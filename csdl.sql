@@ -373,4 +373,21 @@ BEGIN
     RETURN @NewMa
 END
 
+--cần tạo stored procedure trong SQL Server:
+CREATE PROCEDURE CapNhatTongTienHDN
+    @MaHDN NVARCHAR(10)
+AS
+BEGIN
+    UPDATE HoaDonNhap
+    SET TongTien = (
+        SELECT SUM(ThanhTien)
+        FROM ChiTietHDN
+        WHERE MaHDN = @MaHDN
+    )
+    WHERE MaHDN = @MaHDN
+END
+
+
+
+
 
