@@ -12,6 +12,8 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -32,26 +34,33 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
   <ItemGroup>
-    <Reference Include="GumroadLicensing, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\GumroadLicensing.1.0.3\lib\net40\GumroadLicensing.dll</HintPath>
-    </Reference>
-    <Reference Include="Guna.Charts.WinForms, Version=1.1.0.0, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
-      <HintPath>..\packages\Guna.Charts.WinForms.1.1.0\lib\net48\Guna.Charts.WinForms.dll</HintPath>
-    </Reference>
-    <Reference Include="Guna.UI2, Version=2.0.4.7, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
-      <HintPath>..\packages\Guna.UI2.WinForms.2.0.4.7\lib\net48\Guna.UI2.dll</HintPath>
-    </Reference>
-    <Reference Include="NavigationMenu, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Kimtoo.NavigationMenu.1.0.2\lib\net40\NavigationMenu.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Core" />
     <Reference Include="System.Design" />
     <Reference Include="System.Management" />
+    <Reference Include="System.Numerics" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -76,11 +85,18 @@
     <Compile Include="Controller\QueController.cs" />
     <Compile Include="Controller\SanPhamController.cs" />
     <Compile Include="Controller\TaiKhoanController.cs" />
+    <Compile Include="FaceDetection.cs" />
     <Compile Include="FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormLogin.Designer.cs">
       <DependentUpon>FormLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmNhanDien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmNhanDien.Designer.cs">
+      <DependentUpon>FrmNhanDien.cs</DependentUpon>
     </Compile>
     <Compile Include="function\DatabaseHelper.cs" />
     <Compile Include="Model\ChiTietHDBModel.cs" />
@@ -121,10 +137,16 @@
     <Compile Include="View\FrmHDB.Designer.cs">
       <DependentUpon>FrmHDB.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\FrmHDN.cs">
+    <Compile Include="View\QuanLyHoaDonNhap\FrmAddHDN.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\FrmHDN.Designer.cs">
+    <Compile Include="View\QuanLyHoaDonNhap\FrmAddHDN.Designer.cs">
+      <DependentUpon>FrmAddHDN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\QuanLyHoaDonNhap\FrmHDN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\QuanLyHoaDonNhap\FrmHDN.Designer.cs">
       <DependentUpon>FrmHDN.cs</DependentUpon>
     </Compile>
     <Compile Include="View\NhaCungCap\FrmAddNCC.cs">
@@ -151,6 +173,12 @@
     <Compile Include="View\NhanVien\FrmNhanVien.Designer.cs">
       <DependentUpon>FrmNhanVien.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\QuanLyHoaDonNhap\FrmQuanLyHDN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\QuanLyHoaDonNhap\FrmQuanLyHDN.Designer.cs">
+      <DependentUpon>FrmQuanLyHDN.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\SanPham\FrmAddSanPham.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -165,6 +193,9 @@
     </Compile>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmNhanDien.resx">
+      <DependentUpon>FrmNhanDien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -190,13 +221,21 @@
     <EmbeddedResource Include="View\NhanVien\FrmNhanVien.resx">
       <DependentUpon>FrmNhanVien.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\QuanLyHoaDonNhap\FrmAddHDN.resx">
+      <DependentUpon>FrmAddHDN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\QuanLyHoaDonNhap\FrmHDN.resx">
+      <DependentUpon>FrmHDN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\QuanLyHoaDonNhap\FrmQuanLyHDN.resx">
+      <DependentUpon>FrmQuanLyHDN.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\SanPham\FrmAddSanPham.resx">
       <DependentUpon>FrmAddSanPham.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\SanPham\FrmSanPham.resx">
       <DependentUpon>FrmSanPham.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -210,6 +249,93 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <PackageReference Include="Emgu.CV">
+      <Version>4.10.0.5680</Version>
+    </PackageReference>
+    <PackageReference Include="Emgu.CV.Bitmap">
+      <Version>4.10.0.5680</Version>
+    </PackageReference>
+    <PackageReference Include="Emgu.CV.UI">
+      <Version>4.10.0.5680</Version>
+    </PackageReference>
+    <PackageReference Include="GumroadLicensing">
+      <Version>2.0.5</Version>
+    </PackageReference>
+    <PackageReference Include="Guna.Charts.WinForms">
+      <Version>1.1.0</Version>
+    </PackageReference>
+    <PackageReference Include="Guna.UI2.WinForms">
+      <Version>2.0.4.7</Version>
+    </PackageReference>
+    <PackageReference Include="Kimtoo.NavigationMenu">
+      <Version>1.0.2</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Bcl.AsyncInterfaces">
+      <Version>9.0.4</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Bcl.HashCode">
+      <Version>1.1.1</Version>
+    </PackageReference>
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>13.0.3</Version>
+    </PackageReference>
+    <PackageReference Include="System.Buffers">
+      <Version>4.6.1</Version>
+    </PackageReference>
+    <PackageReference Include="System.Collections.Immutable">
+      <Version>9.0.0</Version>
+    </PackageReference>
+    <PackageReference Include="System.Drawing.Common">
+      <Version>9.0.0</Version>
+    </PackageReference>
+    <PackageReference Include="System.Drawing.Primitives">
+      <Version>4.3.0</Version>
+    </PackageReference>
+    <PackageReference Include="System.Formats.Nrbf">
+      <Version>9.0.0</Version>
+    </PackageReference>
+    <PackageReference Include="System.IO.Pipelines">
+      <Version>9.0.4</Version>
+    </PackageReference>
+    <PackageReference Include="System.Memory">
+      <Version>4.6.3</Version>
+    </PackageReference>
+    <PackageReference Include="System.Numerics.Vectors">
+      <Version>4.6.1</Version>
+    </PackageReference>
+    <PackageReference Include="System.Reflection.Metadata">
+      <Version>9.0.0</Version>
+    </PackageReference>
+    <PackageReference Include="System.Resources.Extensions">
+      <Version>9.0.0</Version>
+    </PackageReference>
+    <PackageReference Include="System.Runtime">
+      <Version>4.3.1</Version>
+    </PackageReference>
+    <PackageReference Include="System.Runtime.CompilerServices.Unsafe">
+      <Version>6.1.2</Version>
+    </PackageReference>
+    <PackageReference Include="System.Runtime.InteropServices.RuntimeInformation">
+      <Version>4.3.0</Version>
+    </PackageReference>
+    <PackageReference Include="System.Text.Encodings.Web">
+      <Version>9.0.4</Version>
+    </PackageReference>
+    <PackageReference Include="System.Text.Json">
+      <Version>9.0.4</Version>
+    </PackageReference>
+    <PackageReference Include="System.Threading.Tasks.Extensions">
+      <Version>4.6.3</Version>
+    </PackageReference>
+    <PackageReference Include="System.ValueTuple">
+      <Version>4.6.1</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="haarcascade_frontalface_default.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

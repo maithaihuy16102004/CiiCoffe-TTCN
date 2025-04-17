@@ -149,7 +149,7 @@ namespace DuAnQuanLyQuancafe.Controller
                         cmd.Parameters.AddWithValue("@SDT", parameter["SDT"]);
                         cmd.Parameters.AddWithValue("@MaQue", parameter["MaQue"]);
                         cmd.Parameters.AddWithValue("@Anh", parameter["Anh"] ?? DBNull.Value);
-
+                        
                         int rowsAffected = cmd.ExecuteNonQuery();
 
                         if (rowsAffected > 0)

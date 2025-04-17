@@ -1,0 +1,174 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\Study\\TTCN\\CiiCoffee\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe.csproj": {}
+  },
+  "projects": {
+    "D:\\Study\\TTCN\\CiiCoffee\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Study\\TTCN\\CiiCoffee\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe.csproj",
+        "projectName": "DuAnQuanLyQuancafe",
+        "projectPath": "D:\\Study\\TTCN\\CiiCoffee\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe.csproj",
+        "packagesPath": "C:\\Users\\MaiThaiHuy\\.nuget\\packages\\",
+        "outputPath": "D:\\Study\\TTCN\\CiiCoffee\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\obj\\",
+        "projectStyle": "PackageReference",
+        "skipContentFileWrite": true,
+        "UsingMicrosoftNETSdk": false,
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\MaiThaiHuy\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net48"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net48": {
+            "projectReferences": {}
+          }
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net48": {
+          "dependencies": {
+            "Emgu.CV": {
+              "target": "Package",
+              "version": "[4.10.0.5680, )"
+            },
+            "Emgu.CV.Bitmap": {
+              "target": "Package",
+              "version": "[4.10.0.5680, )"
+            },
+            "Emgu.CV.UI": {
+              "target": "Package",
+              "version": "[4.10.0.5680, )"
+            },
+            "GumroadLicensing": {
+              "target": "Package",
+              "version": "[2.0.5, )"
+            },
+            "Guna.Charts.WinForms": {
+              "target": "Package",
+              "version": "[1.1.0, )"
+            },
+            "Guna.UI2.WinForms": {
+              "target": "Package",
+              "version": "[2.0.4.7, )"
+            },
+            "Kimtoo.NavigationMenu": {
+              "target": "Package",
+              "version": "[1.0.2, )"
+            },
+            "Microsoft.Bcl.AsyncInterfaces": {
+              "target": "Package",
+              "version": "[9.0.4, )"
+            },
+            "Microsoft.Bcl.HashCode": {
+              "target": "Package",
+              "version": "[1.1.1, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            },
+            "System.Buffers": {
+              "target": "Package",
+              "version": "[4.6.1, )"
+            },
+            "System.Collections.Immutable": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "System.Drawing.Common": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "System.Drawing.Primitives": {
+              "target": "Package",
+              "version": "[4.3.0, )"
+            },
+            "System.Formats.Nrbf": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "System.IO.Pipelines": {
+              "target": "Package",
+              "version": "[9.0.4, )"
+            },
+            "System.Memory": {
+              "target": "Package",
+              "version": "[4.6.3, )"
+            },
+            "System.Numerics.Vectors": {
+              "target": "Package",
+              "version": "[4.6.1, )"
+            },
+            "System.Reflection.Metadata": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "System.Resources.Extensions": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "System.Runtime": {
+              "target": "Package",
+              "version": "[4.3.1, )"
+            },
+            "System.Runtime.CompilerServices.Unsafe": {
+              "target": "Package",
+              "version": "[6.1.2, )"
+            },
+            "System.Runtime.InteropServices.RuntimeInformation": {
+              "target": "Package",
+              "version": "[4.3.0, )"
+            },
+            "System.Text.Encodings.Web": {
+              "target": "Package",
+              "version": "[9.0.4, )"
+            },
+            "System.Text.Json": {
+              "target": "Package",
+              "version": "[9.0.4, )"
+            },
+            "System.Threading.Tasks.Extensions": {
+              "target": "Package",
+              "version": "[4.6.3, )"
+            },
+            "System.ValueTuple": {
+              "target": "Package",
+              "version": "[4.6.1, )"
+            }
+          }
+        }
+      },
+      "runtimes": {
+        "win": {
+          "#import": []
+        },
+        "win-arm64": {
+          "#import": []
+        },
+        "win-x64": {
+          "#import": []
+        },
+        "win-x86": {
+          "#import": []
+        }
+      }
+    }
+  }
+}

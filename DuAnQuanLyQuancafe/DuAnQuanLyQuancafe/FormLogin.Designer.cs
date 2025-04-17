@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLogin));
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -40,8 +41,11 @@
             this.btnThoat = new Guna.UI2.WinForms.Guna2ControlBox();
             this.digThanhCong = new Guna.UI2.WinForms.Guna2MessageDialog();
             this.digThatbai = new Guna.UI2.WinForms.Guna2MessageDialog();
+            this.imageBox1 = new Emgu.CV.UI.ImageBox();
+            this.btnKhuonMat = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imageBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2PictureBox1
@@ -105,7 +109,7 @@
             this.txtMatkhau.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtMatkhau.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtMatkhau.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtMatkhau.Location = new System.Drawing.Point(457, 278);
+            this.txtMatkhau.Location = new System.Drawing.Point(457, 254);
             this.txtMatkhau.Name = "txtMatkhau";
             this.txtMatkhau.PlaceholderText = "Mật khẩu";
             this.txtMatkhau.SelectedText = "";
@@ -126,7 +130,7 @@
             this.txtTaikhoan.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTaikhoan.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtTaikhoan.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTaikhoan.Location = new System.Drawing.Point(457, 225);
+            this.txtTaikhoan.Location = new System.Drawing.Point(457, 201);
             this.txtTaikhoan.Name = "txtTaikhoan";
             this.txtTaikhoan.PlaceholderText = "Tên tài khoản\r\n";
             this.txtTaikhoan.SelectedText = "";
@@ -141,7 +145,7 @@
             this.chkLuu.CheckedState.BorderThickness = 0;
             this.chkLuu.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.chkLuu.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkLuu.Location = new System.Drawing.Point(465, 329);
+            this.chkLuu.Location = new System.Drawing.Point(465, 306);
             this.chkLuu.Name = "chkLuu";
             this.chkLuu.Size = new System.Drawing.Size(110, 20);
             this.chkLuu.TabIndex = 3;
@@ -158,13 +162,13 @@
             this.btnDangnhap.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnDangnhap.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnDangnhap.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnDangnhap.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDangnhap.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDangnhap.ForeColor = System.Drawing.Color.White;
-            this.btnDangnhap.Location = new System.Drawing.Point(477, 355);
+            this.btnDangnhap.Location = new System.Drawing.Point(481, 332);
             this.btnDangnhap.Name = "btnDangnhap";
-            this.btnDangnhap.Size = new System.Drawing.Size(167, 45);
+            this.btnDangnhap.Size = new System.Drawing.Size(127, 45);
             this.btnDangnhap.TabIndex = 4;
-            this.btnDangnhap.Text = "Đăng nhập";
+            this.btnDangnhap.Text = "Đăng nhập ";
             this.btnDangnhap.Click += new System.EventHandler(this.btnDangnhap_Click);
             // 
             // btnThoat
@@ -196,11 +200,37 @@
             this.digThatbai.Style = Guna.UI2.WinForms.MessageDialogStyle.Default;
             this.digThatbai.Text = null;
             // 
+            // imageBox1
+            // 
+            this.imageBox1.Location = new System.Drawing.Point(-15, -15);
+            this.imageBox1.Name = "imageBox1";
+            this.imageBox1.Size = new System.Drawing.Size(75, 23);
+            this.imageBox1.TabIndex = 2;
+            this.imageBox1.TabStop = false;
+            // 
+            // btnKhuonMat
+            // 
+            this.btnKhuonMat.BorderRadius = 25;
+            this.btnKhuonMat.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnKhuonMat.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnKhuonMat.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnKhuonMat.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnKhuonMat.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnKhuonMat.ForeColor = System.Drawing.Color.White;
+            this.btnKhuonMat.Location = new System.Drawing.Point(481, 383);
+            this.btnKhuonMat.Name = "btnKhuonMat";
+            this.btnKhuonMat.Size = new System.Drawing.Size(127, 45);
+            this.btnKhuonMat.TabIndex = 6;
+            this.btnKhuonMat.Text = "Đăng nhập bằng khuôn mặt";
+            this.btnKhuonMat.Click += new System.EventHandler(this.btnKhuonMat_Click);
+            // 
             // FrmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(679, 435);
+            this.Controls.Add(this.btnKhuonMat);
+            this.Controls.Add(this.imageBox1);
             this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.btnDangnhap);
             this.Controls.Add(this.chkLuu);
@@ -216,6 +246,7 @@
             this.Text = "FrmLogin";
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imageBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -234,6 +265,8 @@
         private Guna.UI2.WinForms.Guna2ControlBox btnThoat;
         private Guna.UI2.WinForms.Guna2MessageDialog digThanhCong;
         private Guna.UI2.WinForms.Guna2MessageDialog digThatbai;
+        private Emgu.CV.UI.ImageBox imageBox1;
+        private Guna.UI2.WinForms.Guna2Button btnKhuonMat;
     }
 }
 

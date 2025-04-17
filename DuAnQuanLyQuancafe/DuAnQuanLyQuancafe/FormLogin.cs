@@ -10,7 +10,7 @@ namespace DuAnQuanLyQuancafe
     {
         // Đối tượng kết nối SQL
         SqlConnection SqlConn;
-        private static string connString = "Data Source=DESKTOP-K56JJJ3;Initial Catalog=QuanLyBanCoffee;Integrated Security=True;Encrypt=False";
+        private static string connString = "Data Source=DESKTOP-K56JJJ3;Initial Catalog=QuanLyQuanCafe2;Integrated Security=True;Encrypt=False";
 
         public FrmLogin()
         {
@@ -85,5 +85,27 @@ namespace DuAnQuanLyQuancafe
                     SqlConn.Close();
             }
         }
+
+        private void btnKhuonMat_Click(object sender, EventArgs e)
+        {
+            FrmNhanDien frmNhanDien = new FrmNhanDien();
+            frmNhanDien.LoginByFace += XuLyDangNhapBangKhuonMat; // Sự kiện trả về kết quả
+            frmNhanDien.Show();
+        }
+        private void XuLyDangNhapBangKhuonMat(string tenDangNhap, string loaiTaiKhoan)
+        {
+            digThanhCong.Show("Đăng nhập bằng khuôn mặt thành công", "Thông báo");
+
+            if (loaiTaiKhoan == "Admin")
+            {
+                new FrmCapCao().Show();
+            }
+            else
+            {
+                new FrmCapThap().Show();
+            }
+            this.Hide();
+        }
+
     }
 }

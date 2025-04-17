@@ -8,5 +8,6 @@ namespace DuAnQuanLyQuancafe.Controller
 {
     internal class ChiTietHDNController
     {
+
     }
 }
