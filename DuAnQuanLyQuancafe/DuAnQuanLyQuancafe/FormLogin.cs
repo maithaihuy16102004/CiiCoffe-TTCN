@@ -88,14 +88,22 @@ namespace DuAnQuanLyQuancafe
 
         private void btnKhuonMat_Click(object sender, EventArgs e)
         {
+            this.Hide(); // Ẩn form login
             FrmNhanDien frmNhanDien = new FrmNhanDien();
-            frmNhanDien.LoginByFace += XuLyDangNhapBangKhuonMat; // Sự kiện trả về kết quả
+            frmNhanDien.LoginByFace += XuLyDangNhapBangKhuonMat;
+            frmNhanDien.FormClosed += (s, args) => this.Hide(); // Hiện lại nếu người dùng đóng form nhận diện
             frmNhanDien.Show();
         }
+        // Sửa lại để truyền cả form vào và đóng đúng form
         private void XuLyDangNhapBangKhuonMat(string tenDangNhap, string loaiTaiKhoan)
         {
+            // Hiển thị thông báo
             digThanhCong.Show("Đăng nhập bằng khuôn mặt thành công", "Thông báo");
 
+            // Ẩn form login chính nếu muốn
+            this.Hide();
+
+            // Mở form tương ứng
             if (loaiTaiKhoan == "Admin")
             {
                 new FrmCapCao().Show();
@@ -104,7 +112,9 @@ namespace DuAnQuanLyQuancafe
             {
                 new FrmCapThap().Show();
             }
-            this.Hide();
+
+            // Không tạo lại và đóng form ở đây, vì FrmNhanDien đã tự gọi sự kiện
+            // Có thể thêm logic trong FrmNhanDien để đóng sau khi gọi LoginByFace
         }
 
     }

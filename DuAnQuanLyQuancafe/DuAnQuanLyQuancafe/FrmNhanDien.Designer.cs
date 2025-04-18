@@ -32,6 +32,8 @@
             this.btnStart = new Guna.UI2.WinForms.Guna2Button();
             this.imageBoxFrameGrabber = new Emgu.CV.UI.ImageBox();
             this.btnClose = new Guna.UI2.WinForms.Guna2Button();
+            this.digThanhCong = new Guna.UI2.WinForms.Guna2MessageDialog();
+            this.digThatBai = new Guna.UI2.WinForms.Guna2MessageDialog();
             ((System.ComponentModel.ISupportInitialize)(this.imageBoxFrameGrabber)).BeginInit();
             this.SuspendLayout();
             // 
@@ -74,6 +76,24 @@
             this.btnClose.Text = "Close";
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // digThanhCong
+            // 
+            this.digThanhCong.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
+            this.digThanhCong.Caption = null;
+            this.digThanhCong.Icon = Guna.UI2.WinForms.MessageDialogIcon.Information;
+            this.digThanhCong.Parent = null;
+            this.digThanhCong.Style = Guna.UI2.WinForms.MessageDialogStyle.Default;
+            this.digThanhCong.Text = null;
+            // 
+            // digThatBai
+            // 
+            this.digThatBai.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
+            this.digThatBai.Caption = null;
+            this.digThatBai.Icon = Guna.UI2.WinForms.MessageDialogIcon.None;
+            this.digThatBai.Parent = null;
+            this.digThatBai.Style = Guna.UI2.WinForms.MessageDialogStyle.Default;
+            this.digThatBai.Text = null;
+            // 
             // FrmNhanDien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -95,5 +115,7 @@
         private Guna.UI2.WinForms.Guna2Button btnStart;
         private Emgu.CV.UI.ImageBox imageBoxFrameGrabber;
         private Guna.UI2.WinForms.Guna2Button btnClose;
+        private Guna.UI2.WinForms.Guna2MessageDialog digThanhCong;
+        private Guna.UI2.WinForms.Guna2MessageDialog digThatBai;
     }
 }

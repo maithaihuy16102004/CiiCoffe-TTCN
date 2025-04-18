@@ -19,6 +19,7 @@ namespace DuAnQuanLyQuancafe
         private CascadeClassifier faceDetector;
         private Mat frame = new Mat();
         private bool isCapturing = false;
+        private bool isLoggedIn = false;
         private LBPHFaceRecognizer recognizer;
 
         public FrmNhanDien()
@@ -75,27 +76,21 @@ namespace DuAnQuanLyQuancafe
 
                 while (reader.Read())
                 {
-                    string maNV = reader.GetString(0);
-                    string tenDangNhapDB = reader.GetString(1);
-                    string loaiTaiKhoanDB = reader.GetString(2);
                     byte[] imageBytes = reader["HinhAnh"] as byte[];
-
                     if (imageBytes != null)
                     {
-                        
                         using (MemoryStream ms = new MemoryStream(imageBytes))
                         {
                             Bitmap bitmap = new Bitmap(ms);
                             Bitmap resizedBitmap = new Bitmap(bitmap, new Size(200, 200));
-                            Image<Bgr, byte> img = new Image<Bgr, byte>(resizedBitmap.Width, resizedBitmap.Height);
-                           // img.Bitmap = resizedBitmap;
+                            Image<Bgr, byte> img = resizedBitmap.ToImage<Bgr, byte>();
                             Image<Gray, byte> grayFace = img.Convert<Gray, byte>();
                             grayFace._EqualizeHist();
 
                             trainingFaces.Add(grayFace);
                             labels.Add(labelCounter);
-                            labelToTenDangNhap[labelCounter] = tenDangNhapDB;
-                            labelToLoaiTaiKhoan[labelCounter] = loaiTaiKhoanDB;
+                            labelToTenDangNhap[labelCounter] = reader.GetString(1); // TenDangNhap
+                            labelToLoaiTaiKhoan[labelCounter] = reader.GetString(2); // LoaiTaiKhoan
                             labelCounter++;
                         }
                     }
@@ -103,13 +98,9 @@ namespace DuAnQuanLyQuancafe
 
                 if (trainingFaces.Count == 0 || labels.Count == 0)
                 {
-                    MessageBox.Show("Không có dữ liệu khuôn mặt để huấn luyện!");
+                    digThatBai.Show("Không có dữ liệu khuôn mặt để huấn luyện", "Thông báo");
                     return false;
                 }
-                //else
-                //{
-                //    MessageBox.Show($"Số lượng khuôn mặt huấn luyện: {trainingFaces.Count}");
-                //}
 
                 using (VectorOfMat trainingImages = new VectorOfMat())
                 {
@@ -125,18 +116,15 @@ namespace DuAnQuanLyQuancafe
                 }
 
                 var result = recognizer.Predict(faceFromCamera);
-                
-                if (result.Label >= 0 && result.Distance < 700)
+
+                if (result.Label >= 0 && result.Distance < 500)
                 {
                     tenDangNhap = labelToTenDangNhap[result.Label];
                     loaiTaiKhoan = labelToLoaiTaiKhoan[result.Label];
                     return true;
                 }
-                else
-                {
-                    MessageBox.Show("Không nhận diện được khuôn mặt! Vui lòng thử lại.");
-                    return false;
-                }
+
+                return false;
             }
         }
 
@@ -145,14 +133,11 @@ namespace DuAnQuanLyQuancafe
             if (capture != null && capture.IsOpened)
             {
                 capture.Read(frame);
-                if (frame.IsEmpty)
-                {
-                    MessageBox.Show("Không đọc được frame từ camera!");
-                    return;
-                }
+                if (frame.IsEmpty) return;
 
                 Image<Bgr, Byte> image = frame.ToImage<Bgr, Byte>();
                 Rectangle[] faces = faceDetector.DetectMultiScale(image, 1.1, 10, new Size(20, 20));
+
                 foreach (Rectangle face in faces)
                 {
                     image.Draw(face, new Bgr(Color.Red), 2);
@@ -162,10 +147,17 @@ namespace DuAnQuanLyQuancafe
                     faceFromCamera._EqualizeHist();
                     faceFromCamera._GammaCorrect(2.0);
 
-                    string tenDangNhap, loaiTaiKhoan;
-                    if (SoSanhKhuonMat(faceFromCamera, out tenDangNhap, out loaiTaiKhoan))
+                    if (!isLoggedIn && SoSanhKhuonMat(faceFromCamera, out string tenDangNhap, out string loaiTaiKhoan))
                     {
+                        isLoggedIn = true;
+
+                        // Gọi sự kiện và đóng form
                         LoginByFace?.Invoke(tenDangNhap, loaiTaiKhoan);
+                        this.Invoke(new Action(() =>
+                        {
+                            this.Close();
+                        }));
+                        break;
                     }
                 }
 
@@ -182,7 +174,7 @@ namespace DuAnQuanLyQuancafe
                     capture = new VideoCapture(0);
                     if (!capture.IsOpened)
                     {
-                        MessageBox.Show("Không mở được camera. Kiểm tra lại thiết bị!");
+                        digThatBai.Show("Không thể mở camera", "Thông báo");
                         return;
                     }
 
@@ -198,38 +190,23 @@ namespace DuAnQuanLyQuancafe
             else
             {
                 Application.Idle -= ProcessFrame;
-                if (capture != null)
-                {
-                    capture.Dispose();
-                    capture = null;
-                }
+                capture?.Dispose();
+                capture = null;
                 isCapturing = false;
                 btnStart.Text = "Start";
                 imageBoxFrameGrabber.Image = null;
             }
         }
 
-        protected override void OnFormClosing(FormClosingEventArgs e)
+        private void btnClose_Click(object sender, EventArgs e)
         {
-            if (capture != null)
-            {
-                capture.Dispose();
-            }
-            base.OnFormClosing(e);
+            this.Close();
         }
 
         private void FrmNhanDien_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (capture != null)
-            {
-                capture.Dispose();
-            }
-            base.OnFormClosing(e);
-        }
-
-        private void btnClose_Click(object sender, EventArgs e)
-        {
-            this.Close();
+            Application.Idle -= ProcessFrame;
+            capture?.Dispose();
         }
     }
 }
