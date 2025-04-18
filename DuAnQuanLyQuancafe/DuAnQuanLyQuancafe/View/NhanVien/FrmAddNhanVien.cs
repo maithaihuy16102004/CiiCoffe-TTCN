@@ -16,9 +16,7 @@ namespace DuAnQuanLyQuancafe.View.NhanVien
         public FrmAddNhanVien()
         {
             InitializeComponent();
-
-
-
+               
         }
         private void FrmAddNhanVien_Load(object sender, EventArgs e)
         {

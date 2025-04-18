@@ -113,7 +113,7 @@ CREATE TABLE ChiTietHDN (
 
 -- Bảng Tài khoản
 CREATE TABLE TaiKhoan (
-    MaTK INT PRIMARY KEY IDENTITY(1,1),
+    MaTK NVARCHAR(50) NOT NULL,
     TenDangNhap NVARCHAR(50) UNIQUE NOT NULL,
     MatKhau NVARCHAR(255) NOT NULL,
     LoaiTaiKhoan NVARCHAR(20) CHECK (LoaiTaiKhoan IN ('Admin', 'NhanVien')),
@@ -248,6 +248,9 @@ INSERT INTO ChiTietHDN (MaHDN, MaSP, SoLuong, DonGia, ThanhTien, KhuyenMai) VALU
 INSERT INTO TaiKhoan (TenDangNhap, MatKhau, LoaiTaiKhoan, MaNV) VALUES
 ('admin', '1', 'Admin', 'CI001'),
 ('nv2', '2', 'NhanVien', 'CI002');
+
+INSERT INTO TaiKhoan (TenDangNhap, MatKhau, LoaiTaiKhoan, MaNV) VALUES
+('hai', '1', 'NhanVien', 'CI009');
 
 
 EXEC sp_configure 'show advanced options', 1;

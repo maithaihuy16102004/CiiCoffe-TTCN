@@ -173,11 +173,11 @@
     <Compile Include="View\NhanVien\FrmNhanVien.Designer.cs">
       <DependentUpon>FrmNhanVien.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\QuanLyHoaDonNhap\FrmQuanLyHDN.cs">
+    <Compile Include="View\QuanLyHoaDonNhap\FrmChitietHDN.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\QuanLyHoaDonNhap\FrmQuanLyHDN.Designer.cs">
-      <DependentUpon>FrmQuanLyHDN.cs</DependentUpon>
+    <Compile Include="View\QuanLyHoaDonNhap\FrmChitietHDN.Designer.cs">
+      <DependentUpon>FrmChitietHDN.cs</DependentUpon>
     </Compile>
     <Compile Include="View\SanPham\FrmAddSanPham.cs">
       <SubType>Form</SubType>
@@ -227,8 +227,8 @@
     <EmbeddedResource Include="View\QuanLyHoaDonNhap\FrmHDN.resx">
       <DependentUpon>FrmHDN.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\QuanLyHoaDonNhap\FrmQuanLyHDN.resx">
-      <DependentUpon>FrmQuanLyHDN.cs</DependentUpon>
+    <EmbeddedResource Include="View\QuanLyHoaDonNhap\FrmChitietHDN.resx">
+      <DependentUpon>FrmChitietHDN.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\SanPham\FrmAddSanPham.resx">
       <DependentUpon>FrmAddSanPham.cs</DependentUpon>

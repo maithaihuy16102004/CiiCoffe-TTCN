@@ -196,58 +196,58 @@ namespace DuAnQuanLyQuancafe.View
             dgvNhanVien.DataSource = locnhanvien;
         }
 
-        private void dgvNhanVien_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (dgvNhanVien.SelectedRows.Count > 0)
-            {
-                string pathAnh = dgvNhanVien.SelectedRows[0].Cells["Anh"].Value?.ToString();
+        //private void dgvNhanVien_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        //{
+        //    if (dgvNhanVien.SelectedRows.Count > 0)
+        //    {
+        //        string pathAnh = dgvNhanVien.SelectedRows[0].Cells["Anh"].Value?.ToString();
 
-                if (!string.IsNullOrEmpty(pathAnh) && File.Exists(pathAnh))
-                {
-                    picAnhNhanVien.Image = Image.FromFile(pathAnh);
-                }
-                else
-                {
-                    picAnhNhanVien.Image = null; // hoặc ảnh mặc định
-                }
-            }
-        }
+        //        if (!string.IsNullOrEmpty(pathAnh) && File.Exists(pathAnh))
+        //        {
+        //            picAnhNhanVien.Image = Image.FromFile(pathAnh);
+        //        }
+        //        else
+        //        {
+        //            picAnhNhanVien.Image = null; // hoặc ảnh mặc định
+        //        }
+        //    }
+        //}
 
-        private void dgvNhanVien_SelectionChanged(object sender, EventArgs e)
-        {
-            if (dgvNhanVien.SelectedRows.Count > 0)
-            {
-                // Lấy giá trị đường dẫn ảnh từ cột "Anh"
-                var cellValue = dgvNhanVien.SelectedRows[0].Cells["Anh"].Value;
-                if (cellValue != null)
-                {
-                    string pathAnh = cellValue.ToString();
+        //private void dgvNhanVien_SelectionChanged(object sender, EventArgs e)
+        //{
+        //    if (dgvNhanVien.SelectedRows.Count > 0)
+        //    {
+        //        // Lấy giá trị đường dẫn ảnh từ cột "Anh"
+        //        var cellValue = dgvNhanVien.SelectedRows[0].Cells["Anh"].Value;
+        //        if (cellValue != null)
+        //        {
+        //            string pathAnh = cellValue.ToString();
 
-                    // Kiểm tra xem file có tồn tại không
-                    if (File.Exists(pathAnh))
-                    {
-                        try
-                        {
-                            using (var tempImage = Image.FromFile(pathAnh))
-                            {
-                                picAnhNhanVien.Image = new Bitmap(tempImage);
-                            }
-                        }
-                        catch
-                        {
-                            picAnhNhanVien.Image = null;
-                        }
-                    }
-                    else
-                    {
-                        picAnhNhanVien.Image = null;
-                    }
-                }
-                else
-                {
-                    picAnhNhanVien.Image = null;
-                }
-            }
-        }
+        //            // Kiểm tra xem file có tồn tại không
+        //            if (File.Exists(pathAnh))
+        //            {
+        //                try
+        //                {
+        //                    using (var tempImage = Image.FromFile(pathAnh))
+        //                    {
+        //                        picAnhNhanVien.Image = new Bitmap(tempImage);
+        //                    }
+        //                }
+        //                catch
+        //                {
+        //                    picAnhNhanVien.Image = null;
+        //                }
+        //            }
+        //            else
+        //            {
+        //                picAnhNhanVien.Image = null;
+        //            }
+        //        }
+        //        else
+        //        {
+        //            picAnhNhanVien.Image = null;
+        //        }
+        //    }
+        //}
     }
 }

@@ -36,7 +36,6 @@ D:\Study\TTCN\CiiCoffee\CiiCoffe-TTCN\DuAnQuanLyQuancafe\DuAnQuanLyQuancafe\obj\
 D:\Study\TTCN\CiiCoffee\CiiCoffe-TTCN\DuAnQuanLyQuancafe\DuAnQuanLyQuancafe\obj\x64\Debug\DuAnQuanLyQuancafe.View.FrmNhanVien.resources
 D:\Study\TTCN\CiiCoffee\CiiCoffe-TTCN\DuAnQuanLyQuancafe\DuAnQuanLyQuancafe\obj\x64\Debug\DuAnQuanLyQuancafe.View.QuanLyHoaDonNhap.FrmAddHDN.resources
 D:\Study\TTCN\CiiCoffee\CiiCoffe-TTCN\DuAnQuanLyQuancafe\DuAnQuanLyQuancafe\obj\x64\Debug\DuAnQuanLyQuancafe.View.FrmHDN.resources
-D:\Study\TTCN\CiiCoffee\CiiCoffe-TTCN\DuAnQuanLyQuancafe\DuAnQuanLyQuancafe\obj\x64\Debug\DuAnQuanLyQuancafe.View.QuanLyHoaDonNhap.FrmQuanLyHDN.resources
 D:\Study\TTCN\CiiCoffee\CiiCoffe-TTCN\DuAnQuanLyQuancafe\DuAnQuanLyQuancafe\obj\x64\Debug\DuAnQuanLyQuancafe.View.SanPham.FrmAddSanPham.resources
 D:\Study\TTCN\CiiCoffee\CiiCoffe-TTCN\DuAnQuanLyQuancafe\DuAnQuanLyQuancafe\obj\x64\Debug\DuAnQuanLyQuancafe.View.FrmSanPham.resources
 D:\Study\TTCN\CiiCoffee\CiiCoffe-TTCN\DuAnQuanLyQuancafe\DuAnQuanLyQuancafe\obj\x64\Debug\DuAnQuanLyQuancafe.csproj.GenerateResource.cache
@@ -47,3 +46,4 @@ D:\Study\TTCN\CiiCoffee\CiiCoffe-TTCN\DuAnQuanLyQuancafe\DuAnQuanLyQuancafe\obj\
 D:\Study\TTCN\CiiCoffee\CiiCoffe-TTCN\DuAnQuanLyQuancafe\DuAnQuanLyQuancafe\obj\x64\Debug\DuAnQuanLyQuancafe.csproj.SuggestedBindingRedirects.cache
 D:\Study\TTCN\CiiCoffee\CiiCoffe-TTCN\DuAnQuanLyQuancafe\DuAnQuanLyQuancafe\obj\x64\Debug\DuAnQuanLyQuancafe.exe.config
 D:\Study\TTCN\CiiCoffee\CiiCoffe-TTCN\DuAnQuanLyQuancafe\DuAnQuanLyQuancafe\bin\x64\Debug\haarcascade_frontalface_default.xml
+D:\Study\TTCN\CiiCoffee\CiiCoffe-TTCN\DuAnQuanLyQuancafe\DuAnQuanLyQuancafe\obj\x64\Debug\DuAnQuanLyQuancafe.View.QuanLyHoaDonNhap.FrmChitietHDN.resources

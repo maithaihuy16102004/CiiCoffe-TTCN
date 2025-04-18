@@ -19,10 +19,12 @@ namespace DuAnQuanLyQuancafe.View
         {
             InitializeComponent();
             LoadHDN();
+            dgvHDN.CellDoubleClick += dgvHDN_CellDoubleClick;// Đăng ký sự kiện CellClick
+
         }
         public void LoadHDN()
         {
-            if(dgvHDN == null)
+            if (dgvHDN == null)
             {
                 MessageBox.Show("Không có dữ liệu để hiển thị.");
                 return;
@@ -51,9 +53,43 @@ namespace DuAnQuanLyQuancafe.View
             };
         }
 
+
+
+
+        private void dgvHDN_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && dgvHDN.Rows[e.RowIndex].Cells["MaHDN"].Value != null)
+            {
+                string maHDN = dgvHDN.Rows[e.RowIndex].Cells["MaHDN"].Value.ToString();
+
+                FrmChitietHDN frmChiTiet = new FrmChitietHDN(maHDN);
+                frmChiTiet.ShowDialog();
+            }
+        }
+
+
+        private void btnThem_Click_1(object sender, EventArgs e)
+        {
+            FrmAddHDN frmAddHDN = new FrmAddHDN();
+            frmAddHDN.Show();
+            frmAddHDN.FormClosed += (s, args) =>
+            {
+                LoadHDN();
+            };
+        }
+
+        private void FrmHDN_TextChanged(object sender, EventArgs e)
+        {
+            string tukoa = txtTimKiem.Text.Trim();
+            HoaDonNhapController HDNController = new HoaDonNhapController();
+            List<HoaDonNhapModel> locHDN = HDNController.LayDanhSachHDN().FindAll(hdn => hdn.MaHDN.ToLower().Contains(tukoa.ToLower())).ToList();
+            dgvHDN.DataSource = null; // Đặt lại DataSource trước khi gán mới
+            dgvHDN.DataSource = locHDN;
+        }
+
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            if(dgvHDN.SelectedRows.Count > 0)
+            if (dgvHDN.SelectedRows.Count > 0)
             {
                 string id = dgvHDN.SelectedRows[0].Cells["MaHDN"].Value.ToString();
                 HoaDonNhapController HDNController = new HoaDonNhapController();
@@ -69,16 +105,6 @@ namespace DuAnQuanLyQuancafe.View
             {
                 MessageBox.Show("Vui lòng chọn hóa đơn cần xóa.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-        }
-
-        private void txtTimKiem_TextChanged(object sender, EventArgs e)
-        {
-            string tukoa = txtTimKiem.Text.Trim();
-            HoaDonNhapController HDNController = new HoaDonNhapController();
-            List<HoaDonNhapModel> locHDN = HDNController.LayDanhSachHDN().FindAll(hdn => hdn.MaHDN.ToLower().Contains(tukoa.ToLower())).ToList();
-            dgvHDN.DataSource = null; // Đặt lại DataSource trước khi gán mới
-            dgvHDN.DataSource = locHDN;
-
         }
     }
 }

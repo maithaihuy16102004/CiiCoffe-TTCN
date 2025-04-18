@@ -55,10 +55,8 @@
             this.label8 = new System.Windows.Forms.Label();
             this.btnChon = new System.Windows.Forms.Button();
             this.picAnh = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.picAnhNhanVien = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhanVien)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picAnh)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picAnhNhanVien)).BeginInit();
             this.SuspendLayout();
             // 
             // dtpNgaySinh
@@ -152,7 +150,7 @@
             this.btnXoa.ImageOffset = new System.Drawing.Point(0, 0);
             this.btnXoa.ImageRotate = 0F;
             this.btnXoa.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnXoa.Location = new System.Drawing.Point(157, 15);
+            this.btnXoa.Location = new System.Drawing.Point(130, 15);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.PressedState.ImageSize = new System.Drawing.Size(64, 64);
             this.btnXoa.Size = new System.Drawing.Size(39, 39);
@@ -167,7 +165,7 @@
             this.btn.ImageOffset = new System.Drawing.Point(0, 0);
             this.btn.ImageRotate = 0F;
             this.btn.ImageSize = new System.Drawing.Size(32, 32);
-            this.btn.Location = new System.Drawing.Point(103, 15);
+            this.btn.Location = new System.Drawing.Point(76, 12);
             this.btn.Name = "btn";
             this.btn.PressedState.ImageSize = new System.Drawing.Size(64, 64);
             this.btn.Size = new System.Drawing.Size(48, 44);
@@ -218,7 +216,7 @@
             this.btnThem.ImageOffset = new System.Drawing.Point(0, 0);
             this.btnThem.ImageRotate = 0F;
             this.btnThem.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnThem.Location = new System.Drawing.Point(58, 15);
+            this.btnThem.Location = new System.Drawing.Point(27, 15);
             this.btnThem.Name = "btnThem";
             this.btnThem.PressedState.ImageSize = new System.Drawing.Size(64, 64);
             this.btnThem.Size = new System.Drawing.Size(39, 39);
@@ -251,10 +249,10 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvNhanVien.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvNhanVien.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvNhanVien.Location = new System.Drawing.Point(12, 76);
+            this.dgvNhanVien.Location = new System.Drawing.Point(24, 76);
             this.dgvNhanVien.Name = "dgvNhanVien";
             this.dgvNhanVien.RowHeadersVisible = false;
-            this.dgvNhanVien.Size = new System.Drawing.Size(878, 483);
+            this.dgvNhanVien.Size = new System.Drawing.Size(961, 483);
             this.dgvNhanVien.TabIndex = 43;
             this.dgvNhanVien.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvNhanVien.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -277,8 +275,6 @@
             this.dgvNhanVien.ThemeStyle.RowsStyle.Height = 22;
             this.dgvNhanVien.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvNhanVien.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.dgvNhanVien.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNhanVien_CellContentClick);
-            this.dgvNhanVien.SelectionChanged += new System.EventHandler(this.dgvNhanVien_SelectionChanged);
             // 
             // txtSDT
             // 
@@ -344,22 +340,11 @@
             this.picAnh.TabStop = false;
             this.picAnh.UseTransparentBackground = true;
             // 
-            // picAnhNhanVien
-            // 
-            this.picAnhNhanVien.ImageRotate = 0F;
-            this.picAnhNhanVien.Location = new System.Drawing.Point(921, 145);
-            this.picAnhNhanVien.Name = "picAnhNhanVien";
-            this.picAnhNhanVien.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.picAnhNhanVien.Size = new System.Drawing.Size(64, 64);
-            this.picAnhNhanVien.TabIndex = 69;
-            this.picAnhNhanVien.TabStop = false;
-            // 
             // FrmNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(997, 641);
-            this.Controls.Add(this.picAnhNhanVien);
             this.Controls.Add(this.picAnh);
             this.Controls.Add(this.btnChon);
             this.Controls.Add(this.label8);
@@ -389,7 +374,6 @@
             this.Load += new System.EventHandler(this.FrmNhanVien_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhanVien)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picAnh)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picAnhNhanVien)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -420,6 +404,5 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnChon;
         private Guna.UI2.WinForms.Guna2PictureBox picAnh;
-        private Guna.UI2.WinForms.Guna2CirclePictureBox picAnhNhanVien;
     }
 }

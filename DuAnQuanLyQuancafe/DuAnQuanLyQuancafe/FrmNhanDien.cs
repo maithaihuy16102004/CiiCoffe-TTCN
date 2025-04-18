@@ -32,7 +32,7 @@ namespace DuAnQuanLyQuancafe
 
             imageBoxFrameGrabber = new Emgu.CV.UI.ImageBox
             {
-                Size = new Size(700, 500),
+                Size = new Size(800, 500),
                 Location = new Point(10, 10),
                 SizeMode = PictureBoxSizeMode.StretchImage
             };
@@ -117,7 +117,7 @@ namespace DuAnQuanLyQuancafe
 
                 var result = recognizer.Predict(faceFromCamera);
 
-                if (result.Label >= 0 && result.Distance < 500)
+                if (result.Label >= 0 && result.Distance < 100)
                 {
                     tenDangNhap = labelToTenDangNhap[result.Label];
                     loaiTaiKhoan = labelToLoaiTaiKhoan[result.Label];

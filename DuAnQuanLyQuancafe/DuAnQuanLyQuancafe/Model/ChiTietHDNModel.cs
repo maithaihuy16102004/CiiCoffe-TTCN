@@ -12,9 +12,10 @@ namespace DuAnQuanLyQuancafe.Model
         public string MaHDN { get; set; }
         public string MaSP { get; set; }
         public int SoLuong { get; set; }
-        public string DonGia { get; set; }
-        public string ThanhTien { get; set; }
-        public string KhuyenMai { get; set; }
-
+        public decimal DonGia { get; set; }
+        public decimal ThanhTien { get; set; }
+        public decimal KhuyenMai { get; set; }
+        
     }
+
 }
