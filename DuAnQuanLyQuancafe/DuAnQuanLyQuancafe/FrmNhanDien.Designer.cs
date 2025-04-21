@@ -45,7 +45,7 @@
             this.btnStart.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnStart.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnStart.ForeColor = System.Drawing.Color.White;
-            this.btnStart.Location = new System.Drawing.Point(705, 410);
+            this.btnStart.Location = new System.Drawing.Point(705, 442);
             this.btnStart.Name = "btnStart";
             this.btnStart.Size = new System.Drawing.Size(83, 28);
             this.btnStart.TabIndex = 3;
@@ -54,9 +54,9 @@
             // 
             // imageBoxFrameGrabber
             // 
-            this.imageBoxFrameGrabber.Location = new System.Drawing.Point(778, 394);
+            this.imageBoxFrameGrabber.Location = new System.Drawing.Point(12, 12);
             this.imageBoxFrameGrabber.Name = "imageBoxFrameGrabber";
-            this.imageBoxFrameGrabber.Size = new System.Drawing.Size(10, 10);
+            this.imageBoxFrameGrabber.Size = new System.Drawing.Size(776, 458);
             this.imageBoxFrameGrabber.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.imageBoxFrameGrabber.TabIndex = 2;
             this.imageBoxFrameGrabber.TabStop = false;
@@ -69,7 +69,7 @@
             this.btnClose.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnClose.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnClose.ForeColor = System.Drawing.Color.White;
-            this.btnClose.Location = new System.Drawing.Point(602, 410);
+            this.btnClose.Location = new System.Drawing.Point(616, 442);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(83, 28);
             this.btnClose.TabIndex = 4;
@@ -98,10 +98,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 482);
             this.Controls.Add(this.btnClose);
-            this.Controls.Add(this.imageBoxFrameGrabber);
             this.Controls.Add(this.btnStart);
+            this.Controls.Add(this.imageBoxFrameGrabber);
             this.Name = "FrmNhanDien";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmNhanDien";

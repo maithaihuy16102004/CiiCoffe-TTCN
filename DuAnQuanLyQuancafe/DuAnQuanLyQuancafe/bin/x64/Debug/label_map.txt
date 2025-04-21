@@ -1,0 +1,5 @@
+0|admin|Admin
+1|nv2|NhanVien
+2|quang|NhanVien
+3|admin1|Admin
+4|hai|NhanVien

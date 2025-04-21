@@ -21,187 +21,173 @@ namespace DuAnQuanLyQuancafe
         private bool isCapturing = false;
         private bool isLoggedIn = false;
         private LBPHFaceRecognizer recognizer;
+        private string modelPath = "trainedModel.yml";
+        private Dictionary<int, string> labelToTenDangNhap = new Dictionary<int, string>();
+        private Dictionary<int, string> labelToLoaiTaiKhoan = new Dictionary<int, string>();
 
         public FrmNhanDien()
         {
             InitializeComponent();
-
             this.Text = "Nhận Diện Khuôn Mặt";
             this.FormBorderStyle = FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
 
-            imageBoxFrameGrabber = new Emgu.CV.UI.ImageBox
-            {
-                Size = new Size(800, 500),
-                Location = new Point(10, 10),
-                SizeMode = PictureBoxSizeMode.StretchImage
-            };
+            Emgu.CV.UI.ImageBox imageBoxFrameGrabber = new Emgu.CV.UI.ImageBox();
+            imageBoxFrameGrabber.Size = new Size(800, 500);
+            imageBoxFrameGrabber.Location = new Point(10, 10);
+            imageBoxFrameGrabber.SizeMode = PictureBoxSizeMode.StretchImage;
             this.Controls.Add(imageBoxFrameGrabber);
 
-            try
-            {
-                faceDetector = new CascadeClassifier("haarcascade_frontalface_default.xml");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Không thể load Haar Cascade: " + ex.Message);
-            }
-
+            faceDetector = new CascadeClassifier("haarcascade_frontalface_default.xml");
             recognizer = new LBPHFaceRecognizer(1, 8, 8, 8, 200);
+
+            if (File.Exists(modelPath))
+            {
+                recognizer.Read(modelPath);
+                LoadUserMappings();
+            }
+            else
+            {
+                TrainAndSaveRecognizer();
+            }
         }
 
-        private bool SoSanhKhuonMat(Image<Gray, byte> faceFromCamera, out string tenDangNhap, out string loaiTaiKhoan)
+        private void LoadUserMappings()
         {
-            tenDangNhap = "";
-            loaiTaiKhoan = "";
-
             string connectionString = "Data Source=DESKTOP-K56JJJ3;Initial Catalog=QuanLyQuanCafe2;Integrated Security=True;Encrypt=False";
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 conn.Open();
-                string query = @"
-                    SELECT TAIKHOAN.MaNV, TAIKHOAN.TenDangNhap, TAIKHOAN.LoaiTaiKhoan, NHANVIEN.HinhAnh 
-                    FROM TAIKHOAN 
-                    INNER JOIN NHANVIEN ON TAIKHOAN.MaNV = NHANVIEN.MaNV";
-                SqlCommand cmd = new SqlCommand(query, conn);
-                SqlDataReader reader = cmd.ExecuteReader();
-
-                List<Image<Gray, byte>> trainingFaces = new List<Image<Gray, byte>>();
-                List<int> labels = new List<int>();
-
-                Dictionary<int, string> labelToTenDangNhap = new Dictionary<int, string>();
-                Dictionary<int, string> labelToLoaiTaiKhoan = new Dictionary<int, string>();
-
-                int labelCounter = 0;
-
-                while (reader.Read())
+                string query = @"SELECT TAIKHOAN.MaNV, TAIKHOAN.LoaiTaiKhoan FROM TAIKHOAN";
+                using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
-                    byte[] imageBytes = reader["HinhAnh"] as byte[];
-                    if (imageBytes != null)
+                    using (SqlDataReader reader = cmd.ExecuteReader())
                     {
-                        using (MemoryStream ms = new MemoryStream(imageBytes))
+                        int label = 0;
+                        while (reader.Read())
                         {
-                            Bitmap bitmap = new Bitmap(ms);
-                            Bitmap resizedBitmap = new Bitmap(bitmap, new Size(200, 200));
-                            Image<Bgr, byte> img = resizedBitmap.ToImage<Bgr, byte>();
-                            Image<Gray, byte> grayFace = img.Convert<Gray, byte>();
-                            grayFace._EqualizeHist();
-
-                            trainingFaces.Add(grayFace);
-                            labels.Add(labelCounter);
-                            labelToTenDangNhap[labelCounter] = reader.GetString(1); // TenDangNhap
-                            labelToLoaiTaiKhoan[labelCounter] = reader.GetString(2); // LoaiTaiKhoan
-                            labelCounter++;
+                            labelToTenDangNhap[label] = reader.GetString(0); // MaNV
+                            labelToLoaiTaiKhoan[label] = reader.GetString(1); // LoaiTaiKhoan
+                            label++;
                         }
                     }
                 }
+            }
+        }
 
-                if (trainingFaces.Count == 0 || labels.Count == 0)
-                {
-                    digThatBai.Show("Không có dữ liệu khuôn mặt để huấn luyện", "Thông báo");
-                    return false;
-                }
+        private void TrainAndSaveRecognizer()
+        {
+            string connectionString = "Data Source=DESKTOP-K56JJJ3;Initial Catalog=QuanLyQuanCafe2;Integrated Security=True;Encrypt=False";
+            List<Image<Gray, byte>> trainingFaces = new List<Image<Gray, byte>>();
+            List<int> labels = new List<int>();
+            int labelCounter = 0;
 
-                using (VectorOfMat trainingImages = new VectorOfMat())
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+                string query = @"SELECT TAIKHOAN.MaNV, NHANVIEN.HinhAnh FROM TAIKHOAN INNER JOIN NHANVIEN ON TAIKHOAN.MaNV = NHANVIEN.MaNV";
+                using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
-                    foreach (var face in trainingFaces)
+                    using (SqlDataReader reader = cmd.ExecuteReader())
                     {
-                        trainingImages.Push(face);
-                    }
+                        while (reader.Read())
+                        {
+                            byte[] imageBytes = reader["HinhAnh"] as byte[];
+                            if (imageBytes != null)
+                            {
+                                using (MemoryStream ms = new MemoryStream(imageBytes))
+                                {
+                                    Bitmap bmp = new Bitmap(ms);
+                                    Image<Gray, byte> grayFace = bmp.ToImage<Gray, byte>().Resize(200, 200, Emgu.CV.CvEnum.Inter.Cubic);
+                                    grayFace._EqualizeHist();
 
-                    using (VectorOfInt trainingLabels = new VectorOfInt(labels.ToArray()))
-                    {
-                        recognizer.Train(trainingImages, trainingLabels);
+                                    trainingFaces.Add(grayFace);
+                                    labels.Add(labelCounter);
+                                    labelToTenDangNhap[labelCounter] = reader.GetString(0); // MaNV
+                                    labelCounter++;
+                                }
+                            }
+                        }
                     }
                 }
+            }
 
-                var result = recognizer.Predict(faceFromCamera);
+            if (trainingFaces.Count > 0)
+            {
+                VectorOfMat images = new VectorOfMat();
+                foreach (var face in trainingFaces)
+                    images.Push(face);
 
-                if (result.Label >= 0 && result.Distance < 100)
-                {
-                    tenDangNhap = labelToTenDangNhap[result.Label];
-                    loaiTaiKhoan = labelToLoaiTaiKhoan[result.Label];
-                    return true;
-                }
+                VectorOfInt labelVec = new VectorOfInt(labels.ToArray());
+                recognizer.Train(images, labelVec);
+                recognizer.Write(modelPath);  // Kiểm tra xem tệp có được lưu thành công không
+                Console.WriteLine("Model saved successfully.");
 
-                return false;
             }
         }
 
         private void ProcessFrame(object sender, EventArgs e)
         {
-            if (capture != null && capture.IsOpened)
+            if (capture == null || !capture.IsOpened) return;
+
+            capture.Read(frame);
+            if (frame.IsEmpty) return;
+
+            Image<Bgr, byte> image = frame.ToImage<Bgr, byte>();
+            Rectangle[] faces = faceDetector.DetectMultiScale(image, 1.1, 10, new Size(50, 50));
+
+            foreach (Rectangle face in faces)
             {
-                capture.Read(frame);
-                if (frame.IsEmpty) return;
+                image.Draw(face, new Bgr(Color.Red), 2);
+                Image<Gray, byte> gray = image.Copy(face).Convert<Gray, byte>().Resize(200, 200, Emgu.CV.CvEnum.Inter.Cubic);
+                gray._EqualizeHist();
 
-                Image<Bgr, Byte> image = frame.ToImage<Bgr, Byte>();
-                Rectangle[] faces = faceDetector.DetectMultiScale(image, 1.1, 10, new Size(20, 20));
+                var result = recognizer.Predict(gray);
 
-                foreach (Rectangle face in faces)
+                if (labelToTenDangNhap.ContainsKey(result.Label))
                 {
-                    image.Draw(face, new Bgr(Color.Red), 2);
-
-                    Image<Gray, byte> faceFromCamera = image.Copy(face).Convert<Gray, byte>();
-                    faceFromCamera = faceFromCamera.Resize(200, 200, Emgu.CV.CvEnum.Inter.Linear);
-                    faceFromCamera._EqualizeHist();
-                    faceFromCamera._GammaCorrect(2.0);
-
-                    if (!isLoggedIn && SoSanhKhuonMat(faceFromCamera, out string tenDangNhap, out string loaiTaiKhoan))
-                    {
-                        isLoggedIn = true;
-
-                        // Gọi sự kiện và đóng form
-                        LoginByFace?.Invoke(tenDangNhap, loaiTaiKhoan);
-                        this.Invoke(new Action(() =>
-                        {
-                            this.Close();
-                        }));
-                        break;
-                    }
+                    string username = labelToTenDangNhap[result.Label];
+                    string role = labelToLoaiTaiKhoan[result.Label];
+                    Console.WriteLine($"User: {username}, Role: {role}");  // Log user info
+                    LoginByFace?.Invoke(username, role);
+                    this.Invoke(new Action(() => this.Close()));
+                }
+                else
+                {
+                    // Log if label not found
+                    Console.WriteLine($"Label {result.Label} not found in dictionary.");
                 }
 
-                imageBoxFrameGrabber.Image = image;
             }
+
+            imageBoxFrameGrabber.Image = image;
         }
 
         private void btnStart_Click(object sender, EventArgs e)
         {
             if (!isCapturing)
             {
-                try
+                capture = new VideoCapture(0);
+                if (!capture.IsOpened)
                 {
-                    capture = new VideoCapture(0);
-                    if (!capture.IsOpened)
-                    {
-                        digThatBai.Show("Không thể mở camera", "Thông báo");
-                        return;
-                    }
-
-                    Application.Idle += ProcessFrame;
-                    isCapturing = true;
-                    btnStart.Text = "Stop";
+                    MessageBox.Show("Không mở được camera.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Lỗi mở camera: " + ex.Message);
-                }
+                Application.Idle += ProcessFrame;
+                isCapturing = true;
+                btnStart.Text = "Stop";
             }
             else
             {
                 Application.Idle -= ProcessFrame;
                 capture?.Dispose();
-                capture = null;
                 isCapturing = false;
                 btnStart.Text = "Start";
                 imageBoxFrameGrabber.Image = null;
             }
         }
 
-        private void btnClose_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
+        private void btnClose_Click(object sender, EventArgs e) => this.Close();
 
         private void FrmNhanDien_FormClosing(object sender, FormClosingEventArgs e)
         {

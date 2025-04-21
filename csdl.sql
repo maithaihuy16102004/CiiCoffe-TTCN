@@ -376,4 +376,19 @@ BEGIN
     RETURN @NewMa
 END
 
+DROP TABLE IF EXISTS TaiKhoan;
+GO
 
+CREATE TABLE TaiKhoan (
+    MaNV NVARCHAR(10) PRIMARY KEY, -- MaNV làm khóa chính luôn
+    MatKhau NVARCHAR(255) NOT NULL,
+    LoaiTaiKhoan NVARCHAR(20) CHECK (LoaiTaiKhoan IN ('Admin', 'NhanVien')),
+    FOREIGN KEY (MaNV) REFERENCES NhanVien(MaNV) ON DELETE CASCADE
+);
+
+-- Thêm dữ liệu mới (sau khi tạo lại bảng)
+INSERT INTO TaiKhoan (MaNV, MatKhau, LoaiTaiKhoan) VALUES
+('CI001', '1', 'Admin'),
+('CI002', '2', 'NhanVien'),
+('CI003', '1', 'NhanVien');
+SELECT * FROM TaiKhoan

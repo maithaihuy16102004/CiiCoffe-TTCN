@@ -38,10 +38,10 @@ namespace DuAnQuanLyQuancafe
                 }
 
                 // Truy vấn kiểm tra tài khoản và lấy LoaiTaiKhoan
-                string sql = "SELECT LoaiTaiKhoan FROM TaiKhoan WHERE LOWER(TenDangNhap) = LOWER(@TenDangNhap) AND MatKhau = @MatKhau";
+                string sql = "SELECT LoaiTaiKhoan FROM TaiKhoan WHERE LOWER(MaNV) = LOWER(@MaNV) AND MatKhau = @MatKhau";
                 using (SqlCommand cmd = new SqlCommand(sql, SqlConn))
                 {
-                    cmd.Parameters.AddWithValue("@TenDangNhap", txtTaikhoan.Text.Trim());
+                    cmd.Parameters.AddWithValue("@MaNV", txtTaikhoan.Text.Trim());
                     cmd.Parameters.AddWithValue("@MatKhau", txtMatkhau.Text.Trim());
 
                     object result = cmd.ExecuteScalar();
