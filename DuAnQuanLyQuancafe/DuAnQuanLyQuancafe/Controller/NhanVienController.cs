@@ -37,7 +37,8 @@ namespace DuAnQuanLyQuancafe.Controller
                     conn.Open();
                 }
 
-                string query = "SELECT * FROM NhanVien";
+                string query = "SELECT nv.MaNV, nv.TenNV, nv.DiaChi, nv.GioiTinh, nv.NgaySinh, nv.SDT, nv.MaQue, nv.HinhAnh, q.TenQue " +
+                               "FROM NhanVien AS nv JOIN Que AS q ON nv.MaQue = q.MaQue";
 
                 SqlCommand cmd = new SqlCommand(query, conn);
                 using (SqlDataReader reader = cmd.ExecuteReader())
@@ -53,6 +54,7 @@ namespace DuAnQuanLyQuancafe.Controller
                             NgaySinh = reader["NgaySinh"] == DBNull.Value ? DateTime.MinValue : Convert.ToDateTime(reader["NgaySinh"]),
                             SDT = reader["SDT"] as string,
                             MaQue = reader["MaQue"].ToString(),
+                            TenQue = reader["TenQue"].ToString(), // Lấy tên quê từ kết quả JOIN
                             Anh = reader["HinhAnh"] == DBNull.Value ? null : (byte[])reader["HinhAnh"]
                         });
                     }
@@ -61,6 +63,7 @@ namespace DuAnQuanLyQuancafe.Controller
 
             return NhanVien;
         }
+
 
         public static List<QueModel> LayMaQue()
         {

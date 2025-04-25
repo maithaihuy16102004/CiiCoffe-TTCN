@@ -37,6 +37,8 @@
             this.btnThoat = new Guna.UI2.WinForms.Guna2ControlBox();
             this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
             this.btnThongke = new System.Windows.Forms.Button();
             this.btnAcc = new System.Windows.Forms.Button();
@@ -46,8 +48,8 @@
             this.btnSanPham = new System.Windows.Forms.Button();
             this.btnNhanVien = new System.Windows.Forms.Button();
             this.guna2Separator3 = new Guna.UI2.WinForms.Guna2Separator();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lbTen = new System.Windows.Forms.Label();
+            this.lbMa = new System.Windows.Forms.Label();
             this.guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
             this.picAdmin = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2Shapes1 = new Guna.UI2.WinForms.Guna2Shapes();
@@ -75,21 +77,21 @@
             // lbTitle
             // 
             this.lbTitle.AutoSize = true;
-            this.lbTitle.Font = new System.Drawing.Font("Century", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTitle.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(79)))), ((int)(((byte)(40)))));
-            this.lbTitle.Location = new System.Drawing.Point(351, 6);
+            this.lbTitle.Location = new System.Drawing.Point(351, 2);
             this.lbTitle.Name = "lbTitle";
-            this.lbTitle.Size = new System.Drawing.Size(71, 16);
+            this.lbTitle.Size = new System.Drawing.Size(101, 25);
             this.lbTitle.TabIndex = 6;
             this.lbTitle.Text = "Trang chủ";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(936, 6);
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(910, 2);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(285, 20);
+            this.label3.Size = new System.Drawing.Size(311, 25);
             this.label3.TabIndex = 5;
             this.label3.Text = "Tổng quan hệ thống (Dashboard)";
             // 
@@ -140,6 +142,8 @@
             // guna2Panel2
             // 
             this.guna2Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(79)))), ((int)(((byte)(40)))));
+            this.guna2Panel2.Controls.Add(this.label2);
+            this.guna2Panel2.Controls.Add(this.label1);
             this.guna2Panel2.Controls.Add(this.guna2Panel3);
             this.guna2Panel2.Controls.Add(this.btnThongke);
             this.guna2Panel2.Controls.Add(this.btnAcc);
@@ -149,8 +153,8 @@
             this.guna2Panel2.Controls.Add(this.btnSanPham);
             this.guna2Panel2.Controls.Add(this.btnNhanVien);
             this.guna2Panel2.Controls.Add(this.guna2Separator3);
-            this.guna2Panel2.Controls.Add(this.label2);
-            this.guna2Panel2.Controls.Add(this.label1);
+            this.guna2Panel2.Controls.Add(this.lbTen);
+            this.guna2Panel2.Controls.Add(this.lbMa);
             this.guna2Panel2.Controls.Add(this.guna2Separator1);
             this.guna2Panel2.Controls.Add(this.picAdmin);
             this.guna2Panel2.Controls.Add(this.guna2Shapes1);
@@ -158,6 +162,28 @@
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.Size = new System.Drawing.Size(310, 755);
             this.guna2Panel2.TabIndex = 1;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label2.Location = new System.Drawing.Point(140, 95);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(64, 15);
+            this.label2.TabIndex = 14;
+            this.label2.Text = "Họ và tên: ";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label1.Location = new System.Drawing.Point(140, 65);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(33, 15);
+            this.label1.TabIndex = 13;
+            this.label1.Text = "Mã : ";
             // 
             // guna2Panel3
             // 
@@ -169,7 +195,7 @@
             // btnThongke
             // 
             this.btnThongke.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnThongke.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThongke.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThongke.ForeColor = System.Drawing.Color.MediumSeaGreen;
             this.btnThongke.Image = ((System.Drawing.Image)(resources.GetObject("btnThongke.Image")));
             this.btnThongke.Location = new System.Drawing.Point(22, 152);
@@ -184,10 +210,10 @@
             // btnAcc
             // 
             this.btnAcc.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnAcc.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAcc.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAcc.ForeColor = System.Drawing.Color.MediumSeaGreen;
             this.btnAcc.Image = ((System.Drawing.Image)(resources.GetObject("btnAcc.Image")));
-            this.btnAcc.Location = new System.Drawing.Point(22, 602);
+            this.btnAcc.Location = new System.Drawing.Point(22, 616);
             this.btnAcc.Margin = new System.Windows.Forms.Padding(0);
             this.btnAcc.Name = "btnAcc";
             this.btnAcc.Size = new System.Drawing.Size(257, 52);
@@ -200,10 +226,10 @@
             // btnNhaCungCap
             // 
             this.btnNhaCungCap.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnNhaCungCap.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNhaCungCap.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNhaCungCap.ForeColor = System.Drawing.Color.MediumSeaGreen;
             this.btnNhaCungCap.Image = ((System.Drawing.Image)(resources.GetObject("btnNhaCungCap.Image")));
-            this.btnNhaCungCap.Location = new System.Drawing.Point(22, 525);
+            this.btnNhaCungCap.Location = new System.Drawing.Point(22, 538);
             this.btnNhaCungCap.Margin = new System.Windows.Forms.Padding(0);
             this.btnNhaCungCap.Name = "btnNhaCungCap";
             this.btnNhaCungCap.Size = new System.Drawing.Size(257, 52);
@@ -216,10 +242,10 @@
             // btnHDN
             // 
             this.btnHDN.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnHDN.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHDN.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHDN.ForeColor = System.Drawing.Color.MediumSeaGreen;
             this.btnHDN.Image = ((System.Drawing.Image)(resources.GetObject("btnHDN.Image")));
-            this.btnHDN.Location = new System.Drawing.Point(22, 448);
+            this.btnHDN.Location = new System.Drawing.Point(22, 457);
             this.btnHDN.Margin = new System.Windows.Forms.Padding(0);
             this.btnHDN.Name = "btnHDN";
             this.btnHDN.Size = new System.Drawing.Size(257, 52);
@@ -232,10 +258,10 @@
             // btnHDB
             // 
             this.btnHDB.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnHDB.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHDB.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHDB.ForeColor = System.Drawing.Color.MediumSeaGreen;
             this.btnHDB.Image = ((System.Drawing.Image)(resources.GetObject("btnHDB.Image")));
-            this.btnHDB.Location = new System.Drawing.Point(22, 369);
+            this.btnHDB.Location = new System.Drawing.Point(22, 380);
             this.btnHDB.Margin = new System.Windows.Forms.Padding(0);
             this.btnHDB.Name = "btnHDB";
             this.btnHDB.Size = new System.Drawing.Size(257, 52);
@@ -248,10 +274,10 @@
             // btnSanPham
             // 
             this.btnSanPham.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnSanPham.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSanPham.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSanPham.ForeColor = System.Drawing.Color.MediumSeaGreen;
             this.btnSanPham.Image = ((System.Drawing.Image)(resources.GetObject("btnSanPham.Image")));
-            this.btnSanPham.Location = new System.Drawing.Point(22, 294);
+            this.btnSanPham.Location = new System.Drawing.Point(22, 304);
             this.btnSanPham.Margin = new System.Windows.Forms.Padding(0);
             this.btnSanPham.Name = "btnSanPham";
             this.btnSanPham.Size = new System.Drawing.Size(257, 52);
@@ -264,7 +290,7 @@
             // btnNhanVien
             // 
             this.btnNhanVien.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnNhanVien.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNhanVien.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNhanVien.ForeColor = System.Drawing.Color.MediumSeaGreen;
             this.btnNhanVien.Image = ((System.Drawing.Image)(resources.GetObject("btnNhanVien.Image")));
             this.btnNhanVien.Location = new System.Drawing.Point(22, 223);
@@ -284,23 +310,26 @@
             this.guna2Separator3.Size = new System.Drawing.Size(281, 19);
             this.guna2Separator3.TabIndex = 6;
             // 
-            // label2
+            // lbTen
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(156, 95);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "label2";
+            this.lbTen.AutoSize = true;
+            this.lbTen.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lbTen.Location = new System.Drawing.Point(201, 95);
+            this.lbTen.Name = "lbTen";
+            this.lbTen.Size = new System.Drawing.Size(35, 13);
+            this.lbTen.TabIndex = 5;
+            this.lbTen.Text = "label2";
             // 
-            // label1
+            // lbMa
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(156, 63);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "label1";
+            this.lbMa.AutoSize = true;
+            this.lbMa.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbMa.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lbMa.Location = new System.Drawing.Point(201, 65);
+            this.lbMa.Name = "lbMa";
+            this.lbMa.Size = new System.Drawing.Size(38, 13);
+            this.lbMa.TabIndex = 4;
+            this.lbMa.Text = "label1";
             // 
             // guna2Separator1
             // 
@@ -321,7 +350,6 @@
             this.picAdmin.TabIndex = 0;
             this.picAdmin.TabStop = false;
             this.picAdmin.UseTransparentBackground = true;
-            this.picAdmin.Click += new System.EventHandler(this.guna2PictureBox1_Click);
             // 
             // guna2Shapes1
             // 
@@ -373,8 +401,8 @@
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
         private Guna.UI2.WinForms.Guna2PictureBox picAdmin;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbTen;
+        private System.Windows.Forms.Label lbMa;
         private Guna.UI2.WinForms.Guna2Separator guna2Separator1;
         private Guna.UI2.WinForms.Guna2Shapes guna2Shapes1;
         private Guna.UI2.WinForms.Guna2Separator guna2Separator3;
@@ -393,5 +421,7 @@
         private System.Windows.Forms.Label label3;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
         private Guna.UI2.WinForms.Guna2Panel PnlHome;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
     }
 }

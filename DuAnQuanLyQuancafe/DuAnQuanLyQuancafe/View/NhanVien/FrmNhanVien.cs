@@ -57,7 +57,7 @@ namespace DuAnQuanLyQuancafe.View
                 dgvNhanVien.Columns["NgaySinh"].DefaultCellStyle.Format = "dd/MM/yyyy";
                 dgvNhanVien.Columns["SDT"].HeaderText = "Số Điện Thoại";
                 dgvNhanVien.Columns["MaQue"].HeaderText = "Mã Quê";
-                dgvNhanVien.Columns["Anh"].HeaderText = "Ảnh Nhân Viên";
+                dgvNhanVien.Columns["TenQue"].HeaderText = "Quê Quán";
             }
         }
        

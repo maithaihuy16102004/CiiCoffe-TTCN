@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLogin));
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -36,16 +35,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtMatkhau = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtTaikhoan = new Guna.UI2.WinForms.Guna2TextBox();
-            this.chkLuu = new Guna.UI2.WinForms.Guna2CheckBox();
+            this.chkLuuTT = new Guna.UI2.WinForms.Guna2CheckBox();
             this.btnDangnhap = new Guna.UI2.WinForms.Guna2Button();
             this.btnThoat = new Guna.UI2.WinForms.Guna2ControlBox();
             this.digThanhCong = new Guna.UI2.WinForms.Guna2MessageDialog();
             this.digThatbai = new Guna.UI2.WinForms.Guna2MessageDialog();
-            this.imageBox1 = new Emgu.CV.UI.ImageBox();
             this.btnKhuonMat = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imageBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2PictureBox1
@@ -54,9 +51,9 @@
             this.guna2PictureBox1.BorderRadius = 200;
             this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
             this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(-214, -2);
+            this.guna2PictureBox1.Location = new System.Drawing.Point(-185, -3);
             this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(641, 441);
+            this.guna2PictureBox1.Size = new System.Drawing.Size(641, 463);
             this.guna2PictureBox1.TabIndex = 0;
             this.guna2PictureBox1.TabStop = false;
             this.guna2PictureBox1.UseTransparentBackground = true;
@@ -65,12 +62,12 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Image = ((System.Drawing.Image)(resources.GetObject("label1.Image")));
             this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label1.Location = new System.Drawing.Point(12, 127);
+            this.label1.Location = new System.Drawing.Point(12, 101);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(368, 36);
+            this.label1.Size = new System.Drawing.Size(384, 45);
             this.label1.TabIndex = 0;
             this.label1.Text = "     Quản Lý Quán Cà Phê";
             // 
@@ -78,7 +75,7 @@
             // 
             this.guna2CirclePictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2CirclePictureBox1.Image")));
             this.guna2CirclePictureBox1.ImageRotate = 0F;
-            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(481, 39);
+            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(481, 20);
             this.guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
             this.guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.guna2CirclePictureBox1.Size = new System.Drawing.Size(163, 156);
@@ -137,23 +134,23 @@
             this.txtTaikhoan.Size = new System.Drawing.Size(208, 36);
             this.txtTaikhoan.TabIndex = 1;
             // 
-            // chkLuu
+            // chkLuuTT
             // 
-            this.chkLuu.AutoSize = true;
-            this.chkLuu.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.chkLuu.CheckedState.BorderRadius = 0;
-            this.chkLuu.CheckedState.BorderThickness = 0;
-            this.chkLuu.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.chkLuu.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkLuu.Location = new System.Drawing.Point(465, 306);
-            this.chkLuu.Name = "chkLuu";
-            this.chkLuu.Size = new System.Drawing.Size(110, 20);
-            this.chkLuu.TabIndex = 3;
-            this.chkLuu.Text = "Lưu lại thông tin";
-            this.chkLuu.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.chkLuu.UncheckedState.BorderRadius = 0;
-            this.chkLuu.UncheckedState.BorderThickness = 0;
-            this.chkLuu.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.chkLuuTT.AutoSize = true;
+            this.chkLuuTT.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.chkLuuTT.CheckedState.BorderRadius = 0;
+            this.chkLuuTT.CheckedState.BorderThickness = 0;
+            this.chkLuuTT.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.chkLuuTT.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkLuuTT.Location = new System.Drawing.Point(465, 306);
+            this.chkLuuTT.Name = "chkLuuTT";
+            this.chkLuuTT.Size = new System.Drawing.Size(110, 20);
+            this.chkLuuTT.TabIndex = 3;
+            this.chkLuuTT.Text = "Lưu lại thông tin";
+            this.chkLuuTT.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.chkLuuTT.UncheckedState.BorderRadius = 0;
+            this.chkLuuTT.UncheckedState.BorderThickness = 0;
+            this.chkLuuTT.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             // 
             // btnDangnhap
             // 
@@ -162,7 +159,7 @@
             this.btnDangnhap.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnDangnhap.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnDangnhap.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnDangnhap.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDangnhap.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDangnhap.ForeColor = System.Drawing.Color.White;
             this.btnDangnhap.Location = new System.Drawing.Point(481, 332);
             this.btnDangnhap.Name = "btnDangnhap";
@@ -200,14 +197,6 @@
             this.digThatbai.Style = Guna.UI2.WinForms.MessageDialogStyle.Default;
             this.digThatbai.Text = null;
             // 
-            // imageBox1
-            // 
-            this.imageBox1.Location = new System.Drawing.Point(-15, -15);
-            this.imageBox1.Name = "imageBox1";
-            this.imageBox1.Size = new System.Drawing.Size(75, 23);
-            this.imageBox1.TabIndex = 2;
-            this.imageBox1.TabStop = false;
-            // 
             // btnKhuonMat
             // 
             this.btnKhuonMat.BorderRadius = 25;
@@ -215,7 +204,7 @@
             this.btnKhuonMat.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnKhuonMat.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnKhuonMat.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnKhuonMat.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnKhuonMat.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnKhuonMat.ForeColor = System.Drawing.Color.White;
             this.btnKhuonMat.Location = new System.Drawing.Point(481, 383);
             this.btnKhuonMat.Name = "btnKhuonMat";
@@ -230,10 +219,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(679, 435);
             this.Controls.Add(this.btnKhuonMat);
-            this.Controls.Add(this.imageBox1);
             this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.btnDangnhap);
-            this.Controls.Add(this.chkLuu);
+            this.Controls.Add(this.chkLuuTT);
             this.Controls.Add(this.txtTaikhoan);
             this.Controls.Add(this.txtMatkhau);
             this.Controls.Add(this.label2);
@@ -246,7 +234,6 @@
             this.Text = "FrmLogin";
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imageBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -260,12 +247,11 @@
         private System.Windows.Forms.Label label2;
         private Guna.UI2.WinForms.Guna2TextBox txtMatkhau;
         private Guna.UI2.WinForms.Guna2TextBox txtTaikhoan;
-        private Guna.UI2.WinForms.Guna2CheckBox chkLuu;
+        private Guna.UI2.WinForms.Guna2CheckBox chkLuuTT;
         private Guna.UI2.WinForms.Guna2Button btnDangnhap;
         private Guna.UI2.WinForms.Guna2ControlBox btnThoat;
         private Guna.UI2.WinForms.Guna2MessageDialog digThanhCong;
         private Guna.UI2.WinForms.Guna2MessageDialog digThatbai;
-        private Emgu.CV.UI.ImageBox imageBox1;
         private Guna.UI2.WinForms.Guna2Button btnKhuonMat;
     }
 }

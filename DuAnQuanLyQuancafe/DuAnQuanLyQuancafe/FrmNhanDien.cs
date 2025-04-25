@@ -5,7 +5,7 @@ using Emgu.CV.Util;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Drawing;
+using System.Drawing;   
 using System.IO;
 using System.Windows.Forms;
 
@@ -13,6 +13,13 @@ namespace DuAnQuanLyQuancafe
 {
     public partial class FrmNhanDien : Form
     {
+        // định nghĩa biến thiết lập giao diện
+        private int borderRadius = 20;
+        private int borderSize = 2;
+        private Color borderColor = Color.AliceBlue;
+
+
+
         public event Action<string, string> LoginByFace;
 
         private VideoCapture capture;
@@ -27,20 +34,27 @@ namespace DuAnQuanLyQuancafe
 
         public FrmNhanDien()
         {
+            this.FormBorderStyle = FormBorderStyle.None;
+            this.Padding = new Padding(borderSize);
+            this.BackColor = borderColor;
+
+
             InitializeComponent();
             this.Text = "Nhận Diện Khuôn Mặt";
-            this.FormBorderStyle = FormBorderStyle.FixedDialog;
-            this.MaximizeBox = false;
+           
 
+            // Thiết lập ImageBox để hiển thị hình ảnh
             Emgu.CV.UI.ImageBox imageBoxFrameGrabber = new Emgu.CV.UI.ImageBox();
             imageBoxFrameGrabber.Size = new Size(800, 500);
             imageBoxFrameGrabber.Location = new Point(10, 10);
             imageBoxFrameGrabber.SizeMode = PictureBoxSizeMode.StretchImage;
             this.Controls.Add(imageBoxFrameGrabber);
 
+            // Khởi tạo bộ phát hiện khuôn mặt
             faceDetector = new CascadeClassifier("haarcascade_frontalface_default.xml");
             recognizer = new LBPHFaceRecognizer(1, 8, 8, 8, 200);
 
+            // Kiểm tra nếu mô hình đã tồn tại, nếu không sẽ huấn luyện lại
             if (File.Exists(modelPath))
             {
                 recognizer.Read(modelPath);
@@ -52,6 +66,7 @@ namespace DuAnQuanLyQuancafe
             }
         }
 
+        // Tải dữ liệu từ cơ sở dữ liệu và ánh xạ với các label
         private void LoadUserMappings()
         {
             string connectionString = "Data Source=DESKTOP-K56JJJ3;Initial Catalog=QuanLyQuanCafe2;Integrated Security=True;Encrypt=False";
@@ -75,6 +90,7 @@ namespace DuAnQuanLyQuancafe
             }
         }
 
+        // Huấn luyện lại mô hình nhận diện khuôn mặt và lưu trữ
         private void TrainAndSaveRecognizer()
         {
             string connectionString = "Data Source=DESKTOP-K56JJJ3;Initial Catalog=QuanLyQuanCafe2;Integrated Security=True;Encrypt=False";
@@ -120,12 +136,12 @@ namespace DuAnQuanLyQuancafe
 
                 VectorOfInt labelVec = new VectorOfInt(labels.ToArray());
                 recognizer.Train(images, labelVec);
-                recognizer.Write(modelPath);  // Kiểm tra xem tệp có được lưu thành công không
+                recognizer.Write(modelPath);  // Lưu mô hình
                 Console.WriteLine("Model saved successfully.");
-
             }
         }
 
+        // Xử lý từng frame để nhận diện khuôn mặt và thực hiện đăng nhập
         private void ProcessFrame(object sender, EventArgs e)
         {
             if (capture == null || !capture.IsOpened) return;
@@ -144,25 +160,25 @@ namespace DuAnQuanLyQuancafe
 
                 var result = recognizer.Predict(gray);
 
+                // Kiểm tra kết quả nhận diện khuôn mặt
                 if (labelToTenDangNhap.ContainsKey(result.Label))
                 {
                     string username = labelToTenDangNhap[result.Label];
                     string role = labelToLoaiTaiKhoan[result.Label];
-                    Console.WriteLine($"User: {username}, Role: {role}");  // Log user info
-                    LoginByFace?.Invoke(username, role);
-                    this.Invoke(new Action(() => this.Close()));
+                    Console.WriteLine($"User: {username}, Role: {role}");  // Log thông tin người dùng
+                    LoginByFace?.Invoke(username, role);  // Gọi sự kiện đăng nhập
+                    this.Invoke(new Action(() => this.Close())); // Đóng form nhận diện sau khi đăng nhập thành công
                 }
                 else
                 {
-                    // Log if label not found
                     Console.WriteLine($"Label {result.Label} not found in dictionary.");
                 }
-
             }
 
             imageBoxFrameGrabber.Image = image;
         }
 
+        // Bắt đầu hoặc dừng việc nhận diện khuôn mặt
         private void btnStart_Click(object sender, EventArgs e)
         {
             if (!isCapturing)
@@ -182,13 +198,15 @@ namespace DuAnQuanLyQuancafe
                 Application.Idle -= ProcessFrame;
                 capture?.Dispose();
                 isCapturing = false;
-                btnStart.Text = "Start";
+                btnStart.Text = "Start";    
                 imageBoxFrameGrabber.Image = null;
             }
         }
 
+        // Đóng form nhận diện khuôn mặt
         private void btnClose_Click(object sender, EventArgs e) => this.Close();
 
+        // Xử lý khi đóng form
         private void FrmNhanDien_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Idle -= ProcessFrame;

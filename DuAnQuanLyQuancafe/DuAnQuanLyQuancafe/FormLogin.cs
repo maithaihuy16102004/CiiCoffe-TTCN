@@ -1,4 +1,6 @@
-﻿using DuAnQuanLyQuancafe.View;
+﻿using DuAnQuanLyQuancafe.function;
+using DuAnQuanLyQuancafe.Model;
+using DuAnQuanLyQuancafe.View;
 using System;
 using System.Data;
 using System.Data.SqlClient;
@@ -31,13 +33,11 @@ namespace DuAnQuanLyQuancafe
         {
             try
             {
-                // Kiểm tra kết nối SQL
                 if (SqlConn.State == ConnectionState.Closed)
                 {
                     SqlConn.Open();
                 }
 
-                // Truy vấn kiểm tra tài khoản và lấy LoaiTaiKhoan
                 string sql = "SELECT LoaiTaiKhoan FROM TaiKhoan WHERE LOWER(MaNV) = LOWER(@MaNV) AND MatKhau = @MatKhau";
                 using (SqlCommand cmd = new SqlCommand(sql, SqlConn))
                 {
@@ -49,42 +49,61 @@ namespace DuAnQuanLyQuancafe
                     if (result != null)
                     {
                         string loaiTaiKhoan = result.ToString().Trim();
+                        string maNV = txtTaikhoan.Text.Trim();
 
-                        // Đăng nhập thành công
-                        digThanhCong.Show("Đăng nhập thành công", "Thông Báo");
-
-                        // Kiểm tra quyền và mở form tương ứng
-                        if (loaiTaiKhoan == "Admin")
+                        // Lấy thông tin nhân viên từ bảng NhanVien
+                        string sqlNV = "SELECT MaNV, TenNV, HinhAnh FROM NhanVien WHERE MaNV = @MaNV";
+                        using (SqlCommand cmdNV = new SqlCommand(sqlNV, SqlConn))
                         {
-                            FrmCapCao formCapcao = new FrmCapCao();
-                            formCapcao.Show();
-                        }
-                        else if (loaiTaiKhoan == "NhanVien")
-                        {
-                            FrmCapThap formCapthap = new FrmCapThap();
-                            formCapthap.Show();
-                        }
+                            cmdNV.Parameters.AddWithValue("@MaNV", maNV);
+                            using (SqlDataReader reader = cmdNV.ExecuteReader())
+                            {
+                                if (reader.Read())
+                                {
+                                    NhanVienModel nv = new NhanVienModel
+                                    {
+                                        MaNV = reader["MaNV"].ToString(),
+                                        TenNV = reader["TenNV"].ToString(),
+                                        Anh = reader["HinhAnh"] != DBNull.Value ? (byte[])reader["HinhAnh"] : null
+                                    };
 
-                        this.Hide();
+                                    digThanhCong.Show("Đăng nhập thành công", "Thông Báo");
+
+                                    if (loaiTaiKhoan == "Admin")
+                                    {
+                                        new FrmCapCao(nv).Show();  // <-- TRUYỀN NHÂN VIÊN
+                                    }
+                                    else
+                                    {
+                                        new FrmCapThap(nv).Show();  // Nếu muốn truyền luôn
+                                    }
+
+                                    this.Hide();
+                                }
+                                else
+                                {
+                                    digThatbai.Show("Không tìm thấy nhân viên", "Thông báo");
+                                }
+                            }
+                        }
                     }
                     else
                     {
-                        digThatbai.Show("Đăng nhập thất bại", "Thông Báo");
+                        digThatbai.Show("Đăng nhập thất bại", "Thông báo");
                     }
                 }
             }
             catch (Exception ex)
             {
-                // Bắt lỗi kết nối
-                MessageBox.Show("Lỗi kết nối SQL: " + ex.Message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Lỗi: " + ex.Message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
             {
-                // Đóng kết nối sau khi thao tác xong
                 if (SqlConn.State == ConnectionState.Open)
                     SqlConn.Close();
             }
         }
+
 
         private void btnKhuonMat_Click(object sender, EventArgs e)
         {
@@ -94,28 +113,80 @@ namespace DuAnQuanLyQuancafe
             frmNhanDien.FormClosed += (s, args) => this.Hide(); // Hiện lại nếu người dùng đóng form nhận diện
             frmNhanDien.Show();
         }
+
+
         // Sửa lại để truyền cả form vào và đóng đúng form
         private void XuLyDangNhapBangKhuonMat(string tenDangNhap, string loaiTaiKhoan)
         {
-            // Hiển thị thông báo
-            digThanhCong.Show("Đăng nhập bằng khuôn mặt thành công", "Thông báo");
-
-            // Ẩn form login chính nếu muốn
-            this.Hide();
-
-            // Mở form tương ứng
-            if (loaiTaiKhoan == "Admin")
+            try
             {
-                new FrmCapCao().Show();
-            }
-            else
-            {
-                new FrmCapThap().Show();
-            }
+                // Hiển thị thông báo đăng nhập thành công
+                digThanhCong.Show("Đăng nhập bằng khuôn mặt thành công", "Thông báo");
 
-            // Không tạo lại và đóng form ở đây, vì FrmNhanDien đã tự gọi sự kiện
-            // Có thể thêm logic trong FrmNhanDien để đóng sau khi gọi LoginByFace
+                // Ẩn form đăng nhập chính nếu muốn
+                this.Hide();
+
+                // Khởi tạo kết nối với CSDL
+                
+                using (SqlConnection conn = DatabaseHelper.GetConnection())
+                {
+                    conn.Open();
+
+                    // Sử dụng SqlParameter để tránh SQL Injection
+                    SqlCommand cmd = new SqlCommand("SELECT MaNV, TenNV, HinhAnh FROM NHANVIEN WHERE MaNV = @MaNV", conn);
+                    cmd.Parameters.AddWithValue("@MaNV", tenDangNhap);
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.HasRows && reader.Read())
+                        {
+                            // Nếu có bản ghi, lấy thông tin nhân viên
+                            NhanVienModel nv = new NhanVienModel
+                            {
+                                MaNV = reader["MaNV"].ToString(),
+                                TenNV = reader["TenNV"].ToString(),
+                                Anh = reader["HinhAnh"] != DBNull.Value ? (byte[])reader["HinhAnh"] : null
+                            };
+
+                            // Hiển thị thông báo đăng nhập thành công
+                            digThanhCong.Show("Đăng nhập thành công", "Thông Báo");
+
+                            // Mở form tương ứng dựa trên loại tài khoản
+                            if (loaiTaiKhoan == "Admin")
+                            {
+                                new FrmCapCao(nv).Show();  // TRUYỀN NHÂN VIÊN VÀO FORM
+                            }
+                            else
+                            {
+                                new FrmCapThap(nv).Show();  // Nếu muốn truyền luôn
+                            }
+
+                            // Ẩn form hiện tại
+                            this.Hide();
+                        }
+                        else
+                        {
+                            // Không tìm thấy nhân viên
+                            digThatbai.Show("Không tìm thấy nhân viên", "Thông báo");
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // Xử lý lỗi nếu có
+                MessageBox.Show("Lỗi: " + ex.Message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                // Đảm bảo luôn đóng kết nối khi kết thúc
+                if (SqlConn.State == ConnectionState.Open)
+                {
+                    SqlConn.Close();
+                }
+            }
         }
+
 
     }
 }

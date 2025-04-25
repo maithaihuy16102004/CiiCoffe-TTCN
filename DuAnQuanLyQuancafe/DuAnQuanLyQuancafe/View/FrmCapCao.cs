@@ -1,9 +1,11 @@
-﻿    using DuAnQuanLyQuancafe.View.NhaCungCap;
+﻿using DuAnQuanLyQuancafe.Model;
+using DuAnQuanLyQuancafe.View.NhaCungCap;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,11 +15,12 @@ namespace DuAnQuanLyQuancafe.View
 {
     public partial class FrmCapCao : Form
     {
-        public FrmCapCao()
+        private NhanVienModel nhanvien;
+        public FrmCapCao(NhanVienModel NhanVien)
         {
             InitializeComponent();
+            nhanvien = NhanVien;
         }
-
         private void btnNhanVien_Click(object sender, EventArgs e)
         {
             lbTitle.Text = "Quản lý nhân viên";
@@ -80,7 +83,7 @@ namespace DuAnQuanLyQuancafe.View
 
         private void guna2ControlBox1_Click(object sender, EventArgs e)
         {
-            if(MessageBox.Show("Bạn có muốn thoát không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question)== DialogResult.Yes)
+            if (MessageBox.Show("Bạn có muốn thoát không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 Application.Exit();
             }
@@ -88,10 +91,25 @@ namespace DuAnQuanLyQuancafe.View
 
         private void FrmCapCao_Load(object sender, EventArgs e)
         {
+            if (nhanvien != null)
+            {
+                lbMa.Text = nhanvien.MaNV;
+                lbTen.Text = nhanvien.TenNV;
 
-        }
-        private void guna2PictureBox1_Click(object sender, EventArgs e)
-        {
+                if (nhanvien.Anh != null)
+                {
+                    using (MemoryStream ms = new MemoryStream(nhanvien.Anh))
+                    {
+                        picAdmin.Image = Image.FromStream(ms);
+                        picAdmin.SizeMode = PictureBoxSizeMode.Zoom;
+                    }
+                }
+                else
+                {
+                    picAdmin.Image = null;
+                }
+                
+            }
 
         }
     }
