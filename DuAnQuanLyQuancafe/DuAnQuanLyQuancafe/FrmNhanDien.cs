@@ -5,7 +5,7 @@ using Emgu.CV.Util;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Drawing;   
+using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 
@@ -13,12 +13,10 @@ namespace DuAnQuanLyQuancafe
 {
     public partial class FrmNhanDien : Form
     {
-        // định nghĩa biến thiết lập giao diện
+
         private int borderRadius = 20;
         private int borderSize = 2;
         private Color borderColor = Color.AliceBlue;
-
-
 
         public event Action<string, string> LoginByFace;
 
@@ -38,10 +36,8 @@ namespace DuAnQuanLyQuancafe
             this.Padding = new Padding(borderSize);
             this.BackColor = borderColor;
 
-
             InitializeComponent();
             this.Text = "Nhận Diện Khuôn Mặt";
-           
 
             // Thiết lập ImageBox để hiển thị hình ảnh
             Emgu.CV.UI.ImageBox imageBoxFrameGrabber = new Emgu.CV.UI.ImageBox();
@@ -52,7 +48,7 @@ namespace DuAnQuanLyQuancafe
 
             // Khởi tạo bộ phát hiện khuôn mặt
             faceDetector = new CascadeClassifier("haarcascade_frontalface_default.xml");
-            recognizer = new LBPHFaceRecognizer(1, 8, 8, 8, 200);
+            recognizer = new LBPHFaceRecognizer(1, 8, 8, 8, 100);
 
             // Kiểm tra nếu mô hình đã tồn tại, nếu không sẽ huấn luyện lại
             if (File.Exists(modelPath))
@@ -70,23 +66,32 @@ namespace DuAnQuanLyQuancafe
         private void LoadUserMappings()
         {
             string connectionString = "Data Source=DESKTOP-K56JJJ3;Initial Catalog=QuanLyQuanCafe2;Integrated Security=True;Encrypt=False";
-            using (SqlConnection conn = new SqlConnection(connectionString))
+
+            try
             {
-                conn.Open();
-                string query = @"SELECT TAIKHOAN.MaNV, TAIKHOAN.LoaiTaiKhoan FROM TAIKHOAN";
-                using (SqlCommand cmd = new SqlCommand(query, conn))
+                using (SqlConnection conn = new SqlConnection(connectionString))
                 {
-                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    conn.Open();
+                    string query = @"SELECT TAIKHOAN.MaNV, TAIKHOAN.LoaiTaiKhoan FROM TAIKHOAN";
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
-                        int label = 0;
-                        while (reader.Read())
+                        using (SqlDataReader reader = cmd.ExecuteReader())
                         {
-                            labelToTenDangNhap[label] = reader.GetString(0); // MaNV
-                            labelToLoaiTaiKhoan[label] = reader.GetString(1); // LoaiTaiKhoan
-                            label++;
+                            int label = 0;
+                            while (reader.Read())
+                            {
+                                labelToTenDangNhap[label] = reader.GetString(0); // MaNV
+                                labelToLoaiTaiKhoan[label] = reader.GetString(1); // LoaiTaiKhoan
+                                label++;
+                            }
                         }
                     }
                 }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Lỗi khi tải dữ liệu người dùng: {ex.Message}");
+                // Log lỗi thay vì hiển thị popup
             }
         }
 
@@ -98,46 +103,63 @@ namespace DuAnQuanLyQuancafe
             List<int> labels = new List<int>();
             int labelCounter = 0;
 
-            using (SqlConnection conn = new SqlConnection(connectionString))
+            try
             {
-                conn.Open();
-                string query = @"SELECT TAIKHOAN.MaNV, NHANVIEN.HinhAnh FROM TAIKHOAN INNER JOIN NHANVIEN ON TAIKHOAN.MaNV = NHANVIEN.MaNV";
-                using (SqlCommand cmd = new SqlCommand(query, conn))
+                using (SqlConnection conn = new SqlConnection(connectionString))
                 {
-                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    conn.Open();
+                    string query = @"SELECT TAIKHOAN.MaNV, TAIKHOAN.LoaiTaiKhoan, NHANVIEN.HinhAnh 
+                                     FROM TAIKHOAN 
+                                     INNER JOIN NHANVIEN ON TAIKHOAN.MaNV = NHANVIEN.MaNV";
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
-                        while (reader.Read())
+                        using (SqlDataReader reader = cmd.ExecuteReader())
                         {
-                            byte[] imageBytes = reader["HinhAnh"] as byte[];
-                            if (imageBytes != null)
+                            while (reader.Read())
                             {
-                                using (MemoryStream ms = new MemoryStream(imageBytes))
+                                byte[] imageBytes = reader["HinhAnh"] as byte[];
+                                if (imageBytes != null)
                                 {
-                                    Bitmap bmp = new Bitmap(ms);
-                                    Image<Gray, byte> grayFace = bmp.ToImage<Gray, byte>().Resize(200, 200, Emgu.CV.CvEnum.Inter.Cubic);
-                                    grayFace._EqualizeHist();
+                                    using (MemoryStream ms = new MemoryStream(imageBytes))
+                                    {
+                                        Bitmap bmp = new Bitmap(ms);
+                                        Image<Gray, byte> grayFace = bmp.ToImage<Gray, byte>().Resize(200, 200, Emgu.CV.CvEnum.Inter.Cubic);
+                                        grayFace._EqualizeHist();
 
-                                    trainingFaces.Add(grayFace);
-                                    labels.Add(labelCounter);
-                                    labelToTenDangNhap[labelCounter] = reader.GetString(0); // MaNV
-                                    labelCounter++;
+                                        trainingFaces.Add(grayFace);
+                                        labels.Add(labelCounter);
+
+                                        // Ghi ánh xạ label -> MaNV + Role
+                                        labelToTenDangNhap[labelCounter] = reader.GetString(0);      // MaNV
+                                        labelToLoaiTaiKhoan[labelCounter] = reader.GetString(1);     // LoaiTaiKhoan
+                                        labelCounter++;
+                                    }
                                 }
                             }
                         }
                     }
                 }
+
+                if (trainingFaces.Count > 0)
+                {
+                    VectorOfMat images = new VectorOfMat();
+                    foreach (var face in trainingFaces)
+                        images.Push(face);
+
+                    VectorOfInt labelVec = new VectorOfInt(labels.ToArray());
+                    recognizer.Train(images, labelVec);
+                    recognizer.Write(modelPath);
+                    Console.WriteLine("Đã train và lưu model nhận diện khuôn mặt.");
+                }
+                else
+                {
+                    MessageBox.Show("Không có ảnh nào để train!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-
-            if (trainingFaces.Count > 0)
+            catch (Exception ex)
             {
-                VectorOfMat images = new VectorOfMat();
-                foreach (var face in trainingFaces)
-                    images.Push(face);
-
-                VectorOfInt labelVec = new VectorOfInt(labels.ToArray());
-                recognizer.Train(images, labelVec);
-                recognizer.Write(modelPath);  // Lưu mô hình
-                Console.WriteLine("Model saved successfully.");
+                Console.WriteLine($"Lỗi khi huấn luyện mô hình: {ex.Message}");
+                // Log lỗi thay vì hiển thị popup
             }
         }
 
@@ -159,19 +181,25 @@ namespace DuAnQuanLyQuancafe
                 gray._EqualizeHist();
 
                 var result = recognizer.Predict(gray);
+                Console.WriteLine($"Predicted Label: {result.Label}, Distance: {result.Distance}");
 
-                // Kiểm tra kết quả nhận diện khuôn mặt
-                if (labelToTenDangNhap.ContainsKey(result.Label))
+                if (labelToTenDangNhap.ContainsKey(result.Label) && result.Distance < 100)
                 {
                     string username = labelToTenDangNhap[result.Label];
                     string role = labelToLoaiTaiKhoan[result.Label];
-                    Console.WriteLine($"User: {username}, Role: {role}");  // Log thông tin người dùng
-                    LoginByFace?.Invoke(username, role);  // Gọi sự kiện đăng nhập
-                    this.Invoke(new Action(() => this.Close())); // Đóng form nhận diện sau khi đăng nhập thành công
+                    Console.WriteLine($"User: {username}, Role: {role}");
+
+                    // Gọi sự kiện đăng nhập thành công chỉ một lần
+                    if (!isLoggedIn)
+                    {
+                        LoginByFace?.Invoke(username, role);
+                        isLoggedIn = true; // Đảm bảo chỉ gọi 1 lần
+                        //this.Invoke(new Action(() => this.Close()));
+                    }
                 }
                 else
                 {
-                    Console.WriteLine($"Label {result.Label} not found in dictionary.");
+                    Console.WriteLine($"Không nhận diện được hoặc label {result.Label} không khớp.");
                 }
             }
 
@@ -198,7 +226,7 @@ namespace DuAnQuanLyQuancafe
                 Application.Idle -= ProcessFrame;
                 capture?.Dispose();
                 isCapturing = false;
-                btnStart.Text = "Start";    
+                btnStart.Text = "Start";
                 imageBoxFrameGrabber.Image = null;
             }
         }
@@ -214,3 +242,5 @@ namespace DuAnQuanLyQuancafe
         }
     }
 }
+
+

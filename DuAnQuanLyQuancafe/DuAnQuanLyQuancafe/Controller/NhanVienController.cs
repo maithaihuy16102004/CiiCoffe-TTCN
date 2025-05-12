@@ -37,10 +37,10 @@ namespace DuAnQuanLyQuancafe.Controller
                     conn.Open();
                 }
 
-                string query = "SELECT nv.MaNV, nv.TenNV, nv.DiaChi, nv.GioiTinh, nv.NgaySinh, nv.SDT, nv.MaQue, nv.HinhAnh, q.TenQue " +
+                string sql = "SELECT nv.MaNV, nv.TenNV, nv.DiaChi, nv.GioiTinh, nv.NgaySinh, nv.SDT, nv.MaQue, nv.HinhAnh, q.TenQue " +
                                "FROM NhanVien AS nv JOIN Que AS q ON nv.MaQue = q.MaQue";
 
-                SqlCommand cmd = new SqlCommand(query, conn);
+                SqlCommand cmd = new SqlCommand(sql, conn);
                 using (SqlDataReader reader = cmd.ExecuteReader())
                 {
                     while (reader.Read())
@@ -65,34 +65,44 @@ namespace DuAnQuanLyQuancafe.Controller
         }
 
 
-        public static List<QueModel> LayMaQue()
-        {
-            List<QueModel> queList = new List<QueModel>();
-            using (SqlConnection conn = DatabaseHelper.GetConnection())
-            {
-                if (conn.State == ConnectionState.Closed)
-                    conn.Open();
+        //public static List<QueModel> LayMaQue()
+        //{
+        //    List<QueModel> queList = new List<QueModel>();
+        //    using (SqlConnection conn = DatabaseHelper.GetConnection())
+        //    {
+        //        if (conn.State == ConnectionState.Closed)
+        //            conn.Open();
 
-                string query = "SELECT MaQue, TenQue FROM Que";
-                SqlCommand cmd = new SqlCommand(query, conn);
+        //        string query = "SELECT MaQue, TenQue FROM Que";
+        //        SqlCommand cmd = new SqlCommand(query, conn);
 
-                using (SqlDataReader reader = cmd.ExecuteReader())
-                {
-                    while (reader.Read())
-                    {
-                        queList.Add(new QueModel
-                        {
-                            MaQue = reader["MaQue"].ToString(),
-                            TenQue = reader["TenQue"].ToString()
-                        });
-                    }
-                }
-            }
-            return queList;
-        }
-
+        //        using (SqlDataReader reader = cmd.ExecuteReader())
+        //        {
+        //            while (reader.Read())
+        //            {
+        //                queList.Add(new QueModel
+        //                {
+        //                    MaQue = reader["MaQue"].ToString(),
+        //                    TenQue = reader["TenQue"].ToString()
+        //                });
+        //            }
+        //        }
+        //    }
+        //    return queList;
+        //}
+        //private void ResetValue()
+        //{
+        //    txtMa.Text = "";
+        //    txtTen.Text = "";
+        //    txtHLV.Text = "";
+        //    txtMa.Focus();
+        //    txtMa.Enabled = false;
+        //}
         public static void ThemNhanVien(Hashtable parameter)
         {
+            string query;
+            query = "INSERT INTO NhanVien (MaNV, TenNV, DiaChi, GioiTinh, NgaySinh, SDT, MaQue, HinhAnh) " +
+                "VALUES (@MaNV, @TenNV, @DiaChi, @GioiTinh, @NgaySinh, @SDT, @MaQue, @Anh)";
             using (SqlConnection conn = DatabaseHelper.GetConnection())
             {
                 try
@@ -100,7 +110,7 @@ namespace DuAnQuanLyQuancafe.Controller
                     if (conn.State == ConnectionState.Closed)
                         conn.Open();
 
-                    string query = "INSERT INTO NhanVien (MaNV, TenNV, DiaChi, GioiTinh, NgaySinh, SDT, MaQue, HinhAnh) " +
+                     query = "INSERT INTO NhanVien (MaNV, TenNV, DiaChi, GioiTinh, NgaySinh, SDT, MaQue, HinhAnh) " +
                 "VALUES (@MaNV, @TenNV, @DiaChi, @GioiTinh, @NgaySinh, @SDT, @MaQue, @Anh)";
 
                     using (SqlCommand cmd = new SqlCommand(query, conn))
@@ -127,7 +137,6 @@ namespace DuAnQuanLyQuancafe.Controller
                 }
             }
         }
-
         public void SuaNhanVien(Hashtable parameter)
         {
             using (SqlConnection conn = DatabaseHelper.GetConnection())
@@ -137,22 +146,49 @@ namespace DuAnQuanLyQuancafe.Controller
 
                 try
                 {
+                    // Kiểm tra các trường hợp cần thiết trước khi thực hiện cập nhật
+                    if (parameter["MaNV"] == null || parameter["MaNV"].ToString().Trim().Length == 0)
+                    {
+                        MessageBox.Show("Mã nhân viên không hợp lệ.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+
+                    if (parameter["TenNV"] == null || parameter["TenNV"].ToString().Trim().Length == 0)
+                    {
+                        MessageBox.Show("Bạn phải nhập tên nhân viên.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+
+                    if (parameter["DiaChi"] == null || parameter["DiaChi"].ToString().Trim().Length == 0)
+                    {
+                        MessageBox.Show("Bạn phải nhập địa chỉ nhân viên.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+
+                    if (parameter["SDT"] == null || parameter["SDT"].ToString().Trim().Length == 0)
+                    {
+                        MessageBox.Show("Bạn phải nhập số điện thoại của nhân viên.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+
+                    // Nếu các trường hợp đã kiểm tra hợp lệ, tiếp tục thực hiện cập nhật
                     string query = @"UPDATE NhanVien 
-                                     SET TenNV = @TenNV, DiaChi = @DiaChi, GioiTinh = @GioiTinh, 
-                                         NgaySinh = @NgaySinh, SDT = @SDT, MaQue = @MaQue, Anh = @Anh 
-                                     WHERE MaNV = @MaNV";
+                             SET TenNV = @TenNV, DiaChi = @DiaChi, GioiTinh = @GioiTinh, 
+                                 NgaySinh = @NgaySinh, SDT = @SDT, MaQue = @MaQue, HinhAnh = @Anh 
+                             WHERE MaNV = @MaNV";
 
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
-                        cmd.Parameters.AddWithValue("@MaNV", parameter["MaNV"]);
+                        // Thêm các tham số với giá trị từ parameter
+                        cmd.Parameters.AddWithValue("@MaNV", parameter["MaNV"].ToString());  // Chuyển giá trị sang chuỗi nếu cần
                         cmd.Parameters.AddWithValue("@TenNV", parameter["TenNV"]);
                         cmd.Parameters.AddWithValue("@DiaChi", parameter["DiaChi"]);
                         cmd.Parameters.AddWithValue("@GioiTinh", parameter["GioiTinh"]);
                         cmd.Parameters.AddWithValue("@NgaySinh", parameter["NgaySinh"]);
                         cmd.Parameters.AddWithValue("@SDT", parameter["SDT"]);
                         cmd.Parameters.AddWithValue("@MaQue", parameter["MaQue"]);
-                        cmd.Parameters.AddWithValue("@Anh", parameter["Anh"] ?? DBNull.Value);
-                        
+                        cmd.Parameters.AddWithValue("@Anh", parameter["HinhAnh"] ?? DBNull.Value);
+
                         int rowsAffected = cmd.ExecuteNonQuery();
 
                         if (rowsAffected > 0)
@@ -177,6 +213,8 @@ namespace DuAnQuanLyQuancafe.Controller
             }
         }
 
+
+
         public void XoaNhanVien(string maNV)
         {
             using (SqlConnection conn = DatabaseHelper.GetConnection())
@@ -188,15 +226,8 @@ namespace DuAnQuanLyQuancafe.Controller
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@MaNV", maNV);
                 cmd.ExecuteNonQuery();
+                MessageBox.Show("Xóa nhân viên thành công.");
             }
-        }
-
-        public List<NhanVienModel> TimKiemNhanVien(string tuKhoa)
-        {
-            List<NhanVienModel> danhSachNhanVien = LaydanhsachNhanVien();
-            return danhSachNhanVien
-                   .Where(nv => nv.TenNV.ToLower().Contains(tuKhoa.ToLower()))
-                   .ToList();
         }
     }
 }

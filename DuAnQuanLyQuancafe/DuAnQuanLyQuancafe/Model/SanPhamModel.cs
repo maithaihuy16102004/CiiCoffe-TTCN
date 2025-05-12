@@ -13,9 +13,11 @@ namespace DuAnQuanLyQuancafe.Model
         public int MaLoai { get; set; }
         public float GiaNhap { get; set; }
         public float GiaBan { get; set; }
-        public byte[] HinhAnh { get; set; }
         public int SoLuong { get; set; }
         public int MaCongDung { get; set; }
+        public byte[] HinhAnh { get; set; }
+        public string TenLoai { get; set; }      // Thêm thuộc tính TenLoai
+        public string TenCongDung { get; set; }  // Thê
 
     }
 }

@@ -81,7 +81,6 @@ namespace DuAnQuanLyQuancafe.View.NhanVien
                 return;
             }
 
-
             // Tạo danh sách tham số
             string maNV = NhanVienController.GetNextMaNhanVien(); // Gọi hàm sinh mã mới
             Hashtable parameter = new Hashtable

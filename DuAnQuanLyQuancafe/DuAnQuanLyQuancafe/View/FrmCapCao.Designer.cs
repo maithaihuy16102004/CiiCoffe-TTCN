@@ -313,21 +313,22 @@
             // lbTen
             // 
             this.lbTen.AutoSize = true;
+            this.lbTen.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTen.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lbTen.Location = new System.Drawing.Point(201, 95);
+            this.lbTen.Location = new System.Drawing.Point(201, 97);
             this.lbTen.Name = "lbTen";
-            this.lbTen.Size = new System.Drawing.Size(35, 13);
+            this.lbTen.Size = new System.Drawing.Size(40, 15);
             this.lbTen.TabIndex = 5;
             this.lbTen.Text = "label2";
             // 
             // lbMa
             // 
             this.lbMa.AutoSize = true;
-            this.lbMa.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbMa.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbMa.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lbMa.Location = new System.Drawing.Point(201, 65);
+            this.lbMa.Location = new System.Drawing.Point(201, 67);
             this.lbMa.Name = "lbMa";
-            this.lbMa.Size = new System.Drawing.Size(38, 13);
+            this.lbMa.Size = new System.Drawing.Size(40, 15);
             this.lbMa.TabIndex = 4;
             this.lbMa.Text = "label1";
             // 

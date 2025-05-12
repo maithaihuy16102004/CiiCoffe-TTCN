@@ -46,8 +46,12 @@ namespace DuAnQuanLyQuancafe.View.NhaCungCap
             };
             NhaCungCapController nhaCungCapController = new NhaCungCapController();
             nhaCungCapController.ThemNhaCC(parameter);
-            MessageBox.Show("Thêm nhà cung cấp thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.Close(); // Đóng form sau khi thêm nhà cung cấp thành công
+        }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
