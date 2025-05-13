@@ -40,7 +40,16 @@ namespace DuAnQuanLyQuancafe.View.NhaCungCap
                 dgvNhaCC.Columns["MoTa"].HeaderText = "Mô tả";
             }
         }
-
+        private void ResetValue()
+        {
+            txtMa.Text = "";
+            txtTen.Text = "";
+            txtMoTa.Text = "";
+            txtSDT.Text = "";
+            txtDiaChi.Text = "";
+            txtMa.Focus();
+            txtMa.Enabled = false;
+        }
         private void btnThem_Click(object sender, EventArgs e)
         {
             FrmAddNCC frmAddNCC = new FrmAddNCC();
@@ -74,6 +83,7 @@ namespace DuAnQuanLyQuancafe.View.NhaCungCap
 
         private void dgvNhaCC_Click(object sender, EventArgs e)
         {
+            txtMa.Enabled = true; // không cho phép sửa mã
             if (dgvNhaCC.CurrentRow == null || dgvNhaCC.Rows.Count == 0)
             {
                 MessageBox.Show("Không có dữ liệu");
@@ -151,6 +161,20 @@ namespace DuAnQuanLyQuancafe.View.NhaCungCap
             // Cập nhật DataGridView
             dgvNhaCC.DataSource = null;
             dgvNhaCC.DataSource = locnhanvien;
+        }
+
+        private void btnSua_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            ResetValue();
+            btnThem.Enabled = true;
+            btnXoa.Enabled = true;
+            txtMa.Enabled = false;
+            btnSua.Enabled = true;
         }
     }
 }

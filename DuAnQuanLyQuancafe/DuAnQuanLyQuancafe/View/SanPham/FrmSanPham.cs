@@ -25,6 +25,18 @@ namespace DuAnQuanLyQuancafe.View
             cbCongDung.SelectedIndex = -1; // Chọn giá trị đầu tiên
             cbLoai.SelectedIndex = -1; // Chọn giá trị đầu tiên
         }
+        public void resetValue()
+        {
+            txtMa.Text = "";
+            txtTen.Text = "";
+            txtGiaNhap.Text = "";
+            txtGiaBan.Text = "";
+            txtSoluong.Text = "";
+            cbCongDung.SelectedIndex = -1;
+            cbLoai.SelectedIndex = -1;
+            picAnh.Image = null;
+            anhDuocChon = null; // Đặt lại biến ảnh đã chọn
+        }
         private void FrmSanPham_Load(object sender, EventArgs e)
         {
             List<LoaiModel> danhSachLoai = LoaiController.LayDanhSachLoai(); // hoặc gọi trực tiếp từ lớp chứa
@@ -52,6 +64,7 @@ namespace DuAnQuanLyQuancafe.View
                 dgvSanPham.Columns["MaLoai"].Visible = false;
                 dgvSanPham.Columns["MaCongDung"].Visible = false;
                 dgvSanPham.Columns["HinhAnh"].Visible = false;
+                
             }
 
         }
@@ -114,6 +127,7 @@ namespace DuAnQuanLyQuancafe.View
 
         private void dgvSanPham_Click(object sender, EventArgs e)
         {
+            txtMa.Enabled = true; // Cho phép sửa mã
             if (dgvSanPham.CurrentRow == null || dgvSanPham.Rows.Count == 0)
             {
                 MessageBox.Show("Không có dữ liệu");
@@ -130,12 +144,11 @@ namespace DuAnQuanLyQuancafe.View
             cbCongDung.Text = dgvSanPham.CurrentRow.Cells["MaCongDung"]?.Value?.ToString() ?? "";
 
             // Xử lý ảnh
-            picAnh.SizeMode = PictureBoxSizeMode.Zoom;
+            picAnhSP.SizeMode = PictureBoxSizeMode.Zoom;
             var cellValue = dgvSanPham.CurrentRow.Cells["HinhAnh"]?.Value;
 
             if (cellValue != null && !string.IsNullOrWhiteSpace(cellValue.ToString()))
             {
-                // Nếu bạn dùng đường dẫn tương đối (ví dụ: chỉ tên file), nên chuyển sang đường dẫn tuyệt đối
                 string fileName = cellValue.ToString();
                 string pathAnh = Path.Combine(Application.StartupPath, "Images", fileName);
 
@@ -145,23 +158,24 @@ namespace DuAnQuanLyQuancafe.View
                     {
                         using (FileStream fs = new FileStream(pathAnh, FileMode.Open, FileAccess.Read))
                         {
-                            picAnh.Image = Image.FromStream(fs);
+                            Image temp = Image.FromStream(fs);
+                            picAnhSP.Image = new Bitmap(temp); // Copy ảnh ra khỏi stream
                         }
                     }
                     catch (Exception ex)
                     {
                         MessageBox.Show($"Lỗi tải ảnh: {ex.Message}");
-                        picAnh.Image = null;
+                        picAnhSP.Image = null;
                     }
                 }
                 else
                 {
-                    picAnh.Image = null;
+                    picAnhSP.Image = null;
                 }
             }
             else
             {
-                picAnh.Image = null;
+                picAnhSP.Image = null;
             }
         }
         byte[] anhDuocChon; // Biến lưu trữ ảnh dưới dạng byte[]
@@ -191,13 +205,6 @@ namespace DuAnQuanLyQuancafe.View
             string soLuong = txtSoluong.Text.Trim();
             string maCongDung = cbCongDung.SelectedValue?.ToString();
             // Kiểm tra thông tin
-            if (string.IsNullOrWhiteSpace(tenNV) || string.IsNullOrWhiteSpace(maLoai) ||
-                string.IsNullOrWhiteSpace(giaBan) || string.IsNullOrWhiteSpace(giaNhap) || string.IsNullOrWhiteSpace(soLuong))
-            {
-                MessageBox.Show("Vui lòng nhập đầy đủ thông tin.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
             if (string.IsNullOrEmpty(maLoai))
             {
                 MessageBox.Show("Vui lòng chọn loại sản phẩm.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -256,6 +263,26 @@ namespace DuAnQuanLyQuancafe.View
             {
                 MessageBox.Show("Bạn chưa chọn ảnh nào.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+        }
+        
+        private void btn_Click(object sender, EventArgs e)
+        {
+            resetValue();
+            btnThem.Enabled = true;
+            btnXoa.Enabled = true;
+            txtMa.Enabled = false;
+            btnSua.Enabled = true;
+        }
+
+        private void txtTimKiem_TextChanged(object sender, EventArgs e)
+        {
+            string tukhoa = txtTimKiem.Text.ToLower();
+            SanPhamController sanPhamController = new SanPhamController();
+            // Lọc danh sách nhân viên chứa từ khóa
+            List<SanPhamModel> locnhanvien = sanPhamController.LayDanhSachSanPham().FindAll(emp => emp.TenSP.ToLower().Contains(tukhoa)).ToList();
+            // Cập nhật DataGridView
+            dgvSanPham.DataSource = null;
+            dgvSanPham.DataSource = locnhanvien;
         }
     }
 }

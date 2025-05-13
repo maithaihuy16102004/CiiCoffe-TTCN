@@ -108,9 +108,14 @@ namespace DuAnQuanLyQuancafe.View
                 {
                     picAdmin.Image = null;
                 }
-                
-            }
 
+            }
+        }
+        private void btnDangXuat_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FrmLogin frmLogin = new FrmLogin();
+            frmLogin.Show();
         }
     }
 }

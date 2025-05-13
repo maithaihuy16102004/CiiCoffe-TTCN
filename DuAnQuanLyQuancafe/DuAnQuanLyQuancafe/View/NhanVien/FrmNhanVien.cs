@@ -34,6 +34,18 @@ namespace DuAnQuanLyQuancafe.View
             cbGioiTinh.Items.Add("Khác");
             cbGioiTinh.SelectedIndex = 0; // Chọn giá trị đầu tiên
         }
+        private void ResetValue()
+        {
+            txtMa.Text = "";
+            txtTen.Text = "";
+            txtDiaChi.Text = "";
+            txtSDT.Text = "";
+            txtDiaChi.Text = "";
+            txtMa.Focus();
+            txtMa.Enabled = false;
+            cbQue.SelectedIndex = -1; // Đặt lại giá trị của ComboBox quê
+            cbGioiTinh.SelectedIndex = -1; // Đặt lại giá trị của ComboBox giới tính
+        }
         public void LoadNhanVien()
         {
             if (dgvNhanVien == null)
@@ -250,6 +262,15 @@ namespace DuAnQuanLyQuancafe.View
         private void picAnh_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btn_Click(object sender, EventArgs e)
+        {
+            ResetValue();
+            btnThem.Enabled = true;
+            btnXoa.Enabled = true;
+            txtMa.Enabled = false;
+            btnSua.Enabled = true;
         }
     }
 }

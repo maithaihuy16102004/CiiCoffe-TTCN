@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmSanPham));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
             this.picAnh = new Guna.UI2.WinForms.Guna2PictureBox();
             this.btnChon = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
@@ -57,8 +57,10 @@
             this.txtSoluong = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
+            this.picAnhSP = new Guna.UI2.WinForms.Guna2PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.picAnh)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSanPham)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picAnhSP)).BeginInit();
             this.SuspendLayout();
             // 
             // picAnh
@@ -95,17 +97,19 @@
             // 
             // cbLoai
             // 
+            this.cbLoai.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbLoai.FormattingEnabled = true;
-            this.cbLoai.Location = new System.Drawing.Point(224, 652);
+            this.cbLoai.Location = new System.Drawing.Point(749, 200);
             this.cbLoai.Name = "cbLoai";
-            this.cbLoai.Size = new System.Drawing.Size(77, 21);
+            this.cbLoai.Size = new System.Drawing.Size(227, 25);
             this.cbLoai.TabIndex = 88;
             // 
             // txtGiaBan
             // 
-            this.txtGiaBan.Location = new System.Drawing.Point(425, 652);
+            this.txtGiaBan.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtGiaBan.Location = new System.Drawing.Point(749, 300);
             this.txtGiaBan.Name = "txtGiaBan";
-            this.txtGiaBan.Size = new System.Drawing.Size(83, 20);
+            this.txtGiaBan.Size = new System.Drawing.Size(227, 25);
             this.txtGiaBan.TabIndex = 85;
             // 
             // btnSua
@@ -128,7 +132,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(621, 635);
+            this.label7.Location = new System.Drawing.Point(746, 389);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(59, 13);
             this.label7.TabIndex = 82;
@@ -137,7 +141,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(319, 636);
+            this.label6.Location = new System.Drawing.Point(746, 236);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(50, 13);
             this.label6.TabIndex = 81;
@@ -146,7 +150,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(221, 638);
+            this.label5.Location = new System.Drawing.Point(746, 184);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(44, 13);
             this.label5.TabIndex = 80;
@@ -155,7 +159,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(112, 636);
+            this.label4.Location = new System.Drawing.Point(746, 136);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(75, 13);
             this.label4.TabIndex = 79;
@@ -164,7 +168,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(18, 636);
+            this.label3.Location = new System.Drawing.Point(746, 80);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(71, 13);
             this.label3.TabIndex = 78;
@@ -172,16 +176,18 @@
             // 
             // txtTen
             // 
-            this.txtTen.Location = new System.Drawing.Point(115, 652);
+            this.txtTen.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTen.Location = new System.Drawing.Point(749, 152);
             this.txtTen.Name = "txtTen";
-            this.txtTen.Size = new System.Drawing.Size(100, 20);
+            this.txtTen.Size = new System.Drawing.Size(227, 25);
             this.txtTen.TabIndex = 77;
             // 
             // txtMa
             // 
-            this.txtMa.Location = new System.Drawing.Point(21, 652);
+            this.txtMa.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMa.Location = new System.Drawing.Point(749, 96);
             this.txtMa.Name = "txtMa";
-            this.txtMa.Size = new System.Drawing.Size(75, 20);
+            this.txtMa.Size = new System.Drawing.Size(227, 25);
             this.txtMa.TabIndex = 76;
             // 
             // btnXoa
@@ -192,7 +198,7 @@
             this.btnXoa.ImageOffset = new System.Drawing.Point(0, 0);
             this.btnXoa.ImageRotate = 0F;
             this.btnXoa.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnXoa.Location = new System.Drawing.Point(140, 8);
+            this.btnXoa.Location = new System.Drawing.Point(111, 13);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.PressedState.ImageSize = new System.Drawing.Size(64, 64);
             this.btnXoa.Size = new System.Drawing.Size(39, 39);
@@ -207,11 +213,12 @@
             this.btn.ImageOffset = new System.Drawing.Point(0, 0);
             this.btn.ImageRotate = 0F;
             this.btn.ImageSize = new System.Drawing.Size(32, 32);
-            this.btn.Location = new System.Drawing.Point(86, 8);
+            this.btn.Location = new System.Drawing.Point(57, 13);
             this.btn.Name = "btn";
             this.btn.PressedState.ImageSize = new System.Drawing.Size(64, 64);
             this.btn.Size = new System.Drawing.Size(48, 44);
             this.btn.TabIndex = 74;
+            this.btn.Click += new System.EventHandler(this.btn_Click);
             // 
             // guna2Separator1
             // 
@@ -244,10 +251,11 @@
             this.txtTimKiem.IconLeft = ((System.Drawing.Image)(resources.GetObject("txtTimKiem.IconLeft")));
             this.txtTimKiem.Location = new System.Drawing.Point(739, 27);
             this.txtTimKiem.Name = "txtTimKiem";
-            this.txtTimKiem.PlaceholderText = "Nhập tên nhân viên";
+            this.txtTimKiem.PlaceholderText = "Nhập tên sản phẩm";
             this.txtTimKiem.SelectedText = "";
             this.txtTimKiem.Size = new System.Drawing.Size(237, 25);
             this.txtTimKiem.TabIndex = 71;
+            this.txtTimKiem.TextChanged += new System.EventHandler(this.txtTimKiem_TextChanged);
             // 
             // btnThem
             // 
@@ -257,7 +265,7 @@
             this.btnThem.ImageOffset = new System.Drawing.Point(0, 0);
             this.btnThem.ImageRotate = 0F;
             this.btnThem.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnThem.Location = new System.Drawing.Point(41, 8);
+            this.btnThem.Location = new System.Drawing.Point(12, 18);
             this.btnThem.Name = "btnThem";
             this.btnThem.PressedState.ImageSize = new System.Drawing.Size(64, 64);
             this.btnThem.Size = new System.Drawing.Size(39, 39);
@@ -266,34 +274,34 @@
             // 
             // dgvSanPham
             // 
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            this.dgvSanPham.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle19.BackColor = System.Drawing.Color.White;
+            this.dgvSanPham.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle19;
             this.dgvSanPham.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvSanPham.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle20.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle20.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvSanPham.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle20;
             this.dgvSanPham.ColumnHeadersHeight = 15;
             this.dgvSanPham.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvSanPham.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle21.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle21.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvSanPham.DefaultCellStyle = dataGridViewCellStyle21;
             this.dgvSanPham.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvSanPham.Location = new System.Drawing.Point(21, 69);
+            this.dgvSanPham.Location = new System.Drawing.Point(12, 69);
             this.dgvSanPham.Name = "dgvSanPham";
             this.dgvSanPham.RowHeadersVisible = false;
-            this.dgvSanPham.Size = new System.Drawing.Size(961, 540);
+            this.dgvSanPham.Size = new System.Drawing.Size(697, 620);
             this.dgvSanPham.TabIndex = 69;
             this.dgvSanPham.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvSanPham.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -320,30 +328,33 @@
             // 
             // cbCongDung
             // 
+            this.cbCongDung.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbCongDung.FormattingEnabled = true;
-            this.cbCongDung.Location = new System.Drawing.Point(624, 651);
+            this.cbCongDung.Location = new System.Drawing.Point(749, 405);
             this.cbCongDung.Name = "cbCongDung";
-            this.cbCongDung.Size = new System.Drawing.Size(94, 21);
+            this.cbCongDung.Size = new System.Drawing.Size(227, 25);
             this.cbCongDung.TabIndex = 92;
             // 
             // txtGiaNhap
             // 
-            this.txtGiaNhap.Location = new System.Drawing.Point(322, 653);
+            this.txtGiaNhap.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtGiaNhap.Location = new System.Drawing.Point(749, 252);
             this.txtGiaNhap.Name = "txtGiaNhap";
-            this.txtGiaNhap.Size = new System.Drawing.Size(87, 20);
+            this.txtGiaNhap.Size = new System.Drawing.Size(227, 25);
             this.txtGiaNhap.TabIndex = 93;
             // 
             // txtSoluong
             // 
-            this.txtSoluong.Location = new System.Drawing.Point(527, 651);
+            this.txtSoluong.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSoluong.Location = new System.Drawing.Point(749, 354);
             this.txtSoluong.Name = "txtSoluong";
-            this.txtSoluong.Size = new System.Drawing.Size(69, 20);
+            this.txtSoluong.Size = new System.Drawing.Size(227, 25);
             this.txtSoluong.TabIndex = 94;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(422, 635);
+            this.label9.Location = new System.Drawing.Point(746, 284);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(44, 13);
             this.label9.TabIndex = 95;
@@ -352,17 +363,29 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(524, 635);
+            this.label10.Location = new System.Drawing.Point(746, 338);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(49, 13);
             this.label10.TabIndex = 96;
             this.label10.Text = "Số lượng";
+            // 
+            // picAnhSP
+            // 
+            this.picAnhSP.BorderRadius = 10;
+            this.picAnhSP.ImageRotate = 0F;
+            this.picAnhSP.Location = new System.Drawing.Point(759, 461);
+            this.picAnhSP.Name = "picAnhSP";
+            this.picAnhSP.Size = new System.Drawing.Size(206, 129);
+            this.picAnhSP.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picAnhSP.TabIndex = 97;
+            this.picAnhSP.TabStop = false;
             // 
             // FrmSanPham
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(997, 698);
+            this.Controls.Add(this.picAnhSP);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.txtSoluong);
@@ -394,6 +417,7 @@
             this.Load += new System.EventHandler(this.FrmSanPham_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picAnh)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSanPham)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picAnhSP)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -426,5 +450,6 @@
         private System.Windows.Forms.TextBox txtSoluong;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
+        private Guna.UI2.WinForms.Guna2PictureBox picAnhSP;
     }
 }

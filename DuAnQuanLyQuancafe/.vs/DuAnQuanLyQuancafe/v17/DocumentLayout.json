@@ -3,40 +3,28 @@
   "WorkspaceRootPath": "D:\\Study\\TTCN\\CiiCoffee\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{064E79D6-7598-4EB0-895A-20CEE4182156}|DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe.csproj|d:\\study\\ttcn\\ciicoffee\\ciicoffe-ttcn\\duanquanlyquancafe\\duanquanlyquancafe\\formlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{064E79D6-7598-4EB0-895A-20CEE4182156}|DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe.csproj|solutionrelative:duanquanlyquancafe\\formlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{064E79D6-7598-4EB0-895A-20CEE4182156}|DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe.csproj|d:\\study\\ttcn\\ciicoffee\\ciicoffe-ttcn\\duanquanlyquancafe\\duanquanlyquancafe\\formlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{064E79D6-7598-4EB0-895A-20CEE4182156}|DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe.csproj|solutionrelative:duanquanlyquancafe\\formlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{064E79D6-7598-4EB0-895A-20CEE4182156}|DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe.csproj|d:\\study\\ttcn\\ciicoffee\\ciicoffe-ttcn\\duanquanlyquancafe\\duanquanlyquancafe\\view\\frmcapcao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{064E79D6-7598-4EB0-895A-20CEE4182156}|DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe.csproj|solutionrelative:duanquanlyquancafe\\view\\frmcapcao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{064E79D6-7598-4EB0-895A-20CEE4182156}|DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe.csproj|d:\\study\\ttcn\\ciicoffee\\ciicoffe-ttcn\\duanquanlyquancafe\\duanquanlyquancafe\\controller\\sanphamcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{064E79D6-7598-4EB0-895A-20CEE4182156}|DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe.csproj|solutionrelative:duanquanlyquancafe\\controller\\sanphamcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{064E79D6-7598-4EB0-895A-20CEE4182156}|DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe.csproj|d:\\study\\ttcn\\ciicoffee\\ciicoffe-ttcn\\duanquanlyquancafe\\duanquanlyquancafe\\view\\sanpham\\frmsanpham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{064E79D6-7598-4EB0-895A-20CEE4182156}|DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe.csproj|solutionrelative:duanquanlyquancafe\\view\\sanpham\\frmsanpham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{064E79D6-7598-4EB0-895A-20CEE4182156}|DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe.csproj|d:\\study\\ttcn\\ciicoffee\\ciicoffe-ttcn\\duanquanlyquancafe\\duanquanlyquancafe\\view\\quanlyhoadonnhap\\frmhdn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{064E79D6-7598-4EB0-895A-20CEE4182156}|DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe.csproj|solutionrelative:duanquanlyquancafe\\view\\quanlyhoadonnhap\\frmhdn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{064E79D6-7598-4EB0-895A-20CEE4182156}|DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe.csproj|d:\\study\\ttcn\\ciicoffee\\ciicoffe-ttcn\\duanquanlyquancafe\\duanquanlyquancafe\\view\\nhanvien\\frmnhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{064E79D6-7598-4EB0-895A-20CEE4182156}|DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe.csproj|solutionrelative:duanquanlyquancafe\\view\\nhanvien\\frmnhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{064E79D6-7598-4EB0-895A-20CEE4182156}|DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe.csproj|d:\\study\\ttcn\\ciicoffee\\ciicoffe-ttcn\\duanquanlyquancafe\\duanquanlyquancafe\\view\\sanpham\\frmsanpham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{064E79D6-7598-4EB0-895A-20CEE4182156}|DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe.csproj|solutionrelative:duanquanlyquancafe\\view\\sanpham\\frmsanpham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{064E79D6-7598-4EB0-895A-20CEE4182156}|DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe.csproj|d:\\study\\ttcn\\ciicoffee\\ciicoffe-ttcn\\duanquanlyquancafe\\duanquanlyquancafe\\view\\sanpham\\frmaddsanpham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{064E79D6-7598-4EB0-895A-20CEE4182156}|DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe.csproj|solutionrelative:duanquanlyquancafe\\view\\sanpham\\frmaddsanpham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{064E79D6-7598-4EB0-895A-20CEE4182156}|DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe.csproj|d:\\study\\ttcn\\ciicoffee\\ciicoffe-ttcn\\duanquanlyquancafe\\duanquanlyquancafe\\view\\nhanvien\\frmnhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{064E79D6-7598-4EB0-895A-20CEE4182156}|DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe.csproj|solutionrelative:duanquanlyquancafe\\view\\nhanvien\\frmnhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{064E79D6-7598-4EB0-895A-20CEE4182156}|DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe.csproj|d:\\study\\ttcn\\ciicoffee\\ciicoffe-ttcn\\duanquanlyquancafe\\duanquanlyquancafe\\view\\nhacungcap\\frmnhacungcap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{064E79D6-7598-4EB0-895A-20CEE4182156}|DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe.csproj|solutionrelative:duanquanlyquancafe\\view\\nhacungcap\\frmnhacungcap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{064E79D6-7598-4EB0-895A-20CEE4182156}|DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe.csproj|d:\\study\\ttcn\\ciicoffee\\ciicoffe-ttcn\\duanquanlyquancafe\\duanquanlyquancafe\\view\\nhacungcap\\frmnhacungcap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{064E79D6-7598-4EB0-895A-20CEE4182156}|DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe.csproj|solutionrelative:duanquanlyquancafe\\view\\nhacungcap\\frmnhacungcap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{064E79D6-7598-4EB0-895A-20CEE4182156}|DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe.csproj|d:\\study\\ttcn\\ciicoffee\\ciicoffe-ttcn\\duanquanlyquancafe\\duanquanlyquancafe\\view\\frmcapcao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{064E79D6-7598-4EB0-895A-20CEE4182156}|DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe.csproj|solutionrelative:duanquanlyquancafe\\view\\frmcapcao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -71,114 +59,75 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "FormLogin.cs",
-              "DocumentMoniker": "D:\\Study\\TTCN\\CiiCoffee\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\FormLogin.cs",
-              "RelativeDocumentMoniker": "DuAnQuanLyQuancafe\\FormLogin.cs",
-              "ToolTip": "D:\\Study\\TTCN\\CiiCoffee\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\FormLogin.cs",
-              "RelativeToolTip": "DuAnQuanLyQuancafe\\FormLogin.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAcAAAAAAAAAA==",
+              "Title": "FrmHDN.cs [Design]",
+              "DocumentMoniker": "D:\\Study\\TTCN\\CiiCoffee\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\View\\QuanLyHoaDonNhap\\FrmHDN.cs",
+              "RelativeDocumentMoniker": "DuAnQuanLyQuancafe\\View\\QuanLyHoaDonNhap\\FrmHDN.cs",
+              "ToolTip": "D:\\Study\\TTCN\\CiiCoffee\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\View\\QuanLyHoaDonNhap\\FrmHDN.cs [Design]",
+              "RelativeToolTip": "DuAnQuanLyQuancafe\\View\\QuanLyHoaDonNhap\\FrmHDN.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-12T18:15:10.847Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-13T04:48:00.293Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "FormLogin.cs [Design]",
-              "DocumentMoniker": "D:\\Study\\TTCN\\CiiCoffee\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\FormLogin.cs",
-              "RelativeDocumentMoniker": "DuAnQuanLyQuancafe\\FormLogin.cs",
-              "ToolTip": "D:\\Study\\TTCN\\CiiCoffee\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\FormLogin.cs [Design]",
-              "RelativeToolTip": "DuAnQuanLyQuancafe\\FormLogin.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-12T18:15:09.182Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "FrmCapCao.cs [Design]",
-              "DocumentMoniker": "D:\\Study\\TTCN\\CiiCoffee\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\View\\FrmCapCao.cs",
-              "RelativeDocumentMoniker": "DuAnQuanLyQuancafe\\View\\FrmCapCao.cs",
-              "ToolTip": "D:\\Study\\TTCN\\CiiCoffee\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\View\\FrmCapCao.cs [Design]",
-              "RelativeToolTip": "DuAnQuanLyQuancafe\\View\\FrmCapCao.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-12T18:06:41.269Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "FrmNhanVien.cs",
-              "DocumentMoniker": "D:\\Study\\TTCN\\CiiCoffee\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\View\\NhanVien\\FrmNhanVien.cs",
-              "RelativeDocumentMoniker": "DuAnQuanLyQuancafe\\View\\NhanVien\\FrmNhanVien.cs",
-              "ToolTip": "D:\\Study\\TTCN\\CiiCoffee\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\View\\NhanVien\\FrmNhanVien.cs",
-              "RelativeToolTip": "DuAnQuanLyQuancafe\\View\\NhanVien\\FrmNhanVien.cs",
-              "ViewState": "AgIAAEUAAAAAAAAAAAAqwG4AAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-12T17:36:14.425Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
               "Title": "FrmNhanVien.cs [Design]",
               "DocumentMoniker": "D:\\Study\\TTCN\\CiiCoffee\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\View\\NhanVien\\FrmNhanVien.cs",
               "RelativeDocumentMoniker": "DuAnQuanLyQuancafe\\View\\NhanVien\\FrmNhanVien.cs",
               "ToolTip": "D:\\Study\\TTCN\\CiiCoffee\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\View\\NhanVien\\FrmNhanVien.cs [Design]",
               "RelativeToolTip": "DuAnQuanLyQuancafe\\View\\NhanVien\\FrmNhanVien.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-12T17:36:12.256Z",
+              "WhenOpened": "2025-05-13T04:47:12.898Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "FrmSanPham.cs",
-              "DocumentMoniker": "D:\\Study\\TTCN\\CiiCoffee\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\View\\SanPham\\FrmSanPham.cs",
-              "RelativeDocumentMoniker": "DuAnQuanLyQuancafe\\View\\SanPham\\FrmSanPham.cs",
-              "ToolTip": "D:\\Study\\TTCN\\CiiCoffee\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\View\\SanPham\\FrmSanPham.cs",
-              "RelativeToolTip": "DuAnQuanLyQuancafe\\View\\SanPham\\FrmSanPham.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAwBsAAAAoAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "FrmNhanVien.cs",
+              "DocumentMoniker": "D:\\Study\\TTCN\\CiiCoffee\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\View\\NhanVien\\FrmNhanVien.cs",
+              "RelativeDocumentMoniker": "DuAnQuanLyQuancafe\\View\\NhanVien\\FrmNhanVien.cs",
+              "ToolTip": "D:\\Study\\TTCN\\CiiCoffee\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\View\\NhanVien\\FrmNhanVien.cs",
+              "RelativeToolTip": "DuAnQuanLyQuancafe\\View\\NhanVien\\FrmNhanVien.cs",
+              "ViewState": "AgIAAPQAAAAAAAAAAAAQwAIBAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-12T17:30:55.956Z",
+              "WhenOpened": "2025-05-13T04:47:40.981Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "SanPhamController.cs",
-              "DocumentMoniker": "D:\\Study\\TTCN\\CiiCoffee\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\Controller\\SanPhamController.cs",
-              "RelativeDocumentMoniker": "DuAnQuanLyQuancafe\\Controller\\SanPhamController.cs",
-              "ToolTip": "D:\\Study\\TTCN\\CiiCoffee\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\Controller\\SanPhamController.cs",
-              "RelativeToolTip": "DuAnQuanLyQuancafe\\Controller\\SanPhamController.cs",
-              "ViewState": "AgIAAKkAAAAAAAAAAAAAALYAAAA1AAAAAAAAAA==",
+              "Title": "FrmNhaCungCap.cs",
+              "DocumentMoniker": "D:\\Study\\TTCN\\CiiCoffee\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\View\\NhaCungCap\\FrmNhaCungCap.cs",
+              "RelativeDocumentMoniker": "DuAnQuanLyQuancafe\\View\\NhaCungCap\\FrmNhaCungCap.cs",
+              "ToolTip": "D:\\Study\\TTCN\\CiiCoffee\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\View\\NhaCungCap\\FrmNhaCungCap.cs",
+              "RelativeToolTip": "DuAnQuanLyQuancafe\\View\\NhaCungCap\\FrmNhaCungCap.cs",
+              "ViewState": "AgIAAHAAAAAAAAAAAAAQwKwAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-12T17:29:56.317Z",
+              "WhenOpened": "2025-05-13T04:47:04.667Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "FrmAddSanPham.cs",
-              "DocumentMoniker": "D:\\Study\\TTCN\\CiiCoffee\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\View\\SanPham\\FrmAddSanPham.cs",
-              "RelativeDocumentMoniker": "DuAnQuanLyQuancafe\\View\\SanPham\\FrmAddSanPham.cs",
-              "ToolTip": "D:\\Study\\TTCN\\CiiCoffee\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\View\\SanPham\\FrmAddSanPham.cs",
-              "RelativeToolTip": "DuAnQuanLyQuancafe\\View\\SanPham\\FrmAddSanPham.cs",
-              "ViewState": "AgIAADgAAAAAAAAAAAAwwAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 4,
+              "Title": "FrmNhaCungCap.cs [Design]",
+              "DocumentMoniker": "D:\\Study\\TTCN\\CiiCoffee\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\View\\NhaCungCap\\FrmNhaCungCap.cs",
+              "RelativeDocumentMoniker": "DuAnQuanLyQuancafe\\View\\NhaCungCap\\FrmNhaCungCap.cs",
+              "ToolTip": "D:\\Study\\TTCN\\CiiCoffee\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\View\\NhaCungCap\\FrmNhaCungCap.cs [Design]",
+              "RelativeToolTip": "DuAnQuanLyQuancafe\\View\\NhaCungCap\\FrmNhaCungCap.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-12T16:37:07.806Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-13T04:47:02.738Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "FrmSanPham.cs [Design]",
-              "DocumentMoniker": "D:\\Study\\TTCN\\CiiCoffee\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\View\\SanPham\\FrmSanPham.cs",
-              "RelativeDocumentMoniker": "DuAnQuanLyQuancafe\\View\\SanPham\\FrmSanPham.cs",
-              "ToolTip": "D:\\Study\\TTCN\\CiiCoffee\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\View\\SanPham\\FrmSanPham.cs [Design]",
-              "RelativeToolTip": "DuAnQuanLyQuancafe\\View\\SanPham\\FrmSanPham.cs [Design]",
+              "DocumentIndex": 5,
+              "Title": "FrmCapCao.cs [Design]",
+              "DocumentMoniker": "D:\\Study\\TTCN\\CiiCoffee\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\View\\FrmCapCao.cs",
+              "RelativeDocumentMoniker": "DuAnQuanLyQuancafe\\View\\FrmCapCao.cs",
+              "ToolTip": "D:\\Study\\TTCN\\CiiCoffee\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\View\\FrmCapCao.cs [Design]",
+              "RelativeToolTip": "DuAnQuanLyQuancafe\\View\\FrmCapCao.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-12T16:34:41.049Z",
+              "WhenOpened": "2025-05-13T04:44:26.366Z",
               "EditorCaption": " [Design]"
             }
           ]
