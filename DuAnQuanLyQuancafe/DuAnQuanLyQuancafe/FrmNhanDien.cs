@@ -65,7 +65,7 @@ namespace DuAnQuanLyQuancafe
         // Tải dữ liệu từ cơ sở dữ liệu và ánh xạ với các label
         private void LoadUserMappings()
         {
-            string connectionString = "Data Source=DESKTOP-K56JJJ3;Initial Catalog=QuanLyQuanCafe2;Integrated Security=True;Encrypt=False";
+            string connectionString = "Data Source=DESKTOP-LBR1P0N\\KHANH;Initial Catalog=QuanLyQuanCafe2;Integrated Security=True;Encrypt=False";
 
             try
             {
@@ -98,7 +98,7 @@ namespace DuAnQuanLyQuancafe
         // Huấn luyện lại mô hình nhận diện khuôn mặt và lưu trữ
         private void TrainAndSaveRecognizer()
         {
-            string connectionString = "Data Source=DESKTOP-K56JJJ3;Initial Catalog=QuanLyQuanCafe2;Integrated Security=True;Encrypt=False";
+            string connectionString = "Data Source=DESKTOP-LBR1P0N\\KHANH;Initial Catalog=QuanLyQuanCafe2;Integrated Security=True;Encrypt=False";
             List<Image<Gray, byte>> trainingFaces = new List<Image<Gray, byte>>();
             List<int> labels = new List<int>();
             int labelCounter = 0;

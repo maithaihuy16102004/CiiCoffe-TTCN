@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Study\\TTCN\\CiiCoffee\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe.csproj": {}
+    "C:\\Users\\KHANH\\Source\\Repos\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe.csproj": {}
   },
   "projects": {
-    "D:\\Study\\TTCN\\CiiCoffee\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe.csproj": {
+    "C:\\Users\\KHANH\\Source\\Repos\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Study\\TTCN\\CiiCoffee\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe.csproj",
+        "projectUniqueName": "C:\\Users\\KHANH\\Source\\Repos\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe.csproj",
         "projectName": "DuAnQuanLyQuancafe",
-        "projectPath": "D:\\Study\\TTCN\\CiiCoffee\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe.csproj",
-        "packagesPath": "C:\\Users\\MaiThaiHuy\\.nuget\\packages\\",
-        "outputPath": "D:\\Study\\TTCN\\CiiCoffee\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\obj\\",
+        "projectPath": "C:\\Users\\KHANH\\Source\\Repos\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe.csproj",
+        "packagesPath": "C:\\Users\\KHANH\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\KHANH\\Source\\Repos\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "UsingMicrosoftNETSdk": false,
@@ -19,7 +19,7 @@
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\MaiThaiHuy\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\KHANH\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -44,6 +44,10 @@
       "frameworks": {
         "net48": {
           "dependencies": {
+            "EPPlusFree": {
+              "target": "Package",
+              "version": "[4.5.3.8, )"
+            },
             "Emgu.CV": {
               "target": "Package",
               "version": "[4.10.0.5680, )"
@@ -53,6 +57,10 @@
               "version": "[4.10.0.5680, )"
             },
             "Emgu.CV.UI": {
+              "target": "Package",
+              "version": "[4.10.0.5680, )"
+            },
+            "Emgu.CV.runtime.windows": {
               "target": "Package",
               "version": "[4.10.0.5680, )"
             },
