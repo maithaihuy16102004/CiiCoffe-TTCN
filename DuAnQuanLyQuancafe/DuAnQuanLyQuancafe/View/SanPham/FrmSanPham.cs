@@ -326,5 +326,10 @@ namespace DuAnQuanLyQuancafe.View
             txtMa.Enabled = false;
             LoadSanPham();
         }
+
+        private void dgvSanPham_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
