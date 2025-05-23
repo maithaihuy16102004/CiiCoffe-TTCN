@@ -99,9 +99,6 @@ C:\Users\KHANH\Source\Repos\CiiCoffe-TTCN\DuAnQuanLyQuancafe\DuAnQuanLyQuancafe\
 C:\Users\KHANH\Source\Repos\CiiCoffe-TTCN\DuAnQuanLyQuancafe\DuAnQuanLyQuancafe\obj\Debug\DuAnQuanLyQuancafe.Properties.Resources.resources
 C:\Users\KHANH\Source\Repos\CiiCoffe-TTCN\DuAnQuanLyQuancafe\DuAnQuanLyQuancafe\obj\Debug\DuAnQuanLyQuancafe.RoundedTextBox.resources
 C:\Users\KHANH\Source\Repos\CiiCoffe-TTCN\DuAnQuanLyQuancafe\DuAnQuanLyQuancafe\obj\Debug\DuAnQuanLyQuancafe.View.FrmCapCao.resources
-C:\Users\KHANH\Source\Repos\CiiCoffe-TTCN\DuAnQuanLyQuancafe\DuAnQuanLyQuancafe\obj\Debug\DuAnQuanLyQuancafe.View.FrmThongKe.resources
-C:\Users\KHANH\Source\Repos\CiiCoffe-TTCN\DuAnQuanLyQuancafe\DuAnQuanLyQuancafe\obj\Debug\DuAnQuanLyQuancafe.View.FrmCapThap.resources
-C:\Users\KHANH\Source\Repos\CiiCoffe-TTCN\DuAnQuanLyQuancafe\DuAnQuanLyQuancafe\obj\Debug\DuAnQuanLyQuancafe.View.FrmHDB.resources
 C:\Users\KHANH\Source\Repos\CiiCoffe-TTCN\DuAnQuanLyQuancafe\DuAnQuanLyQuancafe\obj\Debug\DuAnQuanLyQuancafe.View.NhaCungCap.FrmAddNCC.resources
 C:\Users\KHANH\Source\Repos\CiiCoffe-TTCN\DuAnQuanLyQuancafe\DuAnQuanLyQuancafe\obj\Debug\DuAnQuanLyQuancafe.View.NhaCungCap.FrmNhaCungCap.resources
 C:\Users\KHANH\Source\Repos\CiiCoffe-TTCN\DuAnQuanLyQuancafe\DuAnQuanLyQuancafe\obj\Debug\DuAnQuanLyQuancafe.View.NhanVien.FrmAddNhanVien.resources

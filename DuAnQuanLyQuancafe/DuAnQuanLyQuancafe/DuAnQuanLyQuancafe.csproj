@@ -111,6 +111,7 @@
     <Compile Include="Model\QueModel.cs" />
     <Compile Include="Model\SanPhamModel.cs" />
     <Compile Include="Model\TaiKhoanModel.cs" />
+    <Compile Include="Model\ThongKeModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RoundedTextBox.cs">
