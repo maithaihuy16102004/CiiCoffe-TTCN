@@ -142,3 +142,4 @@ C:\Users\KHANH\Source\Repos\CiiCoffe-TTCN\DuAnQuanLyQuancafe\DuAnQuanLyQuancafe\
 C:\Users\KHANH\Source\Repos\CiiCoffe-TTCN\DuAnQuanLyQuancafe\DuAnQuanLyQuancafe\obj\Debug\DuAnQuan.8532796D.Up2Date
 C:\Users\KHANH\Source\Repos\CiiCoffe-TTCN\DuAnQuanLyQuancafe\DuAnQuanLyQuancafe\obj\Debug\DuAnQuanLyQuancafe.exe
 C:\Users\KHANH\Source\Repos\CiiCoffe-TTCN\DuAnQuanLyQuancafe\DuAnQuanLyQuancafe\obj\Debug\DuAnQuanLyQuancafe.pdb
+C:\Users\KHANH\Source\Repos\CiiCoffe-TTCN\DuAnQuanLyQuancafe\DuAnQuanLyQuancafe\obj\Debug\DuAnQuanLyQuancafe.View.FrmAcc.resources

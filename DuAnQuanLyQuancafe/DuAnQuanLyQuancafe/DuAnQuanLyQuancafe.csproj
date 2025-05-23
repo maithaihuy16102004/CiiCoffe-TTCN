@@ -228,14 +228,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-<<<<<<< HEAD
     <EmbeddedResource Include="View\FrmAcc.resx">
-      <DependentUpon>FrmAcc.cs</DependentUpon>
-=======
-    <EmbeddedResource Include="RoundedTextBox.resx">
-      <DependentUpon>RoundedTextBox.cs</DependentUpon>
->>>>>>> bcf67183f60235e5c3e9dec3e1e5180eb2cc0cb0
-    </EmbeddedResource>
+  <DependentUpon>FrmAcc.cs</DependentUpon>
+  </EmbeddedResource>
+  <EmbeddedResource Include="RoundedTextBox.resx">
+  <DependentUpon>RoundedTextBox.cs</DependentUpon>
+  </EmbeddedResource>
     <EmbeddedResource Include="View\FrmCapCao.resx">
       <DependentUpon>FrmCapCao.cs</DependentUpon>
     </EmbeddedResource>

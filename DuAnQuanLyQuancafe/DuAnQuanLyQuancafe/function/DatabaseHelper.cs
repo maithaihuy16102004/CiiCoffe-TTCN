@@ -85,5 +85,27 @@ namespace DuAnQuanLyQuancafe.function
                 cbo.ValueMember = loaitk;
             }
         }
+        public static void RunSql(string sql, SqlParameter[] parameters = null)
+        {
+            using (SqlConnection conn = GetConnection())
+            {
+                try
+                {
+                    using (SqlCommand cmd = new SqlCommand(sql, conn))
+                    {
+                        if (parameters != null)
+                        {
+                            cmd.Parameters.AddRange(parameters);
+                        }
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+                catch (SqlException ex)
+                {
+                    MessageBox.Show("Lỗi khi thực thi SQL: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
     }
+
 }
