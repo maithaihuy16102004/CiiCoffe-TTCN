@@ -95,7 +95,6 @@ C:\Users\KHANH\Source\Repos\CiiCoffe-TTCN\DuAnQuanLyQuancafe\DuAnQuanLyQuancafe\
 C:\Users\KHANH\Source\Repos\CiiCoffe-TTCN\DuAnQuanLyQuancafe\DuAnQuanLyQuancafe\obj\Debug\DuAnQuanLyQuancafe.exe.config
 C:\Users\KHANH\Source\Repos\CiiCoffe-TTCN\DuAnQuanLyQuancafe\DuAnQuanLyQuancafe\obj\Debug\DuAnQuanLyQuancafe.FrmLogin.resources
 C:\Users\KHANH\Source\Repos\CiiCoffe-TTCN\DuAnQuanLyQuancafe\DuAnQuanLyQuancafe\obj\Debug\DuAnQuanLyQuancafe.FrmNhanDien.resources
-C:\Users\KHANH\Source\Repos\CiiCoffe-TTCN\DuAnQuanLyQuancafe\DuAnQuanLyQuancafe\obj\Debug\DuAnQuanLyQuancafe.Product.resources
 C:\Users\KHANH\Source\Repos\CiiCoffe-TTCN\DuAnQuanLyQuancafe\DuAnQuanLyQuancafe\obj\Debug\DuAnQuanLyQuancafe.Properties.Resources.resources
 C:\Users\KHANH\Source\Repos\CiiCoffe-TTCN\DuAnQuanLyQuancafe\DuAnQuanLyQuancafe\obj\Debug\DuAnQuanLyQuancafe.RoundedTextBox.resources
 C:\Users\KHANH\Source\Repos\CiiCoffe-TTCN\DuAnQuanLyQuancafe\DuAnQuanLyQuancafe\obj\Debug\DuAnQuanLyQuancafe.View.FrmCapCao.resources
@@ -143,3 +142,4 @@ C:\Users\KHANH\Source\Repos\CiiCoffe-TTCN\DuAnQuanLyQuancafe\DuAnQuanLyQuancafe\
 C:\Users\KHANH\Source\Repos\CiiCoffe-TTCN\DuAnQuanLyQuancafe\DuAnQuanLyQuancafe\obj\Debug\DuAnQuanLyQuancafe.exe
 C:\Users\KHANH\Source\Repos\CiiCoffe-TTCN\DuAnQuanLyQuancafe\DuAnQuanLyQuancafe\obj\Debug\DuAnQuanLyQuancafe.pdb
 C:\Users\KHANH\Source\Repos\CiiCoffe-TTCN\DuAnQuanLyQuancafe\DuAnQuanLyQuancafe\obj\Debug\DuAnQuanLyQuancafe.View.FrmAcc.resources
+C:\Users\KHANH\Source\Repos\CiiCoffe-TTCN\DuAnQuanLyQuancafe\DuAnQuanLyQuancafe\obj\Debug\DuAnQuanLyQuancafe.View.FrmCapThap.resources

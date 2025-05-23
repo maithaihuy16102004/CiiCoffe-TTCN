@@ -419,13 +419,7 @@ namespace DuAnQuanLyQuancafe.View
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
-            noiDungCanIn = TaoNoiDungHoaDon();
-
-            PrintPreviewDialog previewDialog = new PrintPreviewDialog();
-            previewDialog.Document = printDocument;
-            previewDialog.Width = 800;
-            previewDialog.Height = 600;
-            previewDialog.ShowDialog();
+          
         }
         //xu ly tim kiem
         private void RoundedTextBox1_TextChanged(object sender, EventArgs e)
@@ -480,6 +474,17 @@ namespace DuAnQuanLyQuancafe.View
         private void dgvSanPhamm_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void btnPrint_Click_1(object sender, EventArgs e)
+        {
+            noiDungCanIn = TaoNoiDungHoaDon();
+
+            PrintPreviewDialog previewDialog = new PrintPreviewDialog();
+            previewDialog.Document = printDocument;
+            previewDialog.Width = 800;
+            previewDialog.Height = 600;
+            previewDialog.ShowDialog();
         }
     }
 }

@@ -215,9 +215,6 @@
     <EmbeddedResource Include="FrmNhanDien.resx">
       <DependentUpon>FrmNhanDien.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Product.resx">
-      <DependentUpon>Product.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -229,13 +226,16 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="View\FrmAcc.resx">
-  <DependentUpon>FrmAcc.cs</DependentUpon>
-  </EmbeddedResource>
-  <EmbeddedResource Include="RoundedTextBox.resx">
-  <DependentUpon>RoundedTextBox.cs</DependentUpon>
-  </EmbeddedResource>
+      <DependentUpon>FrmAcc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RoundedTextBox.resx">
+      <DependentUpon>RoundedTextBox.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\FrmCapCao.resx">
       <DependentUpon>FrmCapCao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmCapThap.resx">
+      <DependentUpon>FrmCapThap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\NhaCungCap\FrmAddNCC.resx">
       <DependentUpon>FrmAddNCC.cs</DependentUpon>
@@ -371,6 +371,7 @@
     <Content Include="haarcascade_frontalface_default.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\39263_print_printer_icon.png" />
     <None Include="Resources\9110796_x_icon1.png" />
     <None Include="Resources\9110796_x_icon.png" />
     <None Include="Resources\9165725_tick_check_mark_icon1.png" />

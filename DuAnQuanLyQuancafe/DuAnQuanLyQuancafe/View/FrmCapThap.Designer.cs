@@ -31,10 +31,9 @@ namespace DuAnQuanLyQuancafe.View
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCapThap));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gunaAreaDataset1 = new Guna.Charts.WinForms.GunaAreaDataset();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -43,7 +42,7 @@ namespace DuAnQuanLyQuancafe.View
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.panelThongTin = new System.Windows.Forms.FlowLayoutPanel();
             this.panelThanhtoan = new Guna.UI2.WinForms.Guna2Panel();
-            this.btnPrint = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.btnPrint = new Guna.UI2.WinForms.Guna2Button();
             this.lblkhachthanhtoan = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblkhachtra = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblgiamgia = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -55,12 +54,11 @@ namespace DuAnQuanLyQuancafe.View
             this.lblManhanvien = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.roundedTextBox1 = new DuAnQuanLyQuancafe.RoundedTextBox();
             this.dgvSanPhamm = new Guna.UI2.WinForms.Guna2DataGridView();
             this.guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.roundedTextBox1 = new DuAnQuanLyQuancafe.RoundedTextBox();
             this.guna2Panel1.SuspendLayout();
             this.panelThanhtoan.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnPrint)).BeginInit();
             this.guna2GradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -162,15 +160,21 @@ namespace DuAnQuanLyQuancafe.View
             // 
             // btnPrint
             // 
-            this.btnPrint.Image = ((System.Drawing.Image)(resources.GetObject("btnPrint.Image")));
-            this.btnPrint.ImageRotate = 0F;
-            this.btnPrint.Location = new System.Drawing.Point(267, 134);
+            this.btnPrint.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnPrint.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnPrint.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnPrint.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnPrint.FillColor = System.Drawing.Color.White;
+            this.btnPrint.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnPrint.ForeColor = System.Drawing.Color.White;
+            this.btnPrint.Image = global::DuAnQuanLyQuancafe.Properties.Resources._39263_print_printer_icon;
+            this.btnPrint.ImageSize = new System.Drawing.Size(40, 40);
+            this.btnPrint.Location = new System.Drawing.Point(259, 123);
             this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(48, 28);
-            this.btnPrint.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnPrint.Size = new System.Drawing.Size(38, 36);
             this.btnPrint.TabIndex = 5;
-            this.btnPrint.TabStop = false;
-            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
+            this.btnPrint.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click_1);
             // 
             // lblkhachthanhtoan
             // 
@@ -302,28 +306,42 @@ namespace DuAnQuanLyQuancafe.View
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
+            // roundedTextBox1
+            // 
+            this.roundedTextBox1.BackColor = System.Drawing.Color.White;
+            this.roundedTextBox1.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.roundedTextBox1.BorderRadius = 15;
+            this.roundedTextBox1.BorderSize = 2;
+            this.roundedTextBox1.ForeColor = System.Drawing.Color.Black;
+            this.roundedTextBox1.Location = new System.Drawing.Point(57, 18);
+            this.roundedTextBox1.Name = "roundedTextBox1";
+            this.roundedTextBox1.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
+            this.roundedTextBox1.Size = new System.Drawing.Size(351, 35);
+            this.roundedTextBox1.TabIndex = 0;
+            this.roundedTextBox1.Texts = "";
+            // 
             // dgvSanPhamm
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.dgvSanPhamm.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvSanPhamm.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.dgvSanPhamm.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvSanPhamm.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvSanPhamm.ColumnHeadersHeight = 30;
             this.dgvSanPhamm.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvSanPhamm.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvSanPhamm.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvSanPhamm.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvSanPhamm.Location = new System.Drawing.Point(67, 132);
             this.dgvSanPhamm.Name = "dgvSanPhamm";
@@ -365,21 +383,6 @@ namespace DuAnQuanLyQuancafe.View
             this.guna2HtmlLabel4.TabIndex = 3;
             this.guna2HtmlLabel4.Text = "Danh sách sản phẩm";
             // 
-            // roundedTextBox1
-            // 
-            this.roundedTextBox1.BackColor = System.Drawing.Color.White;
-            this.roundedTextBox1.BorderColor = System.Drawing.Color.DodgerBlue;
-            this.roundedTextBox1.BorderRadius = 15;
-            this.roundedTextBox1.BorderSize = 2;
-            this.roundedTextBox1.ForeColor = System.Drawing.Color.Black;
-            this.roundedTextBox1.Location = new System.Drawing.Point(57, 18);
-            this.roundedTextBox1.Name = "roundedTextBox1";
-            this.roundedTextBox1.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
-            this.roundedTextBox1.Size = new System.Drawing.Size(351, 35);
-            this.roundedTextBox1.TabIndex = 0;
-            this.roundedTextBox1.Texts = "";
-
-            // 
             // FrmCapThap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -397,7 +400,6 @@ namespace DuAnQuanLyQuancafe.View
             this.guna2Panel1.ResumeLayout(false);
             this.panelThanhtoan.ResumeLayout(false);
             this.panelThanhtoan.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnPrint)).EndInit();
             this.guna2GradientPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -428,8 +430,8 @@ namespace DuAnQuanLyQuancafe.View
         private Guna.UI2.WinForms.Guna2HtmlLabel lbltongtien;
         private System.Windows.Forms.FlowLayoutPanel panelThongTin;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel4;
-        private Guna.UI2.WinForms.Guna2PictureBox btnPrint;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblTennhanvien;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblManhanvien;
+        private Guna.UI2.WinForms.Guna2Button btnPrint;
     }
 }
