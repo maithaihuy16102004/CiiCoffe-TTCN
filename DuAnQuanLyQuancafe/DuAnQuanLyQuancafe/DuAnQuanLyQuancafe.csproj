@@ -87,7 +87,6 @@
     <Compile Include="Controller\SanPhamController.cs" />
     <Compile Include="Controller\TaiKhoanController.cs" />
     <Compile Include="Controller\ThongKeController.cs" />
-    <Compile Include="FaceDetection.cs" />
     <Compile Include="FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -145,6 +144,12 @@
     </Compile>
     <Compile Include="View\FrmThongKe.Designer.cs">
       <DependentUpon>FrmThongKe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\PhanQuyen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\PhanQuyen.Designer.cs">
+      <DependentUpon>PhanQuyen.cs</DependentUpon>
     </Compile>
     <Compile Include="View\QuanLyHoaDonNhap\FrmAddHDN.cs">
       <SubType>Form</SubType>
@@ -215,6 +220,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View\FrmAcc.resx">
+      <DependentUpon>FrmAcc.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\FrmCapCao.resx">
       <DependentUpon>FrmCapCao.cs</DependentUpon>
     </EmbeddedResource>

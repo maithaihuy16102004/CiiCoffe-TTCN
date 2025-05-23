@@ -2,53 +2,77 @@
 using DuAnQuanLyQuancafe.Model;
 using System;
 using System.Collections.Generic;
-using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace DuAnQuanLyQuancafe.View.QuanLyHoaDonNhap
 {
     public partial class FrmChitietHDN : Form
     {
-        private string maHDN;
+        private readonly string _maHDN;
+        private readonly ChiTietHDNController _chiTietHDNController = new ChiTietHDNController();
 
         public FrmChitietHDN(string maHDN)
         {
             InitializeComponent();
-            this.maHDN = maHDN;
-
-            // Thêm sự kiện Deactivate để đóng form khi mất focus
-            this.Deactivate += FrmChitietHDN_Deactivate;
-
-            // Thêm sự kiện MouseClick để đóng form khi nhấp chuột ra ngoài
-            this.MouseClick += FrmChitietHDN_MouseClick;
+            _maHDN = maHDN ?? throw new ArgumentNullException(nameof(maHDN), "Mã hóa đơn nhập không được để trống.");
+            LoadChiTietHDN();
         }
 
-        private void FrmChitietHDN_Load(object sender, EventArgs e)
+        private void LoadChiTietHDN()
         {
-            ChiTietHDNController controller = new ChiTietHDNController();
-            List<ChiTietHDNModel> danhSachCT = controller.LayChiTietHDNTheoMa(maHDN);
+            try
+            {
+                List<ChiTietHDNModel> danhSachCT = _chiTietHDNController.LayChiTietHDNTheoMa(_maHDN);
+                if (danhSachCT == null || !danhSachCT.Any())
+                {
+                    dgvChiTiet.DataSource = null;
+                    MessageBox.Show($"Không có chi tiết hóa đơn nhập nào cho mã {_maHDN}.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
 
-            dgvChiTiet.DataSource = danhSachCT;
-
-            // Đổi tên cột trong DataGridView
-            dgvChiTiet.Columns["MaCTHDN"].HeaderText = "Mã CTHĐN";
-            dgvChiTiet.Columns["MaSP"].HeaderText = "Mã SP";
-            dgvChiTiet.Columns["SoLuong"].HeaderText = "Số Lượng";
-            dgvChiTiet.Columns["DonGia"].HeaderText = "Đơn Giá";
-            dgvChiTiet.Columns["KhuyenMai"].HeaderText = "Khuyến Mãi";
-            dgvChiTiet.Columns["ThanhTien"].HeaderText = "Thành Tiền";
+                dgvChiTiet.DataSource = danhSachCT;
+                ConfigureDataGridViewColumns();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi khi tải chi tiết hóa đơn: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                dgvChiTiet.DataSource = null;
+            }
         }
 
-        // Sự kiện Deactivate khi form mất focus
-        private void FrmChitietHDN_Deactivate(object sender, EventArgs e)
+        private void ConfigureDataGridViewColumns()
         {
-            this.Close(); // Đóng form khi mất focus
+            if (dgvChiTiet.Columns.Contains("MaCTHDN")) dgvChiTiet.Columns["MaCTHDN"].HeaderText = "Mã CTHĐN";
+            if (dgvChiTiet.Columns.Contains("MaHDN")) dgvChiTiet.Columns["MaHDN"].HeaderText = "Mã HĐN";
+            if (dgvChiTiet.Columns.Contains("MaSP")) dgvChiTiet.Columns["MaSP"].HeaderText = "Mã SP";
+            if (dgvChiTiet.Columns.Contains("SoLuong")) dgvChiTiet.Columns["SoLuong"].HeaderText = "Số Lượng";
+            if (dgvChiTiet.Columns.Contains("DonGia"))
+            {
+                dgvChiTiet.Columns["DonGia"].HeaderText = "Đơn Giá";
+                dgvChiTiet.Columns["DonGia"].DefaultCellStyle.Format = "N0";
+            }
+            if (dgvChiTiet.Columns.Contains("KhuyenMai"))
+            {
+                dgvChiTiet.Columns["KhuyenMai"].HeaderText = "Khuyến Mãi";
+                dgvChiTiet.Columns["KhuyenMai"].DefaultCellStyle.Format = "N0";
+            }
+            if (dgvChiTiet.Columns.Contains("ThanhTien"))
+            {
+                dgvChiTiet.Columns["ThanhTien"].HeaderText = "Thành Tiền";
+                dgvChiTiet.Columns["ThanhTien"].DefaultCellStyle.Format = "N0";
+            }
+
+            // Đặt độ rộng cột
+            if (dgvChiTiet.Columns.Contains("MaCTHDN")) dgvChiTiet.Columns["MaCTHDN"].Width = 120;
+            if (dgvChiTiet.Columns.Contains("MaHDN")) dgvChiTiet.Columns["MaHDN"].Width = 120;
+            if (dgvChiTiet.Columns.Contains("MaSP")) dgvChiTiet.Columns["MaSP"].Width = 100;
+            if (dgvChiTiet.Columns.Contains("SoLuong")) dgvChiTiet.Columns["SoLuong"].Width = 80;
         }
 
-        // Sự kiện MouseClick khi nhấp chuột ra ngoài form
-        private void FrmChitietHDN_MouseClick(object sender, MouseEventArgs e)
+        private void btnClose_Click(object sender, EventArgs e)
         {
-            this.Close(); // Đóng form khi nhấp chuột ra ngoài
+            this.Close();
         }
     }
 }

@@ -33,26 +33,32 @@ namespace DuAnQuanLyQuancafe.function
                 connection.Dispose();
             }
         }
-
-        public static DataTable GetDataToTable(string sql)
+        public static bool CheckKey(string sql, SqlParameter[] parameters = null)
         {
             using (SqlConnection conn = GetConnection())
             {
-                SqlDataAdapter da = new SqlDataAdapter(sql, conn);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-                return dt;
-            }
-        }
-
-        public static bool CheckKey(string sql)
-        {
-            using (SqlConnection conn = GetConnection())
-            {
-                SqlDataAdapter Mydata = new SqlDataAdapter(sql, conn);
-                DataTable table = new DataTable();
-                Mydata.Fill(table);
-                return table.Rows.Count > 0;
+                try
+                {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand(sql, conn))
+                    {
+                        if (parameters != null)
+                        {
+                            cmd.Parameters.AddRange(parameters);
+                        }
+                        using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
+                        {
+                            DataTable table = new DataTable();
+                            adapter.Fill(table);
+                            return table.Rows.Count > 0 && Convert.ToInt32(table.Rows[0][0]) > 0;
+                        }
+                    }
+                }
+                catch (SqlException ex)
+                {
+                    MessageBox.Show($"Lỗi khi kiểm tra khóa: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
+                }
             }
         }
 
@@ -68,23 +74,15 @@ namespace DuAnQuanLyQuancafe.function
                 cbo.DisplayMember = ten;
             }
         }
-
-        public static void RunSql(string sql)
+        public static void fillcombophanquyen(string sql, ComboBox cbo, string loaitk)
         {
-            try
+            using (SqlConnection conn = GetConnection())
             {
-                using (SqlConnection conn = new SqlConnection(connectionString))
-                {
-                    conn.Open();
-                    using (SqlCommand cmd = new SqlCommand(sql, conn))
-                    {
-                        cmd.ExecuteNonQuery();
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
+                SqlDataAdapter Mydata = new SqlDataAdapter(sql, conn);
+                DataTable table = new DataTable();
+                Mydata.Fill(table);
+                cbo.DataSource = table;
+                cbo.ValueMember = loaitk;
             }
         }
     }

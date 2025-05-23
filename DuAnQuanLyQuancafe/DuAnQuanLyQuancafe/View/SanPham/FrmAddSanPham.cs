@@ -130,7 +130,7 @@ namespace DuAnQuanLyQuancafe.View.SanPham
                 string maCongDung = cbCongDung.SelectedValue?.ToString();
 
                 // Kiểm tra dữ liệu đầu vào
-                if (string.IsNullOrEmpty(maSP))
+                if (string.IsNullOrWhiteSpace(maSP))
                 {
                     MessageBox.Show("Mã sản phẩm không được để trống.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     txtMa.Focus();
@@ -138,14 +138,16 @@ namespace DuAnQuanLyQuancafe.View.SanPham
                 }
 
                 // Kiểm tra mã sản phẩm trùng
-                if (KiemTraMaSPTrung(maSP))
+                string sql = "SELECT COUNT(*) FROM SanPham WHERE MaSP = @MaSP";
+                SqlParameter[] parameters = new SqlParameter[] { new SqlParameter("@MaSP", maSP) };
+                if (DatabaseHelper.CheckKey(sql, parameters))
                 {
-                    MessageBox.Show("Mã sản phẩm đã tồn tại. Vui lòng nhập mã khác.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show($"Mã sản phẩm '{maSP}' đã tồn tại. Vui lòng nhập mã khác.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     txtMa.Focus();
                     return;
                 }
 
-                if (string.IsNullOrEmpty(tenSP))
+                if (string.IsNullOrWhiteSpace(tenSP))
                 {
                     MessageBox.Show("Tên sản phẩm không được để trống.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     txtTen.Focus();
@@ -196,21 +198,40 @@ namespace DuAnQuanLyQuancafe.View.SanPham
 
                 // Tạo Hashtable chứa dữ liệu
                 Hashtable parameter = new Hashtable
-                {
-                    { "MaSP", maSP },
-                    { "TenSP", tenSP },
-                    { "MaLoai", maLoai },
-                    { "GiaNhap", giaNhap },
-                    { "GiaBan", giaBan },
-                    { "SoLuong", soLuong },
-                    { "MaCongDung", maCongDung },
-                    { "HinhAnh", _anhDuocChon }
-                };
+        {
+            { "MaSP", maSP },
+            { "TenSP", tenSP },
+            { "MaLoai", maLoai },
+            { "GiaNhap", giaNhap },
+            { "GiaBan", giaBan },
+            { "SoLuong", soLuong },
+            { "MaCongDung", maCongDung },
+            { "HinhAnh", _anhDuocChon }
+        };
 
                 // Gọi controller để thêm sản phẩm
                 _sanPhamController.ThemSanPham(parameter);
                 MessageBox.Show("Thêm sản phẩm thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.Close(); // Đóng form sau khi thêm thành công
+
+                // Hỏi người dùng có muốn tiếp tục thêm sản phẩm khác không
+                DialogResult result = MessageBox.Show("Bạn có muốn tiếp tục thêm sản phẩm khác?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.No)
+                {
+                    this.Close();
+                }
+                else
+                {
+                    // Xóa các trường nhập liệu để thêm sản phẩm mới
+                    txtMa.Clear();
+                    txtTen.Clear();
+                    txtGiaNhap.Clear();
+                    txtGiaBan.Clear();
+                    txtSoLuong.Clear();
+                    cbMaLoai.SelectedIndex = -1;
+                    cbCongDung.SelectedIndex = -1;
+                    _anhDuocChon = null;
+                    txtMa.Focus();
+                }
             }
             catch (ArgumentException ex)
             {

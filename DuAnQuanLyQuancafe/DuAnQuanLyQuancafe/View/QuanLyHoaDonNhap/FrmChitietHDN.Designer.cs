@@ -119,7 +119,7 @@
             this.Name = "FrmChitietHDN";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmQuanLyHDN";
-            this.Load += new System.EventHandler(this.FrmChitietHDN_Load);
+            //this.Load += new System.EventHandler(this.FrmChitietHDN_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvChiTiet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

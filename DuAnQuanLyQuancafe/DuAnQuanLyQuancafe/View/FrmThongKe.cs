@@ -4,19 +4,20 @@ using System.Windows.Forms;
 using DuAnQuanLyQuancafe.Controller;
 using System.Globalization;
 using System.Windows.Forms.DataVisualization.Charting;
+using System.Drawing;
 
 namespace DuAnQuanLyQuancafe.View
 {
     public partial class FrmThongKe : Form
     {
         // Fields
-        private readonly ThongKeController thongKeController;
+        private readonly ThongKeController _thongKeController;
 
         // Constructor
         public FrmThongKe()
         {
             InitializeComponent();
-            thongKeController = new ThongKeController();
+            _thongKeController = new ThongKeController();
 
             // Default: Last 7 days
             dtpStartDate.Value = DateTime.Now.AddDays(-7);
@@ -32,25 +33,24 @@ namespace DuAnQuanLyQuancafe.View
             // Validate dates
             if (dtpStartDate.Value > dtpEndDate.Value)
             {
-                MessageBox.Show("Ngày bắt đầu không thể lớn hơn ngày kết thúc.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                digCanhBao.Show("Ngày bắt đầu không được lớn hơn ngày kết thúc.", "Thông báo");
                 return;
             }
 
             try
             {
-                bool refreshData = thongKeController.LoadData(dtpStartDate.Value, dtpEndDate.Value);
+                bool refreshData = _thongKeController.LoadData(dtpStartDate.Value, dtpEndDate.Value);
                 if (refreshData)
                 {
                     // Update labels
-                    lblNumOrders.Text = thongKeController.GetNumOrders().ToString();
-                    lblTotalRevenue.Text = thongKeController.GetTotalRevenue().ToString("C0", new CultureInfo("vi-VN"));
-                    lblTotalProfit.Text = thongKeController.GetTotalProfit().ToString("C0", new CultureInfo("vi-VN"));
-                    lblNumCustomers.Text = thongKeController.GetNumCustomers().ToString();
-                    lblNumSuppliers.Text = thongKeController.GetNumSuppliers().ToString();
-                    lblNumProducts.Text = thongKeController.GetNumProducts().ToString();
+                    lblNumOrders.Text = _thongKeController.GetNumOrders().ToString();
+                    lblTotalRevenue.Text = _thongKeController.GetTotalRevenue().ToString("C0", new CultureInfo("vi-VN"));
+                    lblTotalProfit.Text = _thongKeController.GetTotalProfit().ToString("C0", new CultureInfo("vi-VN"));
+                    lblNumSuppliers.Text = _thongKeController.GetNumSuppliers().ToString();
+                    lblNumProducts.Text = _thongKeController.GetNumProducts().ToString();
 
                     // Update Gross Revenue Chart
-                    var grossRevenueList = thongKeController.GetGrossRevenueList();
+                    var grossRevenueList = _thongKeController.GetGrossRevenueList();
                     if (grossRevenueList != null && grossRevenueList.Count > 0)
                     {
                         chartGrossRevenue.DataSource = grossRevenueList;
@@ -66,7 +66,7 @@ namespace DuAnQuanLyQuancafe.View
                     }
 
                     // Update Top 5 Products Chart
-                    var topProductList = thongKeController.GetTopProductList();
+                    var topProductList = _thongKeController.GetTopProductList();
                     if (topProductList != null && topProductList.Count > 0)
                     {
                         chartTop5Product.DataSource = topProductList;
@@ -74,6 +74,10 @@ namespace DuAnQuanLyQuancafe.View
                         chartTop5Product.Series[0].XValueMember = "Key";
                         chartTop5Product.Series[0].YValueMembers = "Value";
                         chartTop5Product.Series[0].Label = "#VALX: #VALY";
+                        chartTop5Product.Series[0].IsValueShownAsLabel = true;
+                        chartTop5Product.Series[0]["PieLabelStyle"] = "Outside";
+                        chartTop5Product.Series[0]["DoughnutRadius"] = "60";
+                        chartTop5Product.Series[0].Font = new Font("Arial", 20f, FontStyle.Bold);
                         chartTop5Product.Legends[0].Enabled = true;
                         chartTop5Product.DataBind();
                     }
@@ -81,11 +85,10 @@ namespace DuAnQuanLyQuancafe.View
                     {
                         chartTop5Product.DataSource = null;
                         chartTop5Product.DataBind();
-                        MessageBox.Show("Không có dữ liệu top 5 sản phẩm để hiển thị.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
 
                     // Update Understock DataGridView
-                    var understockList = thongKeController.GetUnderstockList();
+                    var understockList = _thongKeController.GetUnderstockList();
                     if (understockList != null && understockList.Count > 0)
                     {
                         dgvUnderStock.DataSource = understockList;
@@ -98,11 +101,11 @@ namespace DuAnQuanLyQuancafe.View
                         MessageBox.Show("Không có sản phẩm nào dưới mức tồn kho.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
 
-                    MessageBox.Show("Tải dữ liệu thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Tải dữ liệu thành công.", "Thông báo");
                 }
                 else
                 {
-                    MessageBox.Show("Dữ liệu đã được tải trước đó với khoảng thời gian này.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Dữ liệu đã được tải trước đó với khoảng thời gian này.", "Thông báo");
                 }
             }
             catch (Exception ex)
@@ -156,11 +159,6 @@ namespace DuAnQuanLyQuancafe.View
             dtpStartDate.Enabled = true;
             dtpEndDate.Enabled = true;
             btnOK.Enabled = true;
-        }
-
-        private void btnApplyCustomDate_Click(object sender, EventArgs e)
-        {
-            LoadData();
         }
 
         private void btnOK_Click(object sender, EventArgs e)
