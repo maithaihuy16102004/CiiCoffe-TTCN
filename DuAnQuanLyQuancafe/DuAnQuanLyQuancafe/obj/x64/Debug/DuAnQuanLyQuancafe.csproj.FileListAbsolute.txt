@@ -47,3 +47,4 @@ D:\Study\TTCN\CiiCoffee\CiiCoffe-TTCN\DuAnQuanLyQuancafe\DuAnQuanLyQuancafe\obj\
 D:\Study\TTCN\CiiCoffee\CiiCoffe-TTCN\DuAnQuanLyQuancafe\DuAnQuanLyQuancafe\obj\x64\Debug\DuAnQuanLyQuancafe.exe.config
 D:\Study\TTCN\CiiCoffee\CiiCoffe-TTCN\DuAnQuanLyQuancafe\DuAnQuanLyQuancafe\bin\x64\Debug\haarcascade_frontalface_default.xml
 D:\Study\TTCN\CiiCoffee\CiiCoffe-TTCN\DuAnQuanLyQuancafe\DuAnQuanLyQuancafe\obj\x64\Debug\DuAnQuanLyQuancafe.View.QuanLyHoaDonNhap.FrmChitietHDN.resources
+D:\Study\TTCN\CiiCoffee\CiiCoffe-TTCN\DuAnQuanLyQuancafe\DuAnQuanLyQuancafe\obj\x64\Debug\DuAnQuanLyQuancafe.View.frmThongKe.resources

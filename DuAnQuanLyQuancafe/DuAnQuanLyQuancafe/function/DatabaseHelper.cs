@@ -8,62 +8,72 @@ namespace DuAnQuanLyQuancafe.function
     internal class DatabaseHelper
     {
         private static readonly string connectionString = "Data Source=DESKTOP-K56JJJ3;Initial Catalog=QuanLyQuanCafe2;Integrated Security=True;Encrypt=False";
-        public static SqlConnection connection = new SqlConnection(connectionString);
+        // Xóa biến tĩnh connection để tránh xung đột
         public static SqlConnection GetConnection()
         {
             SqlConnection connection = new SqlConnection(connectionString);
             try
             {
-                connection.Open(); // Sử dụng Open() mà không cần kiểm tra trạng thái trước
+                connection.Open();
+                Console.WriteLine("Kết nối thành công đến: " + connection.Database);
+                return connection;
             }
             catch (SqlException ex)
             {
-                throw new Exception("Lỗi khi kết nối đến cơ sở dữ liệu: " + ex.Message);
+                MessageBox.Show("Lỗi khi kết nối đến cơ sở dữ liệu: " + ex.Message);
+                throw;
             }
-            return connection;
         }
 
-        // Phương thức đóng kết nối an toàn
         public static void CloseConnection(SqlConnection connection)
         {
             if (connection != null && connection.State != ConnectionState.Closed)
             {
-                connection.Close();   
+                connection.Close();
                 connection.Dispose();
             }
         }
+
         public static DataTable GetDataToTable(string sql)
         {
-            SqlDataAdapter da = new SqlDataAdapter(sql, connection);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            return dt;
+            using (SqlConnection conn = GetConnection())
+            {
+                SqlDataAdapter da = new SqlDataAdapter(sql, conn);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                return dt;
+            }
         }
+
         public static bool CheckKey(string sql)
         {
-            SqlDataAdapter Mydata = new SqlDataAdapter(sql, connection);
-            DataTable table = new DataTable();
-            Mydata.Fill(table);
-            if (table.Rows.Count > 0)
-                return true;
-            else
-                return false;
+            using (SqlConnection conn = GetConnection())
+            {
+                SqlDataAdapter Mydata = new SqlDataAdapter(sql, conn);
+                DataTable table = new DataTable();
+                Mydata.Fill(table);
+                return table.Rows.Count > 0;
+            }
         }
+
         public static void FillCombo(string sql, ComboBox cbo, string ma, string ten)
         {
-            SqlDataAdapter Mydata = new SqlDataAdapter(sql, connection); // Replaced 'Conn' with 'connection'  
-            DataTable table = new DataTable();
-            Mydata.Fill(table);
-            cbo.DataSource = table;
-
-            cbo.ValueMember = ma;    // Truong gia tri  
-            cbo.DisplayMember = ten;    // Truong hien thi  
+            using (SqlConnection conn = GetConnection())
+            {
+                SqlDataAdapter Mydata = new SqlDataAdapter(sql, conn);
+                DataTable table = new DataTable();
+                Mydata.Fill(table);
+                cbo.DataSource = table;
+                cbo.ValueMember = ma;
+                cbo.DisplayMember = ten;
+            }
         }
+
         public static void RunSql(string sql)
         {
             try
             {
-                using (SqlConnection conn = new SqlConnection(connection.ConnectionString))
+                using (SqlConnection conn = new SqlConnection(connectionString))
                 {
                     conn.Open();
                     using (SqlCommand cmd = new SqlCommand(sql, conn))
@@ -77,6 +87,5 @@ namespace DuAnQuanLyQuancafe.function
                 MessageBox.Show(ex.ToString());
             }
         }
-
     }
 }

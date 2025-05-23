@@ -336,6 +336,7 @@
             this.btnThongke.Text = "Thống kê";
             this.btnThongke.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnThongke.UseVisualStyleBackColor = false;
+            this.btnThongke.Click += new System.EventHandler(this.btnThongke_Click);
             // 
             // btnNhanVien
             // 

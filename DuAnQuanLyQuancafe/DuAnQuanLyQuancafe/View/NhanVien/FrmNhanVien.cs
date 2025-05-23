@@ -50,13 +50,14 @@ namespace DuAnQuanLyQuancafe.View
         {
             if (dgvNhanVien == null)
             {
-                MessageBox.Show("Không có dữ liệu để hiển thị.");
+                MessageBox.Show("Không có dữ liệu để hiển thị.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-            else
+
+            try
             {
                 NhanVienController nhanVienController = new NhanVienController();
-                List<NhanVienModel> dsNhanVien = nhanVienController.LaydanhsachNhanVien();
+                List<NhanVienModel> dsNhanVien = nhanVienController.LayDanhSachNhanVien();
                 dgvNhanVien.DataSource = dsNhanVien;
                 dgvNhanVien.Columns["MaNV"].HeaderText = "Mã Nhân Viên";
                 dgvNhanVien.Columns["TenNV"].HeaderText = "Tên Nhân Viên";
@@ -69,6 +70,11 @@ namespace DuAnQuanLyQuancafe.View
                
                 // Ẩn các cột không cần thiết
                 dgvNhanVien.Columns["MaQue"].Visible = false;
+                //dgvNhanVien.Columns["HinhAnh"].Visible = false; // Đảm bảo tên cột đúng
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi khi tải danh sách nhân viên: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -94,7 +100,7 @@ namespace DuAnQuanLyQuancafe.View
                 {
                     NhanVienController nhanVienController = new NhanVienController();
                     nhanVienController.XoaNhanVien(id);
-                    LoadNhanVien();                    
+                    LoadNhanVien();
                 }
             }
         }
@@ -123,7 +129,108 @@ namespace DuAnQuanLyQuancafe.View
             }
         }
 
-        private void btnSua_Click(object sender, EventArgs e)
+
+
+        private void txtTimKiem_TextChanged_1(object sender, EventArgs e)
+        {
+            NhanVienController nhanVienController = new NhanVienController();
+            List<NhanVienModel> dsNhanVien = nhanVienController.LayDanhSachNhanVien();
+            try
+            {
+                string tuKhoa = txtTimKiem.Text.Trim().ToLower();
+                List<NhanVienModel> locNhanVien = dsNhanVien.FindAll(emp =>
+                    emp.TenNV?.ToLower().Contains(tuKhoa) ?? false);
+
+                dgvNhanVien.DataSource = null;
+                dgvNhanVien.DataSource = locNhanVien;
+
+                if (locNhanVien.Count > 0)
+                {
+                    // Thiết lập tiêu đề cột
+                    dgvNhanVien.Columns["MaNV"].HeaderText = "Mã Nhân Viên";
+                    dgvNhanVien.Columns["TenNV"].HeaderText = "Tên Nhân Viên";
+                    dgvNhanVien.Columns["DiaChi"].HeaderText = "Địa Chỉ";
+                    dgvNhanVien.Columns["GioiTinh"].HeaderText = "Giới Tính";
+                    dgvNhanVien.Columns["NgaySinh"].HeaderText = "Ngày Sinh";
+                    dgvNhanVien.Columns["SDT"].HeaderText = "Số Điện Thoại";
+                    dgvNhanVien.Columns["MaQue"].HeaderText = "Mã Quê";
+                    dgvNhanVien.Columns["TenQue"].HeaderText = "Tên Quê";
+                    dgvNhanVien.Columns["HinhAnh"].Visible = false; // Sửa tên cột
+                    dgvNhanVien.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi khi tìm kiếm nhân viên: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void dgvNhanVien_Click(object sender, EventArgs e)
+        {
+            if (dgvNhanVien.CurrentRow == null || dgvNhanVien.Rows.Count == 0)
+            {
+                MessageBox.Show("Không có dữ liệu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            txtMa.Enabled = false; // Không cho phép sửa mã nhân viên
+            try
+            {
+                NhanVienModel selectedNhanVien = dgvNhanVien.CurrentRow.DataBoundItem as NhanVienModel;
+                if (selectedNhanVien == null)
+                    return;
+
+                txtMa.Text = selectedNhanVien.MaNV;
+                txtTen.Text = selectedNhanVien.TenNV;
+                txtDiaChi.Text = selectedNhanVien.DiaChi;
+                cbGioiTinh.Text = selectedNhanVien.GioiTinh;
+                cbQue.SelectedValue = selectedNhanVien.MaQue.ToString();
+                dtpNgaySinh.Value = selectedNhanVien.NgaySinh;
+                txtSDT.Text = selectedNhanVien.SDT;
+
+                // Xử lý ảnh từ byte[]
+                picAnh.SizeMode = PictureBoxSizeMode.Zoom;
+                if (selectedNhanVien.Anh != null && selectedNhanVien.Anh.Length > 0)
+                {
+                    try
+                    {
+                        using (MemoryStream ms = new MemoryStream(selectedNhanVien.Anh))
+                        {
+                            picAnh.Image = Image.FromStream(ms);
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"Lỗi tải ảnh: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        picAnh.Image = null;
+                    }
+                }
+                else
+                {
+                    picAnh.Image = null;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi khi hiển thị thông tin nhân viên: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void picAnh_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_Click(object sender, EventArgs e)
+        {
+            ResetValue();
+            btnThem.Enabled = true;
+            btnXoa.Enabled = true;
+            txtMa.Enabled = false;
+            btnSua.Enabled = true;
+        }
+
+        private void btnSua_Click_1(object sender, EventArgs e)
         {
             // Kiểm tra xem có dòng nào được chọn chưa
             if (dgvNhanVien.SelectedRows.Count == 0)
@@ -164,113 +271,29 @@ namespace DuAnQuanLyQuancafe.View
                 return;
             }
 
-            if (anhDuocChon == null)
-            {
-                MessageBox.Show("Vui lòng chọn ảnh nhân viên.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
             Hashtable parameter = new Hashtable
-            {
-                { "MaNV", id },
-                { "TenNV", tenNV },
-                { "DiaChi", diaChi },
-                { "SDT", sdt },
-                { "GioiTinh", gioiTinh },
-                { "MaQue", maQue },
-                { "NgaySinh", ngaySinh },
-                { "HinhAnh", anhDuocChon }
-             };
+    {
+        { "MaNV", id },
+        { "TenNV", tenNV },
+        { "DiaChi", diaChi },
+        { "SDT", sdt },
+        { "GioiTinh", gioiTinh },
+        { "MaQue", maQue },
+        { "NgaySinh", ngaySinh },
+        { "HinhAnh", anhDuocChon } // Sử dụng ảnh đã chọn (nếu có)
+    };
 
             try
             {
                 NhanVienController nhanVienController = new NhanVienController();
                 nhanVienController.SuaNhanVien(parameter);
+                MessageBox.Show("Sửa nhân viên thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 LoadNhanVien();
-
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Có lỗi xảy ra khi sửa: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
-
-        private void txtTimKiem_TextChanged_1(object sender, EventArgs e)
-        {
-            string tukhoa = txtTimKiem.Text.ToLower();
-            NhanVienController nhanVienController = new NhanVienController();
-            // Lọc danh sách nhân viên chứa từ khóa
-            List<NhanVienModel> locnhanvien = nhanVienController.LaydanhsachNhanVien().FindAll(emp => emp.TenNV.ToLower().Contains(tukhoa)).ToList();
-            // Cập nhật DataGridView
-            dgvNhanVien.DataSource = null;
-            dgvNhanVien.DataSource = locnhanvien;
-        }
-
-        private void dgvNhanVien_Click(object sender, EventArgs e)
-        {
-            if (dgvNhanVien.CurrentRow == null || dgvNhanVien.Rows.Count == 0)
-            {
-                MessageBox.Show("Không có dữ liệu");
-                return;
-            }
-            txtMa.Enabled = false; // Không cho phép sửa mã nhân viên
-            // Lấy giá trị từ các cột
-            txtMa.Text = dgvNhanVien.CurrentRow.Cells["MaNV"]?.Value?.ToString() ?? "";
-            txtTen.Text = dgvNhanVien.CurrentRow.Cells["TenNV"]?.Value?.ToString() ?? "";
-            txtDiaChi.Text = dgvNhanVien.CurrentRow.Cells["DiaChi"]?.Value?.ToString() ?? "";
-            cbGioiTinh.Text = dgvNhanVien.CurrentRow.Cells["GioiTinh"]?.Value?.ToString() ?? "";
-            cbQue.Text = dgvNhanVien.CurrentRow.Cells["MaQue"]?.Value?.ToString() ?? "";
-            dtpNgaySinh.Text = dgvNhanVien.CurrentRow.Cells["NgaySinh"]?.Value?.ToString() ?? "";
-            txtSDT.Text = dgvNhanVien.CurrentRow.Cells["SDT"]?.Value?.ToString() ?? "";
-
-            // Xử lý ảnh
-            picAnh.SizeMode = PictureBoxSizeMode.Zoom;
-            var cellValue = dgvNhanVien.CurrentRow.Cells["Anh"]?.Value;
-
-            if (cellValue != null && !string.IsNullOrWhiteSpace(cellValue.ToString()))
-            {
-                // Nếu bạn dùng đường dẫn tương đối (ví dụ: chỉ tên file), nên chuyển sang đường dẫn tuyệt đối
-                string fileName = cellValue.ToString();
-                string pathAnh = Path.Combine(Application.StartupPath, "Images", fileName);
-
-                if (File.Exists(pathAnh))
-                {
-                    try
-                    {
-                        using (FileStream fs = new FileStream(pathAnh, FileMode.Open, FileAccess.Read))
-                        {
-                            picAnh.Image = Image.FromStream(fs);
-                        }
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show($"Lỗi tải ảnh: {ex.Message}");
-                        picAnh.Image = null;
-                    }
-                }
-                else
-                {
-                    picAnh.Image = null;
-                }
-            }
-            else
-            {
-                picAnh.Image = null;
-            }
-        }
-
-        private void picAnh_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btn_Click(object sender, EventArgs e)
-        {
-            ResetValue();
-            btnThem.Enabled = true;
-            btnXoa.Enabled = true;
-            txtMa.Enabled = false;
-            btnSua.Enabled = true;
         }
     }
 }

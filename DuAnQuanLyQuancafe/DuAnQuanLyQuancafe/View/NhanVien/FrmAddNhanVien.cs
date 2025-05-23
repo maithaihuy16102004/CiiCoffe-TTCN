@@ -11,12 +11,15 @@ namespace DuAnQuanLyQuancafe.View.NhanVien
 {
     public partial class FrmAddNhanVien : Form
     {
+        private readonly NhanVienController _nhanVienController;
         private byte[] anhDuocChon; // Biến lưu trữ ảnh dưới dạng byte[]
 
         public FrmAddNhanVien()
         {
             InitializeComponent();
-               
+            _nhanVienController = new NhanVienController();
+
+
         }
         private void FrmAddNhanVien_Load(object sender, EventArgs e)
         {
@@ -82,7 +85,7 @@ namespace DuAnQuanLyQuancafe.View.NhanVien
             }
 
             // Tạo danh sách tham số
-            string maNV = NhanVienController.GetNextMaNhanVien(); // Gọi hàm sinh mã mới
+            string maNV = _nhanVienController.GetNextMaNhanVien(); // Gọi hàm sinh mã mới
             Hashtable parameter = new Hashtable
             {
                 { "MaNV", maNV }, // THÊM DÒNG NÀY!
@@ -96,9 +99,10 @@ namespace DuAnQuanLyQuancafe.View.NhanVien
             };
 
             // Gọi hàm thêm nhân viên từ Controller
-            NhanVienController.ThemNhanVien(parameter);
+            _nhanVienController.ThemNhanVien(parameter);
             MessageBox.Show("Thêm nhân viên thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            this.Close(); // Đóng form sau khi thêm nhân viên thành công
+            this.Hide(); // Đóng form sau khi thêm nhân viên thành công
+           
         }
 
         private void btnThoat_Click(object sender, EventArgs e)

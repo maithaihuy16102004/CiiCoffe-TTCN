@@ -62,6 +62,7 @@
     <Reference Include="System.Management" />
     <Reference Include="System.Numerics" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -85,6 +86,7 @@
     <Compile Include="Controller\QueController.cs" />
     <Compile Include="Controller\SanPhamController.cs" />
     <Compile Include="Controller\TaiKhoanController.cs" />
+    <Compile Include="Controller\ThongKeController.cs" />
     <Compile Include="FaceDetection.cs" />
     <Compile Include="FormLogin.cs">
       <SubType>Form</SubType>
@@ -111,6 +113,7 @@
     <Compile Include="Model\QueModel.cs" />
     <Compile Include="Model\SanPhamModel.cs" />
     <Compile Include="Model\TaiKhoanModel.cs" />
+    <Compile Include="Model\ThongKeModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="View\FrmAcc.cs">
@@ -136,6 +139,12 @@
     </Compile>
     <Compile Include="View\FrmHDB.Designer.cs">
       <DependentUpon>FrmHDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FrmThongKe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmThongKe.Designer.cs">
+      <DependentUpon>FrmThongKe.cs</DependentUpon>
     </Compile>
     <Compile Include="View\QuanLyHoaDonNhap\FrmAddHDN.cs">
       <SubType>Form</SubType>
@@ -208,6 +217,9 @@
     </Compile>
     <EmbeddedResource Include="View\FrmCapCao.resx">
       <DependentUpon>FrmCapCao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmThongKe.resx">
+      <DependentUpon>FrmThongKe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\NhaCungCap\FrmAddNCC.resx">
       <DependentUpon>FrmAddNCC.cs</DependentUpon>

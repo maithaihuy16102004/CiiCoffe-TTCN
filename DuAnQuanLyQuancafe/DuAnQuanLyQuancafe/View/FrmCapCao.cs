@@ -117,5 +117,15 @@ namespace DuAnQuanLyQuancafe.View
             FrmLogin frmLogin = new FrmLogin();
             frmLogin.Show();
         }
+
+        private void btnThongke_Click(object sender, EventArgs e)
+        {
+            lbTitle.Text = "Thống kê";
+            FrmThongKe frmThongKe = new FrmThongKe() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            frmThongKe.FormBorderStyle = FormBorderStyle.None;
+            this.PnlHome.Controls.Clear();
+            this.PnlHome.Controls.Add(frmThongKe);
+            frmThongKe.Show();
+        }
     }
 }

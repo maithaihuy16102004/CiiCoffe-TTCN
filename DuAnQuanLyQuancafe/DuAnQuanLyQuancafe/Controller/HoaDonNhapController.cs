@@ -1,144 +1,58 @@
-﻿using DuAnQuanLyQuancafe.function;
+﻿using DuAnQuanLyQuancafe.Model;
 using System;
-using System.Collections.Generic;
-using System.Data.SqlClient;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DuAnQuanLyQuancafe.Model;
 using System.Collections;
+using System.Collections.Generic;
 
 namespace DuAnQuanLyQuancafe.Controller
 {
     internal class HoaDonNhapController
     {
-        public static string GetNextHoaDonNhap()
-        {
-            string MaHDN = "";
-            using (SqlConnection conn = DatabaseHelper.GetConnection())
-            {
-                if (conn.State == ConnectionState.Closed)
-                    conn.Open();
+        private readonly HoaDonNhapModel _hoaDonNhapModel = new HoaDonNhapModel();
 
-                SqlCommand cmd = new SqlCommand("SELECT dbo.GenerateMaHDN()", conn);
-                MaHDN = cmd.ExecuteScalar().ToString();
-            }
-            return MaHDN;
+        /// <summary>
+        /// Lấy mã hóa đơn nhập tiếp theo
+        /// </summary>
+        /// <returns>Mã hóa đơn nhập mới</returns>
+        public string GetNextHoaDonNhap()
+        {
+            return HoaDonNhapModel.GetNextHoaDonNhap();
         }
+
+        /// <summary>
+        /// Lấy danh sách tất cả các hóa đơn nhập
+        /// </summary>
+        /// <returns>Danh sách các hóa đơn nhập</returns>
         public List<HoaDonNhapModel> LayDanhSachHDN()
         {
-            List<HoaDonNhapModel> Hdn = new List<HoaDonNhapModel>();
-            using (SqlConnection conn = DatabaseHelper.GetConnection())
-            {
-                try
-                {
-                    if (conn.State == ConnectionState.Closed)
-                    {
-                        conn.Open();
-                    }
-                    string query = "SELECT * FROM HoaDonNhap";
-                    SqlCommand cmd = new SqlCommand(query, conn);
-                    using (SqlDataReader reader = cmd.ExecuteReader())
-                    {
-                        while (reader.Read())
-                        {
-                            Hdn.Add(new HoaDonNhapModel
-                            {
-                                MaHDN = reader["MaHDN"].ToString(),
-                                NgayNhap = reader["NgayNhap"] == DBNull.Value ? DateTime.MinValue : Convert.ToDateTime(reader["NgayNhap"]),
-                                MaNV = reader["MaNV"].ToString(),
-                                MaNCC = reader["MaNCC"].ToString(),
-                                TongTien = reader["TongTien"].ToString()
-                            });
-                        }
-                    }
-                }
-                catch (SqlException ex)
-                {
-                    throw new Exception("Lỗi khi kết nối đến cơ sở dữ liệu: " + ex.Message);
-                }
-                finally
-                {
-                    if (conn.State == ConnectionState.Open)
-                    {
-                        conn.Close();
-                    }
-                }
-            }
-            return Hdn;
+            return _hoaDonNhapModel.LayDanhSachHDN();
         }
-        public static void themHDN(Hashtable parameter)
-        {
-            using (SqlConnection conn = DatabaseHelper.GetConnection())
-            {
-                try
-                {
-                    if (conn.State == ConnectionState.Closed)
-                    {
-                        conn.Open();
-                    }
-                    string query = "INSERT INTO HoaDonNhap (MaHDN, NgayNhap, MaNV, MaNCC, TongTien) VALUES (@MaHDN, @NgayNhap, @MaNV, @MaNCC, @TongTien)";
-                    using (SqlCommand cmd = new SqlCommand(query, conn))
-                    {
-                        cmd.Parameters.AddWithValue("@MaHDN", parameter["MaHDN"]);
-                        cmd.Parameters.AddWithValue("@NgayNhap", parameter["NgayNhap"]);
-                        cmd.Parameters.AddWithValue("@MaNV", parameter["MaNV"]);
-                        cmd.Parameters.AddWithValue("@MaNCC", parameter["MaNCC"]);
-                        cmd.Parameters.AddWithValue("@TongTien", parameter["TongTien"]);
-                        cmd.ExecuteNonQuery();
-                    }
-                }
-                catch (SqlException ex)
-                {
-                    throw new Exception("Lỗi khi kết nối đến cơ sở dữ liệu: " + ex.Message);
-                }
-                finally
-                {
-                    if (conn.State == ConnectionState.Open)
-                    {
-                        conn.Close();
-                    }
-                }
-            }
-        }
-        public void XoaHDN(string MaHDN)
-        {
-            using (SqlConnection conn = DatabaseHelper.GetConnection())
-            {
-                try
-                {
-                    if(conn.State == ConnectionState.Closed)
-                    {
-                        conn.Open();
-                    }
-                    string query = "DELETE FROM HoaDonNhap WHERE MaHDN = @MaHDN";
-                    using (SqlCommand cmd = new SqlCommand(query, conn))
-                    {
-                        cmd.Parameters.AddWithValue("@MaHDN", MaHDN);
-                        cmd.ExecuteNonQuery();
-                    }
-                }
-                catch (SqlException ex)
-                {
-                    throw new Exception("Lỗi khi kết nối đến cơ sở dữ liệu: " + ex.Message);
-                }
-                finally
-                {
-                    if (conn.State == ConnectionState.Open)
-                    {
-                        conn.Close();
-                    }
 
-                }
-            }
+        /// <summary>
+        /// Thêm một hóa đơn nhập mới
+        /// </summary>
+        /// <param name="parameter">Hashtable chứa các tham số (MaHDN, NgayNhap, MaNV, MaNCC, TongTien)</param>
+        public void ThemHDN(Hashtable parameter)
+        {
+            HoaDonNhapModel.ThemHDN(parameter);
         }
+
+        /// <summary>
+        /// Xóa một hóa đơn nhập dựa trên mã hóa đơn
+        /// </summary>
+        /// <param name="maHDN">Mã hóa đơn cần xóa</param>
+        public void XoaHDN(string maHDN)
+        {
+            _hoaDonNhapModel.XoaHDN(maHDN);
+        }
+
+        /// <summary>
+        /// Tìm kiếm hóa đơn nhập dựa trên từ khóa
+        /// </summary>
+        /// <param name="tuKhoa">Từ khóa tìm kiếm (trong mã hóa đơn)</param>
+        /// <returns>Danh sách hóa đơn nhập khớp với từ khóa</returns>
         public List<HoaDonNhapModel> TimKiemHDN(string tuKhoa)
         {
-            List<HoaDonNhapModel> danhSachHDN = LayDanhSachHDN();
-            return danhSachHDN
-                .Where(hdn => hdn.MaHDN.ToLower().Contains(tuKhoa.ToLower()))
-                .ToList();
+            return _hoaDonNhapModel.TimKiemHDN(tuKhoa);
         }
     }
 }
