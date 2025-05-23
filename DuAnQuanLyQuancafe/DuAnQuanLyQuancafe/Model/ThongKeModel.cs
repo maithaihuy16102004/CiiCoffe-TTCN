@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DuAnQuanLyQuancafe.function;
+
 namespace DuAnQuanLyQuancafe.Model
 {
     public struct RevenueByDate
@@ -15,6 +16,7 @@ namespace DuAnQuanLyQuancafe.Model
         public string Date { get; set; }
         public decimal TotalAmount { get; set; }
     }
+
     public class ThongKeModel
     {
         private DateTime startDate;
@@ -34,44 +36,48 @@ namespace DuAnQuanLyQuancafe.Model
 
         public ThongKeModel()
         {
-
+            TopProductList = new List<KeyValuePair<string, int>>();
+            UnderstockList = new List<KeyValuePair<string, int>>();
+            GrossRevenueList = new List<RevenueByDate>();
         }
 
-        //private methods
+        // Private methods
         private void GetNumberItems()
         {
             using (SqlConnection conn = DatabaseHelper.GetConnection())
             {
                 try
                 {
-                    //Get total number of customers
+                    // Get total number of customers
                     string query = "SELECT COUNT(*) FROM KhachHang";
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
                         NumCustomers = (int)cmd.ExecuteScalar();
                     }
-                    //Get total number of suppliers
+
+                    // Get total number of suppliers
                     query = "SELECT COUNT(*) FROM NhaCungCap";
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
                         NumSuppliers = (int)cmd.ExecuteScalar();
                     }
-                    //Get total number of products
+
+                    // Get total number of products
                     query = "SELECT COUNT(*) FROM SanPham";
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
                         NumProducts = (int)cmd.ExecuteScalar();
                     }
-                    //Get total number of orders
+
+                    // Get total number of orders
                     query = "SELECT COUNT(*) FROM HoaDonBan " +
-                            "WHERE NgayBan BETWEEN @fromDate and @toDate";
+                            "WHERE NgayBan BETWEEN @fromDate AND @toDate";
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
-                        cmd.Parameters.AddWithValue("@fromDate", System.Data.SqlDbType.DateTime).Value = startDate;
-                        cmd.Parameters.AddWithValue("@toDate", System.Data.SqlDbType.DateTime).Value = endDate;
+                        cmd.Parameters.AddWithValue("@fromDate", startDate);
+                        cmd.Parameters.AddWithValue("@toDate", endDate);
                         NumOrders = (int)cmd.ExecuteScalar();
                     }
-
                 }
                 catch (SqlException ex)
                 {
@@ -79,25 +85,28 @@ namespace DuAnQuanLyQuancafe.Model
                 }
                 finally
                 {
-                    DatabaseHelper.CloseConnection(conn); // Ensure connection is closed
+                    DatabaseHelper.CloseConnection(conn);
                 }
             }
         }
-        private void GetOrderAnalisys()
+
+        private void GetOrderAnalysis()
         {
             using (SqlConnection conn = DatabaseHelper.GetConnection())
             {
                 GrossRevenueList = new List<RevenueByDate>();
                 TotalProfit = 0;
                 TotalRevenue = 0;
+                TotalCost = 0;
                 try
                 {
-                    string query = "SELECT TongTien FROM HoaDonNHap"
-                                      + " WHERE NgayNhap BETWEEN @fromDate and @toDate";
+                    // Calculate total cost from HoaDonNhap
+                    string query = "SELECT TongTien FROM HoaDonNhap " +
+                                   "WHERE NgayNhap BETWEEN @fromDate AND @toDate";
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
-                        cmd.Parameters.AddWithValue("@fromDate", System.Data.SqlDbType.DateTime).Value = startDate;
-                        cmd.Parameters.AddWithValue("@toDate", System.Data.SqlDbType.DateTime).Value = endDate;
+                        cmd.Parameters.AddWithValue("@fromDate", startDate);
+                        cmd.Parameters.AddWithValue("@toDate", endDate);
                         using (var reader = cmd.ExecuteReader())
                         {
                             while (reader.Read())
@@ -106,13 +115,15 @@ namespace DuAnQuanLyQuancafe.Model
                             }
                         }
                     }
+
+                    // Calculate revenue and group by date
                     query = "SELECT NgayBan, SUM(TongTien) FROM HoaDonBan " +
-                                   "WHERE NgayBan BETWEEN @fromDate and @toDate " +
-                                   "GROUP BY NgayBan";
+                            "WHERE NgayBan BETWEEN @fromDate AND @toDate " +
+                            "GROUP BY NgayBan";
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
-                        cmd.Parameters.AddWithValue("@fromDate", System.Data.SqlDbType.DateTime).Value = startDate;
-                        cmd.Parameters.AddWithValue("@toDate", System.Data.SqlDbType.DateTime).Value = endDate;
+                        cmd.Parameters.AddWithValue("@fromDate", startDate);
+                        cmd.Parameters.AddWithValue("@toDate", endDate);
                         using (var reader = cmd.ExecuteReader())
                         {
                             var resultTable = new List<KeyValuePair<DateTime, decimal>>();
@@ -123,7 +134,8 @@ namespace DuAnQuanLyQuancafe.Model
                             }
                             TotalProfit = TotalRevenue - TotalCost;
                             reader.Close();
-                            //Group by days
+
+                            // Group by days
                             if (numberDays <= 30)
                             {
                                 foreach (var item in resultTable)
@@ -135,7 +147,7 @@ namespace DuAnQuanLyQuancafe.Model
                                     });
                                 }
                             }
-                            //Group by weeks
+                            // Group by weeks
                             else if (numberDays <= 92)
                             {
                                 GrossRevenueList = (from orderList in resultTable
@@ -147,7 +159,7 @@ namespace DuAnQuanLyQuancafe.Model
                                                         TotalAmount = order.Sum(amount => amount.Value)
                                                     }).ToList();
                             }
-                            //Group by months
+                            // Group by months
                             else if (numberDays <= 365 * 2)
                             {
                                 bool isYear = numberDays <= 365;
@@ -160,7 +172,7 @@ namespace DuAnQuanLyQuancafe.Model
                                                         TotalAmount = order.Sum(amount => amount.Value)
                                                     }).ToList();
                             }
-                            //Group by years
+                            // Group by years
                             else if (numberDays > 365 * 2)
                             {
                                 GrossRevenueList = (from orderList in resultTable
@@ -181,11 +193,12 @@ namespace DuAnQuanLyQuancafe.Model
                 }
                 finally
                 {
-                    DatabaseHelper.CloseConnection(conn); // Ensure connection is closed
+                    DatabaseHelper.CloseConnection(conn);
                 }
             }
         }
-        private void GetProductAnalisys()
+
+        private void GetProductAnalysis()
         {
             using (SqlConnection conn = DatabaseHelper.GetConnection())
             {
@@ -210,7 +223,6 @@ namespace DuAnQuanLyQuancafe.Model
                                 if (!reader.IsDBNull(0) && !reader.IsDBNull(1))
                                 {
                                     TopProductList.Add(new KeyValuePair<string, int>(reader[0].ToString(), Convert.ToInt32(reader[1])));
-                                    Console.WriteLine($"TenSP: {reader[0]}, SoLuong: {reader[1]}");
                                 }
                             }
                         }
@@ -227,7 +239,6 @@ namespace DuAnQuanLyQuancafe.Model
                                 if (!reader.IsDBNull(0) && !reader.IsDBNull(1))
                                 {
                                     UnderstockList.Add(new KeyValuePair<string, int>(reader[0].ToString(), Convert.ToInt32(reader[1])));
-                                    Console.WriteLine($"Understock - TenSP: {reader[0]}, SoLuong: {reader[1]}");
                                 }
                             }
                         }
@@ -244,7 +255,7 @@ namespace DuAnQuanLyQuancafe.Model
             }
         }
 
-        //public methods
+        // Public methods
         public bool LoadData(DateTime startDate, DateTime endDate)
         {
             endDate = new DateTime(endDate.Year, endDate.Month, endDate.Day, endDate.Hour, endDate.Minute, 59);
@@ -254,8 +265,8 @@ namespace DuAnQuanLyQuancafe.Model
                 this.endDate = endDate;
                 this.numberDays = (endDate - startDate).Days + 1;
                 GetNumberItems();
-                GetOrderAnalisys();
-                GetProductAnalisys();
+                GetOrderAnalysis();
+                GetProductAnalysis();
                 return true;
             }
             else
