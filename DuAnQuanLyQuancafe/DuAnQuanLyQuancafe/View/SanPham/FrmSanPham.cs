@@ -52,6 +52,8 @@ namespace DuAnQuanLyQuancafe.View
                 dgvSanPham.Columns["GiaBan"].HeaderText = "Giá Bán";
                 dgvSanPham.Columns["SoLuong"].HeaderText = "Số Lượng";
                 dgvSanPham.Columns["TenCongDung"].HeaderText = "Công Dụng";
+                dgvSanPham.Columns["GiaNhap"].DefaultCellStyle.Format = "N0";
+                dgvSanPham.Columns["GiaBan"].DefaultCellStyle.Format = "N0";
                 // Ẩn các cột không cần thiết
                 dgvSanPham.Columns["MaLoai"].Visible = false;
                 dgvSanPham.Columns["MaCongDung"].Visible = false;

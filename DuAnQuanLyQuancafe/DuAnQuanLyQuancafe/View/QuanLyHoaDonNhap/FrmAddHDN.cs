@@ -20,9 +20,10 @@ namespace DuAnQuanLyQuancafe.View.QuanLyHoaDonNhap
         public FrmAddHDN()
         {
             InitializeComponent();
+            FrmAddHDN_Load();
         }
 
-        private void FrmAddHDN_Load(object sender, EventArgs e)
+        private void FrmAddHDN_Load()
         {
             var controllerNhanVien = new NhanVienController();
             List<NhanVienModel> danhSachNV = controllerNhanVien.LayDanhSachNhanVien();
@@ -60,6 +61,17 @@ namespace DuAnQuanLyQuancafe.View.QuanLyHoaDonNhap
                     MessageBox.Show("Tổng tiền không hợp lệ. Vui lòng nhập số dương.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
+                // Kiểm tra ngày nhập không được lớn hơn ngày hiện tại
+                if (ngayNhap.Date > DateTime.Now.Date)
+                {
+                    MessageBox.Show($"Ngày nhập {ngayNhap.Date} lớn hơn ngày hiện tại {DateTime.Now.Date}.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                else
+                {
+                    MessageBox.Show($"Ngày nhập {ngayNhap.Date} hợp lệ (<= {DateTime.Now.Date}).", "Debug", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
 
                 // Tạo danh sách tham số
                 string maHDN = _hdnController.GetNextHoaDonNhap(); // Gọi qua instance
@@ -69,12 +81,13 @@ namespace DuAnQuanLyQuancafe.View.QuanLyHoaDonNhap
                     { "NgayNhap", ngayNhap },
                     { "MaNV", maNV },
                     { "MaNCC", maNCC },
-                    { "TongTien", tongTien } // Sử dụng decimal thay vì string
+                    { "TongTien", tongTien }
                 };
 
                 // Gọi hàm thêm hóa đơn nhập
                 _hdnController.ThemHDN(parameter);
                 MessageBox.Show("Thêm hóa đơn nhập thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                FrmAddHDN_Load(); // Làm mới danh sách sau khi thêm
                 this.Close();
             }
             catch (Exception ex)

@@ -23,7 +23,6 @@ namespace DuAnQuanLyQuancafe.Model
         private DateTime endDate;
         public int numberDays;
 
-        public int NumCustomers { get; private set; }
         public int NumSuppliers { get; private set; }
         public int NumProducts { get; private set; }
         public List<KeyValuePair<string, int>> TopProductList { get; private set; }
@@ -48,15 +47,8 @@ namespace DuAnQuanLyQuancafe.Model
             {
                 try
                 {
-                    // Get total number of customers
-                    string query = "SELECT COUNT(*) FROM KhachHang";
-                    using (SqlCommand cmd = new SqlCommand(query, conn))
-                    {
-                        NumCustomers = (int)cmd.ExecuteScalar();
-                    }
-
                     // Get total number of suppliers
-                    query = "SELECT COUNT(*) FROM NhaCungCap";
+                    string query = "SELECT COUNT(*) FROM NhaCungCap";
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
                         NumSuppliers = (int)cmd.ExecuteScalar();
@@ -85,7 +77,7 @@ namespace DuAnQuanLyQuancafe.Model
                 }
                 finally
                 {
-                    DatabaseHelper.CloseConnection(conn);
+                    //DatabaseHelper.CloseConnection(conn);
                 }
             }
         }
@@ -193,7 +185,7 @@ namespace DuAnQuanLyQuancafe.Model
                 }
                 finally
                 {
-                    DatabaseHelper.CloseConnection(conn);
+                    //DatabaseHelper.CloseConnection(conn);
                 }
             }
         }
@@ -250,7 +242,7 @@ namespace DuAnQuanLyQuancafe.Model
                 }
                 finally
                 {
-                    DatabaseHelper.CloseConnection(conn);
+                    //DatabaseHelper.CloseConnection(conn);
                 }
             }
         }

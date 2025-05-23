@@ -233,7 +233,7 @@
             this.Name = "FrmAddHDN";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmAddHDN";
-            this.Load += new System.EventHandler(this.FrmAddHDN_Load);
+            //this.Load += new System.EventHandler(this.FrmAddHDN_Load);
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();

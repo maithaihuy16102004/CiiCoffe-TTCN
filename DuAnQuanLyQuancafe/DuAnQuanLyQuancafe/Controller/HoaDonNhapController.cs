@@ -9,28 +9,19 @@ namespace DuAnQuanLyQuancafe.Controller
     {
         private readonly HoaDonNhapModel _hoaDonNhapModel = new HoaDonNhapModel();
 
-        /// <summary>
-        /// Lấy mã hóa đơn nhập tiếp theo
-        /// </summary>
-        /// <returns>Mã hóa đơn nhập mới</returns>
+       
         public string GetNextHoaDonNhap()
         {
             return HoaDonNhapModel.GetNextHoaDonNhap();
         }
 
-        /// <summary>
-        /// Lấy danh sách tất cả các hóa đơn nhập
-        /// </summary>
-        /// <returns>Danh sách các hóa đơn nhập</returns>
+       
         public List<HoaDonNhapModel> LayDanhSachHDN()
         {
             return _hoaDonNhapModel.LayDanhSachHDN();
         }
 
-        /// <summary>
-        /// Thêm một hóa đơn nhập mới
-        /// </summary>
-        /// <param name="parameter">Hashtable chứa các tham số (MaHDN, NgayNhap, MaNV, MaNCC, TongTien)</param>
+       
         public void ThemHDN(Hashtable parameter)
         {
             HoaDonNhapModel.ThemHDN(parameter);
@@ -43,6 +34,10 @@ namespace DuAnQuanLyQuancafe.Controller
         public void XoaHDN(string maHDN)
         {
             _hoaDonNhapModel.XoaHDN(maHDN);
+        }
+        public void CapNhatHDN(Hashtable parameter)
+        {
+            HoaDonNhapModel.CapNhatHDN(parameter);
         }
 
         /// <summary>

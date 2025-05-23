@@ -73,8 +73,9 @@ namespace DuAnQuanLyQuancafe.View
 
         private void btnAcc_Click(object sender, EventArgs e)
         {
+            string maNV = nhanvien.MaNV;
             lbTitle.Text = "Quản lý tài khoản";
-            FrmAcc frmTaiKhoan = new FrmAcc() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            FrmAcc frmTaiKhoan = new FrmAcc(maNV) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             frmTaiKhoan.FormBorderStyle = FormBorderStyle.None;
             this.PnlHome.Controls.Clear();
             this.PnlHome.Controls.Add(frmTaiKhoan);
