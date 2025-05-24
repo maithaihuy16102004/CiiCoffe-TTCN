@@ -119,10 +119,10 @@
     <Compile Include="RoundedTextBox.Designer.cs">
       <DependentUpon>RoundedTextBox.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\FrmAcc.cs">
+    <Compile Include="View\PhanQuyen\FrmAcc.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\FrmAcc.Designer.cs">
+    <Compile Include="View\PhanQuyen\FrmAcc.Designer.cs">
       <DependentUpon>FrmAcc.cs</DependentUpon>
     </Compile>
     <Compile Include="View\FrmCapCao.cs">
@@ -137,23 +137,17 @@
     <Compile Include="View\FrmCapThap.Designer.cs">
       <DependentUpon>FrmCapThap.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\FrmHDB.cs">
+    <Compile Include="View\HoaDonBan\FrmHDB.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\FrmHDB.Designer.cs">
+    <Compile Include="View\HoaDonBan\FrmHDB.Designer.cs">
       <DependentUpon>FrmHDB.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\FrmThongKe.cs">
+    <Compile Include="View\ThongKe\FrmThongKe.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\FrmThongKe.Designer.cs">
+    <Compile Include="View\ThongKe\FrmThongKe.Designer.cs">
       <DependentUpon>FrmThongKe.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\PhanQuyen.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\PhanQuyen.Designer.cs">
-      <DependentUpon>PhanQuyen.cs</DependentUpon>
     </Compile>
     <Compile Include="View\QuanLyHoaDonNhap\FrmAddHDN.cs">
       <SubType>Form</SubType>
@@ -225,7 +219,10 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="View\FrmAcc.resx">
+    <EmbeddedResource Include="View\HoaDonBan\FrmHDB.resx">
+      <DependentUpon>FrmHDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\PhanQuyen\FrmAcc.resx">
       <DependentUpon>FrmAcc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RoundedTextBox.resx">
@@ -236,12 +233,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\FrmCapThap.resx">
       <DependentUpon>FrmCapThap.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\FrmHDB.resx">
-      <DependentUpon>FrmHDB.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\FrmThongKe.resx">
-      <DependentUpon>FrmThongKe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\NhaCungCap\FrmAddNCC.resx">
       <DependentUpon>FrmAddNCC.cs</DependentUpon>
@@ -269,6 +260,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\SanPham\FrmSanPham.resx">
       <DependentUpon>FrmSanPham.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ThongKe\FrmThongKe.resx">
+      <DependentUpon>FrmThongKe.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -378,6 +372,8 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <None Include="Resources\2993694_brand_brands_excel_logo_logos_icon.png" />
+    <None Include="Resources\backthongke.jpg" />
+    <None Include="Resources\abstract-1920x1080-gradient-gradient-desktop-wallpaper-preview %281%29.jpg" />
     <None Include="Resources\39263_print_printer_icon.png" />
     <None Include="Resources\9110796_x_icon1.png" />
     <None Include="Resources\9110796_x_icon.png" />
@@ -386,5 +382,6 @@
     <None Include="Resources\5.3.jpg" />
     <None Include="Resources\5402443_search_find_magnifier_magnifying_magnifying glass_icon.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

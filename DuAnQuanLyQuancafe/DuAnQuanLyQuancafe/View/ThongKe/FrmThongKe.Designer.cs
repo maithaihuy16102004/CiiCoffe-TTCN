@@ -212,7 +212,7 @@
             this.btnOK.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnOK.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnOK.ForeColor = System.Drawing.Color.White;
-            this.btnOK.Location = new System.Drawing.Point(347, 12);
+            this.btnOK.Location = new System.Drawing.Point(358, 12);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(56, 34);
             this.btnOK.TabIndex = 11;
@@ -587,6 +587,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            //this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1037, 696);
             this.Controls.Add(this.guna2Panel5);
             this.Controls.Add(this.guna2Panel4);

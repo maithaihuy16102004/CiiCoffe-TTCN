@@ -3693,11 +3693,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\KHANH\\Source\\Repos\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe.csproj",
+      "projectUniqueName": "C:\\Users\\KHANH\\source\\repos\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe.csproj",
       "projectName": "DuAnQuanLyQuancafe",
-      "projectPath": "C:\\Users\\KHANH\\Source\\Repos\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe.csproj",
+      "projectPath": "C:\\Users\\KHANH\\source\\repos\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe.csproj",
       "packagesPath": "C:\\Users\\KHANH\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\KHANH\\Source\\Repos\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\obj\\",
+      "outputPath": "C:\\Users\\KHANH\\source\\repos\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "UsingMicrosoftNETSdk": false,

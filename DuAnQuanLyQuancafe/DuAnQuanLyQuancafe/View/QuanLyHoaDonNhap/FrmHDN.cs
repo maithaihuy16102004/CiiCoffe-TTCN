@@ -64,8 +64,68 @@ namespace DuAnQuanLyQuancafe.View
             dgv.Columns["TongTien"].DefaultCellStyle.Format = "N0";
             dgv.Columns["MaNCC"].Visible = false;
             dgv.Columns["MaNV"].Visible = false;
-            dgv.Columns["MaHDN"].Width = 150;
-            dgv.Columns["NgayNhap"].Width = 150;
+            dgv.Columns["MaHDN"].HeaderText = "Mã Hóa Đơn Nhập";
+            dgv.Columns["NgayNhap"].HeaderText = "Ngày Nhập";
+            dgv.Columns["TenNV"].HeaderText = "Tên Nhân Viên";
+            dgv.Columns["TenNCC"].HeaderText = "Tên Nhà Cung Cấp";
+            dgv.Columns["TongTien"].HeaderText = "Tổng Tiền";
+
+            // Ẩn các cột không cần thiết
+            dgv.Columns["MaNCC"].Visible = false;
+            dgv.Columns["MaNV"].Visible = false;
+
+            // Định dạng dữ liệu
+            dgv.Columns["TongTien"].DefaultCellStyle.Format = "N0"; // Định dạng số tiền với dấu phân cách hàng nghìn
+            dgv.Columns["NgayNhap"].DefaultCellStyle.Format = "dd/MM/yyyy"; // Định dạng ngày tháng
+
+            // Điều chỉnh chiều rộng cột
+            dgv.Columns["MaHDN"].Width = 120;
+            dgv.Columns["NgayNhap"].Width = 100;
+            dgv.Columns["TenNV"].Width = 150;
+            dgv.Columns["TenNCC"].Width = 200;
+            dgv.Columns["TongTien"].Width = 120;
+
+            // Căn chỉnh nội dung cột
+            dgv.Columns["MaHDN"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgv.Columns["NgayNhap"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgv.Columns["TenNV"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dgv.Columns["TenNCC"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dgv.Columns["TongTien"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+
+            // Tùy chỉnh giao diện tiêu đề cột
+            dgv.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(44, 62, 80); // Màu xanh đậm
+            dgv.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dgv.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold);
+            dgv.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgv.EnableHeadersVisualStyles = false;
+
+            // Tùy chỉnh giao diện hàng
+            dgv.DefaultCellStyle.BackColor = Color.White;
+            dgv.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(240, 248, 255); // Màu xanh nhạt xen kẽ
+            dgv.DefaultCellStyle.Font = new Font("Segoe UI", 9);
+            dgv.DefaultCellStyle.SelectionBackColor = Color.FromArgb(52, 152, 219); // Màu xanh dương khi chọn
+            dgv.DefaultCellStyle.SelectionForeColor = Color.White;
+
+            // Điều chỉnh chiều cao hàng
+            dgv.RowTemplate.Height = 35;
+
+            // Tùy chỉnh viền và lưới
+            dgv.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dgv.GridColor = Color.FromArgb(200, 200, 200);
+
+            // Tắt các tính năng không cần thiết
+            dgv.ReadOnly = true; // Không cho phép chỉnh sửa
+            dgv.RowHeadersVisible = false; // Ẩn cột chọn hàng
+            dgv.AllowUserToResizeColumns = false; // Không cho phép thay đổi kích thước cột
+            dgv.AllowUserToResizeRows = false; // Không cho phép thay đổi kích thước hàng
+
+            // Đảm bảo DataGridView không có viền thừa
+            dgv.BorderStyle = BorderStyle.None;
+            dgv.BackgroundColor = Color.White;
+            dgv.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            dgv.ColumnHeadersHeight = 45;
+            dgv.RowTemplate.Height = 45;
+
         }
 
         private void btnThem_Click_1(object sender, EventArgs e)

@@ -13,16 +13,14 @@ namespace DuAnQuanLyQuancafe
 
         public FrmLogin()
         {
+            
             InitializeComponent();
             _taiKhoanController = new TaiKhoanController();
         }
 
         private void guna2ControlBox1_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Bạn có muốn thoát chương trình không?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
-            {
-                Application.Exit();
-            }
+            Application.Exit();
         }
 
         private void btnDangnhap_Click(object sender, EventArgs e)
@@ -92,5 +90,7 @@ namespace DuAnQuanLyQuancafe
                 digThatbai.Show(errorMessage, "Thông báo");
             }
         }
+
+        
     }
 }

@@ -5,7 +5,7 @@ using System.Windows.Forms;
 
 namespace DuAnQuanLyQuancafe.function
 {
-    internal class DatabaseHelper
+    internal class DatabaseHelper   
     {
         private static readonly string connectionString = "Data Source=DESKTOP-LBR1P0N\\KHANH;Initial Catalog=QuanLyQuanCafe2;Integrated Security=True;Encrypt=False";
         // Xóa biến tĩnh connection để tránh xung đột

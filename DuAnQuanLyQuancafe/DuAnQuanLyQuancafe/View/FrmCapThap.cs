@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Drawing.Printing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -34,6 +35,7 @@ namespace DuAnQuanLyQuancafe.View
             guna2Button2.Click += (s, e) => ChuyenHoaDon(2);
             printDocument.PrintPage += PrintDocument_PrintPage;
             roundedTextBox1.TextChanged += RoundedTextBox1_TextChanged;
+            dgvSanPhamm.ReadOnly = true;
         }
         private void guna2Panel1_Paint(object sender, PaintEventArgs e)
         {
@@ -80,6 +82,7 @@ namespace DuAnQuanLyQuancafe.View
                 SanPhamController sanPhamController = new SanPhamController();
                 List<SanPhamModel> dsSanPham = sanPhamController.LayDanhSachSanPham();
                 dgvSanPhamm.DataSource = dsSanPham;
+                dsSanPhamFull = dsSanPham;
                 dgvSanPhamm.Columns["MaSP"].HeaderText = "Mã Sản Phẩm";
                 dgvSanPhamm.Columns["TenSP"].HeaderText = "Tên Sản Phẩm";
                 dgvSanPhamm.Columns["TenLoai"].HeaderText = "Mã Loại"; // Hiển thị tên loại thay vì mã
@@ -416,26 +419,37 @@ namespace DuAnQuanLyQuancafe.View
         {
 
         }
-
-        private void btnPrint_Click(object sender, EventArgs e)
+        // Hàm để loại bỏ dấu tiếng Việt
+        public static string RemoveDiacritics(string text)
         {
-          
+            var normalized = text.Normalize(NormalizationForm.FormD);
+            var builder = new StringBuilder();
+            foreach (var c in normalized)
+            {
+                var unicodeCategory = CharUnicodeInfo.GetUnicodeCategory(c);
+                if (unicodeCategory != UnicodeCategory.NonSpacingMark)
+                {
+                    builder.Append(c);
+                }
+            }
+            return builder.ToString().Normalize(NormalizationForm.FormC);
         }
+
         //xu ly tim kiem
         private void RoundedTextBox1_TextChanged(object sender, EventArgs e)
         {
-            string searchText = roundedTextBox1.Texts.Trim().ToLower();
+            string searchText = RemoveDiacritics(roundedTextBox1.Texts.Trim().ToLower());
 
             if (string.IsNullOrEmpty(searchText))
             {
-                // Hiển thị tất cả sản phẩm khi ô tìm kiếm trống
                 dgvSanPhamm.DataSource = dsSanPhamFull;
             }
             else
             {
-                // Lọc danh sách sản phẩm theo tên hoặc mã sản phẩm chứa từ khóa
                 var filteredList = dsSanPhamFull
-                    .Where(sp => sp.TenSP.ToLower().Contains(searchText) || sp.MaSP.ToLower().Contains(searchText))
+                    .Where(sp =>
+                        RemoveDiacritics(sp.TenSP.ToLower()).Contains(searchText) ||
+                        RemoveDiacritics(sp.MaSP.ToLower()).Contains(searchText))
                     .ToList();
 
                 dgvSanPhamm.DataSource = filteredList;
