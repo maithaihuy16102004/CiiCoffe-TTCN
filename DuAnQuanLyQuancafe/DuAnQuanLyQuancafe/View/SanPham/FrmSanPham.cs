@@ -59,6 +59,54 @@ namespace DuAnQuanLyQuancafe.View
                 dgvSanPham.Columns["MaCongDung"].Visible = false;
                 dgvSanPham.Columns["HinhAnh"].Visible = false;
                 dgvSanPham.Columns["MaSP"].Width = 50;
+                // Điều chỉnh chiều rộng cột
+                dgvSanPham.Columns["MaSP"].Width = 80;
+                dgvSanPham.Columns["TenSP"].Width = 150;
+                dgvSanPham.Columns["TenLoai"].Width = 150;
+                dgvSanPham.Columns["GiaNhap"].Width = 150;
+                dgvSanPham.Columns["GiaBan"].Width = 120;
+                dgvSanPham.Columns["SoLuong"].Width = 80;
+                dgvSanPham.Columns["TenCongDung"].Width = 200;
+
+                // Căn chỉnh nội dung cột
+                dgvSanPham.Columns["MaSP"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                dgvSanPham.Columns["TenSP"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+                dgvSanPham.Columns["TenLoai"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+                dgvSanPham.Columns["GiaNhap"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                dgvSanPham.Columns["GiaBan"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                dgvSanPham.Columns["SoLuong"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                dgvSanPham.Columns["TenCongDung"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+
+                // Tùy chỉnh giao diện tiêu đề cột
+                dgvSanPham.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(44, 62, 80); // Màu xanh đậm
+                dgvSanPham.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+                dgvSanPham.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold);
+                dgvSanPham.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                dgvSanPham.EnableHeadersVisualStyles = false;
+
+                // Tùy chỉnh giao diện hàng
+                dgvSanPham.DefaultCellStyle.BackColor = Color.White;
+                dgvSanPham.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(240, 248, 255); // Màu xanh nhạt xen kẽ
+                dgvSanPham.DefaultCellStyle.Font = new Font("Segoe UI", 9);
+                dgvSanPham.DefaultCellStyle.SelectionBackColor = Color.FromArgb(52, 152, 219); // Màu xanh dương khi chọn
+                dgvSanPham.DefaultCellStyle.SelectionForeColor = Color.White;
+
+                // Điều chỉnh chiều cao hàng
+                dgvSanPham.RowTemplate.Height = 45;
+
+                // Tùy chỉnh viền và lưới
+                dgvSanPham.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+                dgvSanPham.GridColor = Color.FromArgb(200, 200, 200);
+
+                // Tắt các tính năng không cần thiết
+                dgvSanPham.ReadOnly = true; // Không cho phép chỉnh sửa
+                dgvSanPham.RowHeadersVisible = false; // Ẩn cột chọn hàng
+                dgvSanPham.AllowUserToResizeColumns = false; // Không cho phép thay đổi kích thước cột
+                dgvSanPham.AllowUserToResizeRows = false; // Không cho phép thay đổi kích thước hàng
+
+                // Đảm bảo DataGridView không có viền thừa
+                dgvSanPham.BorderStyle = BorderStyle.None;
+                dgvSanPham.BackgroundColor = Color.White;
             }
             catch (Exception ex)
             {

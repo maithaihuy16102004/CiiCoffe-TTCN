@@ -59,7 +59,7 @@ namespace DuAnQuanLyQuancafe.View
                 NhanVienController nhanVienController = new NhanVienController();
                 List<NhanVienModel> dsNhanVien = nhanVienController.LayDanhSachNhanVien();
                 dgvNhanVien.DataSource = dsNhanVien;
-                dgvNhanVien.Columns["MaNV"].HeaderText = "Mã Nhân Viên";
+                dgvNhanVien.Columns["MaNV"].HeaderText = "Mã NV";
                 dgvNhanVien.Columns["TenNV"].HeaderText = "Tên Nhân Viên";
                 dgvNhanVien.Columns["DiaChi"].HeaderText = "Địa Chỉ";
                 dgvNhanVien.Columns["GioiTinh"].HeaderText = "Giới Tính";
@@ -67,10 +67,58 @@ namespace DuAnQuanLyQuancafe.View
                 dgvNhanVien.Columns["SDT"].HeaderText = "Số Điện Thoại";
                 dgvNhanVien.Columns["MaQue"].HeaderText = "Mã Quê";
                 dgvNhanVien.Columns["TenQue"].HeaderText = "Quê Quán";
-               
+
                 // Ẩn các cột không cần thiết
                 dgvNhanVien.Columns["MaQue"].Visible = false;
                 //dgvNhanVien.Columns["HinhAnh"].Visible = false; // Đảm bảo tên cột đúng
+                // Điều chỉnh chiều rộng cột để hiển thị đầy đủ dữ liệu
+                dgvNhanVien.Columns["MaNV"].Width = 50;
+                dgvNhanVien.Columns["TenNV"].Width = 130;
+                dgvNhanVien.Columns["DiaChi"].Width = 150; // Tăng chiều rộng để hiển thị địa chỉ dài
+                dgvNhanVien.Columns["GioiTinh"].Width = 80;
+                dgvNhanVien.Columns["NgaySinh"].Width = 100;
+                dgvNhanVien.Columns["SDT"].Width = 100; // Tăng chiều rộng để hiển thị số điện thoại đầy đủ
+                dgvNhanVien.Columns["TenQue"].Width = 100; // Tăng chiều rộng cho Quê Quán
+
+                // Căn chỉnh nội dung cột
+                dgvNhanVien.Columns["MaNV"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                dgvNhanVien.Columns["TenNV"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+                dgvNhanVien.Columns["DiaChi"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+                dgvNhanVien.Columns["GioiTinh"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                dgvNhanVien.Columns["NgaySinh"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                dgvNhanVien.Columns["SDT"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                dgvNhanVien.Columns["TenQue"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+
+                // Tùy chỉnh giao diện tiêu đề cột
+                dgvNhanVien.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(44, 62, 80); // Màu xanh đậm
+                dgvNhanVien.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+                dgvNhanVien.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold);
+                dgvNhanVien.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                dgvNhanVien.EnableHeadersVisualStyles = false;
+
+                // Tùy chỉnh giao diện hàng
+                dgvNhanVien.DefaultCellStyle.BackColor = Color.White;
+                dgvNhanVien.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(240, 248, 255); // Màu xanh nhạt xen kẽ
+                dgvNhanVien.DefaultCellStyle.Font = new Font("Segoe UI", 9);
+                dgvNhanVien.DefaultCellStyle.SelectionBackColor = Color.FromArgb(52, 152, 219);
+                dgvNhanVien.DefaultCellStyle.SelectionForeColor = Color.White;
+
+                // Điều chỉnh chiều cao hàng
+                dgvNhanVien.RowTemplate.Height = 45;
+
+                // Tùy chỉnh viền và lưới
+                dgvNhanVien.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+                dgvNhanVien.GridColor = Color.FromArgb(200, 200, 200);
+
+                // Tắt các tính năng không cần thiết
+                dgvNhanVien.ReadOnly = true;
+                dgvNhanVien.RowHeadersVisible = false;
+                dgvNhanVien.AllowUserToResizeColumns = false;
+                dgvNhanVien.AllowUserToResizeRows = false;
+
+                // Đảm bảo DataGridView không có viền thừa
+                dgvNhanVien.BorderStyle = BorderStyle.None;
+                dgvNhanVien.BackgroundColor = Color.White;
             }
             catch (Exception ex)
             {
@@ -153,9 +201,10 @@ namespace DuAnQuanLyQuancafe.View
                     dgvNhanVien.Columns["GioiTinh"].HeaderText = "Giới Tính";
                     dgvNhanVien.Columns["NgaySinh"].HeaderText = "Ngày Sinh";
                     dgvNhanVien.Columns["SDT"].HeaderText = "Số Điện Thoại";
-                    dgvNhanVien.Columns["MaQue"].HeaderText = "Mã Quê";
-                    dgvNhanVien.Columns["TenQue"].HeaderText = "Tên Quê";
-                    dgvNhanVien.Columns["HinhAnh"].Visible = false; // Sửa tên cột
+                    dgvNhanVien.Columns["TenQue"].HeaderText = "Quê quán";
+
+
+                    dgvNhanVien.Columns["MaQue"].Visible = false;
                     dgvNhanVien.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
                 }
             }
@@ -271,17 +320,38 @@ namespace DuAnQuanLyQuancafe.View
                 return;
             }
 
+            // Kiểm tra ngày sinh không được lớn hơn ngày hiện tại
+            DateTime ngayHienTai = DateTime.Now;
+            if (ngaySinh > ngayHienTai)
+            {
+                MessageBox.Show("Ngày sinh không được lớn hơn ngày hiện tại.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Kiểm tra nhân viên đủ 18 tuổi
+            int tuoi = ngayHienTai.Year - ngaySinh.Year;
+            if (ngayHienTai.Month < ngaySinh.Month || (ngayHienTai.Month == ngaySinh.Month && ngayHienTai.Day < ngaySinh.Day))
+            {
+                tuoi--; // Giảm tuổi đi 1 nếu chưa tới ngày sinh nhật trong năm nay
+            }
+
+            if (tuoi < 18)
+            {
+                MessageBox.Show("Nhân viên phải đủ 18 tuổi để đi làm.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             Hashtable parameter = new Hashtable
-    {
-        { "MaNV", id },
-        { "TenNV", tenNV },
-        { "DiaChi", diaChi },
-        { "SDT", sdt },
-        { "GioiTinh", gioiTinh },
-        { "MaQue", maQue },
-        { "NgaySinh", ngaySinh },
-        { "HinhAnh", anhDuocChon } // Sử dụng ảnh đã chọn (nếu có)
-    };
+{
+    { "MaNV", id },
+    { "TenNV", tenNV },
+    { "DiaChi", diaChi },
+    { "SDT", sdt },
+    { "GioiTinh", gioiTinh },
+    { "MaQue", maQue },
+    { "NgaySinh", ngaySinh },
+    { "HinhAnh", anhDuocChon } // Sử dụng ảnh đã chọn (nếu có)
+};
 
             try
             {

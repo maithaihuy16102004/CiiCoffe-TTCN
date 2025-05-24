@@ -4,8 +4,10 @@ using DuAnQuanLyQuancafe.View.NhanVien;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ProgressBar;
 
 namespace DuAnQuanLyQuancafe.View.NhaCungCap
 {
@@ -39,7 +41,43 @@ namespace DuAnQuanLyQuancafe.View.NhaCungCap
                 dgvNhaCC.Columns["SDT"].HeaderText = "Số Điện Thoại";
                 dgvNhaCC.Columns["MoTa"].HeaderText = "Mô Tả";
                 // Tùy chỉnh kích thước cột nếu cần
-                dgvNhaCC.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                // Căn chỉnh nội dung cột
+                dgvNhaCC.Columns["MaNCC"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                dgvNhaCC.Columns["TenNCC"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+                dgvNhaCC.Columns["DiaChi"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+                dgvNhaCC.Columns["SDT"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                dgvNhaCC.Columns["MoTa"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+
+                // Tùy chỉnh giao diện tiêu đề cột
+                dgvNhaCC.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(44, 62, 80); // Màu xanh đậm
+                dgvNhaCC.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+                dgvNhaCC.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold);
+                dgvNhaCC.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                dgvNhaCC.EnableHeadersVisualStyles = false;
+
+                // Tùy chỉnh giao diện hàng
+                dgvNhaCC.DefaultCellStyle.BackColor = Color.White;
+                dgvNhaCC.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(240, 248, 255); // Màu xanh nhạt xen kẽ
+                dgvNhaCC.DefaultCellStyle.Font = new Font("Segoe UI", 9);
+                dgvNhaCC.DefaultCellStyle.SelectionBackColor = Color.FromArgb(52, 152, 219); // Màu xanh dương khi chọn
+                dgvNhaCC.DefaultCellStyle.SelectionForeColor = Color.White;
+
+                // Điều chỉnh chiều cao hàng
+                dgvNhaCC.RowTemplate.Height = 35;
+
+                // Tùy chỉnh viền và lưới
+                dgvNhaCC.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+                dgvNhaCC.GridColor = Color.FromArgb(200, 200, 200);
+
+                // Tắt các tính năng không cần thiết
+                dgvNhaCC.ReadOnly = true; // Không cho phép chỉnh sửa
+                dgvNhaCC.RowHeadersVisible = false; // Ẩn cột chọn hàng
+                dgvNhaCC.AllowUserToResizeColumns = false; // Không cho phép thay đổi kích thước cột
+                dgvNhaCC.AllowUserToResizeRows = false; // Không cho phép thay đổi kích thước hàng
+
+                // Đảm bảo DataGridView không có viền thừa
+                dgvNhaCC.BorderStyle = BorderStyle.None;
+                dgvNhaCC.BackgroundColor = Color.White;
             }
             catch (Exception ex)
             {

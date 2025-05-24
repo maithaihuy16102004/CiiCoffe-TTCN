@@ -129,5 +129,25 @@ namespace DuAnQuanLyQuancafe.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap abstract_1920x1080_gradient_gradient_desktop_wallpaper_preview__1_ {
+            get {
+                object obj = ResourceManager.GetObject("abstract-1920x1080-gradient-gradient-desktop-wallpaper-preview (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap backthongke {
+            get {
+                object obj = ResourceManager.GetObject("backthongke", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

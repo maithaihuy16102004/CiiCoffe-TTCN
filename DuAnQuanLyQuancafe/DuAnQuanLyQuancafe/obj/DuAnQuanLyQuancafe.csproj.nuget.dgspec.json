@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\KHANH\\Source\\Repos\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe.csproj": {}
+    "D:\\Study\\TTCN\\CiiCoffee\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe.csproj": {}
   },
   "projects": {
-    "C:\\Users\\KHANH\\Source\\Repos\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe.csproj": {
+    "D:\\Study\\TTCN\\CiiCoffee\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\KHANH\\Source\\Repos\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe.csproj",
+        "projectUniqueName": "D:\\Study\\TTCN\\CiiCoffee\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe.csproj",
         "projectName": "DuAnQuanLyQuancafe",
-        "projectPath": "C:\\Users\\KHANH\\Source\\Repos\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe.csproj",
-        "packagesPath": "C:\\Users\\KHANH\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\KHANH\\Source\\Repos\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\obj\\",
+        "projectPath": "D:\\Study\\TTCN\\CiiCoffee\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe.csproj",
+        "packagesPath": "C:\\Users\\MaiThaiHuy\\.nuget\\packages\\",
+        "outputPath": "D:\\Study\\TTCN\\CiiCoffee\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "UsingMicrosoftNETSdk": false,
@@ -19,7 +19,7 @@
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\KHANH\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\MaiThaiHuy\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],

@@ -25,8 +25,8 @@ namespace DuAnQuanLyQuancafe
         private Mat frame = new Mat();
         private bool isCapturing = false;
         private bool isLoggedIn = false;
-        private LBPHFaceRecognizer recognizer;
-        private string modelPath = "trainedModel.yml";
+        private LBPHFaceRecognizer recognizer; // là một lớp nhận diện khuôn mặt trong thư viện Emgu.CV/OpenCV, sử dụng thuật toán LBPH.
+        private string modelPath = "trainedModel.yml";  // Đọc mô hình đã huấn luyện
         private Dictionary<int, string> labelToTenDangNhap = new Dictionary<int, string>();
         private Dictionary<int, string> labelToLoaiTaiKhoan = new Dictionary<int, string>();
 
