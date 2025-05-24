@@ -243,15 +243,12 @@
     <EmbeddedResource Include="View\FrmCapThap.resx">
       <DependentUpon>FrmCapThap.cs</DependentUpon>
     </EmbeddedResource>
-<<<<<<< HEAD
     <EmbeddedResource Include="View\QuanLyHoaDonNhap\FrmChiTietHDN.resx">
       <DependentUpon>FrmChiTietHDN.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\ThongKe\FrmThongKe.resx">
       <DependentUpon>FrmThongKe.cs</DependentUpon>
     </EmbeddedResource>
-=======
->>>>>>> 193005f6eb3b761748b47b9da9941940ff65ac5a
     <EmbeddedResource Include="View\NhaCungCap\FrmAddNCC.resx">
       <DependentUpon>FrmAddNCC.cs</DependentUpon>
     </EmbeddedResource>
@@ -275,9 +272,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\SanPham\FrmSanPham.resx">
       <DependentUpon>FrmSanPham.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\ThongKe\FrmThongKe.resx">
-      <DependentUpon>FrmThongKe.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

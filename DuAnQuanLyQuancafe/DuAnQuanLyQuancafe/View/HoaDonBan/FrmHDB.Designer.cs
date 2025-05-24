@@ -186,7 +186,6 @@ namespace DuAnQuanLyQuancafe.View
             // 
             // btnXemChiTiet
             // 
-<<<<<<< HEAD
             this.btnExcel.BorderRadius = 15;
             this.btnExcel.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnExcel.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -200,7 +199,6 @@ namespace DuAnQuanLyQuancafe.View
             this.btnExcel.TabIndex = 9;
             this.btnExcel.Text = "Xuất ra file Excel";
             this.btnExcel.Click += new System.EventHandler(this.btnExcel_Click);
-=======
             this.btnXemChiTiet.BorderRadius = 15;
             this.btnXemChiTiet.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnXemChiTiet.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -216,7 +214,6 @@ namespace DuAnQuanLyQuancafe.View
             this.btnXemChiTiet.Text = "Xem chi tiết ";
             this.btnXemChiTiet.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.btnXemChiTiet.Click += new System.EventHandler(this.btnXemChiTiet_Click);
->>>>>>> 193005f6eb3b761748b47b9da9941940ff65ac5a
             // 
             // find
             // 
