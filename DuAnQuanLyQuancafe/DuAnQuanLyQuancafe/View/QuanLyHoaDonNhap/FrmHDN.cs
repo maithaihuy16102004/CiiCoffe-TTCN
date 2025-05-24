@@ -20,7 +20,7 @@ namespace DuAnQuanLyQuancafe.View
         {
             InitializeComponent();
             LoadHDN();
-            dgvHDN.CellDoubleClick += dgvHDN_CellDoubleClick; // Đăng ký sự kiện CellDoubleClick
+
             function.DatabaseHelper.FillCombo("SELECT MaNCC, TenNCC FROM NhaCungCap", cbNCC, "MaNCC", "TenNCC");
             function.DatabaseHelper.FillCombo("SELECT MaNV, TenNV FROM NhanVien", cbNhanVien, "MaNV", "TenNV");
             txtTimKiem.TextChanged += FrmHDN_TextChanged; // Đăng ký sự kiện TextChanged cho tìm kiếm
@@ -133,46 +133,6 @@ namespace DuAnQuanLyQuancafe.View
                 LoadHDN();
             };
         }
-
-        private void dgvHDN_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0 && e.RowIndex < dgvHDN.Rows.Count)
-            {
-                if (dgvHDN.Rows[e.RowIndex].Cells["MaHDN"].Value != null)
-                {
-                    string maHDN = dgvHDN.Rows[e.RowIndex].Cells["MaHDN"].Value.ToString();
-                    OpenChiTietHDNForm(maHDN);
-                }
-                else
-                {
-                    MessageBox.Show("Mã hóa đơn nhập không hợp lệ.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-            }
-            else
-            {
-                MessageBox.Show("Vui lòng nhấp đúp vào một dòng hợp lệ.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-        }
-
-        private void OpenChiTietHDNForm(string maHDN)
-        {
-            try
-            {
-                // Kiểm tra dữ liệu chi tiết trước khi mở form
-                List<ChiTietHDNModel> danhSachCT = _chiTietHDNController.LayChiTietHDNTheoMa(maHDN);
-                FrmChitietHDN frmChiTiet = new FrmChitietHDN(maHDN);
-                frmChiTiet.ShowDialog(); // Mở form chi tiết dưới dạng dialog
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Lỗi khi mở chi tiết hóa đơn: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            finally
-            {
-                LoadHDN(); // Tải lại dữ liệu sau khi đóng form (nếu có thay đổi)
-            }
-        }
-
         private void FrmHDN_TextChanged(object sender, EventArgs e)
         {
             string tuKhoa = txtTimKiem.Text.Trim();
@@ -308,6 +268,29 @@ namespace DuAnQuanLyQuancafe.View
             else
             {
                 MessageBox.Show("Vui lòng chọn một hóa đơn để xóa.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void btnChiTiet_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtMa.Text.Trim()))
+            {
+                MessageBox.Show("Vui lòng chọn một hóa đơn nhập để xem chi tiết.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            try
+            {
+                string maHDN = txtMa.Text.Trim();
+                FrmChiTietHDN frmChiTietHDN = new FrmChiTietHDN(maHDN);
+                frmChiTietHDN.ShowDialog(); // Sử dụng ShowDialog để hiển thị form như một cửa sổ con
+
+                // Làm mới dữ liệu sau khi đóng form chi tiết (nếu cần)
+                LoadHDN();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi khi mở chi tiết hóa đơn: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

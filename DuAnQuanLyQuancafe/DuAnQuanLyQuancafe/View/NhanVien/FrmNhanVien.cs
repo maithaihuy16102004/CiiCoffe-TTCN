@@ -78,7 +78,7 @@ namespace DuAnQuanLyQuancafe.View
                 dgvNhanVien.Columns["GioiTinh"].Width = 80;
                 dgvNhanVien.Columns["NgaySinh"].Width = 100;
                 dgvNhanVien.Columns["SDT"].Width = 100; // Tăng chiều rộng để hiển thị số điện thoại đầy đủ
-                dgvNhanVien.Columns["TenQue"].Width = 100; // Tăng chiều rộng cho Quê Quán
+                dgvNhanVien.Columns["TenQue"].Width = 120; // Tăng chiều rộng cho Quê Quán
 
                 // Căn chỉnh nội dung cột
                 dgvNhanVien.Columns["MaNV"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;

@@ -63,7 +63,7 @@
             this.imageBoxFrameGrabber.Location = new System.Drawing.Point(15, 61);
             this.imageBoxFrameGrabber.Name = "imageBoxFrameGrabber";
             this.imageBoxFrameGrabber.Size = new System.Drawing.Size(776, 433);
-            this.imageBoxFrameGrabber.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.imageBoxFrameGrabber.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.imageBoxFrameGrabber.TabIndex = 2;
             this.imageBoxFrameGrabber.TabStop = false;
             // 

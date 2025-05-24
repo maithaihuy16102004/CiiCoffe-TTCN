@@ -143,6 +143,12 @@
     <Compile Include="View\HoaDonBan\FrmHDB.Designer.cs">
       <DependentUpon>FrmHDB.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\QuanLyHoaDonNhap\FrmChiTietHDN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\QuanLyHoaDonNhap\FrmChiTietHDN.Designer.cs">
+      <DependentUpon>FrmChiTietHDN.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\ThongKe\FrmThongKe.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -184,12 +190,6 @@
     </Compile>
     <Compile Include="View\NhanVien\FrmNhanVien.Designer.cs">
       <DependentUpon>FrmNhanVien.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\QuanLyHoaDonNhap\FrmChitietHDN.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\QuanLyHoaDonNhap\FrmChitietHDN.Designer.cs">
-      <DependentUpon>FrmChitietHDN.cs</DependentUpon>
     </Compile>
     <Compile Include="View\SanPham\FrmAddSanPham.cs">
       <SubType>Form</SubType>
@@ -234,6 +234,9 @@
     <EmbeddedResource Include="View\FrmCapThap.resx">
       <DependentUpon>FrmCapThap.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\QuanLyHoaDonNhap\FrmChiTietHDN.resx">
+      <DependentUpon>FrmChiTietHDN.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\ThongKe\FrmThongKe.resx">
       <DependentUpon>FrmThongKe.cs</DependentUpon>
     </EmbeddedResource>
@@ -254,9 +257,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\QuanLyHoaDonNhap\FrmHDN.resx">
       <DependentUpon>FrmHDN.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\QuanLyHoaDonNhap\FrmChitietHDN.resx">
-      <DependentUpon>FrmChitietHDN.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\SanPham\FrmAddSanPham.resx">
       <DependentUpon>FrmAddSanPham.cs</DependentUpon>

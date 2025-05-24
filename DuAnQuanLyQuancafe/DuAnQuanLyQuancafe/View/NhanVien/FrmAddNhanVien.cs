@@ -105,16 +105,16 @@ namespace DuAnQuanLyQuancafe.View.NhanVien
             // Tạo danh sách tham số
             string maNV = _nhanVienController.GetNextMaNhanVien(); // Gọi hàm sinh mã mới
             Hashtable parameter = new Hashtable
-    {
-        { "MaNV", maNV }, // THÊM DÒNG NÀY!
-        { "TenNV", tenNV },
-        { "DiaChi", diaChi },
-        { "SDT", sdt },
-        { "GioiTinh", gioiTinh },
-        { "NgaySinh", ngaysinh },
-        { "MaQue", maQue },
-        { "Anh", anhDuocChon }
-    };
+            {
+                { "MaNV", maNV }, // THÊM DÒNG NÀY!
+                { "TenNV", tenNV },
+                { "DiaChi", diaChi },
+                { "SDT", sdt },
+                { "GioiTinh", gioiTinh },
+                { "NgaySinh", ngaysinh },
+                { "MaQue", maQue },
+                { "Anh", anhDuocChon }
+            };
 
             // Gọi hàm thêm nhân viên từ Controller
             _nhanVienController.ThemNhanVien(parameter);
@@ -124,7 +124,7 @@ namespace DuAnQuanLyQuancafe.View.NhanVien
 
         private void btnThoat_Click(object sender, EventArgs e)
         {
-            this.Close(); 
+            this.Close();
         }
 
 

@@ -31,9 +31,9 @@ namespace DuAnQuanLyQuancafe.View
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvHDB = new Guna.UI2.WinForms.Guna2DataGridView();
             this.txttimkiemHDB = new DuAnQuanLyQuancafe.RoundedTextBox();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -49,26 +49,26 @@ namespace DuAnQuanLyQuancafe.View
             // 
             // dgvHDB
             // 
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
-            this.dgvHDB.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvHDB.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.dgvHDB.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvHDB.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvHDB.ColumnHeadersHeight = 30;
             this.dgvHDB.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvHDB.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvHDB.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvHDB.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvHDB.Location = new System.Drawing.Point(29, 99);
             this.dgvHDB.Name = "dgvHDB";
@@ -104,7 +104,7 @@ namespace DuAnQuanLyQuancafe.View
             this.txttimkiemHDB.BorderRadius = 15;
             this.txttimkiemHDB.BorderSize = 2;
             this.txttimkiemHDB.ForeColor = System.Drawing.Color.Black;
-            this.txttimkiemHDB.Location = new System.Drawing.Point(682, 45);
+            this.txttimkiemHDB.Location = new System.Drawing.Point(708, 47);
             this.txttimkiemHDB.Name = "txttimkiemHDB";
             this.txttimkiemHDB.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
             this.txttimkiemHDB.Size = new System.Drawing.Size(225, 29);
@@ -114,7 +114,7 @@ namespace DuAnQuanLyQuancafe.View
             // guna2HtmlLabel1
             // 
             this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(3, 53);
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(53, 59);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
             this.guna2HtmlLabel1.Size = new System.Drawing.Size(71, 15);
             this.guna2HtmlLabel1.TabIndex = 3;
@@ -123,7 +123,7 @@ namespace DuAnQuanLyQuancafe.View
             // guna2HtmlLabel2
             // 
             this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel2.Location = new System.Drawing.Point(267, 53);
+            this.guna2HtmlLabel2.Location = new System.Drawing.Point(306, 59);
             this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
             this.guna2HtmlLabel2.Size = new System.Drawing.Size(73, 15);
             this.guna2HtmlLabel2.TabIndex = 4;
@@ -136,7 +136,7 @@ namespace DuAnQuanLyQuancafe.View
             this.dtstart.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.dtstart.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.dtstart.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.dtstart.Location = new System.Drawing.Point(80, 46);
+            this.dtstart.Location = new System.Drawing.Point(130, 49);
             this.dtstart.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtstart.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtstart.Name = "dtstart";
@@ -150,7 +150,7 @@ namespace DuAnQuanLyQuancafe.View
             this.dtend.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.dtend.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.dtend.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.dtend.Location = new System.Drawing.Point(336, 46);
+            this.dtend.Location = new System.Drawing.Point(385, 49);
             this.dtend.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtend.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtend.Name = "dtend";
@@ -167,7 +167,7 @@ namespace DuAnQuanLyQuancafe.View
             this.btnLoc.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnLoc.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnLoc.ForeColor = System.Drawing.Color.White;
-            this.btnLoc.Location = new System.Drawing.Point(523, 45);
+            this.btnLoc.Location = new System.Drawing.Point(561, 47);
             this.btnLoc.Name = "btnLoc";
             this.btnLoc.Size = new System.Drawing.Size(141, 30);
             this.btnLoc.TabIndex = 7;
@@ -177,7 +177,7 @@ namespace DuAnQuanLyQuancafe.View
             // guna2HtmlLabel3
             // 
             this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel3.Location = new System.Drawing.Point(733, 26);
+            this.guna2HtmlLabel3.Location = new System.Drawing.Point(766, 26);
             this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
             this.guna2HtmlLabel3.Size = new System.Drawing.Size(136, 15);
             this.guna2HtmlLabel3.TabIndex = 8;
@@ -192,7 +192,7 @@ namespace DuAnQuanLyQuancafe.View
             this.btnExcel.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnExcel.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnExcel.ForeColor = System.Drawing.Color.White;
-            this.btnExcel.Location = new System.Drawing.Point(815, 579);
+            this.btnExcel.Location = new System.Drawing.Point(827, 579);
             this.btnExcel.Name = "btnExcel";
             this.btnExcel.Size = new System.Drawing.Size(118, 35);
             this.btnExcel.TabIndex = 9;
@@ -209,7 +209,7 @@ namespace DuAnQuanLyQuancafe.View
             this.find.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.find.ForeColor = System.Drawing.Color.White;
             this.find.Image = global::DuAnQuanLyQuancafe.Properties.Resources._5402443_search_find_magnifier_magnifying_magnifying_glass_icon;
-            this.find.Location = new System.Drawing.Point(913, 47);
+            this.find.Location = new System.Drawing.Point(935, 47);
             this.find.Name = "find";
             this.find.Size = new System.Drawing.Size(32, 21);
             this.find.TabIndex = 10;

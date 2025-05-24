@@ -11,17 +11,15 @@ namespace DuAnQuanLyQuancafe.function
         // Xóa biến tĩnh connection để tránh xung đột
         public static SqlConnection GetConnection()
         {
-            SqlConnection connection = new SqlConnection(connectionString);
+            SqlConnection conn = new SqlConnection(connectionString);
             try
             {
-                connection.Open();
-                Console.WriteLine("Kết nối thành công đến: " + connection.Database);
-                return connection;
+                conn.Open();
+                return conn;
             }
             catch (SqlException ex)
             {
-                MessageBox.Show("Lỗi khi kết nối đến cơ sở dữ liệu: " + ex.Message);
-                throw;
+                throw new Exception($"Lỗi kết nối cơ sở dữ liệu: {ex.Message}");
             }
         }
 

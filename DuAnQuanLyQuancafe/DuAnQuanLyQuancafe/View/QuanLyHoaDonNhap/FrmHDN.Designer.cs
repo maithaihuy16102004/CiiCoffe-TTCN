@@ -50,6 +50,7 @@
             this.btnSua = new Guna.UI2.WinForms.Guna2Button();
             this.btnXoa = new Guna.UI2.WinForms.Guna2ImageButton();
             this.dgvHDN = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.btnChiTiet = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHDN)).BeginInit();
             this.SuspendLayout();
             // 
@@ -215,7 +216,7 @@
             this.btnSua.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnSua.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnSua.ForeColor = System.Drawing.Color.White;
-            this.btnSua.Location = new System.Drawing.Point(811, 632);
+            this.btnSua.Location = new System.Drawing.Point(806, 598);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(180, 45);
             this.btnSua.TabIndex = 99;
@@ -291,11 +292,29 @@
             this.dgvHDN.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.dgvHDN.Click += new System.EventHandler(this.dgvHDN_Click);
             // 
+            // btnChiTiet
+            // 
+            this.btnChiTiet.BorderRadius = 20;
+            this.btnChiTiet.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnChiTiet.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnChiTiet.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnChiTiet.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnChiTiet.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnChiTiet.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnChiTiet.ForeColor = System.Drawing.Color.White;
+            this.btnChiTiet.Location = new System.Drawing.Point(848, 649);
+            this.btnChiTiet.Name = "btnChiTiet";
+            this.btnChiTiet.Size = new System.Drawing.Size(98, 31);
+            this.btnChiTiet.TabIndex = 102;
+            this.btnChiTiet.Text = "Xem chi tiết";
+            this.btnChiTiet.Click += new System.EventHandler(this.btnChiTiet_Click);
+            // 
             // FrmHDN
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1014, 698);
+            this.Controls.Add(this.btnChiTiet);
             this.Controls.Add(this.btnXoa);
             this.Controls.Add(this.btnSua);
             this.Controls.Add(this.cbNCC);
@@ -343,5 +362,6 @@
         private Guna.UI2.WinForms.Guna2Button btnSua;
         private Guna.UI2.WinForms.Guna2ImageButton btnXoa;
         private Guna.UI2.WinForms.Guna2DataGridView dgvHDN;
+        private Guna.UI2.WinForms.Guna2Button btnChiTiet;
     }
 }
