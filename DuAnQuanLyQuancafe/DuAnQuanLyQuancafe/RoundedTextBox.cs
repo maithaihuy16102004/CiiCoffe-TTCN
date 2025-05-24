@@ -28,6 +28,12 @@ namespace DuAnQuanLyQuancafe
             this.BackColor = Color.White;
             this.ForeColor = Color.Black;
             this.Size = new Size(250, 35);
+            textBox.TextChanged += (s, e) =>
+            {
+                if (this.TextChanged != null)
+                    this.TextChanged(this, e);
+            };
+
         }
         [Category("Custom")]
         public string Texts
@@ -88,5 +94,8 @@ namespace DuAnQuanLyQuancafe
         {
 
         }
+        // Public event để FrmCapThap có thể bắt được
+        public new event EventHandler TextChanged;
+
     }
 }

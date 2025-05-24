@@ -63,6 +63,16 @@ namespace DuAnQuanLyQuancafe.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _2993694_brand_brands_excel_logo_logos_icon {
+            get {
+                object obj = ResourceManager.GetObject("2993694_brand_brands_excel_logo_logos_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _39263_print_printer_icon {
             get {
                 object obj = ResourceManager.GetObject("39263_print_printer_icon", resourceCulture);
@@ -86,6 +96,16 @@ namespace DuAnQuanLyQuancafe.Properties {
         internal static System.Drawing.Bitmap _5402443_search_find_magnifier_magnifying_magnifying_glass_icon {
             get {
                 object obj = ResourceManager.GetObject("5402443_search_find_magnifier_magnifying_magnifying glass_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _5402443_search_find_magnifier_magnifying_magnifying_glass_icon1 {
+            get {
+                object obj = ResourceManager.GetObject("5402443_search_find_magnifier_magnifying_magnifying glass_icon1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -136,16 +156,6 @@ namespace DuAnQuanLyQuancafe.Properties {
         internal static System.Drawing.Bitmap abstract_1920x1080_gradient_gradient_desktop_wallpaper_preview__1_ {
             get {
                 object obj = ResourceManager.GetObject("abstract-1920x1080-gradient-gradient-desktop-wallpaper-preview (1)", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap backthongke {
-            get {
-                object obj = ResourceManager.GetObject("backthongke", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

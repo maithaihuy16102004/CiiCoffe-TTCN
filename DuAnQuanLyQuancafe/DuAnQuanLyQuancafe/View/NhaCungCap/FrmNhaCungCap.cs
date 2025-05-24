@@ -78,6 +78,12 @@ namespace DuAnQuanLyQuancafe.View.NhaCungCap
                 // Đảm bảo DataGridView không có viền thừa
                 dgvNhaCC.BorderStyle = BorderStyle.None;
                 dgvNhaCC.BackgroundColor = Color.White;
+                dgvNhaCC.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+                dgvNhaCC.ColumnHeadersHeight = 45;
+
+                dgvNhaCC.RowTemplate.Height = 45;
+                dgvNhaCC.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None;
+                dgvNhaCC.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             }
             catch (Exception ex)
             {

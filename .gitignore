@@ -1,0 +1,21 @@
+# Ignore Visual Studio
+.vs/
+*.user
+*.suo
+
+# Ignore build results
+bin/
+obj/
+*.pdb
+*.cache
+*.log
+*.db
+
+# Ignore NuGet
+*.nupkg
+packages/
+*.snupkg
+
+# Ignore others
+UpgradeLog*.htm
+*.vsidx

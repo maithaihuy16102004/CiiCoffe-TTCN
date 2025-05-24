@@ -107,6 +107,12 @@ namespace DuAnQuanLyQuancafe.View
                 // Đảm bảo DataGridView không có viền thừa
                 dgvSanPham.BorderStyle = BorderStyle.None;
                 dgvSanPham.BackgroundColor = Color.White;
+                dgvSanPham.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+                dgvSanPham.ColumnHeadersHeight = 45;
+
+                dgvSanPham.RowTemplate.Height = 45;
+                dgvSanPham.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None;
+                dgvSanPham.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             }
             catch (Exception ex)
             {

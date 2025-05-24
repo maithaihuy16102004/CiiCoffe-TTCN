@@ -165,5 +165,10 @@ namespace DuAnQuanLyQuancafe.View
         {
             LoadData();
         }
+
+        private void chartTop5Product_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

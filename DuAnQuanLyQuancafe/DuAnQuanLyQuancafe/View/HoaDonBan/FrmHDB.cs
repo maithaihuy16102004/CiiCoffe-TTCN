@@ -11,6 +11,7 @@ using DuAnQuanLyQuancafe.Controller;
 using DuAnQuanLyQuancafe.Model;
 using OfficeOpenXml;
 using System.IO;
+using DuAnQuanLyQuancafe.View.ChiTietHDB;
 
 namespace DuAnQuanLyQuancafe.View
 {
@@ -38,6 +39,7 @@ namespace DuAnQuanLyQuancafe.View
                 dgvHDB.Columns["MaNV"].HeaderText = "Mã Nhân Viên";
                 dgvHDB.Columns["Tongtien"].HeaderText = "Tổng tiền";
             }
+            dgvHDB.ReadOnly = true;
         }
 
         private void find_Click(object sender, EventArgs e)
@@ -137,6 +139,20 @@ namespace DuAnQuanLyQuancafe.View
                 ExportDataGridViewToExcel(dgvHDB, sfd.FileName);
                 MessageBox.Show("Xuất Excel thành công!", "Thông báo");
             }
+        }
+
+        private void btnXemChiTiet_Click(object sender, EventArgs e)
+        {
+            if (dgvHDB.CurrentRow == null)
+            {
+                MessageBox.Show("Vui lòng chọn một hóa đơn!");
+                return;
+            }
+
+            string maHDB = dgvHDB.CurrentRow.Cells["MaHDB"].Value.ToString();
+
+            FrmChiTietHDB chiTietForm = new FrmChiTietHDB(maHDB);
+            chiTietForm.ShowDialog(); // Mở modal để xem chi tiết
         }
     }
 }

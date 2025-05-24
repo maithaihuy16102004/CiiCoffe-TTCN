@@ -7,7 +7,7 @@ namespace DuAnQuanLyQuancafe.function
 {
     internal class DatabaseHelper   
     {
-        private static readonly string connectionString = "Data Source=DESKTOP-K56JJJ3;Initial Catalog=QuanLyQuanCafe2;Integrated Security=True;Encrypt=False";
+        private static readonly string connectionString = "Data Source=DESKTOP-LBR1P0N\\KHANH;Initial Catalog=QuanLyQuanCafe2;Integrated Security=True;Encrypt=False";
         // Xóa biến tĩnh connection để tránh xung đột
         public static SqlConnection GetConnection()
         {

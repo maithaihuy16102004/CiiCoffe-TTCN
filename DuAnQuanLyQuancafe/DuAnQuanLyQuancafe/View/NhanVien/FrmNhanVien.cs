@@ -33,6 +33,12 @@ namespace DuAnQuanLyQuancafe.View
             cbGioiTinh.Items.Add("Nữ");
             cbGioiTinh.Items.Add("Khác");
             cbGioiTinh.SelectedIndex = 0; // Chọn giá trị đầu tiên
+            dgvNhanVien.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            dgvNhanVien.ColumnHeadersHeight = 45;
+
+            dgvNhanVien.RowTemplate.Height = 45;
+            dgvNhanVien.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None;
+            dgvNhanVien.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
         private void ResetValue()
         {

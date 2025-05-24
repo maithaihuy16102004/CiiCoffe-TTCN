@@ -16,6 +16,7 @@ namespace DuAnQuanLyQuancafe.Model
         public int SoLuong { get; set; }
         public float ThanhTien { get; set; }
         public string KhuyenMai { get; set; }
+        public string TenSP { get; set; }
     }
 
 }

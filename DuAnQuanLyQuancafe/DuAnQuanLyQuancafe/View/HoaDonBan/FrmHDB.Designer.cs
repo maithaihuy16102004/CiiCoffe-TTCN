@@ -42,8 +42,9 @@ namespace DuAnQuanLyQuancafe.View
             this.dtend = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.btnLoc = new Guna.UI2.WinForms.Guna2Button();
             this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.btnExcel = new Guna.UI2.WinForms.Guna2Button();
+            this.btnXemChiTiet = new Guna.UI2.WinForms.Guna2Button();
             this.find = new Guna.UI2.WinForms.Guna2Button();
+            this.btnExcel = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHDB)).BeginInit();
             this.SuspendLayout();
             // 
@@ -183,8 +184,9 @@ namespace DuAnQuanLyQuancafe.View
             this.guna2HtmlLabel3.TabIndex = 8;
             this.guna2HtmlLabel3.Text = "Tìm kiếm theo mã nhân viên";
             // 
-            // btnExcel
+            // btnXemChiTiet
             // 
+<<<<<<< HEAD
             this.btnExcel.BorderRadius = 15;
             this.btnExcel.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnExcel.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -198,6 +200,23 @@ namespace DuAnQuanLyQuancafe.View
             this.btnExcel.TabIndex = 9;
             this.btnExcel.Text = "Xuất ra file Excel";
             this.btnExcel.Click += new System.EventHandler(this.btnExcel_Click);
+=======
+            this.btnXemChiTiet.BorderRadius = 15;
+            this.btnXemChiTiet.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnXemChiTiet.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnXemChiTiet.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnXemChiTiet.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnXemChiTiet.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnXemChiTiet.ForeColor = System.Drawing.Color.White;
+            this.btnXemChiTiet.Image = global::DuAnQuanLyQuancafe.Properties.Resources._5402443_search_find_magnifier_magnifying_magnifying_glass_icon1;
+            this.btnXemChiTiet.Location = new System.Drawing.Point(635, 534);
+            this.btnXemChiTiet.Name = "btnXemChiTiet";
+            this.btnXemChiTiet.Size = new System.Drawing.Size(118, 35);
+            this.btnXemChiTiet.TabIndex = 11;
+            this.btnXemChiTiet.Text = "Xem chi tiết ";
+            this.btnXemChiTiet.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            this.btnXemChiTiet.Click += new System.EventHandler(this.btnXemChiTiet_Click);
+>>>>>>> 193005f6eb3b761748b47b9da9941940ff65ac5a
             // 
             // find
             // 
@@ -215,11 +234,30 @@ namespace DuAnQuanLyQuancafe.View
             this.find.TabIndex = 10;
             this.find.Click += new System.EventHandler(this.find_Click_1);
             // 
+            // btnExcel
+            // 
+            this.btnExcel.BorderRadius = 15;
+            this.btnExcel.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnExcel.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnExcel.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnExcel.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnExcel.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnExcel.ForeColor = System.Drawing.Color.White;
+            this.btnExcel.Image = global::DuAnQuanLyQuancafe.Properties.Resources._2993694_brand_brands_excel_logo_logos_icon;
+            this.btnExcel.Location = new System.Drawing.Point(774, 534);
+            this.btnExcel.Name = "btnExcel";
+            this.btnExcel.Size = new System.Drawing.Size(118, 35);
+            this.btnExcel.TabIndex = 9;
+            this.btnExcel.Text = "Xuất ra file Excel";
+            this.btnExcel.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            this.btnExcel.Click += new System.EventHandler(this.btnExcel_Click);
+            // 
             // FrmHDB
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(979, 626);
+            this.Controls.Add(this.btnXemChiTiet);
             this.Controls.Add(this.find);
             this.Controls.Add(this.btnExcel);
             this.Controls.Add(this.guna2HtmlLabel3);
@@ -251,5 +289,6 @@ namespace DuAnQuanLyQuancafe.View
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel3;
         private Guna.UI2.WinForms.Guna2Button btnExcel;
         private Guna.UI2.WinForms.Guna2Button find;
+        private Guna.UI2.WinForms.Guna2Button btnXemChiTiet;
     }
 }

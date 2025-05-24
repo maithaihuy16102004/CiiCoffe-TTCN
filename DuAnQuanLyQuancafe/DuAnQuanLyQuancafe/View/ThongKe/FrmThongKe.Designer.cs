@@ -359,6 +359,7 @@
             title2.Name = "Title1";
             title2.Text = "TOP 5 SẢN PHẨM ĐƯỢC ƯA CHUỘNG";
             this.chartTop5Product.Titles.Add(title2);
+            this.chartTop5Product.Click += new System.EventHandler(this.chartTop5Product_Click);
             // 
             // guna2Panel4
             // 
@@ -586,7 +587,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::DuAnQuanLyQuancafe.Properties.Resources.backthongke;
+            //this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1037, 696);
             this.Controls.Add(this.guna2Panel5);
             this.Controls.Add(this.guna2Panel4);

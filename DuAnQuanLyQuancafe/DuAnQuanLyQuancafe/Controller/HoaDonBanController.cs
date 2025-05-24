@@ -118,6 +118,25 @@ namespace DuAnQuanLyQuancafe.Controller
             }
             return HDB;
         }
+        public static string LayMaHDBMoiNhat(string maNV, DateTime ngayBan)
+        {
+            string maHDB = null;
+            using (SqlConnection conn = DatabaseHelper.GetConnection())
+            {
+                string sql = "SELECT TOP 1 MaHDB FROM HoaDonBan WHERE MaNV = @MaNV AND NgayBan = @NgayBan ORDER BY MaHDB DESC";
+                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                {
+                    cmd.Parameters.AddWithValue("@MaNV", maNV);
+                    cmd.Parameters.AddWithValue("@NgayBan", ngayBan.Date);
+                    object result = cmd.ExecuteScalar();
+                    if (result != null)
+                    {
+                        maHDB = result.ToString();
+                    }
+                }
+            }
+            return maHDB;
+        }
 
     }
 }

@@ -72,6 +72,11 @@ namespace DuAnQuanLyQuancafe.View
             dgvTaiKhoan.Columns["MaNV"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvTaiKhoan.Columns["TenNV"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dgvTaiKhoan.Columns["LoaiTaiKhoan"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvTaiKhoan.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            dgvTaiKhoan.ColumnHeadersHeight = 45;
+
+            dgvTaiKhoan.RowTemplate.Height = 45;
+
         }
 
         private void LoadDuLieu()
