@@ -439,7 +439,6 @@ namespace DuAnQuanLyQuancafe.View
         private void RoundedTextBox1_TextChanged(object sender, EventArgs e)
         {
             string searchText = RemoveDiacritics(roundedTextBox1.Texts.Trim().ToLower());
-
             if (string.IsNullOrEmpty(searchText))
             {
                 dgvSanPhamm.DataSource = dsSanPhamFull;
@@ -476,11 +475,37 @@ namespace DuAnQuanLyQuancafe.View
             };
             HoaDonBanController.LuuHoaDon(hoaDon);
 
+            string maHDB = HoaDonBanController.LayMaHDBMoiNhat(hoaDon.MaNV, hoaDon.NgayBan);
+            if (string.IsNullOrEmpty(maHDB))
+            {
+                MessageBox.Show("Lỗi không lấy được mã hóa đơn.");
+                return;
+            }
+
+            // --- 3. Chuẩn bị danh sách chi tiết hóa đơn để lưu ---
+            List<ChiTietHDBModel> chiTietList = new List<ChiTietHDBModel>();
+            foreach (var item in danhSachThanhToan.Values)
+            {
+                ChiTietHDBModel chiTiet = new ChiTietHDBModel
+                {
+                    MaHDB = maHDB,
+                    MaSP = item.SanPham.MaSP,
+                    SoLuong = item.SoLuong,
+                    ThanhTien = item.SanPham.GiaBan * item.SoLuong,
+                    KhuyenMai = "" // Nếu có thông tin khuyến mãi thì thay thế
+                };
+                chiTietList.Add(chiTiet);
+            }
+
+            // 4. Lưu chi tiết hóa đơn
+            ChiTietHDBController.LuuChiTiet(chiTietList);
+
+            // 5. Hiển thị thông báo và xóa dữ liệu trên form
             MessageBox.Show("Thanh toán thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             panelThongTin.Controls.Clear();          // Xóa các item hiển thị trong panel
             danhSachThanhToan.Clear();               // Xóa danh sách sản phẩm thanh toán
 
-            // Reset các label về mặc định, ví dụ:
+            // Reset các label về mặc định
             lbltongtien.Text = "0 VNĐ";
             lblgiamgia.Text = "0 VNĐ";
             lblkhachtra.Text = "0 VNĐ";

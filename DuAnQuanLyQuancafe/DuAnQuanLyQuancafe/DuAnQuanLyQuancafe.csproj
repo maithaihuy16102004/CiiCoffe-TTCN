@@ -119,6 +119,12 @@
     <Compile Include="RoundedTextBox.Designer.cs">
       <DependentUpon>RoundedTextBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\ChiTietHDB\FrmChiTietHDB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ChiTietHDB\FrmChiTietHDB.Designer.cs">
+      <DependentUpon>FrmChiTietHDB.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\PhanQuyen\FrmAcc.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -219,6 +225,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="View\ChiTietHDB\FrmChiTietHDB.resx">
+      <DependentUpon>FrmChiTietHDB.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\HoaDonBan\FrmHDB.resx">
       <DependentUpon>FrmHDB.cs</DependentUpon>
     </EmbeddedResource>
@@ -371,6 +380,7 @@
     <Content Include="haarcascade_frontalface_default.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\5402443_search_find_magnifier_magnifying_magnifying glass_icon1.png" />
     <None Include="Resources\2993694_brand_brands_excel_logo_logos_icon.png" />
     <None Include="Resources\backthongke.jpg" />
     <None Include="Resources\abstract-1920x1080-gradient-gradient-desktop-wallpaper-preview %281%29.jpg" />
