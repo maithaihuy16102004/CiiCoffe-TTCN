@@ -63,6 +63,16 @@ namespace DuAnQuanLyQuancafe.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _2993694_brand_brands_excel_logo_logos_icon {
+            get {
+                object obj = ResourceManager.GetObject("2993694_brand_brands_excel_logo_logos_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _39263_print_printer_icon {
             get {
                 object obj = ResourceManager.GetObject("39263_print_printer_icon", resourceCulture);

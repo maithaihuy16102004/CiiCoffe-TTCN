@@ -34,7 +34,6 @@ namespace DuAnQuanLyQuancafe.View
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmHDB));
             this.dgvHDB = new Guna.UI2.WinForms.Guna2DataGridView();
             this.txttimkiemHDB = new DuAnQuanLyQuancafe.RoundedTextBox();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -193,12 +192,13 @@ namespace DuAnQuanLyQuancafe.View
             this.btnExcel.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnExcel.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnExcel.ForeColor = System.Drawing.Color.White;
-            this.btnExcel.Image = ((System.Drawing.Image)(resources.GetObject("btnExcel.Image")));
+            this.btnExcel.Image = global::DuAnQuanLyQuancafe.Properties.Resources._2993694_brand_brands_excel_logo_logos_icon;
             this.btnExcel.Location = new System.Drawing.Point(774, 534);
             this.btnExcel.Name = "btnExcel";
             this.btnExcel.Size = new System.Drawing.Size(118, 35);
             this.btnExcel.TabIndex = 9;
             this.btnExcel.Text = "Xuất ra file Excel";
+            this.btnExcel.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.btnExcel.Click += new System.EventHandler(this.btnExcel_Click);
             // 
             // find

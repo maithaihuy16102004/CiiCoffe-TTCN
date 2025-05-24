@@ -3,6 +3,30 @@
   "WorkspaceRootPath": "C:\\Users\\KHANH\\source\\repos\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{064E79D6-7598-4EB0-895A-20CEE4182156}|DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe.csproj|c:\\users\\khanh\\source\\repos\\ciicoffe-ttcn\\duanquanlyquancafe\\duanquanlyquancafe\\view\\frmthongke.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{064E79D6-7598-4EB0-895A-20CEE4182156}|DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe.csproj|solutionrelative:duanquanlyquancafe\\view\\frmthongke.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{064E79D6-7598-4EB0-895A-20CEE4182156}|DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe.csproj|c:\\users\\khanh\\source\\repos\\ciicoffe-ttcn\\duanquanlyquancafe\\duanquanlyquancafe\\view\\frmthongke.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{064E79D6-7598-4EB0-895A-20CEE4182156}|DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe.csproj|solutionrelative:duanquanlyquancafe\\view\\frmthongke.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{064E79D6-7598-4EB0-895A-20CEE4182156}|DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe.csproj|C:\\Users\\KHANH\\source\\repos\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\View\\FrmHDB.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{064E79D6-7598-4EB0-895A-20CEE4182156}|DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe.csproj|solutionrelative:DuAnQuanLyQuancafe\\View\\FrmHDB.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{064E79D6-7598-4EB0-895A-20CEE4182156}|DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe.csproj|C:\\Users\\KHANH\\source\\repos\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\duanquanlyquancafe\\view\\frmhdb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{064E79D6-7598-4EB0-895A-20CEE4182156}|DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe.csproj|solutionrelative:duanquanlyquancafe\\view\\frmhdb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{064E79D6-7598-4EB0-895A-20CEE4182156}|DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe.csproj|c:\\users\\khanh\\source\\repos\\ciicoffe-ttcn\\duanquanlyquancafe\\duanquanlyquancafe\\view\\frmhdb.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{064E79D6-7598-4EB0-895A-20CEE4182156}|DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe.csproj|solutionrelative:duanquanlyquancafe\\view\\frmhdb.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{064E79D6-7598-4EB0-895A-20CEE4182156}|DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe.csproj|c:\\users\\khanh\\source\\repos\\ciicoffe-ttcn\\duanquanlyquancafe\\duanquanlyquancafe\\view\\frmthongke.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{064E79D6-7598-4EB0-895A-20CEE4182156}|DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe.csproj|solutionrelative:duanquanlyquancafe\\view\\frmthongke.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\KHANH\\source\\repos\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\Product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:DuAnQuanLyQuancafe\\Product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -15,7 +39,7 @@
       "RelativeMoniker": "D:0:0:{064E79D6-7598-4EB0-895A-20CEE4182156}|DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe.csproj|solutionrelative:DuAnQuanLyQuancafe\\View\\FrmCapThap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{064E79D6-7598-4EB0-895A-20CEE4182156}|DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe.csproj|c:\\users\\khanh\\source\\repos\\ciicoffe-ttcn\\duanquanlyquancafe\\duanquanlyquancafe\\view\\frmcapthap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{064E79D6-7598-4EB0-895A-20CEE4182156}|DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe.csproj|C:\\Users\\KHANH\\source\\repos\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\duanquanlyquancafe\\view\\frmcapthap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{064E79D6-7598-4EB0-895A-20CEE4182156}|DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe.csproj|solutionrelative:duanquanlyquancafe\\view\\frmcapthap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
@@ -23,11 +47,11 @@
       "RelativeMoniker": "D:0:0:{064E79D6-7598-4EB0-895A-20CEE4182156}|DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe.csproj|solutionrelative:DuAnQuanLyQuancafe\\View\\FrmCapThap.Designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{064E79D6-7598-4EB0-895A-20CEE4182156}|DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe.csproj|c:\\users\\khanh\\source\\repos\\ciicoffe-ttcn\\duanquanlyquancafe\\duanquanlyquancafe\\model\\taikhoanmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{064E79D6-7598-4EB0-895A-20CEE4182156}|DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe.csproj|C:\\Users\\KHANH\\source\\repos\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\duanquanlyquancafe\\model\\taikhoanmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{064E79D6-7598-4EB0-895A-20CEE4182156}|DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe.csproj|solutionrelative:duanquanlyquancafe\\model\\taikhoanmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{064E79D6-7598-4EB0-895A-20CEE4182156}|DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe.csproj|c:\\users\\khanh\\source\\repos\\ciicoffe-ttcn\\duanquanlyquancafe\\duanquanlyquancafe\\controller\\taikhoancontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{064E79D6-7598-4EB0-895A-20CEE4182156}|DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe.csproj|C:\\Users\\KHANH\\source\\repos\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\duanquanlyquancafe\\controller\\taikhoancontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{064E79D6-7598-4EB0-895A-20CEE4182156}|DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe.csproj|solutionrelative:duanquanlyquancafe\\controller\\taikhoancontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -59,20 +83,12 @@
       "RelativeMoniker": "D:0:0:{064E79D6-7598-4EB0-895A-20CEE4182156}|DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe.csproj|solutionrelative:duanquanlyquancafe\\frmnhandien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{064E79D6-7598-4EB0-895A-20CEE4182156}|DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe.csproj|C:\\Users\\KHANH\\source\\repos\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\View\\FrmHDB.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{064E79D6-7598-4EB0-895A-20CEE4182156}|DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe.csproj|solutionrelative:DuAnQuanLyQuancafe\\View\\FrmHDB.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{064E79D6-7598-4EB0-895A-20CEE4182156}|DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe.csproj|C:\\Users\\KHANH\\source\\repos\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\Controller\\ThongKeController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{064E79D6-7598-4EB0-895A-20CEE4182156}|DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe.csproj|solutionrelative:DuAnQuanLyQuancafe\\Controller\\ThongKeController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{064E79D6-7598-4EB0-895A-20CEE4182156}|DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe.csproj|C:\\Users\\KHANH\\source\\repos\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\Model\\HoaDonBanModel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{064E79D6-7598-4EB0-895A-20CEE4182156}|DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe.csproj|solutionrelative:DuAnQuanLyQuancafe\\Model\\HoaDonBanModel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{064E79D6-7598-4EB0-895A-20CEE4182156}|DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe.csproj|C:\\Users\\KHANH\\source\\repos\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\duanquanlyquancafe\\view\\frmhdb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{064E79D6-7598-4EB0-895A-20CEE4182156}|DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe.csproj|solutionrelative:duanquanlyquancafe\\view\\frmhdb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{064E79D6-7598-4EB0-895A-20CEE4182156}|DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe.csproj|C:\\Users\\KHANH\\source\\repos\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\duanquanlyquancafe\\view\\nhanvien\\frmnhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
@@ -154,7 +170,7 @@
       "DocumentGroups": [
         {
           "DockedHeight": 239,
-          "SelectedChildIndex": 11,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -178,20 +194,45 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "TaiKhoanController.cs",
-              "DocumentMoniker": "C:\\Users\\KHANH\\source\\repos\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\Controller\\TaiKhoanController.cs",
-              "RelativeDocumentMoniker": "DuAnQuanLyQuancafe\\Controller\\TaiKhoanController.cs",
-              "ToolTip": "C:\\Users\\KHANH\\source\\repos\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\Controller\\TaiKhoanController.cs",
-              "RelativeToolTip": "DuAnQuanLyQuancafe\\Controller\\TaiKhoanController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "FrmThongKe.cs",
+              "DocumentMoniker": "C:\\Users\\KHANH\\source\\repos\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\View\\FrmThongKe.cs",
+              "RelativeDocumentMoniker": "DuAnQuanLyQuancafe\\View\\FrmThongKe.cs",
+              "ToolTip": "C:\\Users\\KHANH\\source\\repos\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\View\\FrmThongKe.cs",
+              "RelativeToolTip": "DuAnQuanLyQuancafe\\View\\FrmThongKe.cs",
+              "ViewState": "AgIAAEsAAAAAAAAAAAAowKoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-23T19:53:36.831Z",
+              "WhenOpened": "2025-05-23T20:23:16.131Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 1,
+              "Title": "FrmThongKe.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\KHANH\\source\\repos\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\View\\FrmThongKe.cs",
+              "RelativeDocumentMoniker": "DuAnQuanLyQuancafe\\View\\FrmThongKe.cs",
+              "ToolTip": "C:\\Users\\KHANH\\source\\repos\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\View\\FrmThongKe.cs [Design]",
+              "RelativeToolTip": "DuAnQuanLyQuancafe\\View\\FrmThongKe.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T20:22:30.341Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "FrmHDB.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\KHANH\\source\\repos\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\View\\FrmHDB.Designer.cs",
+              "RelativeDocumentMoniker": "DuAnQuanLyQuancafe\\View\\FrmHDB.Designer.cs",
+              "ToolTip": "C:\\Users\\KHANH\\source\\repos\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\View\\FrmHDB.Designer.cs",
+              "RelativeToolTip": "DuAnQuanLyQuancafe\\View\\FrmHDB.Designer.cs",
+              "ViewState": "AgIAAK0AAAAAAAAAAAASwLgAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T20:18:20.375Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
               "Title": "FrmNhanVien.cs",
               "DocumentMoniker": "C:\\Users\\KHANH\\source\\repos\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\View\\NhanVien\\FrmNhanVien.cs",
               "RelativeDocumentMoniker": "DuAnQuanLyQuancafe\\View\\NhanVien\\FrmNhanVien.cs",
@@ -199,12 +240,11 @@
               "RelativeToolTip": "DuAnQuanLyQuancafe\\View\\NhanVien\\FrmNhanVien.cs",
               "ViewState": "AgIAALEAAAAAAAAAAAAIwMQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-23T19:34:20.395Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-23T19:34:20.395Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 17,
               "Title": "HoaDonBanController.cs",
               "DocumentMoniker": "C:\\Users\\KHANH\\source\\repos\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\Controller\\HoaDonBanController.cs",
               "RelativeDocumentMoniker": "DuAnQuanLyQuancafe\\Controller\\HoaDonBanController.cs",
@@ -212,24 +252,22 @@
               "RelativeToolTip": "DuAnQuanLyQuancafe\\Controller\\HoaDonBanController.cs",
               "ViewState": "AgIAACwAAAAAAAAAAAAswHgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-23T19:34:20.397Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-23T19:34:20.397Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 9,
               "Title": "FrmCapThap.cs [Design]",
               "DocumentMoniker": "C:\\Users\\KHANH\\source\\repos\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\View\\FrmCapThap.cs",
               "RelativeDocumentMoniker": "DuAnQuanLyQuancafe\\View\\FrmCapThap.cs",
               "ToolTip": "C:\\Users\\KHANH\\source\\repos\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\View\\FrmCapThap.cs [Design]",
               "RelativeToolTip": "DuAnQuanLyQuancafe\\View\\FrmCapThap.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-23T19:34:20.399Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-05-23T19:34:20.399Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 8,
               "Title": "FrmCapThap.cs",
               "DocumentMoniker": "C:\\Users\\KHANH\\source\\repos\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\View\\FrmCapThap.cs",
               "RelativeDocumentMoniker": "DuAnQuanLyQuancafe\\View\\FrmCapThap.cs",
@@ -237,12 +275,11 @@
               "RelativeToolTip": "DuAnQuanLyQuancafe\\View\\FrmCapThap.cs",
               "ViewState": "AgIAAMIBAAAAAAAAAAAhwNsBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-23T19:34:20.4Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-23T19:34:20.4Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 10,
               "Title": "FrmCapThap.Designer.cs",
               "DocumentMoniker": "C:\\Users\\KHANH\\source\\repos\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\View\\FrmCapThap.Designer.cs",
               "RelativeDocumentMoniker": "DuAnQuanLyQuancafe\\View\\FrmCapThap.Designer.cs",
@@ -250,25 +287,74 @@
               "RelativeToolTip": "DuAnQuanLyQuancafe\\View\\FrmCapThap.Designer.cs",
               "ViewState": "AgIAAIEBAAAAAAAAAAAhwIwBAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-23T19:34:20.402Z",
+              "WhenOpened": "2025-05-23T19:34:20.402Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "FrmHDB.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\KHANH\\source\\repos\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\View\\FrmHDB.cs",
+              "RelativeDocumentMoniker": "DuAnQuanLyQuancafe\\View\\FrmHDB.cs",
+              "ToolTip": "C:\\Users\\KHANH\\source\\repos\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\View\\FrmHDB.cs [Design]",
+              "RelativeToolTip": "DuAnQuanLyQuancafe\\View\\FrmHDB.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T19:34:20.615Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "FrmHDB.cs",
+              "DocumentMoniker": "C:\\Users\\KHANH\\source\\repos\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\View\\FrmHDB.cs",
+              "RelativeDocumentMoniker": "DuAnQuanLyQuancafe\\View\\FrmHDB.cs",
+              "ToolTip": "C:\\Users\\KHANH\\source\\repos\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\View\\FrmHDB.cs",
+              "RelativeToolTip": "DuAnQuanLyQuancafe\\View\\FrmHDB.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAIwCgAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T19:34:20.596Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 12,
+              "Title": "TaiKhoanController.cs",
+              "DocumentMoniker": "C:\\Users\\KHANH\\source\\repos\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\Controller\\TaiKhoanController.cs",
+              "RelativeDocumentMoniker": "DuAnQuanLyQuancafe\\Controller\\TaiKhoanController.cs",
+              "ToolTip": "C:\\Users\\KHANH\\source\\repos\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\Controller\\TaiKhoanController.cs",
+              "RelativeToolTip": "DuAnQuanLyQuancafe\\Controller\\TaiKhoanController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T19:53:36.831Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "FrmThongKe.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\KHANH\\source\\repos\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\View\\FrmThongKe.Designer.cs",
+              "RelativeDocumentMoniker": "DuAnQuanLyQuancafe\\View\\FrmThongKe.Designer.cs",
+              "ToolTip": "C:\\Users\\KHANH\\source\\repos\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\View\\FrmThongKe.Designer.cs",
+              "RelativeToolTip": "DuAnQuanLyQuancafe\\View\\FrmThongKe.Designer.cs",
+              "ViewState": "AgIAADgCAAAAAAAAAAASwFECAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T20:14:53.581Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "Product.cs",
               "DocumentMoniker": "C:\\Users\\KHANH\\source\\repos\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\Product.cs",
               "RelativeDocumentMoniker": "DuAnQuanLyQuancafe\\Product.cs",
               "ToolTip": "C:\\Users\\KHANH\\source\\repos\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\Product.cs",
               "RelativeToolTip": "DuAnQuanLyQuancafe\\Product.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABkAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-21T15:14:11.712Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 7,
               "Title": "Product.Designer.cs",
               "DocumentMoniker": "C:\\Users\\KHANH\\source\\repos\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\Product.Designer.cs",
               "RelativeDocumentMoniker": "DuAnQuanLyQuancafe\\Product.Designer.cs",
@@ -276,12 +362,11 @@
               "RelativeToolTip": "DuAnQuanLyQuancafe\\Product.Designer.cs",
               "ViewState": "AgIAAAsAAAAAAAAAAAAiwB8AAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-21T16:03:38.86Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-21T16:03:38.86Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 11,
               "Title": "TaiKhoanModel.cs",
               "DocumentMoniker": "C:\\Users\\KHANH\\source\\repos\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\Model\\TaiKhoanModel.cs",
               "RelativeDocumentMoniker": "DuAnQuanLyQuancafe\\Model\\TaiKhoanModel.cs",
@@ -289,12 +374,11 @@
               "RelativeToolTip": "DuAnQuanLyQuancafe\\Model\\TaiKhoanModel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAABjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-23T19:56:07.933Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-23T19:56:07.933Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 18,
               "Title": "FrmNhanDien.cs",
               "DocumentMoniker": "C:\\Users\\KHANH\\source\\repos\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\FrmNhanDien.cs",
               "RelativeDocumentMoniker": "DuAnQuanLyQuancafe\\FrmNhanDien.cs",
@@ -302,12 +386,11 @@
               "RelativeToolTip": "DuAnQuanLyQuancafe\\FrmNhanDien.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-23T19:34:20.404Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-23T19:34:20.404Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 13,
               "Title": "DatabaseHelper.cs",
               "DocumentMoniker": "C:\\Users\\KHANH\\source\\repos\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\function\\DatabaseHelper.cs",
               "RelativeDocumentMoniker": "DuAnQuanLyQuancafe\\function\\DatabaseHelper.cs",
@@ -315,12 +398,11 @@
               "RelativeToolTip": "DuAnQuanLyQuancafe\\function\\DatabaseHelper.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-23T19:34:20.405Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-23T19:34:20.405Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 15,
               "Title": "App.config",
               "DocumentMoniker": "C:\\Users\\KHANH\\source\\repos\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\App.config",
               "RelativeDocumentMoniker": "DuAnQuanLyQuancafe\\App.config",
@@ -333,32 +415,18 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 19,
               "Title": "FrmNhanDien.cs [Design]",
               "DocumentMoniker": "C:\\Users\\KHANH\\source\\repos\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\FrmNhanDien.cs",
               "RelativeDocumentMoniker": "DuAnQuanLyQuancafe\\FrmNhanDien.cs",
               "ToolTip": "C:\\Users\\KHANH\\source\\repos\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\FrmNhanDien.cs [Design]",
               "RelativeToolTip": "DuAnQuanLyQuancafe\\FrmNhanDien.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-23T19:34:20.594Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-05-23T19:34:20.594Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "FrmHDB.cs",
-              "DocumentMoniker": "C:\\Users\\KHANH\\source\\repos\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\View\\FrmHDB.cs",
-              "RelativeDocumentMoniker": "DuAnQuanLyQuancafe\\View\\FrmHDB.cs",
-              "ToolTip": "C:\\Users\\KHANH\\source\\repos\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\View\\FrmHDB.cs",
-              "RelativeToolTip": "DuAnQuanLyQuancafe\\View\\FrmHDB.cs",
-              "ViewState": "AgIAAE8AAAAAAAAAAAAYwGIAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-23T19:34:20.596Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 20,
               "Title": "ThongKeController.cs",
               "DocumentMoniker": "C:\\Users\\KHANH\\source\\repos\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\Controller\\ThongKeController.cs",
               "RelativeDocumentMoniker": "DuAnQuanLyQuancafe\\Controller\\ThongKeController.cs",
@@ -366,12 +434,11 @@
               "RelativeToolTip": "DuAnQuanLyQuancafe\\Controller\\ThongKeController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-23T19:34:20.598Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-23T19:34:20.598Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 21,
               "Title": "HoaDonBanModel.cs",
               "DocumentMoniker": "C:\\Users\\KHANH\\source\\repos\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\Model\\HoaDonBanModel.cs",
               "RelativeDocumentMoniker": "DuAnQuanLyQuancafe\\Model\\HoaDonBanModel.cs",
@@ -379,48 +446,33 @@
               "RelativeToolTip": "DuAnQuanLyQuancafe\\Model\\HoaDonBanModel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-23T19:34:20.6Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-23T19:34:20.6Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "FrmHDB.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\KHANH\\source\\repos\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\View\\FrmHDB.cs",
-              "RelativeDocumentMoniker": "DuAnQuanLyQuancafe\\View\\FrmHDB.cs",
-              "ToolTip": "C:\\Users\\KHANH\\source\\repos\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\View\\FrmHDB.cs [Design]",
-              "RelativeToolTip": "DuAnQuanLyQuancafe\\View\\FrmHDB.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-23T19:34:20.615Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 22,
               "Title": "FrmNhanVien.cs [Design]",
               "DocumentMoniker": "C:\\Users\\KHANH\\source\\repos\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\View\\NhanVien\\FrmNhanVien.cs",
               "RelativeDocumentMoniker": "DuAnQuanLyQuancafe\\View\\NhanVien\\FrmNhanVien.cs",
               "ToolTip": "C:\\Users\\KHANH\\source\\repos\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\View\\NhanVien\\FrmNhanVien.cs [Design]",
               "RelativeToolTip": "DuAnQuanLyQuancafe\\View\\NhanVien\\FrmNhanVien.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-23T19:34:20.622Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-05-23T19:34:20.622Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 23,
               "Title": "FrmAddNhanVien.cs [Design]",
               "DocumentMoniker": "C:\\Users\\KHANH\\source\\repos\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\View\\NhanVien\\FrmAddNhanVien.cs",
               "RelativeDocumentMoniker": "DuAnQuanLyQuancafe\\View\\NhanVien\\FrmAddNhanVien.cs",
               "ToolTip": "C:\\Users\\KHANH\\source\\repos\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\View\\NhanVien\\FrmAddNhanVien.cs [Design]",
               "RelativeToolTip": "DuAnQuanLyQuancafe\\View\\NhanVien\\FrmAddNhanVien.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-23T19:34:20.624Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-05-23T19:34:20.624Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 24,
               "Title": "FrmAddNhanVien.cs",
               "DocumentMoniker": "C:\\Users\\KHANH\\source\\repos\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\View\\NhanVien\\FrmAddNhanVien.cs",
               "RelativeDocumentMoniker": "DuAnQuanLyQuancafe\\View\\NhanVien\\FrmAddNhanVien.cs",
@@ -428,36 +480,33 @@
               "RelativeToolTip": "DuAnQuanLyQuancafe\\View\\NhanVien\\FrmAddNhanVien.cs",
               "ViewState": "AgIAADkAAAAAAAAAAAAcwDsAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-23T19:34:20.625Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-23T19:34:20.625Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 25,
               "Title": "FrmHDN.cs [Design]",
               "DocumentMoniker": "C:\\Users\\KHANH\\source\\repos\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\View\\QuanLyHoaDonNhap\\FrmHDN.cs",
               "RelativeDocumentMoniker": "DuAnQuanLyQuancafe\\View\\QuanLyHoaDonNhap\\FrmHDN.cs",
               "ToolTip": "C:\\Users\\KHANH\\source\\repos\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\View\\QuanLyHoaDonNhap\\FrmHDN.cs [Design]",
               "RelativeToolTip": "DuAnQuanLyQuancafe\\View\\QuanLyHoaDonNhap\\FrmHDN.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-23T19:34:20.628Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-05-23T19:34:20.628Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 26,
               "Title": "FrmCapCao.cs [Design]",
               "DocumentMoniker": "C:\\Users\\KHANH\\source\\repos\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\View\\FrmCapCao.cs",
               "RelativeDocumentMoniker": "DuAnQuanLyQuancafe\\View\\FrmCapCao.cs",
               "ToolTip": "C:\\Users\\KHANH\\source\\repos\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\View\\FrmCapCao.cs [Design]",
               "RelativeToolTip": "DuAnQuanLyQuancafe\\View\\FrmCapCao.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-23T19:34:20.629Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-05-23T19:34:20.629Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 27,
               "Title": "FrmCapCao.cs",
               "DocumentMoniker": "C:\\Users\\KHANH\\source\\repos\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\View\\FrmCapCao.cs",
               "RelativeDocumentMoniker": "DuAnQuanLyQuancafe\\View\\FrmCapCao.cs",
@@ -465,24 +514,22 @@
               "RelativeToolTip": "DuAnQuanLyQuancafe\\View\\FrmCapCao.cs",
               "ViewState": "AgIAABcAAAAAAAAAAAA9wC0AAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-23T19:34:20.63Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-23T19:34:20.63Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 28,
               "Title": "FrmAcc.cs [Design]",
               "DocumentMoniker": "C:\\Users\\KHANH\\source\\repos\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\View\\FrmAcc.cs",
               "RelativeDocumentMoniker": "DuAnQuanLyQuancafe\\View\\FrmAcc.cs",
               "ToolTip": "C:\\Users\\KHANH\\source\\repos\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\View\\FrmAcc.cs [Design]",
               "RelativeToolTip": "DuAnQuanLyQuancafe\\View\\FrmAcc.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-23T19:34:20.632Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-05-23T19:34:20.632Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 29,
               "Title": "ChiTietHDBModel.cs",
               "DocumentMoniker": "C:\\Users\\KHANH\\source\\repos\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\Model\\ChiTietHDBModel.cs",
               "RelativeDocumentMoniker": "DuAnQuanLyQuancafe\\Model\\ChiTietHDBModel.cs",
@@ -490,12 +537,11 @@
               "RelativeToolTip": "DuAnQuanLyQuancafe\\Model\\ChiTietHDBModel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-23T19:34:20.633Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-23T19:34:20.633Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 30,
               "Title": "ChiTietHDBController.cs",
               "DocumentMoniker": "C:\\Users\\KHANH\\source\\repos\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\Controller\\ChiTietHDBController.cs",
               "RelativeDocumentMoniker": "DuAnQuanLyQuancafe\\Controller\\ChiTietHDBController.cs",
@@ -503,12 +549,11 @@
               "RelativeToolTip": "DuAnQuanLyQuancafe\\Controller\\ChiTietHDBController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-23T19:34:20.636Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-23T19:34:20.636Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 31,
               "Title": "LoaiModel.cs",
               "DocumentMoniker": "C:\\Users\\KHANH\\source\\repos\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\Model\\LoaiModel.cs",
               "RelativeDocumentMoniker": "DuAnQuanLyQuancafe\\Model\\LoaiModel.cs",
@@ -516,12 +561,11 @@
               "RelativeToolTip": "DuAnQuanLyQuancafe\\Model\\LoaiModel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-23T19:34:20.638Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-23T19:34:20.638Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 32,
               "Title": "FrmSanPham.cs",
               "DocumentMoniker": "C:\\Users\\KHANH\\source\\repos\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\View\\SanPham\\FrmSanPham.cs",
               "RelativeDocumentMoniker": "DuAnQuanLyQuancafe\\View\\SanPham\\FrmSanPham.cs",
@@ -529,48 +573,44 @@
               "RelativeToolTip": "DuAnQuanLyQuancafe\\View\\SanPham\\FrmSanPham.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-23T19:34:20.641Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-23T19:34:20.641Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 33,
               "Title": "FormLogin.cs [Design]",
               "DocumentMoniker": "C:\\Users\\KHANH\\source\\repos\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\FormLogin.cs",
               "RelativeDocumentMoniker": "DuAnQuanLyQuancafe\\FormLogin.cs",
               "ToolTip": "C:\\Users\\KHANH\\source\\repos\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\FormLogin.cs [Design]",
               "RelativeToolTip": "DuAnQuanLyQuancafe\\FormLogin.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-23T19:34:20.643Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-05-23T19:34:20.643Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 34,
               "Title": "FrmSanPham.cs [Design]",
               "DocumentMoniker": "C:\\Users\\KHANH\\source\\repos\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\View\\SanPham\\FrmSanPham.cs",
               "RelativeDocumentMoniker": "DuAnQuanLyQuancafe\\View\\SanPham\\FrmSanPham.cs",
               "ToolTip": "C:\\Users\\KHANH\\source\\repos\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\View\\SanPham\\FrmSanPham.cs [Design]",
               "RelativeToolTip": "DuAnQuanLyQuancafe\\View\\SanPham\\FrmSanPham.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-23T19:34:20.656Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-05-23T19:34:20.656Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 14,
               "Title": "Product.cs [Design]",
               "DocumentMoniker": "C:\\Users\\KHANH\\source\\repos\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\Product.cs",
               "RelativeDocumentMoniker": "DuAnQuanLyQuancafe\\Product.cs",
               "ToolTip": "C:\\Users\\KHANH\\source\\repos\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\Product.cs [Design]",
               "RelativeToolTip": "DuAnQuanLyQuancafe\\Product.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-21T14:57:34.671Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-05-21T14:57:34.671Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 35,
               "Title": "RoundedTextBox.cs",
               "DocumentMoniker": "C:\\Users\\KHANH\\source\\repos\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\RoundedTextBox.cs",
               "RelativeDocumentMoniker": "DuAnQuanLyQuancafe\\RoundedTextBox.cs",
@@ -578,12 +618,11 @@
               "RelativeToolTip": "DuAnQuanLyQuancafe\\RoundedTextBox.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAE8AAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-23T19:34:20.662Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-23T19:34:20.662Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 36,
               "Title": "FrmCapCao.Designer.cs",
               "DocumentMoniker": "C:\\Users\\KHANH\\source\\repos\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\View\\FrmCapCao.Designer.cs",
               "RelativeDocumentMoniker": "DuAnQuanLyQuancafe\\View\\FrmCapCao.Designer.cs",
@@ -591,12 +630,11 @@
               "RelativeToolTip": "DuAnQuanLyQuancafe\\View\\FrmCapCao.Designer.cs",
               "ViewState": "AgIAABYAAAAAAAAAAAAqwB8AAABCAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-23T19:34:20.665Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-23T19:34:20.665Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 37,
               "Title": "FormLogin.cs",
               "DocumentMoniker": "C:\\Users\\KHANH\\source\\repos\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\FormLogin.cs",
               "RelativeDocumentMoniker": "DuAnQuanLyQuancafe\\FormLogin.cs",
@@ -604,12 +642,11 @@
               "RelativeToolTip": "DuAnQuanLyQuancafe\\FormLogin.cs",
               "ViewState": "AgIAAGYAAAAAAAAAAAAAwBYAAABPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-23T19:34:20.667Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-23T19:34:20.667Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 38,
               "Title": "FrmNhaCungCap.cs",
               "DocumentMoniker": "C:\\Users\\KHANH\\source\\repos\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\View\\NhaCungCap\\FrmNhaCungCap.cs",
               "RelativeDocumentMoniker": "DuAnQuanLyQuancafe\\View\\NhaCungCap\\FrmNhaCungCap.cs",
@@ -617,20 +654,18 @@
               "RelativeToolTip": "DuAnQuanLyQuancafe\\View\\NhaCungCap\\FrmNhaCungCap.cs",
               "ViewState": "AgIAAHAAAAAAAAAAAAAQwKwAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-23T19:34:20.669Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-23T19:34:20.669Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 39,
               "Title": "FrmNhaCungCap.cs [Design]",
               "DocumentMoniker": "C:\\Users\\KHANH\\source\\repos\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\View\\NhaCungCap\\FrmNhaCungCap.cs",
               "RelativeDocumentMoniker": "DuAnQuanLyQuancafe\\View\\NhaCungCap\\FrmNhaCungCap.cs",
               "ToolTip": "C:\\Users\\KHANH\\source\\repos\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\View\\NhaCungCap\\FrmNhaCungCap.cs [Design]",
               "RelativeToolTip": "DuAnQuanLyQuancafe\\View\\NhaCungCap\\FrmNhaCungCap.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-23T19:34:20.676Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-05-23T19:34:20.676Z"
             }
           ]
         },

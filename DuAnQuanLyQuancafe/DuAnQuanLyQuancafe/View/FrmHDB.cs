@@ -38,6 +38,7 @@ namespace DuAnQuanLyQuancafe.View
                 dgvHDB.Columns["MaNV"].HeaderText = "Mã Nhân Viên";
                 dgvHDB.Columns["Tongtien"].HeaderText = "Tổng tiền";
             }
+            dgvHDB.ReadOnly = true;
         }
 
         private void find_Click(object sender, EventArgs e)
