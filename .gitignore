@@ -19,3 +19,11 @@ packages/
 # Ignore others
 UpgradeLog*.htm
 *.vsidx
+
+
+# Thêm vào file .gitignore
+*.exe
+*.pdb
+*.cache
+*.suo
+*.user

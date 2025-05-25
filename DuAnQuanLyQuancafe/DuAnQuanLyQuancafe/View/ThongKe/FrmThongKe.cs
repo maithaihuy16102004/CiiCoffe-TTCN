@@ -48,6 +48,7 @@ namespace DuAnQuanLyQuancafe.View
                     lblTotalProfit.Text = _thongKeController.GetTotalProfit().ToString("C0", new CultureInfo("vi-VN"));
                     lblNumSuppliers.Text = _thongKeController.GetNumSuppliers().ToString();
                     lblNumProducts.Text = _thongKeController.GetNumProducts().ToString();
+                    lblCost.Text = _thongKeController.GetTotalCost().ToString("C0", new CultureInfo("vi-VN"));
 
                     // Update Gross Revenue Chart
                     var grossRevenueList = _thongKeController.GetGrossRevenueList();
@@ -167,6 +168,11 @@ namespace DuAnQuanLyQuancafe.View
         }
 
         private void chartTop5Product_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2HtmlLabel1_Click(object sender, EventArgs e)
         {
 
         }
