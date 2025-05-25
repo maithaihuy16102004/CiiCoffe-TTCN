@@ -189,7 +189,6 @@ namespace DuAnQuanLyQuancafe.Model
                 }
             }
         }
-
         private void GetProductAnalysis()
         {
             using (SqlConnection conn = DatabaseHelper.GetConnection())
@@ -198,7 +197,7 @@ namespace DuAnQuanLyQuancafe.Model
                 UnderstockList = new List<KeyValuePair<string, int>>();
                 try
                 {
-                    // Get top 5 products
+                    // Top 5 sản phẩm bán chạy (giữ nguyên)
                     string query = "SELECT TOP 5 s.TenSP, SUM(ct.SoLuong) FROM ChiTietHDB ct " +
                                    "JOIN SanPham s ON s.MaSP = ct.MaSP " +
                                    "JOIN HoaDonBan h ON ct.MaHDB = h.MaHDB " +
@@ -220,7 +219,7 @@ namespace DuAnQuanLyQuancafe.Model
                         }
                     }
 
-                    // Get understock products
+                    // Sửa phần tồn kho dưới 10
                     query = "SELECT TOP 5 TenSP, SoLuong FROM SanPham WHERE SoLuong < 10 ORDER BY SoLuong ASC";
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
@@ -240,13 +239,8 @@ namespace DuAnQuanLyQuancafe.Model
                 {
                     MessageBox.Show($"Lỗi khi truy vấn cơ sở dữ liệu: {ex.Message}");
                 }
-                finally
-                {
-                    //DatabaseHelper.CloseConnection(conn);
-                }
             }
         }
-
         // Public methods
         public bool LoadData(DateTime startDate, DateTime endDate)
         {

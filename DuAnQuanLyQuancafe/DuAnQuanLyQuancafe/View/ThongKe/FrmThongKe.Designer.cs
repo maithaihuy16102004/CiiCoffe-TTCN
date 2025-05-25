@@ -67,7 +67,6 @@
             this.lblNumSuppliers = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel6 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel5 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.lblNumCustomers = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
             this.dgvUnderStock = new Guna.UI2.WinForms.Guna2DataGridView();
@@ -75,6 +74,7 @@
             this.guna2HtmlLabel11 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.digthanhcong = new Guna.UI2.WinForms.Guna2MessageDialog();
             this.digCanhBao = new Guna.UI2.WinForms.Guna2MessageDialog();
+            this.lblCost = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Panel1.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             this.guna2Panel3.SuspendLayout();
@@ -223,7 +223,7 @@
             // guna2Panel1
             // 
             this.guna2Panel1.BackColor = System.Drawing.Color.White;
-            this.guna2Panel1.Controls.Add(this.lblNumOrders);
+            this.guna2Panel1.Controls.Add(this.lblCost);
             this.guna2Panel1.Controls.Add(this.lblTongDonBan);
             this.guna2Panel1.Location = new System.Drawing.Point(36, 55);
             this.guna2Panel1.Name = "guna2Panel1";
@@ -233,10 +233,10 @@
             // lblNumOrders
             // 
             this.lblNumOrders.BackColor = System.Drawing.Color.Transparent;
-            this.lblNumOrders.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNumOrders.Location = new System.Drawing.Point(13, 24);
+            this.lblNumOrders.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNumOrders.Location = new System.Drawing.Point(15, 64);
             this.lblNumOrders.Name = "lblNumOrders";
-            this.lblNumOrders.Size = new System.Drawing.Size(75, 27);
+            this.lblNumOrders.Size = new System.Drawing.Size(57, 22);
             this.lblNumOrders.TabIndex = 14;
             this.lblNumOrders.Text = "100000";
             // 
@@ -244,11 +244,11 @@
             // 
             this.lblTongDonBan.BackColor = System.Drawing.Color.Transparent;
             this.lblTongDonBan.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTongDonBan.Location = new System.Drawing.Point(13, 3);
+            this.lblTongDonBan.Location = new System.Drawing.Point(49, 7);
             this.lblTongDonBan.Name = "lblTongDonBan";
-            this.lblTongDonBan.Size = new System.Drawing.Size(98, 15);
+            this.lblTongDonBan.Size = new System.Drawing.Size(49, 15);
             this.lblTongDonBan.TabIndex = 13;
-            this.lblTongDonBan.Text = "TỔNG ĐƠN BÁN";
+            this.lblTongDonBan.Text = "CHI PHÍ";
             // 
             // guna2Panel2
             // 
@@ -364,12 +364,12 @@
             // guna2Panel4
             // 
             this.guna2Panel4.BackColor = System.Drawing.Color.White;
+            this.guna2Panel4.Controls.Add(this.lblNumOrders);
             this.guna2Panel4.Controls.Add(this.lblNumProducts);
             this.guna2Panel4.Controls.Add(this.guna2HtmlLabel7);
             this.guna2Panel4.Controls.Add(this.lblNumSuppliers);
             this.guna2Panel4.Controls.Add(this.guna2HtmlLabel6);
             this.guna2Panel4.Controls.Add(this.guna2HtmlLabel5);
-            this.guna2Panel4.Controls.Add(this.lblNumCustomers);
             this.guna2Panel4.Controls.Add(this.guna2HtmlLabel3);
             this.guna2Panel4.Location = new System.Drawing.Point(36, 433);
             this.guna2Panel4.Name = "guna2Panel4";
@@ -424,24 +424,14 @@
             this.guna2HtmlLabel5.TabIndex = 15;
             this.guna2HtmlLabel5.Text = "TỔNG QUAN";
             // 
-            // lblNumCustomers
-            // 
-            this.lblNumCustomers.BackColor = System.Drawing.Color.Transparent;
-            this.lblNumCustomers.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNumCustomers.Location = new System.Drawing.Point(13, 64);
-            this.lblNumCustomers.Name = "lblNumCustomers";
-            this.lblNumCustomers.Size = new System.Drawing.Size(57, 22);
-            this.lblNumCustomers.TabIndex = 14;
-            this.lblNumCustomers.Text = "100000";
-            // 
             // guna2HtmlLabel3
             // 
             this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel3.Location = new System.Drawing.Point(13, 43);
             this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
-            this.guna2HtmlLabel3.Size = new System.Drawing.Size(103, 15);
+            this.guna2HtmlLabel3.Size = new System.Drawing.Size(85, 15);
             this.guna2HtmlLabel3.TabIndex = 13;
-            this.guna2HtmlLabel3.Text = "Tổng số Khách hàng";
+            this.guna2HtmlLabel3.Text = "Tổng số đơn bán";
             // 
             // guna2Panel5
             // 
@@ -583,11 +573,21 @@
             this.digCanhBao.Style = Guna.UI2.WinForms.MessageDialogStyle.Default;
             this.digCanhBao.Text = null;
             // 
+            // lblCost
+            // 
+            this.lblCost.BackColor = System.Drawing.Color.Transparent;
+            this.lblCost.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCost.Location = new System.Drawing.Point(36, 29);
+            this.lblCost.Name = "lblCost";
+            this.lblCost.Size = new System.Drawing.Size(75, 27);
+            this.lblCost.TabIndex = 15;
+            this.lblCost.Text = "100000";
+            this.lblCost.Click += new System.EventHandler(this.guna2HtmlLabel1_Click);
+            // 
             // FrmThongKe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            //this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1037, 696);
             this.Controls.Add(this.guna2Panel5);
             this.Controls.Add(this.guna2Panel4);
@@ -647,7 +647,6 @@
         private System.Windows.Forms.DataVisualization.Charting.Chart chartGrossRevenue;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartTop5Product;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel4;
-        private Guna.UI2.WinForms.Guna2HtmlLabel lblNumCustomers;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel3;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblNumProducts;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel7;
@@ -660,5 +659,6 @@
         private Guna.UI2.WinForms.Guna2DataGridView guna2DataGridView1;
         private Guna.UI2.WinForms.Guna2MessageDialog digthanhcong;
         private Guna.UI2.WinForms.Guna2MessageDialog digCanhBao;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lblCost;
     }
 }
