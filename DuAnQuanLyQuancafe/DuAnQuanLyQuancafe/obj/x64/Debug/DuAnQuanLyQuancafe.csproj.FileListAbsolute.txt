@@ -64,3 +64,4 @@ D:\Study\TTCN\CiiCoffee\CiiCoffe-TTCN\DuAnQuanLyQuancafe\DuAnQuanLyQuancafe\bin\
 D:\Study\TTCN\CiiCoffee\CiiCoffe-TTCN\DuAnQuanLyQuancafe\DuAnQuanLyQuancafe\obj\x64\Debug\DuAnQuanLyQuancafe.View.FrmHDB.resources
 D:\Study\TTCN\CiiCoffee\CiiCoffe-TTCN\DuAnQuanLyQuancafe\DuAnQuanLyQuancafe\obj\x64\Debug\DuAnQuanLyQuancafe.RoundedTextBox.resources
 D:\Study\TTCN\CiiCoffee\CiiCoffe-TTCN\DuAnQuanLyQuancafe\DuAnQuanLyQuancafe\obj\x64\Debug\DuAnQuanLyQuancafe.View.FrmCapThap.resources
+D:\Study\TTCN\CiiCoffee\CiiCoffe-TTCN\DuAnQuanLyQuancafe\DuAnQuanLyQuancafe\obj\x64\Debug\DuAnQuanLyQuancafe.View.ChiTietHDB.FrmChiTietHDB.resources

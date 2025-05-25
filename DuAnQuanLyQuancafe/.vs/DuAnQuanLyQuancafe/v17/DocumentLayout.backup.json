@@ -1,21 +1,37 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\KHANH\\source\\repos\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\",
+  "WorkspaceRootPath": "D:\\Study\\TTCN\\CiiCoffee\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{064E79D6-7598-4EB0-895A-20CEE4182156}|DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe.csproj|c:\\users\\khanh\\source\\repos\\ciicoffe-ttcn\\duanquanlyquancafe\\duanquanlyquancafe\\view\\hoadonban\\frmhdb.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{064E79D6-7598-4EB0-895A-20CEE4182156}|DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe.csproj|solutionrelative:duanquanlyquancafe\\view\\hoadonban\\frmhdb.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{064E79D6-7598-4EB0-895A-20CEE4182156}|DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe.csproj|d:\\study\\ttcn\\ciicoffee\\ciicoffe-ttcn\\duanquanlyquancafe\\duanquanlyquancafe\\view\\quanlyhoadonnhap\\frmchitiethdn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{064E79D6-7598-4EB0-895A-20CEE4182156}|DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe.csproj|solutionrelative:duanquanlyquancafe\\view\\quanlyhoadonnhap\\frmchitiethdn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{064E79D6-7598-4EB0-895A-20CEE4182156}|DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe.csproj|c:\\users\\khanh\\source\\repos\\ciicoffe-ttcn\\duanquanlyquancafe\\duanquanlyquancafe\\function\\databasehelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{064E79D6-7598-4EB0-895A-20CEE4182156}|DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe.csproj|D:\\Study\\TTCN\\CiiCoffee\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\duanquanlyquancafe\\view\\quanlyhoadonnhap\\frmhdn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{064E79D6-7598-4EB0-895A-20CEE4182156}|DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe.csproj|solutionrelative:duanquanlyquancafe\\view\\quanlyhoadonnhap\\frmhdn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{064E79D6-7598-4EB0-895A-20CEE4182156}|DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe.csproj|D:\\Study\\TTCN\\CiiCoffee\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\duanquanlyquancafe\\view\\quanlyhoadonnhap\\frmhdn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{064E79D6-7598-4EB0-895A-20CEE4182156}|DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe.csproj|solutionrelative:duanquanlyquancafe\\view\\quanlyhoadonnhap\\frmhdn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{064E79D6-7598-4EB0-895A-20CEE4182156}|DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe.csproj|d:\\study\\ttcn\\ciicoffee\\ciicoffe-ttcn\\duanquanlyquancafe\\duanquanlyquancafe\\controller\\chitiethdncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{064E79D6-7598-4EB0-895A-20CEE4182156}|DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe.csproj|solutionrelative:duanquanlyquancafe\\controller\\chitiethdncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{064E79D6-7598-4EB0-895A-20CEE4182156}|DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe.csproj|D:\\Study\\TTCN\\CiiCoffee\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\duanquanlyquancafe\\model\\chitiethdnmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{064E79D6-7598-4EB0-895A-20CEE4182156}|DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe.csproj|solutionrelative:duanquanlyquancafe\\model\\chitiethdnmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{064E79D6-7598-4EB0-895A-20CEE4182156}|DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe.csproj|D:\\Study\\TTCN\\CiiCoffee\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\duanquanlyquancafe\\function\\databasehelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{064E79D6-7598-4EB0-895A-20CEE4182156}|DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe.csproj|solutionrelative:duanquanlyquancafe\\function\\databasehelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{064E79D6-7598-4EB0-895A-20CEE4182156}|DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe.csproj|c:\\users\\khanh\\source\\repos\\ciicoffe-ttcn\\duanquanlyquancafe\\duanquanlyquancafe\\frmnhandien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{064E79D6-7598-4EB0-895A-20CEE4182156}|DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe.csproj|solutionrelative:duanquanlyquancafe\\frmnhandien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{064E79D6-7598-4EB0-895A-20CEE4182156}|DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe.csproj|D:\\Study\\TTCN\\CiiCoffee\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\duanquanlyquancafe\\view\\quanlyhoadonnhap\\frmaddhdn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{064E79D6-7598-4EB0-895A-20CEE4182156}|DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe.csproj|solutionrelative:duanquanlyquancafe\\view\\quanlyhoadonnhap\\frmaddhdn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{064E79D6-7598-4EB0-895A-20CEE4182156}|DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe.csproj|C:\\Users\\KHANH\\source\\repos\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\duanquanlyquancafe\\view\\quanlyhoadonnhap\\frmchitiethdn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{064E79D6-7598-4EB0-895A-20CEE4182156}|DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe.csproj|D:\\Study\\TTCN\\CiiCoffee\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\duanquanlyquancafe\\view\\quanlyhoadonnhap\\frmchitiethdn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{064E79D6-7598-4EB0-895A-20CEE4182156}|DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe.csproj|solutionrelative:duanquanlyquancafe\\view\\quanlyhoadonnhap\\frmchitiethdn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
@@ -26,7 +42,7 @@
       "DocumentGroups": [
         {
           "DockedHeight": 239,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 11,
           "Children": [
             {
               "$type": "Bookmark",
@@ -38,10 +54,6 @@
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
-            },
-            {
-              "$type": "Bookmark",
               "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
             },
             {
@@ -49,54 +61,110 @@
               "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "FrmHDB.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\KHANH\\source\\repos\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\View\\HoaDonBan\\FrmHDB.Designer.cs",
-              "RelativeDocumentMoniker": "DuAnQuanLyQuancafe\\View\\HoaDonBan\\FrmHDB.Designer.cs",
-              "ToolTip": "C:\\Users\\KHANH\\source\\repos\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\View\\HoaDonBan\\FrmHDB.Designer.cs*",
-              "RelativeToolTip": "DuAnQuanLyQuancafe\\View\\HoaDonBan\\FrmHDB.Designer.cs*",
-              "ViewState": "AgIAAL8AAAAAAAAAAAAAANsAAAAyAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "ChiTietHDNController.cs",
+              "DocumentMoniker": "D:\\Study\\TTCN\\CiiCoffee\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\Controller\\ChiTietHDNController.cs",
+              "RelativeDocumentMoniker": "DuAnQuanLyQuancafe\\Controller\\ChiTietHDNController.cs",
+              "ToolTip": "D:\\Study\\TTCN\\CiiCoffee\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\Controller\\ChiTietHDNController.cs",
+              "RelativeToolTip": "DuAnQuanLyQuancafe\\Controller\\ChiTietHDNController.cs",
+              "ViewState": "AgIAALoAAAAAAAAAAAAmwMwAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-24T17:29:05.733Z",
+              "WhenOpened": "2025-05-25T11:56:04.579Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "FrmHDN.cs",
+              "DocumentMoniker": "D:\\Study\\TTCN\\CiiCoffee\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\View\\QuanLyHoaDonNhap\\FrmHDN.cs",
+              "RelativeDocumentMoniker": "DuAnQuanLyQuancafe\\View\\QuanLyHoaDonNhap\\FrmHDN.cs",
+              "ToolTip": "D:\\Study\\TTCN\\CiiCoffee\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\View\\QuanLyHoaDonNhap\\FrmHDN.cs",
+              "RelativeToolTip": "DuAnQuanLyQuancafe\\View\\QuanLyHoaDonNhap\\FrmHDN.cs",
+              "ViewState": "AgIAAKMAAAAAAAAAAAAhwLwAAACbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-25T10:54:54.658Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "DatabaseHelper.cs",
-              "DocumentMoniker": "C:\\Users\\KHANH\\source\\repos\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\function\\DatabaseHelper.cs",
-              "RelativeDocumentMoniker": "DuAnQuanLyQuancafe\\function\\DatabaseHelper.cs",
-              "ToolTip": "C:\\Users\\KHANH\\source\\repos\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\function\\DatabaseHelper.cs",
-              "RelativeToolTip": "DuAnQuanLyQuancafe\\function\\DatabaseHelper.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAABAAAAAAAAAA==",
+              "Title": "FrmHDN.cs [Design]",
+              "DocumentMoniker": "D:\\Study\\TTCN\\CiiCoffee\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\View\\QuanLyHoaDonNhap\\FrmHDN.cs",
+              "RelativeDocumentMoniker": "DuAnQuanLyQuancafe\\View\\QuanLyHoaDonNhap\\FrmHDN.cs",
+              "ToolTip": "D:\\Study\\TTCN\\CiiCoffee\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\View\\QuanLyHoaDonNhap\\FrmHDN.cs [Design]",
+              "RelativeToolTip": "DuAnQuanLyQuancafe\\View\\QuanLyHoaDonNhap\\FrmHDN.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-24T17:28:56.939Z",
+              "WhenOpened": "2025-05-25T10:54:52.769Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ChiTietHDNModel.cs",
+              "DocumentMoniker": "D:\\Study\\TTCN\\CiiCoffee\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\Model\\ChiTietHDNModel.cs",
+              "RelativeDocumentMoniker": "DuAnQuanLyQuancafe\\Model\\ChiTietHDNModel.cs",
+              "ToolTip": "D:\\Study\\TTCN\\CiiCoffee\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\Model\\ChiTietHDNModel.cs",
+              "RelativeToolTip": "DuAnQuanLyQuancafe\\Model\\ChiTietHDNModel.cs",
+              "ViewState": "AgIAAIIAAAAAAAAAAAAUwIMAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-25T10:48:54.978Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "FrmChiTietHDN.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\KHANH\\source\\repos\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\View\\QuanLyHoaDonNhap\\FrmChitietHDN.cs",
+              "DocumentIndex": 5,
+              "Title": "DatabaseHelper.cs",
+              "DocumentMoniker": "D:\\Study\\TTCN\\CiiCoffee\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\function\\DatabaseHelper.cs",
+              "RelativeDocumentMoniker": "DuAnQuanLyQuancafe\\function\\DatabaseHelper.cs",
+              "ToolTip": "D:\\Study\\TTCN\\CiiCoffee\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\function\\DatabaseHelper.cs",
+              "RelativeToolTip": "DuAnQuanLyQuancafe\\function\\DatabaseHelper.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-25T10:34:56.393Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "FrmAddHDN.cs",
+              "DocumentMoniker": "D:\\Study\\TTCN\\CiiCoffee\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\View\\QuanLyHoaDonNhap\\FrmAddHDN.cs",
+              "RelativeDocumentMoniker": "DuAnQuanLyQuancafe\\View\\QuanLyHoaDonNhap\\FrmAddHDN.cs",
+              "ToolTip": "D:\\Study\\TTCN\\CiiCoffee\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\View\\QuanLyHoaDonNhap\\FrmAddHDN.cs",
+              "RelativeToolTip": "DuAnQuanLyQuancafe\\View\\QuanLyHoaDonNhap\\FrmAddHDN.cs",
+              "ViewState": "AgIAADsAAAAAAAAAAAAwwDAAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-25T10:19:08.065Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "FrmChiTietHDN.cs",
+              "DocumentMoniker": "D:\\Study\\TTCN\\CiiCoffee\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\View\\QuanLyHoaDonNhap\\FrmChitietHDN.cs",
               "RelativeDocumentMoniker": "DuAnQuanLyQuancafe\\View\\QuanLyHoaDonNhap\\FrmChitietHDN.cs",
-              "ToolTip": "C:\\Users\\KHANH\\source\\repos\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\View\\QuanLyHoaDonNhap\\FrmChitietHDN.cs [Design]",
+              "ToolTip": "D:\\Study\\TTCN\\CiiCoffee\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\View\\QuanLyHoaDonNhap\\FrmChitietHDN.cs",
+              "RelativeToolTip": "DuAnQuanLyQuancafe\\View\\QuanLyHoaDonNhap\\FrmChitietHDN.cs",
+              "ViewState": "AgIAANMAAAAAAAAAAADwv+gAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-25T09:51:38.836Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "FrmChiTietHDN.cs [Design]",
+              "DocumentMoniker": "D:\\Study\\TTCN\\CiiCoffee\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\View\\QuanLyHoaDonNhap\\FrmChitietHDN.cs",
+              "RelativeDocumentMoniker": "DuAnQuanLyQuancafe\\View\\QuanLyHoaDonNhap\\FrmChitietHDN.cs",
+              "ToolTip": "D:\\Study\\TTCN\\CiiCoffee\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\View\\QuanLyHoaDonNhap\\FrmChitietHDN.cs [Design]",
               "RelativeToolTip": "DuAnQuanLyQuancafe\\View\\QuanLyHoaDonNhap\\FrmChitietHDN.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-24T17:21:45.761Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "FrmNhanDien.cs",
-              "DocumentMoniker": "C:\\Users\\KHANH\\source\\repos\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\FrmNhanDien.cs",
-              "RelativeDocumentMoniker": "DuAnQuanLyQuancafe\\FrmNhanDien.cs",
-              "ToolTip": "C:\\Users\\KHANH\\source\\repos\\CiiCoffe-TTCN\\DuAnQuanLyQuancafe\\DuAnQuanLyQuancafe\\FrmNhanDien.cs",
-              "RelativeToolTip": "DuAnQuanLyQuancafe\\FrmNhanDien.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAAQwAYAAAAcAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-24T17:21:45.79Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-25T09:51:37.357Z",
+              "EditorCaption": " [Design]"
             }
           ]
         },

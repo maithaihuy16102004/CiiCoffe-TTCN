@@ -25,9 +25,9 @@ namespace DuAnQuanLyQuancafe.View.QuanLyHoaDonNhap
 
         private void FrmAddHDN_Load()
         {
-            var controllerNhanVien = new NhanVienController();
+            NhanVienController controllerNhanVien = new NhanVienController();
             List<NhanVienModel> danhSachNV = controllerNhanVien.LayDanhSachNhanVien();
-            var controllerNhaCungCap = new NhaCungCapController();
+            NhaCungCapController controllerNhaCungCap = new NhaCungCapController();
             List<NhaCungCapModel> danhSachNCC = controllerNhaCungCap.LayDanhSachNhaCC();
 
             cbMaNV.DataSource = danhSachNV;
@@ -74,7 +74,7 @@ namespace DuAnQuanLyQuancafe.View.QuanLyHoaDonNhap
 
 
                 // Tạo danh sách tham số
-                string maHDN = _hdnController.GetNextHoaDonNhap(); // Gọi qua instance
+                string maHDN = _hdnController.GetNextHoaDonNhap();
                 Hashtable parameter = new Hashtable
                 {
                     { "MaHDN", maHDN },

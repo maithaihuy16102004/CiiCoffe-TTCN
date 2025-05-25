@@ -121,11 +121,11 @@
   <data name="5.3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\5.3.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="abstract-1920x1080-gradient-gradient-desktop-wallpaper-preview (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\abstract-1920x1080-gradient-gradient-desktop-wallpaper-preview (1).jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="9165725_tick_check_mark_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\9165725_tick_check_mark_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="9110796_x_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\9110796_x_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="9165725_tick_check_mark_icon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\9165725_tick_check_mark_icon1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -133,8 +133,8 @@
   <data name="39263_print_printer_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\39263_print_printer_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="abstract-1920x1080-gradient-gradient-desktop-wallpaper-preview (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\abstract-1920x1080-gradient-gradient-desktop-wallpaper-preview (1).jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="9110796_x_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\9110796_x_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="2993694_brand_brands_excel_logo_logos_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\2993694_brand_brands_excel_logo_logos_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -147,5 +147,8 @@
   </data>
   <data name="5402443_search_find_magnifier_magnifying_magnifying glass_icon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\5402443_search_find_magnifier_magnifying_magnifying glass_icon1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="backthongke" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\backthongke1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

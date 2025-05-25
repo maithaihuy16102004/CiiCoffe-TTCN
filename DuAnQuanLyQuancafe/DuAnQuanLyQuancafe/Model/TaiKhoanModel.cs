@@ -6,7 +6,7 @@ namespace DuAnQuanLyQuancafe.Model
 {
     public class TaiKhoanModel
     {
-        private static string connString = "Data Source=DESKTOP-LBR1P0N\\KHANH;Initial Catalog=QuanLyQuanCafe2;Integrated Security=True;Encrypt=False";
+        private static string connString = "Data Source=DESKTOP-K56JJJ3;Initial Catalog=QuanLyQuanCafe2;Integrated Security=True;Encrypt=False";
 
         // Xác thực đăng nhập
         public static (bool Success, string LoaiTaiKhoan, string ErrorMessage) XacThucDangNhap(string maNV, string matKhau)

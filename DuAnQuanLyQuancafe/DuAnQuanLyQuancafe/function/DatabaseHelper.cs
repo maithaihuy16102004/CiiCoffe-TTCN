@@ -7,19 +7,19 @@ namespace DuAnQuanLyQuancafe.function
 {
     internal class DatabaseHelper   
     {
-        private static readonly string connectionString = "Data Source=DESKTOP-LBR1P0N\\KHANH;Initial Catalog=QuanLyQuanCafe2;Integrated Security=True;Encrypt=False";
-        // Xóa biến tĩnh connection để tránh xung đột
+        private static readonly string connectionString = "Data Source=DESKTOP-K56JJJ3;Initial Catalog=QuanLyQuanCafe2;Integrated Security=True;Encrypt=False";
+
         public static SqlConnection GetConnection()
         {
-            SqlConnection conn = new SqlConnection(connectionString);
             try
             {
+                SqlConnection conn = new SqlConnection(connectionString);
                 conn.Open();
                 return conn;
             }
-            catch (SqlException ex)
+            catch (Exception ex)
             {
-                throw new Exception($"Lỗi kết nối cơ sở dữ liệu: {ex.Message}");
+                throw new Exception($"Lỗi tạo kết nối cơ sở dữ liệu: {ex.Message}");
             }
         }
 
@@ -37,7 +37,9 @@ namespace DuAnQuanLyQuancafe.function
             {
                 try
                 {
-                    conn.Open();
+                    if (conn.State != ConnectionState.Open)
+                        conn.Open();
+
                     using (SqlCommand cmd = new SqlCommand(sql, conn))
                     {
                         if (parameters != null)
@@ -59,6 +61,7 @@ namespace DuAnQuanLyQuancafe.function
                 }
             }
         }
+
 
         public static void FillCombo(string sql, ComboBox cbo, string ma, string ten)
         {
@@ -101,6 +104,36 @@ namespace DuAnQuanLyQuancafe.function
                 catch (SqlException ex)
                 {
                     MessageBox.Show("Lỗi khi thực thi SQL: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+        // Hàm ExecuteScalar để gọi hàm SQL và trả về một giá trị đơn
+        public static string ExecuteScalar(string sql, SqlParameter[] parameters = null)
+        {
+            using (SqlConnection conn = GetConnection())
+            {
+                try
+                {
+                    using (SqlCommand cmd = new SqlCommand(sql, conn))
+                    {
+                        cmd.CommandType = CommandType.Text;
+                        if (parameters != null)
+                        {
+                            cmd.Parameters.AddRange(parameters);
+                        }
+                        object result = cmd.ExecuteScalar();
+                        return result != null ? result.ToString() : null;
+                    }
+                }
+                catch (SqlException ex)
+                {
+                    MessageBox.Show($"Lỗi khi gọi hàm SQL: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return null;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Lỗi không xác định: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return null;
                 }
             }
         }

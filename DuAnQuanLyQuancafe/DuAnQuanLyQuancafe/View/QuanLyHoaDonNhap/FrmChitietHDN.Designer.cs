@@ -39,7 +39,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtMaChiTiet = new System.Windows.Forms.TextBox();
+            this.txtMaCTHDN = new System.Windows.Forms.TextBox();
             this.btnLammoi = new Guna.UI2.WinForms.Guna2ImageButton();
             this.guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
             this.label2 = new System.Windows.Forms.Label();
@@ -50,10 +50,10 @@
             this.label8 = new System.Windows.Forms.Label();
             this.txtDonGia = new System.Windows.Forms.TextBox();
             this.txtThanhTien = new System.Windows.Forms.TextBox();
-            this.cboHDN = new Guna.UI2.WinForms.Guna2ComboBox();
             this.cboSanPham = new Guna.UI2.WinForms.Guna2ComboBox();
             this.btnThoat = new Guna.UI2.WinForms.Guna2ControlBox();
             this.btnCapNhat = new Guna.UI2.WinForms.Guna2Button();
+            this.txtMaHDN = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvChiTiet)).BeginInit();
             this.SuspendLayout();
             // 
@@ -95,6 +95,7 @@
             this.txtSoLuong.Name = "txtSoLuong";
             this.txtSoLuong.Size = new System.Drawing.Size(203, 25);
             this.txtSoLuong.TabIndex = 116;
+            this.txtSoLuong.TextChanged += new System.EventHandler(this.txtSoLuong_TextChanged_1);
             // 
             // label6
             // 
@@ -132,13 +133,13 @@
             this.label3.TabIndex = 109;
             this.label3.Text = "Mã chi tiết hóa đơn";
             // 
-            // txtMaChiTiet
+            // txtMaCTHDN
             // 
-            this.txtMaChiTiet.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaChiTiet.Location = new System.Drawing.Point(60, 181);
-            this.txtMaChiTiet.Name = "txtMaChiTiet";
-            this.txtMaChiTiet.Size = new System.Drawing.Size(203, 25);
-            this.txtMaChiTiet.TabIndex = 108;
+            this.txtMaCTHDN.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMaCTHDN.Location = new System.Drawing.Point(60, 181);
+            this.txtMaCTHDN.Name = "txtMaCTHDN";
+            this.txtMaCTHDN.Size = new System.Drawing.Size(203, 25);
+            this.txtMaCTHDN.TabIndex = 108;
             // 
             // btnLammoi
             // 
@@ -159,14 +160,14 @@
             // 
             this.guna2Separator1.Location = new System.Drawing.Point(-14, 72);
             this.guna2Separator1.Name = "guna2Separator1";
-            this.guna2Separator1.Size = new System.Drawing.Size(1021, 10);
+            this.guna2Separator1.Size = new System.Drawing.Size(888, 10);
             this.guna2Separator1.TabIndex = 106;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(723, 22);
+            this.label2.Location = new System.Drawing.Point(618, 22);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(62, 16);
             this.label2.TabIndex = 105;
@@ -258,7 +259,7 @@
             this.dgvChiTiet.ThemeStyle.RowsStyle.Height = 22;
             this.dgvChiTiet.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvChiTiet.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.dgvChiTiet.Click += new System.EventHandler(this.dgvChiTiet_Click_1);
+            this.dgvChiTiet.Click += new System.EventHandler(this.dgvChiTiet_Click);
             // 
             // label7
             // 
@@ -285,6 +286,7 @@
             this.txtDonGia.Name = "txtDonGia";
             this.txtDonGia.Size = new System.Drawing.Size(203, 25);
             this.txtDonGia.TabIndex = 124;
+            this.txtDonGia.TextChanged += new System.EventHandler(this.txtDonGia_TextChanged_1);
             // 
             // txtThanhTien
             // 
@@ -293,21 +295,6 @@
             this.txtThanhTien.Name = "txtThanhTien";
             this.txtThanhTien.Size = new System.Drawing.Size(203, 25);
             this.txtThanhTien.TabIndex = 125;
-            // 
-            // cboHDN
-            // 
-            this.cboHDN.BackColor = System.Drawing.Color.Transparent;
-            this.cboHDN.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cboHDN.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboHDN.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cboHDN.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cboHDN.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cboHDN.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.cboHDN.ItemHeight = 30;
-            this.cboHDN.Location = new System.Drawing.Point(336, 181);
-            this.cboHDN.Name = "cboHDN";
-            this.cboHDN.Size = new System.Drawing.Size(203, 36);
-            this.cboHDN.TabIndex = 126;
             // 
             // cboSanPham
             // 
@@ -349,17 +336,25 @@
             this.btnCapNhat.Size = new System.Drawing.Size(180, 45);
             this.btnCapNhat.TabIndex = 129;
             this.btnCapNhat.Text = "Lưu cập nhật";
-            this.btnCapNhat.Click += new System.EventHandler(this.btnCapNhat_Click_1);
+            this.btnCapNhat.Click += new System.EventHandler(this.btnCapNhat_Click);
+            // 
+            // txtMaHDN
+            // 
+            this.txtMaHDN.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMaHDN.Location = new System.Drawing.Point(336, 181);
+            this.txtMaHDN.Name = "txtMaHDN";
+            this.txtMaHDN.Size = new System.Drawing.Size(203, 25);
+            this.txtMaHDN.TabIndex = 130;
             // 
             // FrmChiTietHDN
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(866, 521);
+            this.Controls.Add(this.txtMaHDN);
             this.Controls.Add(this.btnCapNhat);
             this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.cboSanPham);
-            this.Controls.Add(this.cboHDN);
             this.Controls.Add(this.txtThanhTien);
             this.Controls.Add(this.txtDonGia);
             this.Controls.Add(this.label8);
@@ -371,7 +366,7 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.txtMaChiTiet);
+            this.Controls.Add(this.txtMaCTHDN);
             this.Controls.Add(this.btnLammoi);
             this.Controls.Add(this.guna2Separator1);
             this.Controls.Add(this.label2);
@@ -398,7 +393,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtMaChiTiet;
+        private System.Windows.Forms.TextBox txtMaCTHDN;
         private Guna.UI2.WinForms.Guna2ImageButton btnLammoi;
         private Guna.UI2.WinForms.Guna2Separator guna2Separator1;
         private System.Windows.Forms.Label label2;
@@ -409,9 +404,9 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtDonGia;
         private System.Windows.Forms.TextBox txtThanhTien;
-        private Guna.UI2.WinForms.Guna2ComboBox cboHDN;
         private Guna.UI2.WinForms.Guna2ComboBox cboSanPham;
         private Guna.UI2.WinForms.Guna2ControlBox btnThoat;
         private Guna.UI2.WinForms.Guna2Button btnCapNhat;
+        private System.Windows.Forms.TextBox txtMaHDN;
     }
 }

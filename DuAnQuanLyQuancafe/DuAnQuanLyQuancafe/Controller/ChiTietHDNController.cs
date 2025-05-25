@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Data.SqlClient;
+using System.Linq;
 using System.Windows.Forms;
 using DuAnQuanLyQuancafe.Model;
-using DuAnQuanLyQuancafe.function;
 
 namespace DuAnQuanLyQuancafe.Controller
 {
@@ -17,244 +16,209 @@ namespace DuAnQuanLyQuancafe.Controller
         /// <returns>Danh sách chi tiết hóa đơn nhập</returns>
         public List<ChiTietHDNModel> LayChiTietHDNTheoMa(string maHDN)
         {
-            try
+            if (string.IsNullOrEmpty(maHDN))
             {
-                if (string.IsNullOrEmpty(maHDN))
-                {
-                    MessageBox.Show("Mã hóa đơn nhập không được để trống.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return new List<ChiTietHDNModel>();
-                }
-
-                return ChiTietHDNModel.LayChiTietHDNTheoMa(maHDN);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Lỗi khi lấy danh sách chi tiết hóa đơn nhập: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Mã hóa đơn nhập không được để trống.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return new List<ChiTietHDNModel>();
             }
+
+            // Kiểm tra hóa đơn nhập có tồn tại không (gọi qua model)
+            if (!CheckHoaDonNhapExists(maHDN))
+            {
+                MessageBox.Show($"Hóa đơn nhập với mã {maHDN} không tồn tại.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return new List<ChiTietHDNModel>();
+            }
+
+            return ChiTietHDNModel.LayTheoMaHDN(maHDN);
         }
 
         /// <summary>
         /// Thêm một chi tiết hóa đơn nhập mới
         /// </summary>
         /// <param name="chiTiet">Đối tượng ChiTietHDNModel cần thêm</param>
-        /// <returns>Trả về true nếu thêm thành công, false nếu thất bại</returns>
+        /// <returns>True nếu thêm thành công, False nếu thất bại</returns>
         public bool ThemChiTietHDN(ChiTietHDNModel chiTiet)
         {
-            try
+            if (chiTiet == null)
             {
-                if (chiTiet == null)
-                {
-                    MessageBox.Show("Dữ liệu chi tiết hóa đơn nhập không hợp lệ.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return false;
-                }
+                MessageBox.Show("Dữ liệu chi tiết hóa đơn nhập không hợp lệ.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
 
-                using (SqlConnection conn = DatabaseHelper.GetConnection())
-                {
-                    if (conn.State != ConnectionState.Open)
-                    {
-                        conn.Open(); // Đảm bảo kết nối được mở
-                    }
-                    bool result = ChiTietHDNModel.ThemChiTietHDN(chiTiet, conn); // Truyền kết nối vào Model
-                    if (result)
-                    {
-                        // MessageBox đã được hiển thị trong FrmChiTietHDN, không cần hiển thị ở đây
-                        return true;
-                    }
-                    else
-                    {
-                        MessageBox.Show("Thêm chi tiết hóa đơn nhập thất bại.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return false;
-                    }
-                }
-            }
-            catch (SqlException sqlEx)
+            // Kiểm tra hóa đơn nhập có tồn tại không
+            if (!CheckHoaDonNhapExists(chiTiet.MaHDN))
             {
-                MessageBox.Show($"Lỗi SQL khi thêm chi tiết hóa đơn nhập: {sqlEx.Message}", "Lỗi SQL", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Hóa đơn nhập với mã {chiTiet.MaHDN} không tồn tại.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
-            catch (Exception ex)
+
+            // Kiểm tra sản phẩm có tồn tại không
+            if (!CheckSanPhamExists(chiTiet.MaSP))
             {
-                MessageBox.Show($"Lỗi khi thêm chi tiết hóa đơn nhập: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Sản phẩm với mã {chiTiet.MaSP} không tồn tại.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
+
+            return chiTiet.Them();
         }
 
         /// <summary>
         /// Lưu danh sách chi tiết hóa đơn nhập
         /// </summary>
         /// <param name="chiTietHDNs">Danh sách chi tiết hóa đơn nhập</param>
-        /// <returns>Trả về true nếu tất cả đều thành công, false nếu có lỗi</returns>
+        /// <returns>True nếu tất cả đều thành công, False nếu có lỗi</returns>
         public bool LuuChiTiet(List<ChiTietHDNModel> chiTietHDNs)
         {
-            try
+            if (chiTietHDNs == null || chiTietHDNs.Count == 0)
             {
-                if (chiTietHDNs == null || chiTietHDNs.Count == 0)
-                {
-                    MessageBox.Show("Danh sách chi tiết hóa đơn nhập không được để trống.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return false;
-                }
-
-                bool allSuccess = true;
-                using (SqlConnection conn = DatabaseHelper.GetConnection())
-                {
-                    if (conn.State != ConnectionState.Open)
-                    {
-                        conn.Open(); // Đảm bảo kết nối được mở
-                    }
-
-                    foreach (var ct in chiTietHDNs)
-                    {
-                        if (!ChiTietHDNModel.ThemChiTietHDN(ct, conn)) // Sửa lỗi cú pháp: gọi phương thức đúng
-                        {
-                            MessageBox.Show($"Thêm chi tiết hóa đơn nhập cho mã HĐN '{ct.MaHDN}' thất bại.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            allSuccess = false;
-                        }
-                    }
-                }
-
-                if (allSuccess)
-                {
-                    MessageBox.Show("Lưu danh sách chi tiết hóa đơn nhập thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                return allSuccess;
-            }
-            catch (SqlException sqlEx)
-            {
-                MessageBox.Show($"Lỗi SQL khi lưu danh sách chi tiết hóa đơn nhập: {sqlEx.Message}", "Lỗi SQL", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Danh sách chi tiết hóa đơn nhập không được để trống.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
-            catch (Exception ex)
+
+            // Kiểm tra tất cả chi tiết có cùng MaHDN không
+            string maHDN = chiTietHDNs[0].MaHDN;
+            if (!CheckHoaDonNhapExists(maHDN))
             {
-                MessageBox.Show($"Lỗi khi lưu danh sách chi tiết hóa đơn nhập: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Hóa đơn nhập với mã {maHDN} không tồn tại.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
+
+            if (chiTietHDNs.Any(ct => ct.MaHDN != maHDN))
+            {
+                MessageBox.Show("Tất cả chi tiết hóa đơn nhập phải thuộc cùng một hóa đơn nhập.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            bool allSuccess = true;
+            foreach (var chiTiet in chiTietHDNs)
+            {
+                if (!CheckSanPhamExists(chiTiet.MaSP))
+                {
+                    MessageBox.Show($"Sản phẩm với mã {chiTiet.MaSP} không tồn tại.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    allSuccess = false;
+                    continue;
+                }
+
+                if (!chiTiet.Them())
+                {
+                    allSuccess = false;
+                }
+            }
+
+            if (allSuccess)
+            {
+                MessageBox.Show("Lưu danh sách chi tiết hóa đơn nhập thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Có lỗi xảy ra khi lưu một số chi tiết hóa đơn nhập.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            return allSuccess;
         }
 
         /// <summary>
         /// Cập nhật thông tin chi tiết hóa đơn nhập
         /// </summary>
         /// <param name="chiTiet">Đối tượng ChiTietHDNModel cần cập nhật</param>
-        /// <returns>Trả về true nếu cập nhật thành công, false nếu thất bại</returns>
+        /// <returns>True nếu cập nhật thành công, False nếu thất bại</returns>
         public bool CapNhatChiTietHDN(ChiTietHDNModel chiTiet)
         {
-            try
+            if (chiTiet == null)
             {
-                if (chiTiet == null)
-                {
-                    MessageBox.Show("Dữ liệu chi tiết hóa đơn nhập không hợp lệ.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return false;
-                }
+                MessageBox.Show("Dữ liệu chi tiết hóa đơn nhập không hợp lệ.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
 
-                using (SqlConnection conn = DatabaseHelper.GetConnection())
-                {
-                    if (conn.State != ConnectionState.Open)
-                    {
-                        conn.Open(); // Đảm bảo kết nối được mở
-                    }
-                    bool result = ChiTietHDNModel.CapNhatChiTietHDN(chiTiet, conn); // Truyền kết nối vào Model
-                    if (result)
-                    {
-                        // MessageBox đã được hiển thị trong FrmChiTietHDN, không cần hiển thị ở đây
-                        return true;
-                    }
-                    else
-                    {
-                        MessageBox.Show("Cập nhật chi tiết hóa đơn nhập thất bại.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return false;
-                    }
-                }
-            }
-            catch (SqlException sqlEx)
+            // Kiểm tra chi tiết hóa đơn có tồn tại không
+            if (!CheckKey(chiTiet.MaCTHDN))
             {
-                MessageBox.Show($"Lỗi SQL khi cập nhật chi tiết hóa đơn nhập: {sqlEx.Message}", "Lỗi SQL", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Chi tiết hóa đơn với mã {chiTiet.MaCTHDN} không tồn tại.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
-            catch (Exception ex)
+
+            // Kiểm tra sản phẩm có tồn tại không
+            if (!CheckSanPhamExists(chiTiet.MaSP))
             {
-                MessageBox.Show($"Lỗi khi cập nhật chi tiết hóa đơn nhập: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Sản phẩm với mã {chiTiet.MaSP} không tồn tại.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
+
+            return chiTiet.CapNhat();
         }
 
         /// <summary>
         /// Xóa chi tiết hóa đơn nhập theo mã chi tiết
         /// </summary>
         /// <param name="maCTHDN">Mã chi tiết hóa đơn nhập</param>
-        /// <returns>Trả về true nếu xóa thành công, false nếu thất bại</returns>
+        /// <returns>True nếu xóa thành công, False nếu thất bại</returns>
         public bool XoaChiTietHDN(string maCTHDN)
+        {
+            if (string.IsNullOrEmpty(maCTHDN))
+            {
+                MessageBox.Show("Mã chi tiết hóa đơn nhập không được để trống.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            // Kiểm tra chi tiết hóa đơn có tồn tại không
+            if (!CheckKey(maCTHDN))
+            {
+                MessageBox.Show($"Chi tiết hóa đơn với mã {maCTHDN} không tồn tại.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            return ChiTietHDNModel.Xoa(maCTHDN);
+        }
+
+        // Kiểm tra xem hóa đơn nhập có tồn tại không (gọi qua model)
+        private bool CheckHoaDonNhapExists(string maHDN)
         {
             try
             {
-                if (string.IsNullOrEmpty(maCTHDN))
+                using (SqlConnection conn = new SqlConnection("Data Source=DESKTOP-K56JJJ3;Initial Catalog=QuanLyQuanCafe2;Integrated Security=True;Encrypt=False"))
                 {
-                    MessageBox.Show("Mã chi tiết hóa đơn nhập không được để trống.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return false;
-                }
-
-                using (SqlConnection conn = DatabaseHelper.GetConnection())
-                {
-                    if (conn.State != ConnectionState.Open)
+                    conn.Open();
+                    string query = "SELECT COUNT(*) FROM HoaDonNhap WHERE MaHDN = @MaHDN";
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
-                        conn.Open(); // Đảm bảo kết nối được mở
-                    }
-                    bool result = ChiTietHDNModel.XoaChiTietHDN(maCTHDN, conn); // Truyền kết nối vào Model
-                    if (result)
-                    {
-                        // MessageBox đã được hiển thị trong FrmChiTietHDN, không cần hiển thị ở đây
-                        return true;
-                    }
-                    else
-                    {
-                        MessageBox.Show("Xóa chi tiết hóa đơn nhập thất bại.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return false;
+                        cmd.Parameters.AddWithValue("@MaHDN", maHDN);
+                        return (int)cmd.ExecuteScalar() > 0;
                     }
                 }
-            }
-            catch (SqlException sqlEx)
-            {
-                MessageBox.Show($"Lỗi SQL khi xóa chi tiết hóa đơn nhập: {sqlEx.Message}", "Lỗi SQL", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Lỗi khi xóa chi tiết hóa đơn nhập: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Lỗi khi kiểm tra hóa đơn nhập: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
         }
 
-        /// <summary>
-        /// Lấy mã chi tiết hóa đơn nhập tự động từ cơ sở dữ liệu (tùy chọn, để hiển thị trước cho người dùng)
-        /// </summary>
-        /// <returns>Mã chi tiết hóa đơn nhập mới</returns>
-        public string LayMaCTHDNTuDatabase()
+        // Kiểm tra xem sản phẩm có tồn tại không (gọi qua model)
+        private bool CheckSanPhamExists(string maSP)
         {
             try
             {
-                using (SqlConnection conn = DatabaseHelper.GetConnection())
+                using (SqlConnection conn = new SqlConnection("Data Source=DESKTOP-K56JJJ3;Initial Catalog=QuanLyQuanCafe2;Integrated Security=True;Encrypt=False"))
                 {
-                    if (conn.State != ConnectionState.Open)
+                    conn.Open();
+                    string query = "SELECT COUNT(*) FROM SanPham WHERE MaSP = @MaSP";
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
-                        conn.Open();
-                    }
-                    using (SqlCommand cmd = new SqlCommand("SELECT dbo.GenerateMaCTHDN()", conn))
-                    {
-                        object result = cmd.ExecuteScalar();
-                        string maCTHDN = result?.ToString() ?? "CTHDN20250524001"; // Giá trị mặc định nếu không lấy được
-                        return maCTHDN;
+                        cmd.Parameters.AddWithValue("@MaSP", maSP);
+                        return (int)cmd.ExecuteScalar() > 0;
                     }
                 }
             }
-            catch (SqlException sqlEx)
-            {
-                MessageBox.Show($"Lỗi SQL khi lấy mã chi tiết hóa đơn nhập: {sqlEx.Message}", "Lỗi SQL", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return "CTHDN20250524001"; // Giá trị mặc định khi có lỗi
-            }
             catch (Exception ex)
             {
-                MessageBox.Show($"Lỗi khi lấy mã chi tiết hóa đơn nhập: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return "CTHDN20250524001"; // Giá trị mặc định khi có lỗi
+                MessageBox.Show($"Lỗi khi kiểm tra sản phẩm: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
             }
+        }
+
+        // Kiểm tra xem chi tiết hóa đơn có tồn tại không (gọi qua model)
+        private bool CheckKey(string maCTHDN)
+        {
+            return ChiTietHDNModel.CheckKey(maCTHDN);
         }
     }
 }

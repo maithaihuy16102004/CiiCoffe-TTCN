@@ -380,6 +380,7 @@
     <Content Include="haarcascade_frontalface_default.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\backthongke1.jpg" />
     <None Include="Resources\5402443_search_find_magnifier_magnifying_magnifying glass_icon1.png" />
     <None Include="Resources\2993694_brand_brands_excel_logo_logos_icon.png" />
     <None Include="Resources\backthongke.jpg" />

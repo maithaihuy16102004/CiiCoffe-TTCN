@@ -587,7 +587,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            //this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImage = global::DuAnQuanLyQuancafe.Properties.Resources.backthongke;
             this.ClientSize = new System.Drawing.Size(1037, 696);
             this.Controls.Add(this.guna2Panel5);
             this.Controls.Add(this.guna2Panel4);
