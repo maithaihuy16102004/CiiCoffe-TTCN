@@ -90,7 +90,7 @@ namespace DuAnQuanLyQuancafe.View
             this.guna2HtmlLabel2.Size = new System.Drawing.Size(53, 17);
             this.guna2HtmlLabel2.TabIndex = 1;
             this.guna2HtmlLabel2.Text = "Giảm giá";
-            this.guna2HtmlLabel2.Click += new System.EventHandler(this.guna2HtmlLabel2_Click);
+            //this.guna2HtmlLabel2.Click += new System.EventHandler(this.guna2HtmlLabel2_Click);
             // 
             // guna2HtmlLabel3
             // 
@@ -101,7 +101,7 @@ namespace DuAnQuanLyQuancafe.View
             this.guna2HtmlLabel3.Size = new System.Drawing.Size(86, 17);
             this.guna2HtmlLabel3.TabIndex = 2;
             this.guna2HtmlLabel3.Text = "Khách cần trả";
-            this.guna2HtmlLabel3.Click += new System.EventHandler(this.guna2HtmlLabel3_Click);
+            //this.guna2HtmlLabel3.Click += new System.EventHandler(this.guna2HtmlLabel3_Click);
             // 
             // guna2Button3
             // 
@@ -304,7 +304,7 @@ namespace DuAnQuanLyQuancafe.View
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            //this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // roundedTextBox1
             // 
@@ -370,7 +370,7 @@ namespace DuAnQuanLyQuancafe.View
             this.dgvSanPhamm.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvSanPhamm.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.dgvSanPhamm.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSanPhamm_CellClick);
-            this.dgvSanPhamm.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSanPhamm_CellContentClick);
+            //this.dgvSanPhamm.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSanPhamm_CellContentClick);
             // 
             // guna2HtmlLabel4
             // 

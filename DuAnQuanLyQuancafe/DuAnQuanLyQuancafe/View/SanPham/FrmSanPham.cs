@@ -50,10 +50,11 @@ namespace DuAnQuanLyQuancafe.View
                 dgvSanPham.Columns["TenLoai"].HeaderText = "Tên Loại"; // Sửa nhãn
                 dgvSanPham.Columns["GiaNhap"].HeaderText = "Giá Nhập";
                 dgvSanPham.Columns["GiaBan"].HeaderText = "Giá Bán";
-                dgvSanPham.Columns["SoLuong"].HeaderText = "Số Lượng";
+                dgvSanPham.Columns["SoLuong"].HeaderText = "Tồn kho";
                 dgvSanPham.Columns["TenCongDung"].HeaderText = "Công Dụng";
                 dgvSanPham.Columns["GiaNhap"].DefaultCellStyle.Format = "N0";
                 dgvSanPham.Columns["GiaBan"].DefaultCellStyle.Format = "N0";
+                dgvSanPham.Columns["SoLuong"].Visible = false;
                 // Ẩn các cột không cần thiết
                 dgvSanPham.Columns["MaLoai"].Visible = false;
                 dgvSanPham.Columns["MaCongDung"].Visible = false;
@@ -243,7 +244,7 @@ namespace DuAnQuanLyQuancafe.View
                     dgvSanPham.Columns["TenLoai"].HeaderText = "Tên Loại";
                     dgvSanPham.Columns["GiaNhap"].HeaderText = "Giá Nhập";
                     dgvSanPham.Columns["GiaBan"].HeaderText = "Giá Bán";
-                    dgvSanPham.Columns["SoLuong"].HeaderText = "Số Lượng";
+                    dgvSanPham.Columns["SoLuong"].HeaderText = "Tồn kho";
                     dgvSanPham.Columns["TenCongDung"].HeaderText = "Công Dụng";
                     dgvSanPham.Columns["MaLoai"].Visible = false;
                     dgvSanPham.Columns["MaCongDung"].Visible = false;

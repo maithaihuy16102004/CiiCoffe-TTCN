@@ -242,10 +242,10 @@ namespace DuAnQuanLyQuancafe.View.NhaCungCap
                 return;
             }
 
-            if (string.IsNullOrWhiteSpace(sdt) || sdt.Length < 10 || !sdt.All(char.IsDigit))
+            if (sdt.Length > 10 || sdt.Length < 1 || !sdt.StartsWith("0"))
             {
-                MessageBox.Show("Số điện thoại phải có ít nhất 10 chữ số và chỉ chứa số.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtSDT.Focus();
+                MessageBox.Show("Số điện thoại không hợp lệ. Số điện thoại phải bắt đầu bằng 0 và có độ dài không quá 10 ký tự.",
+                                "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 

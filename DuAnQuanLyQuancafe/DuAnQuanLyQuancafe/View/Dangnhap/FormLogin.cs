@@ -60,10 +60,11 @@ namespace DuAnQuanLyQuancafe
 
         private void btnKhuonMat_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            // Không cần this.Hide() ở đây vì sẽ đóng cả FrmLogin sau khi đăng nhập thành công
             FrmNhanDien frmNhanDien = new FrmNhanDien();
             frmNhanDien.LoginByFace += XuLyDangNhapBangKhuonMat;
-            frmNhanDien.FormClosed += (s, args) => this.Show();
+            // Không cần hiển thị lại FrmLogin khi FrmNhanDien đóng
+            // frmNhanDien.FormClosed += (s, args) => this.Show();
             frmNhanDien.Show();
         }
 
@@ -83,7 +84,7 @@ namespace DuAnQuanLyQuancafe
                     new FrmCapCao(nhanVien).Show();
                 else
                     new FrmCapThap(nhanVien).Show();
-                this.Hide();
+                this.Close(); // Đóng hoàn toàn FrmLogin sau khi đăng nhập thành công
             }
             else
             {
@@ -91,6 +92,6 @@ namespace DuAnQuanLyQuancafe
             }
         }
 
-        
+
     }
 }

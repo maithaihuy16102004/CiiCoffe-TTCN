@@ -227,7 +227,7 @@
             // btnNhaCungCap
             // 
             this.btnNhaCungCap.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnNhaCungCap.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNhaCungCap.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNhaCungCap.ForeColor = System.Drawing.Color.MediumSeaGreen;
             this.btnNhaCungCap.Image = ((System.Drawing.Image)(resources.GetObject("btnNhaCungCap.Image")));
             this.btnNhaCungCap.Location = new System.Drawing.Point(22, 538);
@@ -236,6 +236,7 @@
             this.btnNhaCungCap.Size = new System.Drawing.Size(257, 52);
             this.btnNhaCungCap.TabIndex = 10;
             this.btnNhaCungCap.Text = "Quản lý nhà cung cấp";
+            this.btnNhaCungCap.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnNhaCungCap.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnNhaCungCap.UseVisualStyleBackColor = false;
             this.btnNhaCungCap.Click += new System.EventHandler(this.btnNhaCungCap_Click);
@@ -252,6 +253,7 @@
             this.btnHDN.Size = new System.Drawing.Size(257, 52);
             this.btnHDN.TabIndex = 9;
             this.btnHDN.Text = "Quản lý hóa đơn nhập hàng";
+            this.btnHDN.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnHDN.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnHDN.UseVisualStyleBackColor = false;
             this.btnHDN.Click += new System.EventHandler(this.btnHDN_Click);
@@ -268,6 +270,7 @@
             this.btnHDB.Size = new System.Drawing.Size(257, 52);
             this.btnHDB.TabIndex = 8;
             this.btnHDB.Text = "Quản Lý hóa đơn bán hàng";
+            this.btnHDB.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnHDB.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnHDB.UseVisualStyleBackColor = false;
             this.btnHDB.Click += new System.EventHandler(this.btnHDB_Click);
@@ -275,7 +278,7 @@
             // btnSanPham
             // 
             this.btnSanPham.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnSanPham.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSanPham.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSanPham.ForeColor = System.Drawing.Color.MediumSeaGreen;
             this.btnSanPham.Image = ((System.Drawing.Image)(resources.GetObject("btnSanPham.Image")));
             this.btnSanPham.Location = new System.Drawing.Point(22, 304);
@@ -284,6 +287,7 @@
             this.btnSanPham.Size = new System.Drawing.Size(257, 52);
             this.btnSanPham.TabIndex = 7;
             this.btnSanPham.Text = "Quản lý sản phẩm";
+            this.btnSanPham.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSanPham.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnSanPham.UseVisualStyleBackColor = false;
             this.btnSanPham.Click += new System.EventHandler(this.btnSanPham_Click);
@@ -326,7 +330,7 @@
             // btnThongke
             // 
             this.btnThongke.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnThongke.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThongke.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThongke.ForeColor = System.Drawing.Color.MediumSeaGreen;
             this.btnThongke.Image = ((System.Drawing.Image)(resources.GetObject("btnThongke.Image")));
             this.btnThongke.Location = new System.Drawing.Point(10, 21);
@@ -335,6 +339,7 @@
             this.btnThongke.Size = new System.Drawing.Size(257, 52);
             this.btnThongke.TabIndex = 12;
             this.btnThongke.Text = "Thống kê";
+            this.btnThongke.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnThongke.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnThongke.UseVisualStyleBackColor = false;
             this.btnThongke.Click += new System.EventHandler(this.btnThongke_Click);
@@ -342,7 +347,7 @@
             // btnNhanVien
             // 
             this.btnNhanVien.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnNhanVien.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNhanVien.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNhanVien.ForeColor = System.Drawing.Color.MediumSeaGreen;
             this.btnNhanVien.Image = ((System.Drawing.Image)(resources.GetObject("btnNhanVien.Image")));
             this.btnNhanVien.Location = new System.Drawing.Point(10, 93);
@@ -351,6 +356,7 @@
             this.btnNhanVien.Size = new System.Drawing.Size(257, 52);
             this.btnNhanVien.TabIndex = 5;
             this.btnNhanVien.Text = "Quản lý nhân viên";
+            this.btnNhanVien.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnNhanVien.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnNhanVien.UseVisualStyleBackColor = false;
             this.btnNhanVien.Click += new System.EventHandler(this.btnNhanVien_Click);

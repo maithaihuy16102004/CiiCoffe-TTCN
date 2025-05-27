@@ -56,11 +56,9 @@
             this.txtSoluong = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.picAnhSP = new Guna.UI2.WinForms.Guna2PictureBox();
             this.btnSua = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.picAnh)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSanPham)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picAnhSP)).BeginInit();
             this.SuspendLayout();
             // 
             // picAnh
@@ -68,9 +66,9 @@
             this.picAnh.BackColor = System.Drawing.Color.Transparent;
             this.picAnh.BorderRadius = 50;
             this.picAnh.ImageRotate = 0F;
-            this.picAnh.Location = new System.Drawing.Point(865, 558);
+            this.picAnh.Location = new System.Drawing.Point(865, 526);
             this.picAnh.Name = "picAnh";
-            this.picAnh.Size = new System.Drawing.Size(77, 74);
+            this.picAnh.Size = new System.Drawing.Size(96, 106);
             this.picAnh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picAnh.TabIndex = 91;
             this.picAnh.TabStop = false;
@@ -353,18 +351,6 @@
             this.label10.TabIndex = 96;
             this.label10.Text = "Số lượng";
             // 
-            // picAnhSP
-            // 
-            this.picAnhSP.BorderRadius = 10;
-            this.picAnhSP.ImageRotate = 0F;
-            this.picAnhSP.Location = new System.Drawing.Point(760, 436);
-            this.picAnhSP.Name = "picAnhSP";
-            this.picAnhSP.Size = new System.Drawing.Size(193, 110);
-            this.picAnhSP.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picAnhSP.TabIndex = 97;
-            this.picAnhSP.TabStop = false;
-            this.picAnhSP.Click += new System.EventHandler(this.picAnhSP_Click);
-            // 
             // btnSua
             // 
             this.btnSua.BorderRadius = 20;
@@ -388,7 +374,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(997, 698);
             this.Controls.Add(this.btnSua);
-            this.Controls.Add(this.picAnhSP);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.txtSoluong);
@@ -419,7 +404,6 @@
             this.Load += new System.EventHandler(this.FrmSanPham_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picAnh)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSanPham)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picAnhSP)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -451,7 +435,6 @@
         private System.Windows.Forms.TextBox txtSoluong;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
-        private Guna.UI2.WinForms.Guna2PictureBox picAnhSP;
         private Guna.UI2.WinForms.Guna2Button btnSua;
     }
 }

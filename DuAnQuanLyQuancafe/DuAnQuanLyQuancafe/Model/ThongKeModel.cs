@@ -219,12 +219,39 @@ namespace DuAnQuanLyQuancafe.Model
                         }
                     }
 
-                    // Sửa phần tồn kho dưới 10
+                    // Sản phẩm tồn kho dưới 10 (giữ nguyên)
                     query = "SELECT TOP 5 TenSP, SoLuong FROM SanPham WHERE SoLuong < 10 ORDER BY SoLuong ASC";
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
                         using (var reader = cmd.ExecuteReader())
                         {
+                            while (reader.Read())
+                            {
+                                if (!reader.IsDBNull(0) && !reader.IsDBNull(1))
+                                {
+                                    UnderstockList.Add(new KeyValuePair<string, int>(reader[0].ToString(), Convert.ToInt32(reader[1])));
+                                }
+                            }
+                        }
+                    }
+
+                    // Sản phẩm tồn kho chưa sử dụng (các sản phẩm không được bán trong khoảng thời gian)
+                    query = "SELECT TOP 5 s.TenSP, s.SoLuong " +
+                            "FROM SanPham s " +
+                            "LEFT JOIN (SELECT ct.MaSP " +
+                                       "FROM ChiTietHDB ct " +
+                                       "JOIN HoaDonBan h ON ct.MaHDB = h.MaHDB " +
+                                       "WHERE h.NgayBan BETWEEN @fromDate AND @toDate) AS sold " +
+                            "ON s.MaSP = sold.MaSP " +
+                            "WHERE sold.MaSP IS NULL " +
+                            "ORDER BY s.SoLuong DESC";
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@fromDate", startDate);
+                        cmd.Parameters.AddWithValue("@toDate", endDate);
+                        using (var reader = cmd.ExecuteReader())
+                        {
+                            UnderstockList.Clear(); // Xóa danh sách hiện tại để thay bằng danh sách mới
                             while (reader.Read())
                             {
                                 if (!reader.IsDBNull(0) && !reader.IsDBNull(1))

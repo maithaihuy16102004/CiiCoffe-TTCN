@@ -82,7 +82,7 @@ namespace DuAnQuanLyQuancafe.View
                 dgvNhanVien.Columns["TenNV"].Width = 130;
                 dgvNhanVien.Columns["DiaChi"].Width = 150; // Tăng chiều rộng để hiển thị địa chỉ dài
                 dgvNhanVien.Columns["GioiTinh"].Width = 80;
-                dgvNhanVien.Columns["NgaySinh"].Width = 100;
+                dgvNhanVien.Columns["NgaySinh"].Width = 120;
                 dgvNhanVien.Columns["SDT"].Width = 100; // Tăng chiều rộng để hiển thị số điện thoại đầy đủ
                 dgvNhanVien.Columns["TenQue"].Width = 120; // Tăng chiều rộng cho Quê Quán
 
@@ -116,11 +116,6 @@ namespace DuAnQuanLyQuancafe.View
                 dgvNhanVien.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
                 dgvNhanVien.GridColor = Color.FromArgb(200, 200, 200);
 
-                // Tắt các tính năng không cần thiết
-                dgvNhanVien.ReadOnly = true;
-                dgvNhanVien.RowHeadersVisible = false;
-                dgvNhanVien.AllowUserToResizeColumns = false;
-                dgvNhanVien.AllowUserToResizeRows = false;
 
                 // Đảm bảo DataGridView không có viền thừa
                 dgvNhanVien.BorderStyle = BorderStyle.None;
@@ -154,6 +149,7 @@ namespace DuAnQuanLyQuancafe.View
                 {
                     NhanVienController nhanVienController = new NhanVienController();
                     nhanVienController.XoaNhanVien(id);
+                    MessageBox.Show("Xóa nhân viên thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     LoadNhanVien();
                 }
             }
@@ -225,33 +221,38 @@ namespace DuAnQuanLyQuancafe.View
             if (dgvNhanVien.CurrentRow == null || dgvNhanVien.Rows.Count == 0)
             {
                 MessageBox.Show("Không có dữ liệu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                ResetValue(); // Giả sử bạn có hàm ResetValue() để đặt lại các trường
                 return;
             }
 
-            txtMa.Enabled = false; // Không cho phép sửa mã nhân viên
             try
             {
-                NhanVienModel selectedNhanVien = dgvNhanVien.CurrentRow.DataBoundItem as NhanVienModel;
-                if (selectedNhanVien == null)
-                    return;
-
-                txtMa.Text = selectedNhanVien.MaNV;
-                txtTen.Text = selectedNhanVien.TenNV;
-                txtDiaChi.Text = selectedNhanVien.DiaChi;
-                cbGioiTinh.Text = selectedNhanVien.GioiTinh;
-                cbQue.SelectedValue = selectedNhanVien.MaQue.ToString();
-                dtpNgaySinh.Value = selectedNhanVien.NgaySinh;
-                txtSDT.Text = selectedNhanVien.SDT;
+                txtMa.Enabled = false; // Không cho phép sửa mã nhân viên
+                txtMa.Text = dgvNhanVien.CurrentRow.Cells["MaNV"]?.Value?.ToString() ?? "";
+                txtTen.Text = dgvNhanVien.CurrentRow.Cells["TenNV"]?.Value?.ToString() ?? "";
+                txtDiaChi.Text = dgvNhanVien.CurrentRow.Cells["DiaChi"]?.Value?.ToString() ?? "";
+                cbGioiTinh.Text = dgvNhanVien.CurrentRow.Cells["GioiTinh"]?.Value?.ToString() ?? "";
+                cbQue.SelectedValue = dgvNhanVien.CurrentRow.Cells["MaQue"]?.Value?.ToString() ?? "";
+                dtpNgaySinh.Value = Convert.ToDateTime(dgvNhanVien.CurrentRow.Cells["NgaySinh"]?.Value?.ToString() ?? DateTime.Now.ToString());
+                txtSDT.Text = dgvNhanVien.CurrentRow.Cells["SDT"]?.Value?.ToString() ?? "";
 
                 // Xử lý ảnh từ byte[]
                 picAnh.SizeMode = PictureBoxSizeMode.Zoom;
-                if (selectedNhanVien.Anh != null && selectedNhanVien.Anh.Length > 0)
+                if (dgvNhanVien.CurrentRow.Cells["Anh"]?.Value != null)
                 {
                     try
                     {
-                        using (MemoryStream ms = new MemoryStream(selectedNhanVien.Anh))
+                        byte[] anh = (byte[])dgvNhanVien.CurrentRow.Cells["Anh"].Value;
+                        if (anh.Length > 0)
                         {
-                            picAnh.Image = Image.FromStream(ms);
+                            using (MemoryStream ms = new MemoryStream(anh))
+                            {
+                                picAnh.Image = Image.FromStream(ms);
+                            }
+                        }
+                        else
+                        {
+                            picAnh.Image = null;
                         }
                     }
                     catch (Exception ex)
@@ -314,9 +315,15 @@ namespace DuAnQuanLyQuancafe.View
 
             // Kiểm tra thông tin
             if (string.IsNullOrWhiteSpace(tenNV) || string.IsNullOrWhiteSpace(diaChi) ||
-                string.IsNullOrWhiteSpace(sdt) || string.IsNullOrWhiteSpace(gioiTinh))
+                 string.IsNullOrWhiteSpace(gioiTinh))
             {
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (sdt.Length > 10 || sdt.Length < 1 || !sdt.StartsWith("0"))
+            {
+                MessageBox.Show("Số điện thoại không hợp lệ. Số điện thoại phải bắt đầu bằng 0 và có độ dài không quá 10 ký tự.",
+                                "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 

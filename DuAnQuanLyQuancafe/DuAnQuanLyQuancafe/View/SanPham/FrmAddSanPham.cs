@@ -92,29 +92,7 @@ namespace DuAnQuanLyQuancafe.View.SanPham
             }
         }
 
-        private bool KiemTraMaSPTrung(string maSP)
-        {
-            try
-            {
-                using (SqlConnection conn = DatabaseHelper.GetConnection())
-                {
-                    if (conn.State == System.Data.ConnectionState.Closed)
-                        conn.Open();
-
-                    string query = "SELECT COUNT(*) FROM SanPham WHERE MaSP = @MaSP";
-                    using (SqlCommand cmd = new SqlCommand(query, conn))
-                    {
-                        cmd.Parameters.AddWithValue("@MaSP", maSP);
-                        int count = (int)cmd.ExecuteScalar();
-                        return count > 0;
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                throw new Exception($"Lỗi khi kiểm tra mã sản phẩm: {ex.Message}");
-            }
-        }
+ 
 
         private void btnThem_Click(object sender, EventArgs e)
         {

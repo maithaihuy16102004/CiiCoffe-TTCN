@@ -25,8 +25,9 @@ namespace DuAnQuanLyQuancafe
         private Mat frame = new Mat();
         private bool isCapturing = false;
         private bool isLoggedIn = false;
-        private LBPHFaceRecognizer recognizer; // là một lớp nhận diện khuôn mặt trong thư viện Emgu.CV/OpenCV, sử dụng thuật toán LBPH.
-        private string modelPath = "trainedModel.yml";  // Đọc mô hình đã huấn luyện
+        private bool hasShownFailedMessage = false; // Biến cờ để kiểm soát hiển thị thông báo thất bại
+        private LBPHFaceRecognizer recognizer;
+        private string modelPath = "trainedModel.yml";
         private Dictionary<int, string> labelToTenDangNhap = new Dictionary<int, string>();
         private Dictionary<int, string> labelToLoaiTaiKhoan = new Dictionary<int, string>();
 
@@ -65,7 +66,7 @@ namespace DuAnQuanLyQuancafe
         // Tải dữ liệu từ cơ sở dữ liệu và ánh xạ với các label
         private void LoadUserMappings()
         {
-            string connectionString = "Data Source=DESKTOP-LBR1P0N\\KHANH;Initial Catalog=QuanLyQuanCafe2;Integrated Security=True;Encrypt=False";
+            string connectionString = "Data Source=DESKTOP-K56JJJ3;Initial Catalog=QuanLyQuanCafe2;Integrated Security=True;Encrypt=False";
 
             try
             {
@@ -194,7 +195,7 @@ namespace DuAnQuanLyQuancafe
                     {
                         LoginByFace?.Invoke(username, role);
                         isLoggedIn = true; // Đảm bảo chỉ gọi 1 lần
-                        //this.Invoke(new Action(() => this.Close()));
+                        this.Invoke(new Action(() => this.Close())); // Đóng form sau khi đăng nhập thành công
                     }
                 }
                 else

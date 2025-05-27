@@ -47,10 +47,10 @@ namespace DuAnQuanLyQuancafe.View.NhaCungCap
                 return;
             }
 
-            if (string.IsNullOrEmpty(sdt))
+            if (sdt.Length > 10 || sdt.Length < 1 || !sdt.StartsWith("0"))
             {
-                MessageBox.Show("Số điện thoại không được để trống.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtSDT.Focus();
+                MessageBox.Show("Số điện thoại không hợp lệ. Số điện thoại phải bắt đầu bằng 0 và có độ dài không quá 10 ký tự.",
+                                "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -73,10 +73,10 @@ namespace DuAnQuanLyQuancafe.View.NhaCungCap
 
             // Gọi controller để thêm nhà cung cấp
             _nhaCungCapController.ThemNhaCC(parameter);
-            
-            this.Hide(); // Đóng form sau khi thêm nhân viên thành công
-            // Xóa nội dung các ô nhập liệu sau khi thêm thành công
-            
+
+            this.Close(); // Đóng form sau khi thêm nhà cung cấp
+                          // Xóa nội dung các ô nhập liệu sau khi thêm thành công
+
         }
 
         private void btnThoat_Click(object sender, EventArgs e)

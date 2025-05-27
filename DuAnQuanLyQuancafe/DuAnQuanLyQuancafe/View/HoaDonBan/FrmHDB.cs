@@ -32,7 +32,7 @@ namespace DuAnQuanLyQuancafe.View
             else
             {
                 HoaDonBanController HoaDonBanController = new HoaDonBanController();
-                List<HoaDonBanModel> dsHDB = HoaDonBanController.LaydanhsachHDB();
+                List<HoaDonBanModel> dsHDB = HoaDonBanController.LayDanhSachHDB();
                 dgvHDB.DataSource = dsHDB;
                 dgvHDB.Columns["MaHDB"].HeaderText = "Mã Hóa Đơn";
                 dgvHDB.Columns["NgayBan"].HeaderText = "Ngày Lập";
@@ -56,7 +56,7 @@ namespace DuAnQuanLyQuancafe.View
 
             if (string.IsNullOrEmpty(keyword))
             {
-                dsHDB = controller.LaydanhsachHDB();
+                dsHDB = controller.LayDanhSachHDB();
             }
             else
             {

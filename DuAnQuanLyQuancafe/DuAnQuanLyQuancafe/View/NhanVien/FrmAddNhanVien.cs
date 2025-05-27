@@ -70,9 +70,10 @@ namespace DuAnQuanLyQuancafe.View.NhanVien
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            if (sdt.Length < 10)
+            if (sdt.Length > 10 || sdt.Length < 1 || !sdt.StartsWith("0"))
             {
-                MessageBox.Show("Số điện thoại không hợp lệ.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Số điện thoại không hợp lệ. Số điện thoại phải bắt đầu bằng 0 và có độ dài không quá 10 ký tự.",
+                                "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             if (anhDuocChon == null)
@@ -119,7 +120,7 @@ namespace DuAnQuanLyQuancafe.View.NhanVien
             // Gọi hàm thêm nhân viên từ Controller
             _nhanVienController.ThemNhanVien(parameter);
             MessageBox.Show("Thêm nhân viên thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            this.Hide(); // Đóng form sau khi thêm nhân viên thành công
+            this.Close(); // Đóng form sau khi thêm nhân viên thành công
         }
 
         private void btnThoat_Click(object sender, EventArgs e)

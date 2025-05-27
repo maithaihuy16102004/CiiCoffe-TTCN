@@ -1,143 +1,80 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
-using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DuAnQuanLyQuancafe.function;
+using System.Windows.Forms;
 using DuAnQuanLyQuancafe.Model;
 
 namespace DuAnQuanLyQuancafe.Controller
 {
     public class HoaDonBanController
     {
-        public List<HoaDonBanModel> LaydanhsachHDB()
+        private readonly HoaDonBanModel _model;
+
+        public HoaDonBanController()
         {
-            List<HoaDonBanModel> HDB = new List<HoaDonBanModel>();
-
-            using (SqlConnection conn = DatabaseHelper.GetConnection())
-            {
-                if (conn.State == ConnectionState.Closed)
-                {
-                    conn.Open();
-                }
-
-                string sql = "SELECT hdb.MaHDB, hdb.Ngayban, hdb.MaNV, hdb.Tongtien " +
-                               "FROM Hoadonban hdb ";
-
-                SqlCommand cmd = new SqlCommand(sql, conn);
-                using (SqlDataReader reader = cmd.ExecuteReader())
-                {
-                    while (reader.Read())
-                    {
-                        HDB.Add(new HoaDonBanModel
-                        {
-                            MaHDB = reader["MaHDB"].ToString(),
-                            NgayBan = reader["NgayBan"] == DBNull.Value ? DateTime.MinValue : Convert.ToDateTime(reader["NgayBan"]),
-                            MaNV = reader["MaNV"] as string,
-                            Tongtien = reader["Tongtien"] == DBNull.Value ? 0f : Convert.ToSingle(reader["Tongtien"]),
-                        });
-                    }
-                }
-            }
-
-            return HDB;
-        }
-        public static void LuuHoaDon(HoaDonBanModel hoaDon)
-        {
-            string sql = $"INSERT INTO HoaDonBan ( NgayBan, MaNV, TongTien) VALUES " +
-                         $"( '{hoaDon.NgayBan:yyyy-MM-dd}', '{hoaDon.MaNV}', {hoaDon.Tongtien})";
-            DatabaseHelper.RunSql(sql);
+            _model = new HoaDonBanModel();
         }
 
-        public static string LayMaHDBTuDatabase()
+        /// <summary>
+        /// Lấy danh sách toàn bộ hóa đơn bán.
+        /// </summary>
+        public List<HoaDonBanModel> LayDanhSachHDB()
         {
-            using (SqlConnection conn = DatabaseHelper.GetConnection())
-            {
-                using (SqlCommand cmd = new SqlCommand("SELECT dbo.GenerateMaHDB()", conn))
-                {
-                    object result = cmd.ExecuteScalar();
-                    return result != null ? result.ToString() : null;
-                }
-            }
+            return _model.LayDanhSachHDB();
         }
+
+        /// <summary>
+        /// Lưu thông tin hóa đơn bán. Nếu chưa có mã thì tự động tạo mới.
+        /// </summary>
+        public void LuuHoaDon(HoaDonBanModel hoaDon)
+        {
+            if (hoaDon == null)
+                throw new ArgumentNullException(nameof(hoaDon), "Hóa đơn không được để null.");
+
+            if (string.IsNullOrWhiteSpace(hoaDon.MaHDB))
+                hoaDon.MaHDB = _model.LayMaHDBTuDatabase();
+
+            _model.LuuHoaDon(hoaDon);
+        }
+
+        /// <summary>
+        /// Lấy mã hóa đơn bán tự động từ cơ sở dữ liệu.
+        /// </summary>
+        public string LayMaHDBTuDatabase()
+        {
+            return _model.LayMaHDBTuDatabase();
+        }
+
+        /// <summary>
+        /// Tìm kiếm hóa đơn theo mã nhân viên.
+        /// </summary>
         public List<HoaDonBanModel> TimKiemHDBTheoMaNV(string maNV)
         {
-            List<HoaDonBanModel> HDB = new List<HoaDonBanModel>();
-            using (SqlConnection conn = DatabaseHelper.GetConnection())
-            {
-                if (conn.State == ConnectionState.Closed)
-                    conn.Open();
+            if (string.IsNullOrWhiteSpace(maNV))
+                throw new ArgumentException("Mã nhân viên không được để trống.", nameof(maNV));
 
-                string sql = "SELECT MaHDB, Ngayban, MaNV, Tongtien FROM Hoadonban WHERE MaNV = @MaNV";
-                SqlCommand cmd = new SqlCommand(sql, conn);
-                cmd.Parameters.AddWithValue("@MaNV", maNV);
-                using (SqlDataReader reader = cmd.ExecuteReader())
-                {
-                    while (reader.Read())
-                    {
-                        HDB.Add(new HoaDonBanModel
-                        {
-                            MaHDB = reader["MaHDB"].ToString(),
-                            NgayBan = reader["NgayBan"] == DBNull.Value ? DateTime.MinValue : Convert.ToDateTime(reader["NgayBan"]),
-                            MaNV = reader["MaNV"] as string,
-                            Tongtien = reader["Tongtien"] == DBNull.Value ? 0f : Convert.ToSingle(reader["Tongtien"]),
-                        });
-                    }
-                }
-            }
-            return HDB;
-
+            return _model.TimKiemHDBTheoMaNV(maNV);
         }
+
+        /// <summary>
+        /// Lọc danh sách hóa đơn theo khoảng ngày bán.
+        /// </summary>
         public List<HoaDonBanModel> LocHDBTheoNgay(DateTime ngayBatDau, DateTime ngayKetThuc)
         {
-            List<HoaDonBanModel> HDB = new List<HoaDonBanModel>();
-            using (SqlConnection conn = DatabaseHelper.GetConnection())
-            {
-                if (conn.State == ConnectionState.Closed)
-                    conn.Open();
+            if (ngayBatDau > ngayKetThuc)
+                    MessageBox.Show("Ngày bắt đầu không thể lớn hơn ngày kết thúc.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-                string sql = "SELECT MaHDB, Ngayban, MaNV, Tongtien FROM Hoadonban WHERE Ngayban >= @NgayBatDau AND Ngayban <= @NgayKetThuc";
-                SqlCommand cmd = new SqlCommand(sql, conn);
-                cmd.Parameters.AddWithValue("@NgayBatDau", ngayBatDau.Date);
-                cmd.Parameters.AddWithValue("@NgayKetThuc", ngayKetThuc.Date);
-                using (SqlDataReader reader = cmd.ExecuteReader())
-                {
-                    while (reader.Read())
-                    {
-                        HDB.Add(new HoaDonBanModel
-                        {
-                            MaHDB = reader["MaHDB"].ToString(),
-                            NgayBan = reader["NgayBan"] == DBNull.Value ? DateTime.MinValue : Convert.ToDateTime(reader["NgayBan"]),
-                            MaNV = reader["MaNV"] == DBNull.Value ? null : reader["MaNV"].ToString(),
-                            Tongtien = reader["Tongtien"] == DBNull.Value ? 0f : Convert.ToSingle(reader["Tongtien"]),
-                        });
-                    }
-                }
-            }
-            return HDB;
+            return _model.LocHDBTheoNgay(ngayBatDau, ngayKetThuc);
         }
-        public static string LayMaHDBMoiNhat(string maNV, DateTime ngayBan)
+
+        /// <summary>
+        /// Lấy mã hóa đơn mới nhất theo mã nhân viên và ngày bán.
+        /// </summary>
+        public string LayMaHDBMoiNhat(string maNV, DateTime ngayBan)
         {
-            string maHDB = null;
-            using (SqlConnection conn = DatabaseHelper.GetConnection())
-            {
-                string sql = "SELECT TOP 1 MaHDB FROM HoaDonBan WHERE MaNV = @MaNV AND NgayBan = @NgayBan ORDER BY MaHDB DESC";
-                using (SqlCommand cmd = new SqlCommand(sql, conn))
-                {
-                    cmd.Parameters.AddWithValue("@MaNV", maNV);
-                    cmd.Parameters.AddWithValue("@NgayBan", ngayBan.Date);
-                    object result = cmd.ExecuteScalar();
-                    if (result != null)
-                    {
-                        maHDB = result.ToString();
-                    }
-                }
-            }
-            return maHDB;
-        }
+            if (string.IsNullOrWhiteSpace(maNV))
+                throw new ArgumentException("Mã nhân viên không được để trống.", nameof(maNV));
 
+            return _model.LayMaHDBMoiNhat(maNV, ngayBan);
+        }
     }
 }
-
