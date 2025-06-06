@@ -1,216 +1,156 @@
-Tài Liệu Kiến Trúc Phần Mềm - Quản Lý Quán Cà Phê
-1. Mục Tiêu và Phạm Vi
-1.1 Mục Tiêu
-Mục tiêu của dự án Quản lý quán cà phê là phát triển một ứng dụng phần mềm cho phép quản lý quán cà phê, bao gồm các tính năng chính như quản lý nhân viên, tài khoản người dùng, thực đơn món ăn, đơn hàng, và báo cáo doanh thu. Phần mềm hỗ trợ nhân viên và quản lý thực hiện các công việc như tạo đơn hàng, quản lý món ăn, theo dõi doanh thu và phân quyền người dùng.
+1. Mục tiêu và Phạm vi
+1.1 Mục tiêu
+Dự án nhằm xây dựng một phần mềm quản lý quán cà phê giúp tự động hóa và tối ưu hóa các hoạt động hằng ngày như: quản lý nhân viên, người dùng, thực đơn đồ uống, đơn hàng và báo cáo doanh thu. Phần mềm hỗ trợ cả nhân viên lẫn quản lý dễ dàng thao tác, đồng thời phân quyền rõ ràng để đảm bảo an toàn và hiệu quả trong quản lý.
 
-1.2 Phạm Vi
-Quản lý tài khoản người dùng với quyền truy cập khác nhau (Admin, Nhân viên).
+1.2 Phạm vi
+Phần mềm bao gồm các chức năng chính sau:
 
-Quản lý nhân viên: thêm, sửa, xóa thông tin nhân viên.
+Quản lý tài khoản người dùng với phân quyền (Admin, Nhân viên).
 
-Quản lý món ăn: thêm, sửa, xóa món ăn, theo dõi kho.
+Quản lý nhân viên: thêm, sửa, xóa thông tin.
 
-Quản lý đơn hàng: tạo đơn hàng, tính tiền, tạo hóa đơn.
+Quản lý đồ uống: cập nhật thực đơn, theo dõi tình trạng và nguyên liệu.
 
-Báo cáo doanh thu: thống kê doanh thu theo ngày, tháng, năm.
+Quản lý đơn hàng: tạo hóa đơn, thanh toán.
 
-2. Kiến Trúc Tổng Quan
-2.1 Kiến Trúc Hệ Thống
-Hệ thống được xây dựng theo kiến trúc MVC (Model-View-Controller), giúp phân chia rõ ràng các thành phần và dễ dàng bảo trì, mở rộng:
+Thống kê, báo cáo doanh thu theo ngày, tháng, năm.
 
-Model: Các lớp đại diện cho dữ liệu (như Nhân viên, Món ăn, Đơn hàng) và các logic nghiệp vụ.
+2. Kiến trúc tổng quan
+2.1 Kiến trúc hệ thống
+Phần mềm được thiết kế theo mô hình MVC (Model - View - Controller) để dễ bảo trì, mở rộng và quản lý code:
 
-View: Các form WinForms để người dùng tương tác.
+Model: Đại diện cho dữ liệu và nghiệp vụ như Nhân viên, Đồ uống, Hóa đơn.
 
-Controller: Các lớp xử lý logic điều khiển các yêu cầu từ người dùng và giao tiếp với Model để thao tác dữ liệu.
+View: Giao diện người dùng (thiết kế bằng WinForms).
 
-2.2 Phân Chia Hệ Thống
-Hệ thống được chia thành các mô-đun:
+Controller: Xử lý các tương tác từ người dùng và điều hướng dữ liệu qua lại giữa View và Model.
 
-Mô-đun Đăng Nhập và Phân Quyền: Quản lý đăng nhập người dùng và phân quyền.
+2.2 Phân chia hệ thống
+Phần mềm được chia thành các mô-đun chính:
 
-Mô-đun Quản Lý Nhân Viên: Thêm, sửa, xóa nhân viên.
+Đăng nhập & Phân quyền: Kiểm soát truy cập hệ thống.
 
-Mô-đun Quản Lý Món Ăn: Quản lý thực đơn, món ăn.
+Quản lý nhân viên: Thêm, sửa, xóa thông tin nhân viên.
 
-Mô-đun Quản Lý Đơn Hàng: Quản lý các đơn hàng và thanh toán.
+Quản lý đồ uống (thực đơn): Cập nhật, theo dõi danh sách đồ uống.
 
-Mô-đun Báo Cáo Doanh Thu: Thống kê và báo cáo doanh thu.
+Quản lý đơn hàng: Tạo đơn, thanh toán, xuất hóa đơn.
 
-3. Mô-đun và Cấu Trúc
-3.1 Mô Tả Các Mô-đun Chính
-Mô-đun Đăng Nhập: Xử lý đăng nhập qua tài khoản hoặc nhận diện khuôn mặt.
+Báo cáo doanh thu: Thống kê doanh thu chi tiết.
 
-Mô-đun Quản Lý Nhân Viên: Quản lý danh sách nhân viên, các chức năng thêm, sửa, xóa.
+3. Mô-đun và Cấu trúc
+3.1 Mô tả mô-đun
+Đăng nhập: Hỗ trợ đăng nhập bằng tài khoản hoặc nhận diện khuôn mặt.
 
-Mô-đun Quản Lý Món Ăn: Cung cấp giao diện quản lý thực đơn món ăn.
+Quản lý nhân viên: Hiển thị và cập nhật thông tin nhân sự.
 
-Mô-đun Quản Lý Đơn Hàng: Hỗ trợ tạo và theo dõi đơn hàng của khách hàng.
+Quản lý đồ uống: Quản lý thực đơn, giá cả và trạng thái đồ uống.
 
-Mô-đun Báo Cáo Doanh Thu: Xem báo cáo doanh thu theo các khoảng thời gian.
+Quản lý đơn hàng: Tạo đơn hàng, tính tiền, xuất hóa đơn.
 
-3.2 Cấu Trúc Nội Bộ Mô-đun
-Mỗi mô-đun sẽ có các lớp xử lý nghiệp vụ (Business Logic),
+Báo cáo doanh thu: Thống kê doanh thu theo thời gian.
 
+3.2 Cấu trúc nội bộ mô-đun
+Mỗi mô-đun có giao diện riêng và lớp xử lý nghiệp vụ.
 
+Giao tiếp trực tiếp với cơ sở dữ liệu thông qua các lớp trung gian (Data Access Layer).
 
+4. Công nghệ và hạ tầng
+4.1 Công nghệ sử dụng
+Ngôn ngữ: C# (.NET Framework 4.8)
 
+Giao diện: WinForms
 
+Cơ sở dữ liệu: SQL Server
 
+4.2 Hạ tầng triển khai
+Cơ sở dữ liệu lưu trữ trên máy chủ nội bộ hoặc máy tính quản lý.
 
-Bạn đã nói:
-sao lại món ăn thực đơn đồ uống mà what the fuvk ?
-Xin lỗi về sự hiểu lầm trước đó! Để sửa lại chính xác, tôi sẽ thay từ "món ăn" thành "đồ uống" trong các phần liên quan đến thực đơn và đồ uống trong dự án quản lý quán cà phê của bạn. Dưới đây là tài liệu đã được chỉnh sửa lại.
+Ứng dụng cài đặt trực tiếp trên các máy tính của nhân viên/quản lý.
 
-Tài Liệu Kiến Trúc Phần Mềm - Quản Lý Quán Cà Phê
-1. Mục Tiêu và Phạm Vi
-1.1 Mục Tiêu
-Mục tiêu của dự án Quản lý quán cà phê là phát triển một phần mềm giúp quản lý các hoạt động tại quán cà phê, bao gồm quản lý nhân viên, tài khoản người dùng, đồ uống (thực đơn), đơn hàng và báo cáo doanh thu. Phần mềm giúp tối ưu hóa các quy trình hoạt động trong quán cà phê, cho phép nhân viên và quản lý dễ dàng thực hiện các tác vụ quản lý.
+5. Mô hình dữ liệu
+5.1 Cấu trúc các bảng
+TaiKhoan: Chứa thông tin tài khoản và quyền người dùng.
 
-1.2 Phạm Vi
-Dự án sẽ bao gồm các tính năng chính sau:
+NhanVien: Lưu thông tin nhân viên (tên, chức vụ, mã nhân viên...).
 
-Quản lý tài khoản người dùng với quyền truy cập khác nhau (Admin, Nhân viên).
+DoUong: Danh sách đồ uống, giá, trạng thái.
 
-Quản lý nhân viên: thêm, sửa, xóa thông tin nhân viên.
+HoaDon: Thông tin hóa đơn gồm đồ uống, số lượng, tổng tiền, người lập hóa đơn.
 
-Quản lý đồ uống (thực đơn): thêm, sửa, xóa đồ uống, theo dõi kho nguyên liệu.
+5.2 Quan hệ giữa các bảng
+Tài khoản liên kết với nhân viên qua trường MaNV.
 
-Quản lý đơn hàng: tạo đơn hàng, thanh toán, tạo hóa đơn.
+Hóa đơn liên kết với đồ uống thông qua chi tiết đơn hàng.
 
-Báo cáo doanh thu: thống kê doanh thu theo ngày, tháng, năm.
+6. Thiết kế giao diện
+6.1 Giao diện người dùng
+FrmLogin: Đăng nhập.
 
-2. Kiến Trúc Tổng Quan
-2.1 Kiến Trúc Hệ Thống
-Hệ thống sử dụng kiến trúc MVC (Model-View-Controller), phân chia rõ ràng giữa các phần của hệ thống:
+FrmQuanLyNhanVien: Quản lý nhân sự.
 
-Model: Đại diện cho dữ liệu (như Nhân viên, Đồ uống, Đơn hàng) và các nghiệp vụ của hệ thống.
+FrmQuanLyDoUong: Quản lý thực đơn.
 
-View: Giao diện người dùng, cho phép người dùng tương tác với hệ thống.
+FrmQuanLyDonHang: Tạo đơn hàng.
 
-Controller: Chịu trách nhiệm xử lý các yêu cầu từ người dùng và giao tiếp với Model để thao tác với dữ liệu.
+FrmBaoCaoDoanhThu: Xem báo cáo doanh thu.
 
-2.2 Phân Chia Hệ Thống
-Hệ thống được chia thành các mô-đun chính sau:
+6.2 Tương tác người dùng
+Giao diện thân thiện, dễ thao tác, phù hợp với cả nhân viên lẫn quản lý.
 
-Mô-đun Đăng Nhập và Phân Quyền: Quản lý đăng nhập và phân quyền người dùng.
+7. Quản lý dữ liệu
+Dữ liệu được lưu trong SQL Server.
 
-Mô-đun Quản Lý Nhân Viên: Quản lý thông tin nhân viên trong quán cà phê.
+Các thao tác như thêm, sửa, xóa thực hiện thông qua giao diện và cập nhật lên cơ sở dữ liệu thông qua các lớp xử lý nghiệp vụ.
 
-Mô-đun Quản Lý Đồ Uống (Thực Đơn): Cập nhật và quản lý đồ uống trong quán.
+8. Bảo mật
+8.1 Bảo vệ thông tin người dùng
+Mật khẩu được mã hóa trước khi lưu.
 
-Mô-đun Quản Lý Đơn Hàng: Theo dõi và xử lý các đơn hàng của khách.
+Hỗ trợ đăng nhập bằng khuôn mặt để tăng tính an toàn.
 
-Mô-đun Báo Cáo Doanh Thu: Xem báo cáo doanh thu theo các khoảng thời gian.
+Phân quyền rõ ràng giữa người dùng và quản trị viên.
 
-3. Mô-đun và Cấu Trúc
-3.1 Mô Tả Các Mô-đun Chính
-Mô-đun Đăng Nhập: Xử lý việc đăng nhập người dùng qua tài khoản và mật khẩu hoặc qua nhận diện khuôn mặt.
+9. Hiệu suất và tối ưu hóa
+9.1 Đảm bảo hiệu suất
+Tối ưu truy vấn SQL.
 
-Mô-đun Quản Lý Nhân Viên: Cung cấp chức năng thêm, sửa, xóa thông tin nhân viên.
+Giao diện phản hồi nhanh.
 
-Mô-đun Quản Lý Đồ Uống: Quản lý đồ uống trong quán, cho phép cập nhật thực đơn và theo dõi các loại đồ uống.
+9.2 Cách tối ưu
+Dùng chỉ mục (index) trong các bảng dữ liệu lớn.
 
-Mô-đun Quản Lý Đơn Hàng: Quản lý đơn hàng của khách, bao gồm việc tạo đơn và tính toán giá trị thanh toán.
+Giảm tải hệ thống bằng cách lọc dữ liệu trước khi hiển thị.
 
-Mô-đun Báo Cáo Doanh Thu: Cung cấp báo cáo doanh thu, cho phép xem chi tiết doanh thu theo các khoảng thời gian (ngày, tháng, năm).
+10. Quản lý phiên bản và triển khai
+10.1 Quản lý phiên bản
+Sử dụng Git để quản lý source code.
 
-3.2 Cấu Trúc Nội Bộ Mô-đun
-Mô-đun Quản Lý Nhân Viên sẽ bao gồm các lớp đại diện cho nhân viên và các chức năng như thêm, sửa, xóa nhân viên. Các thao tác này sẽ được thực hiện qua giao diện người dùng và kết nối với cơ sở dữ liệu.
+Ghi chú rõ ràng từng lần cập nhật, giúp dễ dàng bảo trì hoặc quay lại phiên bản ổn định.
 
-Mô-đun Quản Lý Đồ Uống sẽ bao gồm các lớp cho phép thêm, sửa, xóa đồ uống trong thực đơn, và cũng sẽ kết nối với cơ sở dữ liệu để lưu trữ thông tin.
+10.2 Triển khai
+Cài đặt ứng dụng trực tiếp trên máy tính nội bộ.
 
-Mô-đun Quản Lý Đơn Hàng sẽ theo dõi các đơn hàng được tạo ra, bao gồm các chi tiết về đồ uống được chọn, số lượng, và giá trị thanh toán.
+Kết nối đến cơ sở dữ liệu SQL Server cài sẵn.
 
-Mô-đun Báo Cáo Doanh Thu sẽ thực hiện các truy vấn để lấy dữ liệu doanh thu từ cơ sở dữ liệu và cung cấp báo cáo theo yêu cầu.
+11. Hướng dẫn cài đặt và sử dụng
+11.1 Cài đặt
+Cài SQL Server và khởi tạo cơ sở dữ liệu.
 
-4. Công Nghệ và Cơ Sở Hạ Tầng
-4.1 Công Nghệ Sử Dụng
-C# WinForms: Để phát triển giao diện người dùng trên nền tảng Windows.
+Cài đặt phần mềm WinForms trên máy tính.
 
-SQL Server: Cơ sở dữ liệu lưu trữ thông tin về tài khoản người dùng, nhân viên, đồ uống và đơn hàng.
+Kết nối phần mềm với cơ sở dữ liệu.
 
-.NET Framework 4.8: Dùng để xây dựng ứng dụng trên Windows.
+11.2 Sử dụng
+Đăng nhập bằng tài khoản hoặc khuôn mặt.
 
-4.2 Cấu Trúc Cơ Sở Hạ Tầng
-Cơ sở dữ liệu: SQL Server, bao gồm các bảng như TaiKhoan, NhanVien, DoUong, HoaDon.
+Quản lý thực đơn, tạo đơn hàng, theo dõi doanh thu.
 
-Máy chủ: Ứng dụng sẽ được triển khai trên máy tính của quản lý hoặc nhân viên quán cà phê.
+Dễ dàng thao tác với giao diện thân thiện.
 
-5. Mô Hình Dữ Liệu
-5.1 Cấu Trúc Cơ Sở Dữ Liệu
-Cơ sở dữ liệu của hệ thống bao gồm các bảng sau:
+12. Tài liệu tham khảo
+Microsoft .NET Documentation
 
-TaiKhoan: Lưu trữ thông tin tài khoản người dùng.
+SQL Server Documentation
 
-NhanVien: Lưu trữ thông tin nhân viên quán cà phê.
-
-DoUong: Lưu trữ danh sách đồ uống trong thực đơn, bao gồm tên, giá trị, trạng thái (có sẵn hay không).
-
-HoaDon: Lưu trữ thông tin đơn hàng, bao gồm mã nhân viên, đồ uống, số lượng, giá trị thanh toán.
-
-5.2 Quan Hệ Giữa Các Bảng
-TaiKhoan và NhanVien có quan hệ qua trường MaNV.
-
-HoaDon và DoUong có quan hệ thông qua các chi tiết trong đơn hàng.
-
-6. Thiết Kế Giao Diện
-6.1 Giao Diện Người Dùng
-FrmLogin: Giao diện đăng nhập với các lựa chọn tài khoản và mật khẩu.
-
-FrmQuanLyNhanVien: Giao diện quản lý nhân viên quán cà phê.
-
-FrmQuanLyDoUong: Giao diện quản lý đồ uống (thực đơn), cho phép thêm, sửa, xóa đồ uống.
-
-FrmQuanLyDonHang: Giao diện để tạo và quản lý đơn hàng.
-
-FrmBaoCaoDoanhThu: Giao diện báo cáo doanh thu theo các khoảng thời gian.
-
-6.2 Tương Tác Người Dùng
-Giao diện người dùng được thiết kế đơn giản, dễ sử dụng, giúp người dùng dễ dàng truy cập vào các tính năng như quản lý nhân viên, đồ uống, đơn hàng và báo cáo doanh thu.
-
-7. Quản Lý Dữ Liệu
-7.1 Xử Lý Dữ Liệu
-Dữ liệu của hệ thống được lưu trữ trong cơ sở dữ liệu SQL Server, với các bảng đại diện cho tài khoản người dùng, nhân viên, đồ uống và đơn hàng. Các thao tác thêm, sửa, xóa sẽ được thực hiện qua các lớp kết nối với cơ sở dữ liệu.
-
-8. Bảo Mật
-8.1 Bảo Mật Hệ Thống
-Hệ thống sử dụng các biện pháp bảo mật sau:
-
-Mã hóa mật khẩu: Mật khẩu người dùng được mã hóa trước khi lưu vào cơ sở dữ liệu.
-
-Xác thực đa yếu tố: Hệ thống hỗ trợ đăng nhập qua tài khoản và nhận diện khuôn mặt để tăng cường bảo mật.
-
-Quyền truy cập: Phân quyền rõ ràng giữa các loại tài khoản như Admin và Nhân viên.
-
-9. Hiệu Suất và Tối Ưu Hóa
-9.1 Hiệu Suất
-Các truy vấn cơ sở dữ liệu được tối ưu hóa để đảm bảo hệ thống xử lý nhanh chóng, đặc biệt trong các báo cáo doanh thu lớn.
-
-9.2 Tối Ưu Hóa
-Chỉ mục: Sử dụng chỉ mục trong cơ sở dữ liệu để tăng tốc độ truy vấn.
-
-Cập nhật dữ liệu: Cập nhật dữ liệu theo chu kỳ để đảm bảo tính chính xác và hiệu suất của hệ thống.
-
-10. Quản Lý Phiên Bản và Triển Khai
-10.1 Quản Lý Phiên Bản
-Phiên bản phần mềm sẽ được quản lý thông qua Git và GitHub, cho phép theo dõi thay đổi và dễ dàng quay lại các phiên bản trước.
-
-10.2 Triển Khai
-Ứng dụng sẽ được triển khai trực tiếp trên các máy tính của quản lý và nhân viên tại quán cà phê, với hướng dẫn cài đặt và sử dụng chi tiết.
-
-11. Hướng Dẫn Cài Đặt và Sử Dụng
-11.1 Cài Đặt
-Bước 1: Cài đặt SQL Server và tạo cơ sở dữ liệu.
-
-Bước 2: Cài đặt phần mềm trên máy tính và kết nối với cơ sở dữ liệu.
-
-11.2 Sử Dụng
-Đăng nhập: Người dùng đăng nhập vào hệ thống để bắt đầu sử dụng.
-
-Quản lý đồ uống: Quản lý thực đơn đồ uống, thêm hoặc sửa món uống.
-
-12. Tài Liệu Tham Khảo
-Microsoft .NET Framework: Tài liệu hướng dẫn phát triển ứng dụng C#.
-
-SQL Server Documentation: Tài liệu hướng dẫn sử dụng SQL Server.
+Các bài viết và ví dụ từ cộng đồng C#, Stack Overflow.
